@@ -21,7 +21,6 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import nepjr.tech.NTTags;
 
 @Mod(modid = NTTags.MODID, 
 	 version = NTTags.VERSION, 

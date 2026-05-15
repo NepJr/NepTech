@@ -8,7 +8,6 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import gregtech.api.capability.impl.SteamMultiWorkable;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
 import gregtech.api.gui.widgets.AdvancedTextWidget;
@@ -27,6 +26,7 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
+import nepjr.tech.api.capability.impl.NTSteamMultiWorkable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -47,7 +47,7 @@ public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockControll
 		super(metaTileEntityId, RecipeMaps.FORGE_HAMMER_RECIPES, CONVERSION_RATE);
 		this.level = level;
         this.PARALLEL_LIMIT = 8 * level;
-        this.recipeMapWorkable = new SteamMultiWorkable(this, CONVERSION_RATE);
+        this.recipeMapWorkable = new NTSteamMultiWorkable(this, CONVERSION_RATE, level);
         this.recipeMapWorkable.setParallelLimit(PARALLEL_LIMIT);
     }
 
