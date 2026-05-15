@@ -1,4 +1,45 @@
+// Electric Machines
+neptech.machine.greenhouse.name=Greenhouse
+
+// Steam Machines
+neptech.machine.steam_smasher.name=Steam Smasher
+neptech.machine.hp_steam_smasher.name=High Pressure Steam Smasher
+
+// Fertilized Dirts
+tile.fertilized_dirt.basic.name=Basic Fertilized Dirt
+tile.fertilized_dirt.advanced.name=Advanced Fertilized Dirt
+tile.fertilized_dirt.living.name=Living Fertilized Dirt
+tile.fertilized_dirt.extraterrestrial.name=Extraterrestrial Fertilized Dirt
+tile.fertilized_dirt.absurd.name=Absurd Fertilized Dirt
+
+// WIP Items
+metaitem.spray.infinite.name=[NYI] Infinite Spray Can
+
 // Circuits
+metaitem.circuit.bioware_processor.name=Bioware Processor
+metaitem.circuit.bioware_assembly.name=Bioware Processor Assembly
+metaitem.circuit.bioware_computer.name=Bioware Supercomputer
+metaitem.circuit.bioware_mainframe.name=Bioware Processor Mainframe
+
+metaitem.circuit.optical_processor.name=Optical Processor
+metaitem.circuit.optical_assembly.name=Optical Processor Assembly
+metaitem.circuit.optical_computer.name=Optical Supercomputer
+metaitem.circuit.optical_mainframe.name=Optical Processor Mainframe
+
+metaitem.circuit.exotic_processor.name=Exotic Processor
+metaitem.circuit.exotic_assembly.name=Exotic Processor Assembly
+metaitem.circuit.exotic_computer.name=Exotic Supercomputer
+metaitem.circuit.exotic_mainframe.name=Exotic Processor Mainframe
+
+metaitem.circuit.cosmic_processor.name=Cosmic Processor
+metaitem.circuit.cosmic_assembly.name=Cosmic Processor Assembly
+metaitem.circuit.cosmic_computer.name=Cosmic Supercomputer
+metaitem.circuit.cosmic_mainframe.name=Cosmic Processor Mainframe
+
+metaitem.circuit.supracausal_processor.name=Supra-Causal Processor
+metaitem.circuit.supracausal_assembly.name=Supra-Causal Processor Assembly
+metaitem.circuit.supracausal_computer.name=Supra-Causal Supercomputer
+metaitem.circuit.supracausal_mainframe.name=Supra-Causal Processor Mainframe
 
 // Universal Circuits
 metaitem.circuit.universal.ulv.name=Universal ULV Circuit
