@@ -11,6 +11,7 @@ import exnihilocreatio.registries.registries.SieveRegistry;
 import exnihilocreatio.texturing.Color;
 import exnihilocreatio.util.ItemInfo;
 import gregtech.api.GTValues;
+import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,71 +19,56 @@ import net.minecraft.item.ItemStack;
 public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 {
 	public void registerOreChunks(OreRegistry registry) 
-	{
-		
-		Item ingot = Item.getByNameOrId("gregtech:meta_ingot");
-		Item dust = Item.getByNameOrId("gregtech:meta_dust");
-		
+	{	
 		if(!registry.isRegistered("copper"))
 		{
-			registry.register(Materials.Copper.getName(), new Color(Materials.Copper.getMaterialRGB()), 
-					new ItemInfo(ingot, Materials.Copper.getId()),
-					new ItemInfo(dust, Materials.Copper.getId()));
+			registerMaterial(registry, Materials.Copper);
 		}
 		if(!registry.isRegistered("tin"))
 		{
-			registry.register(Materials.Tin.getName(), new Color(Materials.Tin.getMaterialRGB()), 
-					new ItemInfo(ingot, Materials.Tin.getId()),
-					new ItemInfo(dust, Materials.Tin.getId()));
+			registerMaterial(registry, Materials.Tin);
 		}
 		if(!registry.isRegistered("silver"))
 		{
-			registry.register(Materials.Silver.getName(), new Color(Materials.Silver.getMaterialRGB()), 
-					new ItemInfo(ingot, Materials.Silver.getId()),
-					new ItemInfo(dust, Materials.Silver.getId()));
+			registerMaterial(registry, Materials.Silver);
 		}
 		if(!registry.isRegistered("lead"))
 		{
-			registry.register(Materials.Lead.getName(), new Color(Materials.Lead.getMaterialRGB()), 
-					new ItemInfo(ingot, Materials.Lead.getId()),
-					new ItemInfo(dust, Materials.Lead.getId()));
+			registerMaterial(registry, Materials.Lead);
 		}
 		if(!registry.isRegistered("cobaltite"))
 		{
-			registry.register(Materials.Cobaltite.getName(), new Color(Materials.Cobaltite.getMaterialRGB()), 
-					new ItemInfo(ingot, Materials.Cobalt.getId()),
-					new ItemInfo(dust, Materials.Cobaltite.getId()));
+			registerMaterial(registry, Materials.Cobaltite);
 		}
 		if(!registry.isRegistered("sphalerite"))
 		{
-			registry.register(Materials.Sphalerite.getName(), new Color(Materials.Sphalerite.getMaterialRGB()), 
-					new ItemInfo(dust, Materials.Sphalerite.getId()),
-					new ItemInfo(dust, Materials.Sphalerite.getId()));
+			registerMaterial(registry, Materials.Sphalerite);
 		}
 		if(!registry.isRegistered("calcite"))
 		{
-			registry.register(Materials.Calcite.getName(), new Color(Materials.Calcite.getMaterialRGB()), 
-					new ItemInfo(dust, Materials.Calcite.getId()),
-					new ItemInfo(dust, Materials.Calcite.getId()));
+			registerMaterial(registry, Materials.Calcite);
 		}
 		if(!registry.isRegistered("gypsum"))
 		{
-			registry.register(Materials.Gypsum.getName(), new Color(Materials.Gypsum.getMaterialRGB()), 
-					new ItemInfo(dust, Materials.Gypsum.getId()),
-					new ItemInfo(dust, Materials.Gypsum.getId()));
+			registerMaterial(registry, Materials.Gypsum);
 		}
 		if(!registry.isRegistered("sulfur"))
 		{
-			registry.register(Materials.Sulfur.getName(), new Color(Materials.Sulfur.getMaterialRGB()), 
-					new ItemInfo(dust, Materials.Sulfur.getId()),
-					new ItemInfo(dust, Materials.Sulfur.getId()));
+			registerMaterial(registry, Materials.Sulfur);
 		}
 		if(!registry.isRegistered("oilsands"))
 		{
-			registry.register(Materials.Oilsands.getName(), new Color(Materials.Oilsands.getMaterialRGB()), 
-					new ItemInfo(dust, Materials.Oilsands.getId()),
-					new ItemInfo(dust, Materials.Oilsands.getId()));
+			registerMaterial(registry, Materials.Oilsands);
 		}
+		if(!registry.isRegistered("tungstate"))
+		{
+			registerMaterial(registry, Materials.Tungstate);
+		}
+		if(!registry.isRegistered("scheelite"))
+		{
+			registerMaterial(registry, Materials.Scheelite);
+		}
+		
 		ItemOre oreCalcite = ExNihiloRegistryManager.ORE_REGISTRY.getOreItem("calcite");
 		ItemOre oreGypsum = ExNihiloRegistryManager.ORE_REGISTRY.getOreItem("gypsum");
 		ItemOre oreSulfur = ExNihiloRegistryManager.ORE_REGISTRY.getOreItem("sulfur");
@@ -139,6 +125,16 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 	public String getMODID() 
 	{
 		return GTValues.MODID;
+	}
+	
+	private void registerMaterial(OreRegistry registry, Material material)
+	{
+		Item ingot = Item.getByNameOrId("gregtech:meta_ingot");
+		Item dust = Item.getByNameOrId("gregtech:meta_dust");
+		
+		registry.register(material.getName(), new Color(material.getMaterialRGB()), 
+				new ItemInfo(ingot, material.getId()),
+				new ItemInfo(dust, material.getId()));
 	}
 
 }

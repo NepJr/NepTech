@@ -9,6 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import gregtech.api.capability.impl.SteamMultiWorkable;
+import gregtech.api.gui.GuiTextures;
+import gregtech.api.gui.ModularUI;
+import gregtech.api.gui.widgets.AdvancedTextWidget;
+import gregtech.api.gui.widgets.IndicatorImageWidget;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -21,10 +25,12 @@ import gregtech.client.particle.VanillaParticleEffects;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.client.utils.TooltipHelper;
+import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
@@ -116,6 +122,24 @@ public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockControll
         tooltip.add(I18n.format("gregtech.multiblock.steam_.duration_modifier"));
         tooltip.add(I18n.format("gregtech.universal.tooltip.parallel", PARALLEL_LIMIT));
         tooltip.add(TooltipHelper.BLINKING_ORANGE + I18n.format("gregtech.multiblock.require_steam_parts"));
+    }
+    
+    @Override
+    protected ModularUI.Builder createUITemplate(EntityPlayer entityPlayer) {
+        ModularUI.Builder builder = ModularUI
+                .builder(GuiTextures.BACKGROUND_STEAM.get((level == 2) ? true : false), 176, 208);
+        builder.shouldColor(false);
+        builder.image(4, 4, 168, 117, GuiTextures.DISPLAY_STEAM.get((level == 2) ? true : false));
+        builder.label(9, 9, getMetaFullName(), 0xFFFFFF);
+        builder.widget(new AdvancedTextWidget(9, 20, this::addDisplayText, 0xFFFFFF)
+                .setMaxWidthLimit(162)
+                .setClickHandler(this::handleDisplayClick));
+        builder.widget(new IndicatorImageWidget(152, 101, 17, 17, getLogo())
+                .setWarningStatus(getWarningLogo(), this::addWarningText)
+                .setErrorStatus(getErrorLogo(), this::addErrorText));
+        builder.bindPlayerInventory(entityPlayer.inventory,
+                GuiTextures.SLOT_STEAM.get((level == 2) ? true : false), 7, 125);
+        return builder;
     }
 
     @SideOnly(Side.CLIENT)
