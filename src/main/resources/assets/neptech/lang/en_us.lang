@@ -1,0 +1,18 @@
+// Circuits
+
+// Universal Circuits
+metaitem.circuit.universal.ulv.name=Universal ULV Circuit
+metaitem.circuit.universal.lv.name=Universal LV Circuit
+metaitem.circuit.universal.mv.name=Universal MV Circuit
+metaitem.circuit.universal.hv.name=Universal HV Circuit
+metaitem.circuit.universal.ev.name=Universal EV Circuit
+metaitem.circuit.universal.iv.name=Universal IV Circuit
+metaitem.circuit.universal.luv.name=Universal LuV Circuit
+metaitem.circuit.universal.zpm.name=Universal ZPM Circuit
+metaitem.circuit.universal.uv.name=Universal UV Circuit
+metaitem.circuit.universal.uhv.name=Universal UHV Circuit
+metaitem.circuit.universal.uev.name=Universal UEV Circuit
+metaitem.circuit.universal.uiv.name=Universal UIV Circuit
+metaitem.circuit.universal.uxv.name=Universal UXV Circuit
+metaitem.circuit.universal.opv.name=Universal OpV Circuit
+metaitem.circuit.universal.max.name=Universal MAX Circuit

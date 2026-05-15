@@ -38,5 +38,11 @@
  * For more details, see https://docs.gradle.org/8.4/userguide/java_library_plugin.html#sec:java_library_configurations_graph
  */
 dependencies {
-
+	api("gregtech:gregtech:2.8.10-beta")
+	
+	// Ex Nihilo Creatio support
+	implementation rfg.deobf("curse.maven:ex-nihilo-creatio-274456:2817545")
+	
+	// Dependencies for other mods
+	implementation rfg.deobf("curse.maven:shadowfacts-forgelin-248453:2785465")
 }
