@@ -21,7 +21,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-import xyz.nepjr.tech.NTTags;
+import nepjr.tech.NTTags;
 
 @EventBusSubscriber(modid = NTTags.MODID)
 public class CommonProxy 
