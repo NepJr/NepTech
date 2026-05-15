@@ -7,6 +7,8 @@ neptech.machine.greenhouse.name=Greenhouse
 // Steam Machines
 neptech.machine.steam_smasher.name=Steam Smasher
 neptech.machine.hp_steam_smasher.name=High Pressure Steam Smasher
+neptech.machine.steam_crusher.name=Steam Crusher
+neptech.machine.hp_steam_crusher.name=High Pressure Steam Crusher
 
 // Fertilized Dirts
 tile.fertilized_dirt.basic.name=Basic Fertilized Dirt
