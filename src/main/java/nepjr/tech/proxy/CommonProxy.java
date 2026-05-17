@@ -8,6 +8,7 @@ import gregtech.api.event.HighTierEvent;
 import gregtech.api.unification.material.event.MaterialEvent;
 import nepjr.tech.api.NepTechAPI;
 import nepjr.tech.api.block.IFertilizedDirtBlockStats;
+import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.blocks.BlockFertilizedDirt;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTMetaItems;
@@ -77,7 +78,7 @@ public class CommonProxy
     @SubscribeEvent
     public static void registerMaterials(MaterialEvent event) 
     {
-
+    	NTMaterials.init();
     }
     
     @SubscribeEvent
@@ -93,7 +94,7 @@ public class CommonProxy
 	
 	private enum UnregisteredFertilizerType implements IStringSerializable, IFertilizedDirtBlockStats 
 	{
-		DIRT("dirt", 1, 0.0F);
+		DIRT("dirt", 0, 0.0F);
 		
 		private final String name;
 		private final int fertilizerTier;

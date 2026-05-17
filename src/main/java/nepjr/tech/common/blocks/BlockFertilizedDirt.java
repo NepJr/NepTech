@@ -22,8 +22,8 @@ public class BlockFertilizedDirt extends VariantActiveBlock<BlockFertilizedDirt.
 	
 	public enum FertilizerType implements IStringSerializable, IFertilizedDirtBlockStats 
 	{
-		BASIC("basic", 2, 0.1F),
-		ADVANCED("advanced", 3, 0.2F),
+		BASIC("basic", 1, 0.1F),
+		ADVANCED("advanced", 2, 0.2F),
 		LIVING("living", 4, 0.4F),
 		EXTRATERRESTRIAL("extraterrestrial", 8, 0.5F),
 		ABSURD("absurd", 16, 0.99F);

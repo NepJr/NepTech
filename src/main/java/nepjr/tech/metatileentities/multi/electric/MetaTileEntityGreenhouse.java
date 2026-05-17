@@ -181,7 +181,7 @@ public class MetaTileEntityGreenhouse extends RecipeMapMultiblockController
 		@Override
 		public int getParallelLimit()
 		{
-			return (int) Math.pow(2, fertilizerTier) * GTUtility.getTierByVoltage(this.getEnergyContainer().getInputVoltage());
+			return (int) Math.max(Math.pow(2, fertilizerTier), 1);
 		}
 	}
 	

@@ -10,6 +10,9 @@ import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.compat.exnihilo.ExNihiloGTModule;
 import nepjr.tech.loaders.recipe.AssemblerRecipes;
+import nepjr.tech.loaders.recipe.AsslineRecipes;
+import nepjr.tech.loaders.recipe.CraftingRecipes;
+import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
 import nepjr.tech.loaders.recipe.RemovalRecipes;
 import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
@@ -56,7 +59,10 @@ public class NepTech {
     public void init(FMLInitializationEvent event)
     {
     	RemovalRecipes.init();
+    	CraftingRecipes.init();
+    	ForgeHammerRecipes.init();
     	AssemblerRecipes.init();
+    	AsslineRecipes.init();
     	UniversalCircuitRecipes.init();
     	GreenhouseRecipes.init();
     }
