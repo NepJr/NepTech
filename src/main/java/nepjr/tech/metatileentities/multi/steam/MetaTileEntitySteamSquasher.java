@@ -38,13 +38,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockController {
+public class MetaTileEntitySteamSquasher extends RecipeMapSteamMultiblockController {
 
 	protected final int level;
 	protected final int PARALLEL_LIMIT;
 
-    public MetaTileEntitySteamSmasher(int level, ResourceLocation metaTileEntityId) {
-		super(metaTileEntityId, RecipeMaps.FORGE_HAMMER_RECIPES, CONVERSION_RATE);
+    public MetaTileEntitySteamSquasher(int level, ResourceLocation metaTileEntityId) {
+		super(metaTileEntityId, RecipeMaps.COMPRESSOR_RECIPES, CONVERSION_RATE);
 		this.level = level;
         this.PARALLEL_LIMIT = 8 * level;
         this.recipeMapWorkable = new NTSteamMultiWorkable(this, CONVERSION_RATE, level);
@@ -53,18 +53,19 @@ public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockControll
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity metaTileEntityHolder) {
-        return new MetaTileEntitySteamSmasher(level, metaTileEntityId);
+        return new MetaTileEntitySteamSquasher(level, metaTileEntityId);
     }
 
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("XXX", "XIX", "XAX", "XAX", "XXX")
-                .aisle("XXX", "III", "AAA", "AIA", "XXX")
-                .aisle("XSX", "XIX", "XAX", "XAX", "XXX")
+                .aisle("XXX", "XGX", "XGX", "XGX", "XXX")
+                .aisle("XXX", "GIG", "GAG", "GIG", "XXX")
+                .aisle("XSX", "XGX", "XGX", "XGX", "XXX")
                 .where('S', selfPredicate())
                 .where('X', states(getCasingState()).setMinGlobalLimited(14).or(autoAbilities()))
                 .where('I', states(getMaterialBlockState()))
+                .where('G', states(Blocks.GLASS.getDefaultState()))
                 .where('A', air())
                 .build();
     }
@@ -77,10 +78,9 @@ public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockControll
     
     public IBlockState getMaterialBlockState()
     {
-    	if(level == 2)
-    		return MetaBlocks.COMPRESSED.get(Materials.Steel).getBlock(Materials.Steel);
-    	else
-    		return Blocks.IRON_BLOCK.getDefaultState();
+    	return level == 2 ?
+    		MetaBlocks.COMPRESSED.get(Materials.Steel).getBlock(Materials.Steel) :
+    		Blocks.IRON_BLOCK.getDefaultState();
     }
 
     @SideOnly(Side.CLIENT)
@@ -95,7 +95,7 @@ public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockControll
     @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return Textures.FORGE_HAMMER_OVERLAY;
+        return Textures.CHEMICAL_BATH_OVERLAY;
     }
     
     @Override

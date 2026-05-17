@@ -24,6 +24,7 @@ import gregtech.client.particle.VanillaParticleEffects;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.client.utils.TooltipHelper;
+import gregtech.common.blocks.BlockBoilerCasing.BoilerCasingType;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import nepjr.tech.api.capability.impl.NTSteamMultiWorkable;
@@ -38,13 +39,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockController {
+public class MetaTileEntitySteamSqueezer extends RecipeMapSteamMultiblockController {
 
 	protected final int level;
 	protected final int PARALLEL_LIMIT;
 
-    public MetaTileEntitySteamSmasher(int level, ResourceLocation metaTileEntityId) {
-		super(metaTileEntityId, RecipeMaps.FORGE_HAMMER_RECIPES, CONVERSION_RATE);
+    public MetaTileEntitySteamSqueezer(int level, ResourceLocation metaTileEntityId) {
+		super(metaTileEntityId, RecipeMaps.EXTRACTOR_RECIPES, CONVERSION_RATE);
 		this.level = level;
         this.PARALLEL_LIMIT = 8 * level;
         this.recipeMapWorkable = new NTSteamMultiWorkable(this, CONVERSION_RATE, level);
@@ -53,19 +54,19 @@ public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockControll
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity metaTileEntityHolder) {
-        return new MetaTileEntitySteamSmasher(level, metaTileEntityId);
+        return new MetaTileEntitySteamSqueezer(level, metaTileEntityId);
     }
 
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("XXX", "XIX", "XAX", "XAX", "XXX")
-                .aisle("XXX", "III", "AAA", "AIA", "XXX")
-                .aisle("XSX", "XIX", "XAX", "XAX", "XXX")
+                .aisle("XXX", "XGX", "XGX", "XGX", "XXX")
+                .aisle("XXX", "GPG", "GPG", "GPG", "XXX")
+                .aisle("XSX", "XGX", "XGX", "XGX", "XXX")
                 .where('S', selfPredicate())
                 .where('X', states(getCasingState()).setMinGlobalLimited(14).or(autoAbilities()))
-                .where('I', states(getMaterialBlockState()))
-                .where('A', air())
+                .where('G', states(Blocks.GLASS.getDefaultState()))
+                .where('P', states(getPipeState()))
                 .build();
     }
 
@@ -75,27 +76,31 @@ public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockControll
                 MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.BRONZE_BRICKS);
     }
     
-    public IBlockState getMaterialBlockState()
+    public IBlockState getPipeState()
     {
-    	if(level == 2)
-    		return MetaBlocks.COMPRESSED.get(Materials.Steel).getBlock(Materials.Steel);
-    	else
-    		return Blocks.IRON_BLOCK.getDefaultState();
+    	return level == 2 ? 
+    			MetaBlocks.BOILER_CASING.getState(BoilerCasingType.STEEL_PIPE) : 
+    			MetaBlocks.BOILER_CASING.getState(BoilerCasingType.BRONZE_PIPE);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
-        return level == 2 ?
-        		SOLID_STEEL_CASING:
-        		BRONZE_PLATED_BRICKS;
+        if (level == 2)
+        {
+        	return SOLID_STEEL_CASING;
+        }
+        else
+        {
+        	return BRONZE_PLATED_BRICKS;
+        }
     }
 
     @SideOnly(Side.CLIENT)
     @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return Textures.FORGE_HAMMER_OVERLAY;
+        return Textures.CANNER_OVERLAY;
     }
     
     @Override

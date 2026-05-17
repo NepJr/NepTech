@@ -70,18 +70,16 @@ public class MetaTileEntitySteamFuser extends RecipeMapSteamMultiblockController
     }
 
     public IBlockState getCasingState() {
-	      if(level == 2)
-	    	  return MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID);
-	      else
-	    	  return MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.BRONZE_BRICKS);
+        return level == 2 ?
+                MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID) :
+                MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.BRONZE_BRICKS);
     }
     
     public IBlockState getFireboxState()
     {
-    	if(level == 2)
-    		return MetaBlocks.BOILER_FIREBOX_CASING.getState(FireboxCasingType.STEEL_FIREBOX);
-    	else
-    		return MetaBlocks.BOILER_FIREBOX_CASING.getState(FireboxCasingType.BRONZE_FIREBOX);
+    	return level == 2 ? 
+    		MetaBlocks.BOILER_FIREBOX_CASING.getState(FireboxCasingType.STEEL_FIREBOX) :
+    		MetaBlocks.BOILER_FIREBOX_CASING.getState(FireboxCasingType.BRONZE_FIREBOX);
     }
 
     private boolean isFireboxPart(IMultiblockPart sourcePart) {

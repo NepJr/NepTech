@@ -3,16 +3,17 @@ package nepjr.tech.loaders.recipe;
 import gregtech.api.GTValues;
 import gregtech.api.items.OreDictNames;
 import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials.Tier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.blocks.BlockGlassCasing.CasingType;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
+import net.minecraft.init.Blocks;
 
 public class CraftingRecipes 
 {
@@ -32,7 +33,7 @@ public class CraftingRecipes
 				'G', new UnificationEntry(OrePrefix.gear, Materials.Potin),
 				'M', MetaTileEntities.STEAM_MACERATOR_BRONZE.getStackForm());
 		
-		ModHandler.addShapedRecipe("steam_crusher_upgrade", NTMetaTileEntities.STEAM_HP_CRUSHER.getStackForm(), 
+		ModHandler.addShapedRecipe("steam_crusher_upgrade", NTMetaTileEntities.HP_STEAM_CRUSHER.getStackForm(), 
 				"CGC",
 				"CMC",
 				"CGC",
@@ -40,13 +41,51 @@ public class CraftingRecipes
 				'G', new UnificationEntry(OrePrefix.gear, Materials.WroughtIron),
 				'M', NTMetaTileEntities.STEAM_CRUSHER.getStackForm());
 		
-		ModHandler.addShapedRecipe("hp_steam_crusher", NTMetaTileEntities.STEAM_HP_CRUSHER.getStackForm(), 
+		ModHandler.addShapedRecipe("hp_steam_crusher", NTMetaTileEntities.HP_STEAM_CRUSHER.getStackForm(), 
 				"CGC",
 				"CMC",
 				"CGC",
 				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
 				'G', new UnificationEntry(OrePrefix.gear, Materials.WroughtIron),
 				'M', MetaTileEntities.STEAM_MACERATOR_STEEL.getStackForm());
+		
+		// Steam Smelter
+		
+		ModHandler.addShapelessRecipe("steam_oven_to_smelter", 
+				NTMetaTileEntities.STEAM_SMELTER.getStackForm(), 
+				MetaTileEntities.STEAM_OVEN.getStackForm());
+		
+		ModHandler.addShapedRecipe("steam_smelter", NTMetaTileEntities.STEAM_SMELTER.getStackForm(), 
+				"CGC",
+				"CMC",
+				"CGC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.BRONZE_BRICKS),
+				'G', new UnificationEntry(OrePrefix.gear, Materials.Invar),
+				'M', MetaTileEntities.STEAM_FURNACE_BRONZE.getStackForm());
+		
+		ModHandler.addShapedRecipe("steam_smelter_furnace", NTMetaTileEntities.STEAM_SMELTER.getStackForm(), 
+				"CGC",
+				"CMC",
+				"CGC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.BRONZE_BRICKS),
+				'G', new UnificationEntry(OrePrefix.gear, Materials.Invar),
+				'M', Blocks.FURNACE);
+		
+		ModHandler.addShapedRecipe("steam_smelter_upgrade", NTMetaTileEntities.HP_STEAM_SMELTER.getStackForm(), 
+				"CGC",
+				"CMC",
+				"CGC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
+				'G', new UnificationEntry(OrePrefix.gear, Materials.Invar),
+				'M', NTMetaTileEntities.STEAM_SMELTER.getStackForm());
+		
+		ModHandler.addShapedRecipe("hp_steam_smelter", NTMetaTileEntities.HP_STEAM_CRUSHER.getStackForm(), 
+				"CGC",
+				"CMC",
+				"CGC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
+				'G', new UnificationEntry(OrePrefix.gear, Materials.Invar),
+				'M', MetaTileEntities.STEAM_FURNACE_STEEL.getStackForm());
 		
 		// Steam Smasher
 		
@@ -58,7 +97,7 @@ public class CraftingRecipes
 				'P', OreDictNames.craftingPiston,
 				'M', MetaTileEntities.STEAM_HAMMER_BRONZE.getStackForm());
 		
-		ModHandler.addShapedRecipe("steam_smasher_upgrade", NTMetaTileEntities.STEAM_HP_SMASHER.getStackForm(), 
+		ModHandler.addShapedRecipe("steam_smasher_upgrade", NTMetaTileEntities.HP_STEAM_SMASHER.getStackForm(), 
 				"CPC",
 				"CMC",
 				"CPC",
@@ -66,7 +105,7 @@ public class CraftingRecipes
 				'P', MetaItems.ELECTRIC_PISTON_LV,
 				'M', NTMetaTileEntities.STEAM_SMASHER.getStackForm());
 		
-		ModHandler.addShapedRecipe("hp_steam_smasher", NTMetaTileEntities.STEAM_HP_SMASHER.getStackForm(), 
+		ModHandler.addShapedRecipe("hp_steam_smasher", NTMetaTileEntities.HP_STEAM_SMASHER.getStackForm(), 
 				"CPC",
 				"CMC",
 				"CPC",
@@ -84,7 +123,7 @@ public class CraftingRecipes
 				'P', new UnificationEntry(OrePrefix.plate, Materials.Invar),
 				'M', MetaTileEntities.STEAM_ALLOY_SMELTER_BRONZE.getStackForm());
 		
-		ModHandler.addShapedRecipe("steam_fuser_upgrade", NTMetaTileEntities.STEAM_HP_FUSER.getStackForm(), 
+		ModHandler.addShapedRecipe("steam_fuser_upgrade", NTMetaTileEntities.HP_STEAM_FUSER.getStackForm(), 
 				"CPC",
 				"CMC",
 				"CPC",
@@ -92,13 +131,68 @@ public class CraftingRecipes
 				'P', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.INVAR_HEATPROOF),
 				'M', NTMetaTileEntities.STEAM_FUSER.getStackForm());
 		
-		ModHandler.addShapedRecipe("hp_steam_fuser", NTMetaTileEntities.STEAM_HP_FUSER.getStackForm(), 
+		ModHandler.addShapedRecipe("hp_steam_fuser", NTMetaTileEntities.HP_STEAM_FUSER.getStackForm(), 
 				"CPC",
 				"CMC",
 				"CPC",
 				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
 				'P', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.INVAR_HEATPROOF),
 				'M', MetaTileEntities.STEAM_ALLOY_SMELTER_STEEL.getStackForm());
+		
+		// Steam Squasher
+		
+		ModHandler.addShapedRecipe("steam_squasher", NTMetaTileEntities.STEAM_SQUASHER.getStackForm(), 
+				"CPC",
+				"CMC",
+				"CPC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.BRONZE_BRICKS),
+				'P', OreDictNames.craftingPiston,
+				'M', MetaTileEntities.STEAM_COMPRESSOR_BRONZE.getStackForm());
+		
+		ModHandler.addShapedRecipe("steam_squasher_upgrade", NTMetaTileEntities.HP_STEAM_SQUASHER.getStackForm(), 
+				"CPC",
+				"CMC",
+				"CPC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
+				'P', MetaItems.ELECTRIC_PISTON_LV,
+				'M', NTMetaTileEntities.STEAM_SQUASHER.getStackForm());
+		
+		ModHandler.addShapedRecipe("hp_steam_squasher", NTMetaTileEntities.HP_STEAM_SQUASHER.getStackForm(), 
+				"CPC",
+				"CMC",
+				"CPC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
+				'P', MetaItems.ELECTRIC_PISTON_LV,
+				'M', MetaTileEntities.STEAM_COMPRESSOR_STEEL.getStackForm());
+		
+		// Steam Squeezer
+		
+		ModHandler.addShapedRecipe("steam_squeezer", NTMetaTileEntities.STEAM_SQUEEZER.getStackForm(), 
+				"CPC",
+				"CMC",
+				"CGC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.BRONZE_BRICKS),
+				'P', OreDictNames.craftingPiston,
+				'G', Blocks.GLASS,
+				'M', MetaTileEntities.STEAM_EXTRACTOR_BRONZE.getStackForm());
+		
+		ModHandler.addShapedRecipe("steam_squeezer_upgrade", NTMetaTileEntities.HP_STEAM_SQUEEZER.getStackForm(), 
+				"CPC",
+				"CMC",
+				"CGC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
+				'P', MetaItems.ELECTRIC_PISTON_LV,
+				'G', MetaBlocks.TRANSPARENT_CASING.getItemVariant(CasingType.TEMPERED_GLASS),
+				'M', NTMetaTileEntities.STEAM_SQUEEZER.getStackForm());
+		
+		ModHandler.addShapedRecipe("hp_steam_squeezer", NTMetaTileEntities.HP_STEAM_SQUEEZER.getStackForm(), 
+				"CPC",
+				"CMC",
+				"CGC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
+				'P', MetaItems.ELECTRIC_PISTON_LV,
+				'G', MetaBlocks.TRANSPARENT_CASING.getItemVariant(CasingType.TEMPERED_GLASS),
+				'M', MetaTileEntities.STEAM_EXTRACTOR_STEEL.getStackForm());
 		
 		// Auto maintenance Hatch
 		ModHandler.addShapedRecipe("new_auto_maintenance_hatch", MetaTileEntities.AUTO_MAINTENANCE_HATCH.getStackForm(), 

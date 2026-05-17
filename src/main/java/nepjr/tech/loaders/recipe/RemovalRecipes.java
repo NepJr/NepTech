@@ -20,5 +20,8 @@ public class RemovalRecipes
 		
 		// Steam Grinder
 		ModHandler.removeRecipeByOutput(MetaTileEntities.STEAM_GRINDER.getStackForm());
+		
+		// Steam Oven
+		ModHandler.removeRecipeByOutput(MetaTileEntities.STEAM_OVEN.getStackForm());
 	}
 }

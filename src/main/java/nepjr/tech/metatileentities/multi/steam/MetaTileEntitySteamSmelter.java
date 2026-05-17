@@ -1,13 +1,11 @@
 package nepjr.tech.metatileentities.multi.steam;
 
-import static gregtech.client.renderer.texture.Textures.BRONZE_PLATED_BRICKS;
-import static gregtech.client.renderer.texture.Textures.SOLID_STEEL_CASING;
-
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import gregtech.api.GTValues;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
 import gregtech.api.gui.widgets.AdvancedTextWidget;
@@ -19,18 +17,17 @@ import gregtech.api.metatileentity.multiblock.RecipeMapSteamMultiblockController
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.unification.material.Materials;
 import gregtech.client.particle.VanillaParticleEffects;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.client.utils.TooltipHelper;
+import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import nepjr.tech.api.capability.impl.NTSteamMultiWorkable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
@@ -38,34 +35,38 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockController {
+public class MetaTileEntitySteamSmelter extends RecipeMapSteamMultiblockController {
 
 	protected final int level;
 	protected final int PARALLEL_LIMIT;
 
-    public MetaTileEntitySteamSmasher(int level, ResourceLocation metaTileEntityId) {
-		super(metaTileEntityId, RecipeMaps.FORGE_HAMMER_RECIPES, CONVERSION_RATE);
-		this.level = level;
-        this.PARALLEL_LIMIT = 8 * level;
+    public MetaTileEntitySteamSmelter(int level, ResourceLocation metaTileEntityId) {
+        super(metaTileEntityId, RecipeMaps.FURNACE_RECIPES, CONVERSION_RATE);
         this.recipeMapWorkable = new NTSteamMultiWorkable(this, CONVERSION_RATE, level);
+        this.level = level;
+        this.PARALLEL_LIMIT = 8 * level;
         this.recipeMapWorkable.setParallelLimit(PARALLEL_LIMIT);
     }
 
     @Override
-    public MetaTileEntity createMetaTileEntity(IGregTechTileEntity metaTileEntityHolder) {
-        return new MetaTileEntitySteamSmasher(level, metaTileEntityId);
+    public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
+        return new MetaTileEntitySteamSmelter(level, metaTileEntityId);
     }
 
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("XXX", "XIX", "XAX", "XAX", "XXX")
-                .aisle("XXX", "III", "AAA", "AIA", "XXX")
-                .aisle("XSX", "XIX", "XAX", "XAX", "XXX")
+                .aisle("XXX", "CCC", "#C#")
+                .aisle("XXX", "C#C", "#C#")
+                .aisle("XXX", "CSC", "#C#")
                 .where('S', selfPredicate())
-                .where('X', states(getCasingState()).setMinGlobalLimited(14).or(autoAbilities()))
-                .where('I', states(getMaterialBlockState()))
-                .where('A', air())
+                .where('X', states(getFireboxState())
+                        .or(autoAbilities(true, false, false, false, false).setMinGlobalLimited(1)
+                                .setMaxGlobalLimited(3)))
+                .where('C', states(getCasingState()).setMinGlobalLimited(6)
+                        .or(autoAbilities(false, false, true, true, false)))
+                .where('#', any())
                 .build();
     }
 
@@ -74,30 +75,41 @@ public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockControll
                 MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID) :
                 MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.BRONZE_BRICKS);
     }
-    
-    public IBlockState getMaterialBlockState()
-    {
-    	if(level == 2)
-    		return MetaBlocks.COMPRESSED.get(Materials.Steel).getBlock(Materials.Steel);
-    	else
-    		return Blocks.IRON_BLOCK.getDefaultState();
+
+    public IBlockState getFireboxState() {
+        return level == 2 ?
+                MetaBlocks.BOILER_FIREBOX_CASING.getState(BlockFireboxCasing.FireboxCasingType.STEEL_FIREBOX) :
+                MetaBlocks.BOILER_FIREBOX_CASING.getState(BlockFireboxCasing.FireboxCasingType.BRONZE_FIREBOX);
+    }
+
+    private boolean isFireboxPart(IMultiblockPart sourcePart) {
+        return isStructureFormed() && (((MetaTileEntity) sourcePart).getPos().getY() < getPos().getY());
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
-        return level == 2 ?
-        		SOLID_STEEL_CASING:
-        		BRONZE_PLATED_BRICKS;
+        if (level == 2) {
+            if (sourcePart != null && isFireboxPart(sourcePart)) {
+                return lastActive ? Textures.STEEL_FIREBOX_ACTIVE : Textures.STEEL_FIREBOX;
+            }
+            return Textures.SOLID_STEEL_CASING;
+
+        } else {
+            if (sourcePart != null && isFireboxPart(sourcePart)) {
+                return lastActive ? Textures.BRONZE_FIREBOX_ACTIVE : Textures.BRONZE_FIREBOX;
+            }
+            return Textures.BRONZE_PLATED_BRICKS;
+        }
     }
 
     @SideOnly(Side.CLIENT)
     @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return Textures.FORGE_HAMMER_OVERLAY;
+        return Textures.ELECTRIC_FURNACE_OVERLAY;
     }
-    
+
     @Override
     public boolean hasMaintenanceMechanics() {
         return false;
@@ -138,7 +150,10 @@ public class MetaTileEntitySteamSmasher extends RecipeMapSteamMultiblockControll
     @Override
     public void randomDisplayTick() {
         if (isActive()) {
-            VanillaParticleEffects.defaultFrontEffect(this, 0.4F, EnumParticleTypes.SMOKE_NORMAL);
+            VanillaParticleEffects.defaultFrontEffect(this, EnumParticleTypes.SMOKE_LARGE, EnumParticleTypes.FLAME);
+            if (GTValues.RNG.nextBoolean()) {
+                VanillaParticleEffects.defaultFrontEffect(this, 0.5F, EnumParticleTypes.SMOKE_NORMAL);
+            }
         }
     }
 }

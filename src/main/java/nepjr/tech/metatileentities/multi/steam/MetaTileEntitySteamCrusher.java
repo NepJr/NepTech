@@ -67,23 +67,17 @@ public class MetaTileEntitySteamCrusher extends RecipeMapSteamMultiblockControll
     }
 
     public IBlockState getCasingState() {
-	      if(level == 2)
-	    	  return MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID);
-	      else
-	    	  return MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.BRONZE_BRICKS);
+        return level == 2 ?
+                MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID) :
+                MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.BRONZE_BRICKS);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
-        if (level == 2)
-        {
-        	return SOLID_STEEL_CASING;
-        }
-        else
-        {
-        	return BRONZE_PLATED_BRICKS;
-        }
+        return level == 2 ?
+        		SOLID_STEEL_CASING:
+        		BRONZE_PLATED_BRICKS;
     }
 
     @SideOnly(Side.CLIENT)

@@ -11,6 +11,12 @@ neptech.machine.steam_crusher.name=Steam Crusher
 neptech.machine.hp_steam_crusher.name=High Pressure Steam Crusher
 neptech.machine.steam_fuser.name=Steam Fuser
 neptech.machine.hp_steam_fuser.name=High Pressure Steam Fuser
+neptech.machine.steam_squasher.name=Steam Squasher
+neptech.machine.hp_steam_squasher.name=High Pressure Steam Squasher
+neptech.machine.steam_squeezer.name=Steam Squeezer
+neptech.machine.hp_steam_squeezer.name=High Pressure Steam Squeezer
+neptech.machine.steam_smelter.name=Steam Smelter
+neptech.machine.hp_steam_smelter.name=High Pressure Steam Smelter
 
 // Fertilized Dirts
 tile.fertilized_dirt.basic.name=Basic Fertilized Dirt
