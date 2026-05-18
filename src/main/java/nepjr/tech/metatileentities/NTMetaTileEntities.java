@@ -6,6 +6,7 @@ import static nepjr.tech.NepTech.nepId;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSquasher;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSqueezer;
+import nepjr.tech.metatileentities.steam.boiler.NTSteamSolarBoiler;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamCrusher;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamFuser;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSmasher;
@@ -35,6 +36,9 @@ public class NTMetaTileEntities
 	public static MetaTileEntitySteamSmelter STEAM_SMELTER;
 	public static MetaTileEntitySteamSmelter HP_STEAM_SMELTER;
 	
+	public static NTSteamSolarBoiler STEAM_SOLAR_BOILER;
+	public static NTSteamSolarBoiler HP_STEAM_SOLAR_BOILER;
+	
 	public static void register()
 	{
 		GREENHOUSE = registerMetaTileEntity(6000, new MetaTileEntityGreenhouse(nepId("greenhouse")));
@@ -56,5 +60,8 @@ public class NTMetaTileEntities
 		
 		STEAM_SMELTER = registerMetaTileEntity(7011, new MetaTileEntitySteamSmelter(1, nepId("steam_smelter")));
 		HP_STEAM_SMELTER = registerMetaTileEntity(7012, new MetaTileEntitySteamSmelter(2, nepId("hp_steam_smelter")));
+		
+		STEAM_SOLAR_BOILER = registerMetaTileEntity(7013, new NTSteamSolarBoiler(nepId("steam_solar_boiler"), false));
+		HP_STEAM_SOLAR_BOILER = registerMetaTileEntity(7014, new NTSteamSolarBoiler(nepId("hp_steam_solar_boiler"), true));
 	}
 }

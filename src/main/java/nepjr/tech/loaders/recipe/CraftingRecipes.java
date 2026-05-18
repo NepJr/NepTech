@@ -10,6 +10,7 @@ import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.blocks.BlockGlassCasing.CasingType;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
+import gregtech.common.blocks.BlockSteamCasing.SteamCasingType;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
@@ -193,6 +194,26 @@ public class CraftingRecipes
 				'P', MetaItems.ELECTRIC_PISTON_LV,
 				'G', MetaBlocks.TRANSPARENT_CASING.getItemVariant(CasingType.TEMPERED_GLASS),
 				'M', MetaTileEntities.STEAM_EXTRACTOR_STEEL.getStackForm());
+		
+		// Steam Solar boiler
+		ModHandler.addShapedRecipe("nt_steam_solar_boiler", NTMetaTileEntities.STEAM_SOLAR_BOILER.getStackForm(), 
+				"GGG",
+				"PPP",
+				"FHF",
+				'G', Blocks.GLASS,
+				'F', new UnificationEntry(OrePrefix.pipeSmallFluid, Materials.Bronze),
+				'P', new UnificationEntry(OrePrefix.plate, Materials.Silver),
+				'H', MetaBlocks.STEAM_CASING.getItemVariant(SteamCasingType.BRONZE_BRICKS_HULL));
+		
+		// High Pressure Steam Solar boiler
+		ModHandler.addShapedRecipe("nt_hp_steam_solar_boiler", NTMetaTileEntities.HP_STEAM_SOLAR_BOILER.getStackForm(), 
+				"GGG",
+				"PPP",
+				"FHF",
+				'G', Blocks.GLASS,
+				'F', new UnificationEntry(OrePrefix.pipeSmallFluid, Materials.Steel),
+				'P', new UnificationEntry(OrePrefix.plateDouble, Materials.Silver),
+				'H', MetaBlocks.STEAM_CASING.getItemVariant(SteamCasingType.STEEL_BRICKS_HULL));
 		
 		// Auto maintenance Hatch
 		ModHandler.addShapedRecipe("new_auto_maintenance_hatch", MetaTileEntities.AUTO_MAINTENANCE_HATCH.getStackForm(), 

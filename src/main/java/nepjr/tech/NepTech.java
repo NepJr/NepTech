@@ -11,6 +11,7 @@ import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.compat.exnihilo.ExNihiloGTModule;
 import nepjr.tech.loaders.recipe.AssemblerRecipes;
 import nepjr.tech.loaders.recipe.AsslineRecipes;
+import nepjr.tech.loaders.recipe.CentrifugeRecipes;
 import nepjr.tech.loaders.recipe.CraftingRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
@@ -29,7 +30,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 	 version = NTTags.VERSION, 
 	 name = NTTags.MODNAME, 
 	 acceptedMinecraftVersions = "[1.12.2]",
-	 dependencies = GTInternalTags.DEP_VERSION_STRING)
+	 dependencies = GTInternalTags.DEP_VERSION_STRING + "before:exnihilocreatio;")
 public class NepTech {
 
     public static final Logger LOGGER = LogManager.getLogger(NTTags.MODID);
@@ -39,10 +40,10 @@ public class NepTech {
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) 
-    {
+    {	
     	// Ex Nihilo support
     	ExNihiloCreatio.loadedModules.add(new ExNihiloGTModule());
-    		
+    	
     	// Init items
     	NTMetaItems.init();
     	
@@ -63,6 +64,7 @@ public class NepTech {
     	ForgeHammerRecipes.init();
     	AssemblerRecipes.init();
     	AsslineRecipes.init();
+    	CentrifugeRecipes.init();
     	UniversalCircuitRecipes.init();
     	GreenhouseRecipes.init();
     }
