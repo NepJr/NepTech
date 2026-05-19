@@ -15,6 +15,7 @@ import nepjr.tech.loaders.recipe.CentrifugeRecipes;
 import nepjr.tech.loaders.recipe.CraftingRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
+import nepjr.tech.loaders.recipe.MaceratorRecipes;
 import nepjr.tech.loaders.recipe.RemovalRecipes;
 import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
@@ -61,6 +62,7 @@ public class NepTech {
     {
     	RemovalRecipes.init();
     	CraftingRecipes.init();
+    	MaceratorRecipes.init();
     	ForgeHammerRecipes.init();
     	AssemblerRecipes.init();
     	AsslineRecipes.init();

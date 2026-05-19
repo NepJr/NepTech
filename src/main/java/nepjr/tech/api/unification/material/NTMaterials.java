@@ -11,6 +11,7 @@ import static nepjr.tech.NepTech.nepId;
 public class NTMaterials 
 {
 	public static Material VoidGas;
+	public static Material WitchWater;
 	
 	public static void init()
 	{

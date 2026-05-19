@@ -20,6 +20,15 @@ public class CraftingRecipes
 {
 	public static void init()
 	{
+		//Greenhouse
+		ModHandler.addShapedRecipe("greenhouse", NTMetaTileEntities.GREENHOUSE.getStackForm(), 
+				"SCS",
+				"CHC",
+				"SCS",
+				'S', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
+				'C', new UnificationEntry(OrePrefix.circuit, Tier.LV),
+				'H', MetaTileEntities.HULL[GTValues.LV].getStackForm());
+		
 		// Steam Grinder 
 		
 		ModHandler.addShapelessRecipe("steam_grinder_to_crusher", 

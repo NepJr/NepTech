@@ -13,6 +13,8 @@ import exnihilocreatio.util.ItemInfo;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
+import nepjr.tech.common.blocks.NTMetaBlocks;
+import nepjr.tech.common.blocks.BlockGeneric.GenericType;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -48,6 +50,16 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		registerMaterial(registry, Materials.Oilsands, true, true);
 		registerMaterial(registry, Materials.Tungstate, true, true);
 		registerMaterial(registry, Materials.Scheelite, true, true);
+		
+		// Gems
+		registerMaterial(registry, Materials.Ruby, true, true);
+		registerMaterial(registry, Materials.Emerald, true, true);
+		registerMaterial(registry, Materials.Diamond, true, true);
+		registerMaterial(registry, Materials.Sapphire, true, true);
+		registerMaterial(registry, Materials.Sodalite, true, true);
+		registerMaterial(registry, Materials.Spessartine, true, true);
+		registerMaterial(registry, Materials.Monazite, true, true);
+		registerMaterial(registry, Materials.Topaz, true, true);
 	}
 	
 	public void registerSieve(SieveRegistry registry) {
@@ -60,6 +72,16 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		addSieveRecipe(registry, Materials.Galena, Blocks.GRAVEL, 0.05f, BlockSieve.MeshType.DIAMOND);
 		addSieveRecipe(registry, Materials.Tungstate, ModBlocks.endstoneCrushed, 0.05f, BlockSieve.MeshType.DIAMOND);
 		addSieveRecipe(registry, Materials.Scheelite, ModBlocks.endstoneCrushed, 0.05f, BlockSieve.MeshType.DIAMOND);
+		
+		// Gems
+		addSieveRecipe(registry, Materials.Ruby, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
+		addSieveRecipe(registry, Materials.Emerald, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
+		addSieveRecipe(registry, Materials.Diamond, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
+		addSieveRecipe(registry, Materials.Sapphire, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
+		addSieveRecipe(registry, Materials.Sodalite, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
+		addSieveRecipe(registry, Materials.Spessartine, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
+		addSieveRecipe(registry, Materials.Monazite, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
+		addSieveRecipe(registry, Materials.Topaz, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
     }
 	
 	@Override

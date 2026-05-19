@@ -17,11 +17,15 @@ public class NTMetaBlocks
 	private NTMetaBlocks() {}
 	
 	public static BlockFertilizedDirt FERTILIZED_DIRT;
+	public static BlockGeneric GENERIC_BLOCKS;
 	
 	public static void init()
 	{
 		FERTILIZED_DIRT = new BlockFertilizedDirt();
 		FERTILIZED_DIRT.setRegistryName("fertilized_dirt");
+		
+		GENERIC_BLOCKS = new BlockGeneric();
+		GENERIC_BLOCKS.setRegistryName("generic_blocks");
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -29,6 +33,9 @@ public class NTMetaBlocks
 	{
 		FERTILIZED_DIRT.onModelRegister();
 		registerItemModel(FERTILIZED_DIRT);
+		
+		GENERIC_BLOCKS.onModelRegister();
+		registerItemModel(GENERIC_BLOCKS);
 	}
 	
 	// Taken from GYCM

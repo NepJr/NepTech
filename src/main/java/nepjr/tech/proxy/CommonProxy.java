@@ -8,6 +8,7 @@ import gregtech.api.event.HighTierEvent;
 import gregtech.api.unification.material.event.MaterialEvent;
 import nepjr.tech.api.NepTechAPI;
 import nepjr.tech.api.block.IFertilizedDirtBlockStats;
+import nepjr.tech.api.unification.material.GTMaterialModifications;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.blocks.BlockFertilizedDirt;
 import nepjr.tech.common.blocks.NTMetaBlocks;
@@ -58,6 +59,7 @@ public class CommonProxy
     	
     	// Itemblocks
     	registry.register(createItemBlock(NTMetaBlocks.FERTILIZED_DIRT, VariantItemBlock::new));
+    	registry.register(createItemBlock(NTMetaBlocks.GENERIC_BLOCKS, VariantItemBlock::new));
     }
     
     // Taken from GYCM
@@ -73,11 +75,13 @@ public class CommonProxy
     	IForgeRegistry<Block> registry = event.getRegistry();
     	
     	registry.register(NTMetaBlocks.FERTILIZED_DIRT);
+    	registry.register(NTMetaBlocks.GENERIC_BLOCKS);
     }
 
     @SubscribeEvent
     public static void registerMaterials(MaterialEvent event) 
     {
+    	GTMaterialModifications.init();
     	NTMaterials.init();
     }
     
