@@ -1,5 +1,6 @@
 package nepjr.tech.api.unification.material;
 
+import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 
 import static gregtech.api.GTValues.*;
@@ -11,13 +12,32 @@ import static nepjr.tech.NepTech.nepId;
 public class NTMaterials 
 {
 	public static Material VoidGas;
-	public static Material WitchWater;
+	
+	// Holmium related stuff
+	public static Material Holmium;
+	public static Material ImpureHolmiumSolution;
+	public static Material EnrichedHolmiumSolution;
+	public static Material HolmiumChloride;
+	public static Material Holminide;
 	
 	public static void init()
 	{
 		VoidGas = new Material.Builder(8000, nepId("void_gas"))
 				.gas()
 				.color(0x440044)
+				.build();
+		
+		Holmium = new Material.Builder(8001, nepId("holmium"))
+				.ingot()
+				.iconSet(SHINY)
+				.color(0x882288)
+				.cableProperties(GTValues.V[UEV], 8, 0, false)
+				.build();
+		
+		Holminide = new Material.Builder(8002, nepId("holminide"))
+				.ore()
+				.iconSet(DULL)
+				.color(0x661166)
 				.build();
 	}
 }

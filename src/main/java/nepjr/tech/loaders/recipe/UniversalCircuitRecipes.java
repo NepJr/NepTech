@@ -10,16 +10,7 @@ import static gregtech.common.items.MetaItems.SHAPE_MOLD_CREDIT;
 public class UniversalCircuitRecipes 
 {
 	public static void init()
-	{
-		// ULV
-		FORMING_PRESS_RECIPES.recipeBuilder()
-			.input(MetaItems.NAND_CHIP_ULV)
-			.notConsumable(SHAPE_MOLD_CREDIT)
-			.output(NTMetaItems.UNIVERSAL_CIRCUIT_ULV)
-			.EUt(1)
-			.duration(1)
-			.buildAndRegister();
-		
+	{	
 		// LV
 		FORMING_PRESS_RECIPES.recipeBuilder()
 			.input(MetaItems.ELECTRONIC_CIRCUIT_LV)

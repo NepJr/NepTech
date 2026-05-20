@@ -11,6 +11,7 @@ import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.compat.exnihilo.ExNihiloGTModule;
 import nepjr.tech.loaders.recipe.AssemblerRecipes;
 import nepjr.tech.loaders.recipe.AsslineRecipes;
+import nepjr.tech.loaders.recipe.AsteroidMiningRecipes;
 import nepjr.tech.loaders.recipe.CentrifugeRecipes;
 import nepjr.tech.loaders.recipe.CraftingRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
@@ -62,6 +63,7 @@ public class NepTech {
     {
     	RemovalRecipes.init();
     	CraftingRecipes.init();
+    	AsteroidMiningRecipes.init();
     	MaceratorRecipes.init();
     	ForgeHammerRecipes.init();
     	AssemblerRecipes.init();

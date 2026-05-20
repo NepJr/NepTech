@@ -56,7 +56,6 @@ public class NTMetaItems
 	public static MetaItem<?>.MetaValueItem SUPRACAUSAL_MAINFRAME_MAX;
 	
 	// Universal Circuits
-	public static MetaItem<?>.MetaValueItem UNIVERSAL_CIRCUIT_ULV;
 	public static MetaItem<?>.MetaValueItem UNIVERSAL_CIRCUIT_LV;
 	public static MetaItem<?>.MetaValueItem UNIVERSAL_CIRCUIT_MV;
 	public static MetaItem<?>.MetaValueItem UNIVERSAL_CIRCUIT_HV;
@@ -73,6 +72,11 @@ public class NTMetaItems
 	//public static MetaItem<?>.MetaValueItem UNIVERSAL_CIRCUIT_MAX;
 	
 	public static MetaItem<?>.MetaValueItem INFINITE_SPRAY_CAN;
+	
+	// Mining Drones
+	public static MetaItem<?>.MetaValueItem BASIC_MINING_DRONE;
+	public static MetaItem<?>.MetaValueItem ADVANCED_MINING_DRONE;
+	public static MetaItem<?>.MetaValueItem LEGENDARY_MINING_DRONE;
 	
 	public static void init()
 	{
@@ -126,26 +130,29 @@ public class NTMetaItems
         SUPRACAUSAL_MAINFRAME_MAX = nepItems.addItem(25, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, Tier.MAX);
 	
         // Universal Circuits
-        UNIVERSAL_CIRCUIT_ULV = nepItems.addItem(26, "circuit.universal.ulv").setUnificationData(OrePrefix.circuit, Tier.ULV);
-        UNIVERSAL_CIRCUIT_LV = nepItems.addItem(27, "circuit.universal.lv").setUnificationData(OrePrefix.circuit, Tier.LV);
-        UNIVERSAL_CIRCUIT_MV = nepItems.addItem(28, "circuit.universal.mv").setUnificationData(OrePrefix.circuit, Tier.MV);
-        UNIVERSAL_CIRCUIT_HV = nepItems.addItem(29, "circuit.universal.hv").setUnificationData(OrePrefix.circuit, Tier.HV);
-        UNIVERSAL_CIRCUIT_EV = nepItems.addItem(30, "circuit.universal.ev").setUnificationData(OrePrefix.circuit, Tier.EV);
-        UNIVERSAL_CIRCUIT_IV = nepItems.addItem(31, "circuit.universal.iv").setUnificationData(OrePrefix.circuit, Tier.IV);
-        UNIVERSAL_CIRCUIT_LuV = nepItems.addItem(32, "circuit.universal.luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
-        UNIVERSAL_CIRCUIT_ZPM = nepItems.addItem(33, "circuit.universal.zpm").setUnificationData(OrePrefix.circuit, Tier.ZPM);
-        UNIVERSAL_CIRCUIT_UV = nepItems.addItem(34, "circuit.universal.uv").setUnificationData(OrePrefix.circuit, Tier.UV);
-        UNIVERSAL_CIRCUIT_UHV = nepItems.addItem(35, "circuit.universal.uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
-        UNIVERSAL_CIRCUIT_UEV = nepItems.addItem(36, "circuit.universal.uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
-        UNIVERSAL_CIRCUIT_UIV = nepItems.addItem(37, "circuit.universal.uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
-        UNIVERSAL_CIRCUIT_UXV = nepItems.addItem(38, "circuit.universal.uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
-        UNIVERSAL_CIRCUIT_OpV = nepItems.addItem(39, "circuit.universal.opv").setUnificationData(OrePrefix.circuit, Tier.OpV);
-        //UNIVERSAL_CIRCUIT_MAX = nepItems.addItem(40, "circuit.universal.max").setUnificationData(OrePrefix.circuit, Tier.MAX);
+        UNIVERSAL_CIRCUIT_LV = nepItems.addItem(26, "circuit.universal.lv").setUnificationData(OrePrefix.circuit, Tier.LV);
+        UNIVERSAL_CIRCUIT_MV = nepItems.addItem(27, "circuit.universal.mv").setUnificationData(OrePrefix.circuit, Tier.MV);
+        UNIVERSAL_CIRCUIT_HV = nepItems.addItem(28, "circuit.universal.hv").setUnificationData(OrePrefix.circuit, Tier.HV);
+        UNIVERSAL_CIRCUIT_EV = nepItems.addItem(29, "circuit.universal.ev").setUnificationData(OrePrefix.circuit, Tier.EV);
+        UNIVERSAL_CIRCUIT_IV = nepItems.addItem(30, "circuit.universal.iv").setUnificationData(OrePrefix.circuit, Tier.IV);
+        UNIVERSAL_CIRCUIT_LuV = nepItems.addItem(31, "circuit.universal.luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
+        UNIVERSAL_CIRCUIT_ZPM = nepItems.addItem(32, "circuit.universal.zpm").setUnificationData(OrePrefix.circuit, Tier.ZPM);
+        UNIVERSAL_CIRCUIT_UV = nepItems.addItem(33, "circuit.universal.uv").setUnificationData(OrePrefix.circuit, Tier.UV);
+        UNIVERSAL_CIRCUIT_UHV = nepItems.addItem(34, "circuit.universal.uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
+        UNIVERSAL_CIRCUIT_UEV = nepItems.addItem(35, "circuit.universal.uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
+        UNIVERSAL_CIRCUIT_UIV = nepItems.addItem(36, "circuit.universal.uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
+        UNIVERSAL_CIRCUIT_UXV = nepItems.addItem(37, "circuit.universal.uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
+        UNIVERSAL_CIRCUIT_OpV = nepItems.addItem(38, "circuit.universal.opv").setUnificationData(OrePrefix.circuit, Tier.OpV);
+        //UNIVERSAL_CIRCUIT_MAX = nepItems.addItem(39, "circuit.universal.max").setUnificationData(OrePrefix.circuit, Tier.MAX);
         
         // Infinite spray can
-        INFINITE_SPRAY_CAN = nepItems.addItem(41, "spray.infinite")
+        INFINITE_SPRAY_CAN = nepItems.addItem(40, "spray.infinite")
         		.addComponents(new ColorSprayInfiniteBehaviour())
         		.setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        
+        BASIC_MINING_DRONE = nepItems.addItem(41, "basic_mining_drone");
+        ADVANCED_MINING_DRONE = nepItems.addItem(42, "advanced_mining_drone");
+        LEGENDARY_MINING_DRONE = nepItems.addItem(43, "legendary_mining_drone");
 	}
 
 }

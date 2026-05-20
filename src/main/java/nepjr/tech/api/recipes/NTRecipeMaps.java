@@ -3,6 +3,7 @@ package nepjr.tech.api.recipes;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget.MoveType;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.builders.GasCollectorRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -14,4 +15,10 @@ public class NTRecipeMaps
 			new SimpleRecipeBuilder(), false)
 						.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, MoveType.HORIZONTAL)
 						.setSound(GTSoundEvents.CHAINSAW_TOOL);
+	
+	@ZenProperty
+	public static final RecipeMap<GasCollectorRecipeBuilder> ASTEROID_MINING = new RecipeMap<>("asteroid_mining", 3, 9, 2, 2,
+			new GasCollectorRecipeBuilder(), false)
+						.setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, MoveType.HORIZONTAL)
+						.setSound(GTSoundEvents.MINER);
 }

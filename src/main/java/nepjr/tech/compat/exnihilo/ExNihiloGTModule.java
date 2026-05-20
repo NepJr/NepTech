@@ -24,11 +24,7 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 {
 	public void registerOreChunks(OreRegistry registry) 
 	{	
-		// Shouldn't need to check if these four are added, but only here incase someone adds extra mods to the pack
-		if(!registry.isRegistered("copper"))
-		{
-			registerMaterial(registry, Materials.Copper, false, false);
-		}
+		// Shouldn't need to check if these three are added, but only here incase someone adds extra mods to the pack
 		if(!registry.isRegistered("tin"))
 		{
 			registerMaterial(registry, Materials.Tin, false, false);
@@ -42,14 +38,13 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 			registerMaterial(registry, Materials.Sulfur, true, true);
 		}
 		
+		registerMaterial(registry, Materials.Tetrahedrite, true, true);
 		registerMaterial(registry, Materials.Galena, true, true);
 		registerMaterial(registry, Materials.Cobaltite, true, true);
 		registerMaterial(registry, Materials.Sphalerite, true, true);
 		registerMaterial(registry, Materials.Calcite, true, true);
 		registerMaterial(registry, Materials.Gypsum, true, true);
 		registerMaterial(registry, Materials.Oilsands, true, true);
-		registerMaterial(registry, Materials.Tungstate, true, true);
-		registerMaterial(registry, Materials.Scheelite, true, true);
 		
 		// Gems
 		registerMaterial(registry, Materials.Ruby, true, true);
@@ -70,8 +65,7 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		addSieveRecipe(registry, Materials.Sphalerite, Blocks.GRAVEL, 0.05f, BlockSieve.MeshType.DIAMOND);
 		addSieveRecipe(registry, Materials.Cobaltite, Blocks.GRAVEL, 0.05f, BlockSieve.MeshType.DIAMOND);
 		addSieveRecipe(registry, Materials.Galena, Blocks.GRAVEL, 0.05f, BlockSieve.MeshType.DIAMOND);
-		addSieveRecipe(registry, Materials.Tungstate, ModBlocks.endstoneCrushed, 0.05f, BlockSieve.MeshType.DIAMOND);
-		addSieveRecipe(registry, Materials.Scheelite, ModBlocks.endstoneCrushed, 0.05f, BlockSieve.MeshType.DIAMOND);
+		addSieveRecipe(registry, Materials.Tetrahedrite, Blocks.GRAVEL, 0.1f, BlockSieve.MeshType.DIAMOND);
 		
 		// Gems
 		addSieveRecipe(registry, Materials.Ruby, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
