@@ -4,6 +4,7 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import gregicality.multiblocks.api.capability.IParallelMultiblock;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -57,7 +58,7 @@ public class MetaTileEntityGreenhouse extends NTMetaTileEntity
 			.aisle("OCCSCCO", "OGGCGGO", "OOGCGOO", "OOOCOOO", "OOOOOOO", "OOOOOOO")
 			.where('S', selfPredicate())
 			.where('C', states(getCasingState())
-					.or(autoAbilities(true, true, true, true, true, false, false)))
+					.or(autoAbilities()))
 			.where('D', fertilizedDirt())
 			.where('O', any())
 			.where('G', states(getGlassState()))
@@ -103,24 +104,7 @@ public class MetaTileEntityGreenhouse extends NTMetaTileEntity
                 .setWorkingStatus(recipeMapWorkable.isWorkingEnabled(), recipeMapWorkable.isActive())
                 .addEnergyUsageLine(recipeMapWorkable.getEnergyContainer())
                 .addEnergyTierLine(GTUtility.getTierByVoltage(recipeMapWorkable.getMaxVoltage()))
-                .addCustom(tl -> {
-                    if (isStructureFormed()) {
-                        // Custom parallels line so we can have a hover text
-                        if (recipeMapWorkable.getParallelLimit() > 1) {
-                            ITextComponent parallels = TextComponentUtil.stringWithColor(
-                                    TextFormatting.DARK_PURPLE,
-                                    TextFormattingUtil.formatNumbers(recipeMapWorkable.getParallelLimit()));
-                            ITextComponent bodyText = TextComponentUtil.translationWithColor(
-                                    TextFormatting.GRAY,
-                                    "gregtech.multiblock.parallel",
-                                    parallels);
-                            ITextComponent hoverText = TextComponentUtil.translationWithColor(
-                                    TextFormatting.GRAY,
-                                    "gregtech.multiblock.multi_furnace.parallel_hover");
-                            tl.add(TextComponentUtil.setHover(bodyText, hoverText));
-                        }
-                    }
-                })
+                .addParallelsLine(recipeMapWorkable.getParallelLimit())
                 .addWorkingStatusLine()
                 .addProgressLine(recipeMapWorkable.getProgressPercent());
     }
@@ -149,7 +133,7 @@ public class MetaTileEntityGreenhouse extends NTMetaTileEntity
 		@Override
 		public int getParallelLimit()
 		{
-			return (int) Math.max(Math.pow(2, fertilizerTier), 1);
+			return (int) Math.min(Math.max(Math.pow(2, fertilizerTier), 1) * getMaxParallel(), Integer.MAX_VALUE);
 		}
 	}
 	

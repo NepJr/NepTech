@@ -74,10 +74,7 @@ public class NTMetaItems
 	public static MetaItem<?>.MetaValueItem INFINITE_SPRAY_CAN;
 	
 	// Mining Drones
-	public static MetaItem<?>.MetaValueItem BASIC_MINING_DRONE;
-	public static MetaItem<?>.MetaValueItem ADVANCED_MINING_DRONE;
-	public static MetaItem<?>.MetaValueItem LEGENDARY_MINING_DRONE;
-	
+	public static MetaItem<?>.MetaValueItem MINING_DRONE;
 	public static void init()
 	{
 		nepItems = new StandardMetaItem();
@@ -150,9 +147,7 @@ public class NTMetaItems
         		.addComponents(new ColorSprayInfiniteBehaviour())
         		.setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
         
-        BASIC_MINING_DRONE = nepItems.addItem(41, "basic_mining_drone");
-        ADVANCED_MINING_DRONE = nepItems.addItem(42, "advanced_mining_drone");
-        LEGENDARY_MINING_DRONE = nepItems.addItem(43, "legendary_mining_drone");
+        MINING_DRONE = nepItems.addItem(41, "mining_drone");
 	}
 
 }

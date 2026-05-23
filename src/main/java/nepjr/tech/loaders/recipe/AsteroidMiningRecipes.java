@@ -8,6 +8,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import nepjr.tech.api.recipes.NTRecipeMaps;
+import nepjr.tech.api.recipes.chance.output.NTChancedOutputLogic;
 import nepjr.tech.common.items.NTMetaItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -18,7 +19,7 @@ public class AsteroidMiningRecipes
 {
 	public static void init()
 	{
-		addMiningRecipe(miningDroneType.BASIC, GTValues.LV, 16, 0, Item.getItemFromBlock(Blocks.STONE).getDefaultInstance(), 
+		addMiningRecipe(MiningType.BASIC_NOTCONSUMED, GTValues.LV, 16, 0, Item.getItemFromBlock(Blocks.STONE).getDefaultInstance(), 
 				OrePrefix.stone,
 				Materials.Marble,
 				Materials.GraniteBlack,
@@ -29,7 +30,15 @@ public class AsteroidMiningRecipes
 				Materials.Basalt
 				);
 		
-		addMiningRecipe(miningDroneType.BASIC, GTValues.LV, 1, 0, Items.IRON_INGOT.getDefaultInstance(),
+		addMiningRecipe(MiningType.BASIC_NOTCONSUMED, GTValues.LV, 16, -1, Item.getItemFromBlock(Blocks.NETHERRACK).getDefaultInstance(),
+				Item.getItemFromBlock(Blocks.NETHERRACK).getDefaultInstance(),
+				Item.getItemFromBlock(Blocks.SOUL_SAND).getDefaultInstance(),
+				Item.getItemFromBlock(Blocks.GLOWSTONE).getDefaultInstance());
+		
+		addMiningRecipe(MiningType.ADVANCED_NOTCONSUMED, GTValues.EV, 16, 1, Item.getItemFromBlock(Blocks.END_STONE).getDefaultInstance(),
+				Item.getItemFromBlock(Blocks.END_STONE).getDefaultInstance());
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.LV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Iron.getId()),
 				OrePrefix.ore,
 				Materials.Iron,
 				Materials.BandedIron,
@@ -40,7 +49,7 @@ public class AsteroidMiningRecipes
 				Materials.GraniticMineralSand,
 				Materials.BasalticMineralSand);
 		
-		addMiningRecipe(miningDroneType.BASIC, GTValues.MV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Magnetite.getId()),
+		addMiningRecipe(MiningType.BASIC, GTValues.MV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Magnetite.getId()),
 				OrePrefix.ore,
 				Materials.Magnetite,
 				Materials.Magnetite,
@@ -48,15 +57,15 @@ public class AsteroidMiningRecipes
 				Materials.VanadiumMagnetite,
 				Materials.Gold);
 		
-		addMiningRecipe(miningDroneType.BASIC, GTValues.MV, 2, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Magnetite.getId()),
-				OrePrefix.ore,
+		addMiningRecipe(MiningType.BASIC, GTValues.MV, 2, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Magnetite.getId()),
+				OrePrefix.oreNetherrack,
 				Materials.Magnetite,
 				Materials.VanadiumMagnetite,
 				Materials.Gold,
 				Materials.Gold,
 				Materials.Gold);
 		
-		addMiningRecipe(miningDroneType.BASIC, GTValues.EV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Platinum.getId()),
+		addMiningRecipe(MiningType.BASIC, GTValues.EV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Platinum.getId()),
 				OrePrefix.ore,
 				Materials.Chalcopyrite,
 				Materials.Chalcocite,
@@ -65,7 +74,7 @@ public class AsteroidMiningRecipes
 				Materials.Pentlandite,
 				Materials.Cooperite);
 		
-		addMiningRecipe(miningDroneType.BASIC, GTValues.EV, 2, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Platinum.getId()),
+		addMiningRecipe(MiningType.BASIC, GTValues.EV, 2, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Platinum.getId()),
 				OrePrefix.oreNetherrack,
 				Materials.Chalcopyrite,
 				Materials.Chalcocite,
@@ -75,7 +84,7 @@ public class AsteroidMiningRecipes
 				Materials.Pentlandite,
 				Materials.Cooperite);
 		
-		addMiningRecipe(miningDroneType.BASIC, GTValues.EV, 3, 1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Platinum.getId()),
+		addMiningRecipe(MiningType.BASIC, GTValues.EV, 3, 1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Platinum.getId()),
 				OrePrefix.oreEndstone,
 				Materials.Chalcopyrite,
 				Materials.Chalcocite,
@@ -85,13 +94,13 @@ public class AsteroidMiningRecipes
 				Materials.Cooperite,
 				Materials.Cooperite);
 		
-		addMiningRecipe(miningDroneType.BASIC, GTValues.HV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Titanium.getId()),
+		addMiningRecipe(MiningType.BASIC, GTValues.HV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Titanium.getId()),
 				OrePrefix.ore,
 				Materials.Bauxite,
 				Materials.Aluminium,
 				Materials.Ilmenite);
 		
-		addMiningRecipe(miningDroneType.BASIC, GTValues.MV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Aluminium.getId()),
+		addMiningRecipe(MiningType.BASIC, GTValues.MV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Aluminium.getId()),
 				OrePrefix.ore,
 				Materials.Aluminium,
 				Materials.Spodumene,
@@ -103,54 +112,130 @@ public class AsteroidMiningRecipes
 				Materials.FullersEarth,
 				Materials.Zeolite);
 		
-		addMiningRecipe(miningDroneType.BASIC, GTValues.EV, 1, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"),1 , Materials.Monazite.getId()),
+		addMiningRecipe(MiningType.BASIC, GTValues.EV, 1, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"),1 , Materials.Monazite.getId()),
 				OrePrefix.oreNetherrack,
 				Materials.Monazite,
 				Materials.Bastnasite,
 				Materials.Neodymium);
 		
-		addMiningRecipe(miningDroneType.ADVANCED, GTValues.IV, 1, 1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Tungsten.getId()),
+		addMiningRecipe(MiningType.BASIC, GTValues.HV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Diamond.getId()),
+				OrePrefix.ore,
+				Materials.Coal,
+				Materials.Graphite,
+				Materials.Diamond);
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.HV, 1, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Sulfur.getId()),
+				OrePrefix.oreNetherrack,
+				Materials.Sulfur,
+				Materials.Sulfur,
+				Materials.Pyrite,
+				Materials.Sphalerite);
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.HV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Tin.getId()),
+				OrePrefix.ore,
+				Materials.Tin,
+				Materials.Cassiterite,
+				Materials.CassiteriteSand);
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.HV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Zinc.getId()),
+				OrePrefix.ore,
+				Materials.Zinc,
+				Materials.Sphalerite);
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.HV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Nickel.getId()),
+				OrePrefix.ore,
+				Materials.Nickel,
+				Materials.Garnierite,
+				Materials.Cobaltite,
+				Materials.Pentlandite);
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.HV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Lead.getId()),
+				OrePrefix.ore,
+				Materials.Lead,
+				Materials.Galena,
+				Materials.Silver);
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.HV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Manganese.getId()),
+				OrePrefix.ore,
+				Materials.Grossular,
+				Materials.Spessartine,
+				Materials.Pyrolusite,
+				Materials.Tantalite);
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.EV, 1, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Molybdenum.getId()),
+				OrePrefix.oreNetherrack,
+				Materials.Molybdenum,
+				Materials.Wulfenite,
+				Materials.Molybdenite,
+				Materials.Powellite);
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.EV, 1, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Thorium.getId()),
+				OrePrefix.oreNetherrack,
+				Materials.Beryllium,
+				Materials.Emerald,
+				Materials.Thorium);
+		
+		addMiningRecipe(MiningType.BASIC, GTValues.EV, 1, 1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Uraninite.getId()),
+				OrePrefix.oreEndstone,
+				Materials.Pitchblende,
+				Materials.Uraninite);
+		
+		addMiningRecipe(MiningType.ADVANCED, GTValues.IV, 1, 1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Tungsten.getId()),
 				OrePrefix.oreEndstone,
 				Materials.Tungstate,
 				Materials.Scheelite);
+		
+		NTRecipeMaps.ASTEROID_MINING.recipeBuilder()
+			.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000))
+			.inputs(NTMetaItems.MINING_DRONE.getStackForm())
+			.EUt(GTValues.VA[GTValues.EV])
+			.duration(180*20)
+			.input(OrePrefix.dust, Materials.Uranium235, 64)
+			.output(OrePrefix.ore, Materials.Plutonium239, 64)
+			.circuitMeta(1)
+			.dimension(1)
+			.buildAndRegister();
 	}
 	
-	private enum miningDroneType
+	private enum MiningType
 	{
 		BASIC,
 		ADVANCED,
-		LEGENDARY;
+		BASIC_NOTCONSUMED,
+		ADVANCED_NOTCONSUMED;
 	}
 	
-	private static void addMiningRecipe(miningDroneType level, int tier, int circuitMeta, int dimension, ItemStack catalyst, OrePrefix prefix, Material... outputs)
+	private static void addMiningRecipe(MiningType level, int tier, int circuitMeta, int dimension, ItemStack catalyst, OrePrefix prefix, Material... outputs)
 	{
-		ItemStack drone = null;
-		int fluidAmt = 1;
-		if(level == miningDroneType.ADVANCED)
-		{
-			drone = NTMetaItems.ADVANCED_MINING_DRONE.getStackForm();
-			fluidAmt = 8000;
-		}
-		if(level == miningDroneType.LEGENDARY)
-		{
-			drone = NTMetaItems.LEGENDARY_MINING_DRONE.getStackForm();
-			fluidAmt = 16000;
-		}
-		if(level == miningDroneType.BASIC)
-		{
-			drone = NTMetaItems.BASIC_MINING_DRONE.getStackForm();
-			fluidAmt = 4000;
-		}
-		
 		GasCollectorRecipeBuilder recipe = NTRecipeMaps.ASTEROID_MINING.recipeBuilder();
+		if(level == MiningType.ADVANCED)
+		{
+			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
+			recipe.inputs(NTMetaItems.MINING_DRONE.getStackForm());
+		}
+		if(level == MiningType.BASIC)
+		{
+			recipe.fluidInputs(Materials.RocketFuel.getFluid(4000));
+			recipe.inputs(NTMetaItems.MINING_DRONE.getStackForm());
+		}
 		
-		recipe.inputs(drone);
+		if(level == MiningType.ADVANCED_NOTCONSUMED)
+		{
+			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
+			recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
+		}
+		if(level == MiningType.BASIC_NOTCONSUMED)
+		{
+			recipe.fluidInputs(Materials.RocketFuel.getFluid(4000));
+			recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
+		}
+		
 		recipe.notConsumable(catalyst);
-		recipe.fluidInputs(Materials.RocketFuel.getFluid(fluidAmt));
+		
 		recipe.EUt(GTValues.VA[tier]);
 		recipe.duration(180 * 20);
 		recipe.circuitMeta(circuitMeta);
-		recipe.chancedOutputLogic(ChancedOutputLogic.XOR);
+		recipe.chancedOutputLogic(NTChancedOutputLogic.SINGLEITEM);
 		recipe.dimension(dimension);
 		
 		for (Material m : outputs)
@@ -161,35 +246,35 @@ public class AsteroidMiningRecipes
 		recipe.buildAndRegister();
 	}
 	
-	private static void addMiningRecipe(miningDroneType level, int tier, int circuitMeta, int dimension, ItemStack catalyst, ItemStack... outputs)
+	private static void addMiningRecipe(MiningType level, int tier, int circuitMeta, int dimension, ItemStack catalyst, ItemStack... outputs)
 	{
-		ItemStack drone;
-		int fluidAmt = 1;
-		if(level == miningDroneType.ADVANCED)
-		{
-			drone = NTMetaItems.ADVANCED_MINING_DRONE.getStackForm();
-			fluidAmt = 8000;
-		}
-		if(level == miningDroneType.LEGENDARY)
-		{
-			drone = NTMetaItems.LEGENDARY_MINING_DRONE.getStackForm();
-			fluidAmt = 16000;
-		}
-		else
-		{
-			drone = NTMetaItems.BASIC_MINING_DRONE.getStackForm();
-			fluidAmt = 4000;
-		}
-		
 		GasCollectorRecipeBuilder recipe = NTRecipeMaps.ASTEROID_MINING.recipeBuilder();
+		if(level == MiningType.ADVANCED)
+		{
+			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
+			recipe.inputs(NTMetaItems.MINING_DRONE.getStackForm());
+		}
+		if(level == MiningType.BASIC)
+		{
+			recipe.fluidInputs(Materials.RocketFuel.getFluid(4000));
+			recipe.inputs(NTMetaItems.MINING_DRONE.getStackForm());
+		}
 		
-		recipe.inputs(drone);
+		if(level == MiningType.ADVANCED_NOTCONSUMED)
+		{
+			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
+			recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
+		}
+		if(level == MiningType.BASIC_NOTCONSUMED)
+		{
+			recipe.fluidInputs(Materials.RocketFuel.getFluid(4000));
+			recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
+		}
 		recipe.notConsumable(catalyst);
-		recipe.fluidInputs(Materials.RocketFuel.getFluid(fluidAmt));
 		recipe.EUt(GTValues.VA[tier]);
 		recipe.duration(180 * 20);
 		recipe.circuitMeta(circuitMeta);
-		recipe.chancedOutputLogic(ChancedOutputLogic.XOR);
+		recipe.chancedOutputLogic(NTChancedOutputLogic.SINGLEITEM);
 		recipe.dimension(dimension);
 		
 		for (ItemStack i : outputs)

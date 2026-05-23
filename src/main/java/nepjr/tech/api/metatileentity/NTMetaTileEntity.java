@@ -4,6 +4,8 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.function.Supplier;
 
+import gregicality.multiblocks.api.metatileentity.GCYMRecipeMapMultiblockController;
+import gregtech.api.metatileentity.multiblock.MultiMapMultiblockController;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.PatternStringError;
 import gregtech.api.pattern.TraceabilityPredicate;
@@ -14,11 +16,11 @@ import nepjr.tech.api.block.IFertilizedDirtBlockStats;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
 
-public abstract class NTMetaTileEntity extends RecipeMapMultiblockController {
+public abstract class NTMetaTileEntity extends GCYMRecipeMapMultiblockController {
 
 	public NTMetaTileEntity(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap) 
 	{
-		super(metaTileEntityId, recipeMap);
+		super(metaTileEntityId, new RecipeMap<?>[] { recipeMap });
 	}
 	
 	// Allow all fertilizers, and require them to have the same type.

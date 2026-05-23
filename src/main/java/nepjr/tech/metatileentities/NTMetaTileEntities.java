@@ -5,6 +5,7 @@ import static nepjr.tech.NepTech.nepId;
 
 import gregicality.multiblocks.common.metatileentities.multiblockpart.MetaTileEntityParallelHatch;
 import gregtech.api.GTValues;
+import nepjr.tech.config.NTConfig;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityDroneLauncher;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTParallelHatch;
@@ -55,35 +56,55 @@ public class NTMetaTileEntities
 	
 	public static void register()
 	{
-		GREENHOUSE = registerMetaTileEntity(6000, new MetaTileEntityGreenhouse(nepId("greenhouse")));
-		DRONE_LAUNCHER = registerMetaTileEntity(6001, new MetaTileEntityDroneLauncher(nepId("drone_launcher")));
+		if(NTConfig.neptech.enableGreenhouse)
+		{
+			GREENHOUSE = registerMetaTileEntity(6000, new MetaTileEntityGreenhouse(nepId("greenhouse")));			
+		}
+		if(NTConfig.neptech.enableDroneLauncher)
+		{
+			DRONE_LAUNCHER = registerMetaTileEntity(6001, new MetaTileEntityDroneLauncher(nepId("drone_launcher")));
+		}		
+		if(NTConfig.neptech.reworkedSteamGrinderOver)
+		{
+			STEAM_CRUSHER = registerMetaTileEntity(7003, new MetaTileEntitySteamCrusher(1, nepId("steam_crusher")));
+			STEAM_SMELTER = registerMetaTileEntity(7011, new MetaTileEntitySteamSmelter(1, nepId("steam_smelter")));
+			if(NTConfig.neptech.enableHPMultiblocks)
+			{
+				HP_STEAM_CRUSHER = registerMetaTileEntity(7004, new MetaTileEntitySteamCrusher(2, nepId("hp_steam_crusher")));
+				HP_STEAM_SMELTER = registerMetaTileEntity(7012, new MetaTileEntitySteamSmelter(2, nepId("hp_steam_smelter")));
+			}
+		}
 		
-		STEAM_SMASHER = registerMetaTileEntity(7001, new MetaTileEntitySteamSmasher(1, nepId("steam_smasher")));
-		HP_STEAM_SMASHER = registerMetaTileEntity(7002, new MetaTileEntitySteamSmasher(2, nepId("hp_steam_smasher")));
+		if(NTConfig.neptech.enableNewSteamMultis)
+		{
+			STEAM_SMASHER = registerMetaTileEntity(7001, new MetaTileEntitySteamSmasher(1, nepId("steam_smasher")));
+			STEAM_FUSER = registerMetaTileEntity(7005, new MetaTileEntitySteamFuser(1, nepId("steam_fuser")));
+			STEAM_SQUEEZER = registerMetaTileEntity(7009, new MetaTileEntitySteamSqueezer(1, nepId("steam_squeezer")));
+			STEAM_SQUASHER = registerMetaTileEntity(7007, new MetaTileEntitySteamSquasher(1, nepId("steam_squasher")));
+			if(NTConfig.neptech.enableHPMultiblocks)
+			{
+				HP_STEAM_SMASHER = registerMetaTileEntity(7002, new MetaTileEntitySteamSmasher(2, nepId("hp_steam_smasher")));
+				HP_STEAM_FUSER = registerMetaTileEntity(7006, new MetaTileEntitySteamFuser(2, nepId("hp_steam_fuser")));
+				HP_STEAM_SQUASHER = registerMetaTileEntity(7008, new MetaTileEntitySteamSquasher(2, nepId("hp_steam_squasher")));
+				HP_STEAM_SQUEEZER = registerMetaTileEntity(7010, new MetaTileEntitySteamSqueezer(2, nepId("hp_steam_squeezer")));
+			}
+		}
 		
-		STEAM_CRUSHER = registerMetaTileEntity(7003, new MetaTileEntitySteamCrusher(1, nepId("steam_crusher")));
-		HP_STEAM_CRUSHER = registerMetaTileEntity(7004, new MetaTileEntitySteamCrusher(2, nepId("hp_steam_crusher")));
-		
-		STEAM_FUSER = registerMetaTileEntity(7005, new MetaTileEntitySteamFuser(1, nepId("steam_fuser")));
-		HP_STEAM_FUSER = registerMetaTileEntity(7006, new MetaTileEntitySteamFuser(2, nepId("hp_steam_fuser")));
-		
-		STEAM_SQUASHER = registerMetaTileEntity(7007, new MetaTileEntitySteamSquasher(1, nepId("steam_squasher")));
-		HP_STEAM_SQUASHER = registerMetaTileEntity(7008, new MetaTileEntitySteamSquasher(2, nepId("hp_steam_squasher")));
-		
-		STEAM_SQUEEZER = registerMetaTileEntity(7009, new MetaTileEntitySteamSqueezer(1, nepId("steam_squeezer")));
-		HP_STEAM_SQUEEZER = registerMetaTileEntity(7010, new MetaTileEntitySteamSqueezer(2, nepId("hp_steam_squeezer")));
-		
-		STEAM_SMELTER = registerMetaTileEntity(7011, new MetaTileEntitySteamSmelter(1, nepId("steam_smelter")));
-		HP_STEAM_SMELTER = registerMetaTileEntity(7012, new MetaTileEntitySteamSmelter(2, nepId("hp_steam_smelter")));
-		
-		STEAM_SOLAR_BOILER = registerMetaTileEntity(7013, new NTSteamSolarBoiler(nepId("steam_solar_boiler"), false));
-		HP_STEAM_SOLAR_BOILER = registerMetaTileEntity(7014, new NTSteamSolarBoiler(nepId("hp_steam_solar_boiler"), true));
+		if(NTConfig.neptech.reworkedSteamSolarBoilers)
+		{
+			STEAM_SOLAR_BOILER = registerMetaTileEntity(7013, new NTSteamSolarBoiler(nepId("steam_solar_boiler"), false));
+			HP_STEAM_SOLAR_BOILER = registerMetaTileEntity(7014, new NTSteamSolarBoiler(nepId("hp_steam_solar_boiler"), true));		
+		}
 		
 		PARALLEL_HATCH_UHV = registerMetaTileEntity(7101, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.uhv"), GTValues.UHV));
 		PARALLEL_HATCH_UEV = registerMetaTileEntity(7102, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.uev"), GTValues.UEV));
 		PARALLEL_HATCH_UIV = registerMetaTileEntity(7103, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.uiv"), GTValues.UIV));
 		PARALLEL_HATCH_UXV = registerMetaTileEntity(7104, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.uxv"), GTValues.UXV));
 		PARALLEL_HATCH_OpV = registerMetaTileEntity(7105, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.opv"), GTValues.OpV));
-		STERILE_MAINTENANCE_HATCH = registerMetaTileEntity(7106, new MetaTileEntitySterileMaintenanceHatch(nepId("maintenance_hatch_sterile_cleanroom_auto")));
+		
+		if(NTConfig.neptech.enableSterileCleaningHatch)
+		{			
+			STERILE_MAINTENANCE_HATCH = registerMetaTileEntity(7106, new MetaTileEntitySterileMaintenanceHatch(nepId("maintenance_hatch_sterile_cleanroom_auto")));
+		}
 	}
 }

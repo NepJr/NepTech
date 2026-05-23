@@ -9,19 +9,24 @@ import gregtech.GTInternalTags;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.compat.exnihilo.ExNihiloGTModule;
+import nepjr.tech.config.NTConfig;
+import nepjr.tech.loaders.recipe.AE2Recipes;
 import nepjr.tech.loaders.recipe.AssemblerRecipes;
 import nepjr.tech.loaders.recipe.AsslineRecipes;
 import nepjr.tech.loaders.recipe.AsteroidMiningRecipes;
 import nepjr.tech.loaders.recipe.CentrifugeRecipes;
 import nepjr.tech.loaders.recipe.CraftingRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
+import nepjr.tech.loaders.recipe.FormingPressRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
+import nepjr.tech.loaders.recipe.LaserEngraverRecipes;
 import nepjr.tech.loaders.recipe.MaceratorRecipes;
 import nepjr.tech.loaders.recipe.RemovalRecipes;
 import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
 import nepjr.tech.proxy.CommonProxy;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -44,7 +49,7 @@ public class NepTech {
     public void preInit(FMLPreInitializationEvent event) 
     {	
     	// Ex Nihilo support
-    	ExNihiloCreatio.loadedModules.add(new ExNihiloGTModule());
+    	if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio")) { ExNihiloCreatio.loadedModules.add(new ExNihiloGTModule()); }
     	
     	// Init items
     	NTMetaItems.init();
@@ -62,15 +67,18 @@ public class NepTech {
     public void init(FMLInitializationEvent event)
     {
     	RemovalRecipes.init();
+    	if(NTConfig.modcompat.enableAE2Recipes && Loader.isModLoaded("appliedenergistics2")) { AE2Recipes.init(); }
+    	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
+    	if(NTConfig.neptech.enableGreenhouse) { GreenhouseRecipes.init(); }
     	CraftingRecipes.init();
-    	AsteroidMiningRecipes.init();
+    	// LaserEngraverRecipes.init();
+    	// FormingPressRecipes.init();
     	MaceratorRecipes.init();
     	ForgeHammerRecipes.init();
     	AssemblerRecipes.init();
     	AsslineRecipes.init();
     	CentrifugeRecipes.init();
     	UniversalCircuitRecipes.init();
-    	GreenhouseRecipes.init();
     }
 
     @NotNull
