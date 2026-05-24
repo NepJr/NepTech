@@ -130,6 +130,8 @@ public class AE2Items
 	public static ItemStack QUANTUM_PROCESSOR = getCrazyAEMaterialItem(16);
 	public static ItemStack ENERGY_PROCESSOR = getCrazyAEMaterialItem(48);
 	
+	public static Block PERFECT_INTERFACE_THAT_CRASHES_THE_FUCKING_GAME = Block.getBlockFromName("crazyae:perfect_interface");
+	
 	private static ItemStack getMaterialItem(int index)
 	{
 		return new ItemStack(Item.getByNameOrId("appliedenergistics2:material"), 1, index);

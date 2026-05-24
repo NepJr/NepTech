@@ -85,6 +85,7 @@ public class AE2Recipes
 		}
 		if(NTConfig.modcompat.enableCrazyAERecipes && Loader.isModLoaded("crazyae"))
 		{	
+			ModHandler.removeRecipeByOutput(Item.getItemFromBlock(PERFECT_INTERFACE_THAT_CRASHES_THE_FUCKING_GAME).getDefaultInstance());
 			ModHandler.removeRecipeByOutput(ENERGY_COMPONENT_1K);
 			ModHandler.removeRecipeByOutput(ENERGY_COMPONENT_4K);
 			ModHandler.removeRecipeByOutput(ENERGY_COMPONENT_16K);
