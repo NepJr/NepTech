@@ -48,14 +48,15 @@ public class CraftingRecipes
 			
 			// Mining Drone
 			ModHandler.addShapedRecipe("mining_drone", NTMetaItems.MINING_DRONE.getStackForm(), 
-					" E ",
+					"DED",
 					"SGS",
 					"THT",
 					'E', MetaItems.EMITTER_LV,
 					'S', MetaItems.SENSOR_LV,
 					'G', MetaTileEntities.COMBUSTION_GENERATOR[GTValues.LV].getStackForm(),
 					'T', MetaItems.POWER_THRUSTER,
-					'H', MetaTileEntities.HULL[GTValues.LV].getStackForm());
+					'H', MetaTileEntities.HULL[GTValues.LV].getStackForm(),
+					'D', new UnificationEntry(OrePrefix.toolHeadDrill, Materials.Steel));
 		}
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)

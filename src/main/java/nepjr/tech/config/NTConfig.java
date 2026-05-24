@@ -61,6 +61,16 @@ public class NTConfig
 		@Config.RequiresMcRestart
 		public boolean enableAE2Recipes = true;
 		
+		@Config.Comment("Changes various AE2 Fluid Crafting to be more Gregified")
+		@Config.Name("Change AE2 Fluid Crafting Recipes")
+		@Config.RequiresMcRestart
+		public boolean enableAE2FCRecipes = true;
+		
+		@Config.Comment("Changes various CrazyAE Recipes to be more Gregified")
+		@Config.Name("Change CrazyAE Recipes")
+		@Config.RequiresMcRestart
+		public boolean enableCrazyAERecipes = true;
+		
 		@Config.Comment("Enable Ex Nihilo support")
 		@Config.Name("Ex Nihilo Support")
 		@Config.RequiresMcRestart

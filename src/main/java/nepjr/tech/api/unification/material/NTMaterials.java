@@ -2,6 +2,7 @@ package nepjr.tech.api.unification.material;
 
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialFlags;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -30,6 +31,7 @@ public class NTMaterials
 		Holmium = new Material.Builder(8001, nepId("holmium"))
 				.ingot()
 				.iconSet(SHINY)
+				.flags(MaterialFlags.GENERATE_FINE_WIRE)
 				.color(0x882288)
 				.cableProperties(GTValues.V[UEV], 8, 0, false)
 				.build();

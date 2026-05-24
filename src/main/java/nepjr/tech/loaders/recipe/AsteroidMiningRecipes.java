@@ -185,6 +185,14 @@ public class AsteroidMiningRecipes
 				Materials.Tungstate,
 				Materials.Scheelite);
 		
+		addMiningRecipe(MiningType.BASIC, GTValues.MV, 1, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.CertusQuartz.getId()),
+				OrePrefix.oreNetherrack,
+				Materials.Quartzite,
+				Materials.CertusQuartz,
+				Materials.CertusQuartz,
+				Materials.Barite);
+		
+		// Unique Recipes. I didn't want to bother adding a helper function for these so I'll just define them manually as of for right now
 		NTRecipeMaps.ASTEROID_MINING.recipeBuilder()
 			.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000))
 			.inputs(NTMetaItems.MINING_DRONE.getStackForm())

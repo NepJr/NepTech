@@ -19,7 +19,6 @@ import nepjr.tech.loaders.recipe.CraftingRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.FormingPressRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
-import nepjr.tech.loaders.recipe.LaserEngraverRecipes;
 import nepjr.tech.loaders.recipe.MaceratorRecipes;
 import nepjr.tech.loaders.recipe.RemovalRecipes;
 import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
@@ -31,13 +30,18 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = NTTags.MODID, 
 	 version = NTTags.VERSION, 
 	 name = NTTags.MODNAME, 
 	 acceptedMinecraftVersions = "[1.12.2]",
-	 dependencies = GTInternalTags.DEP_VERSION_STRING + "before:exnihilocreatio;")
+	 dependencies = GTInternalTags.DEP_VERSION_STRING
+	 			  + "required-after:gcym;"
+	 			  + "after:ae2fc;"
+	 			  + "after:crazyae;"
+	 			  + "before:exnihilocreatio;")
 public class NepTech {
 
     public static final Logger LOGGER = LogManager.getLogger(NTTags.MODID);
@@ -72,13 +76,18 @@ public class NepTech {
     	if(NTConfig.neptech.enableGreenhouse) { GreenhouseRecipes.init(); }
     	CraftingRecipes.init();
     	// LaserEngraverRecipes.init();
-    	// FormingPressRecipes.init();
+    	FormingPressRecipes.init();
     	MaceratorRecipes.init();
     	ForgeHammerRecipes.init();
     	AssemblerRecipes.init();
     	AsslineRecipes.init();
     	CentrifugeRecipes.init();
     	UniversalCircuitRecipes.init();
+    }
+    
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
     }
 
     @NotNull

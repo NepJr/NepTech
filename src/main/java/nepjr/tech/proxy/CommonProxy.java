@@ -1,11 +1,14 @@
 package nepjr.tech.proxy;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.event.HighTierEvent;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.event.MaterialEvent;
+import gregtech.api.unification.ore.OrePrefix;
 import nepjr.tech.api.NepTechAPI;
 import nepjr.tech.api.block.IFertilizedDirtBlockStats;
 import nepjr.tech.api.unification.material.GTMaterialModifications;
@@ -17,11 +20,14 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import nepjr.tech.NTTags;
 
@@ -47,7 +53,7 @@ public class CommonProxy
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) 
     {
-
+    	
     }
 
     @SubscribeEvent
@@ -83,6 +89,12 @@ public class CommonProxy
     {
     	GTMaterialModifications.init();
     	NTMaterials.init();
+    }
+    
+    @SubscribeEvent
+    public static void onOreRegister(OreRegisterEvent event)
+    {
+    	
     }
     
     @SubscribeEvent
