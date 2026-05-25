@@ -192,6 +192,13 @@ public class AsteroidMiningRecipes
 				Materials.CertusQuartz,
 				Materials.Barite);
 		
+		addMiningRecipe(MiningType.BASIC, GTValues.LV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Salt.getId()),
+				OrePrefix.ore,
+				Materials.Salt,
+				Materials.RockSalt,
+				Materials.Lepidolite,
+				Materials.Spodumene);
+		
 		// Unique Recipes. I didn't want to bother adding a helper function for these so I'll just define them manually as of for right now
 		NTRecipeMaps.ASTEROID_MINING.recipeBuilder()
 			.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000))
