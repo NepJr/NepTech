@@ -91,7 +91,15 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		
 		if(materialOre != null)
 		{
-			registry.register(block, new ItemInfo(materialOre), chance, meshType.getID());
+			if(blockToSift == Blocks.SAND)
+			{
+				registry.register("sand", new ItemInfo(materialOre), chance, meshType.getID());
+			}
+			else
+			{
+				registry.register(block, new ItemInfo(materialOre), chance, meshType.getID());
+			}
+			
 		}
 	}
 	

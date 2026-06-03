@@ -122,7 +122,7 @@ public class CraftingRecipes
 						'G', new UnificationEntry(OrePrefix.gear, Materials.Invar),
 						'M', NTMetaTileEntities.STEAM_SMELTER.getStackForm());
 				
-				ModHandler.addShapedRecipe("hp_steam_smelter", NTMetaTileEntities.HP_STEAM_CRUSHER.getStackForm(), 
+				ModHandler.addShapedRecipe("hp_steam_smelter", NTMetaTileEntities.HP_STEAM_SMELTER.getStackForm(), 
 						"CGC",
 						"CMC",
 						"CGC",

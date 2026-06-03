@@ -18,7 +18,7 @@ neptech.machine.hp_steam_squeezer.name=High Pressure Steam Squeezer
 neptech.machine.steam_smelter.name=Steam Smelter
 neptech.machine.hp_steam_smelter.name=High Pressure Steam Smelter
 neptech.machine.steam_solar_boiler.name=Steam Solar Boiler
-neptech.machine.hp_steam_solar_boiler=High Pressure Steam Solar Boiler
+neptech.machine.hp_steam_solar_boiler.name=High Pressure Steam Solar Boiler
 
 // Fertilized Dirts
 tile.fertilized_dirt.basic.name=Basic Fertilized Dirt
