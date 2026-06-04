@@ -6,6 +6,7 @@ import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.builders.GasCollectorRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
+import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenProperty;
 
 public class NTRecipeMaps 
@@ -21,4 +22,10 @@ public class NTRecipeMaps
 			new GasCollectorRecipeBuilder(), false)
 						.setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, MoveType.HORIZONTAL)
 						.setSound(GTSoundEvents.MINER);
+	
+	@ZenProperty
+	public static final RecipeMap<SimpleRecipeBuilder> AUTO_SIFTER = new RecipeMap<>("auto_sifter", 1, 9, 0, 0,
+			new SimpleRecipeBuilder(), false)
+						.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, MoveType.HORIZONTAL)
+						.setSound(SoundEvents.BLOCK_SAND_PLACE);
 }

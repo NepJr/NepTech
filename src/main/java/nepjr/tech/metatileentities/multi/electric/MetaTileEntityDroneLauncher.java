@@ -23,7 +23,7 @@ import nepjr.tech.api.recipes.NTRecipeMaps;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
 
-public class MetaTileEntityDroneLauncher extends NTMetaTileEntity
+public class MetaTileEntityDroneLauncher extends RecipeMapMultiblockController
 {
 
 	public MetaTileEntityDroneLauncher(ResourceLocation metaTileEntityId) 

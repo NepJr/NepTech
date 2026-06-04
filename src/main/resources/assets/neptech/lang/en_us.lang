@@ -1,8 +1,34 @@
 // Recipe Map Names
 recipemap.greenhouse.name=Greenhouse Gardening
+recipemap.asteroid_mining.name=Asteroid Mining
+recipemap.auto_sifter.name=Automatic Sifting
+
+// Materials
+neptech.material.void_gas=Void Gas
+neptech.material.holmium=Holmium
+neptech.material.holminide=Holminide
+neptech.material.cryotheum=Cryotheum
+neptech.material.pyrotheum=Pyrotheum
+
+// Machine tooltips n related shit
+neptech.machine.overkill_combustion_engine.tooltip.boost_regular=Supply §f1 L/s§7 of Cryotheum to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.
+neptech.multiblock.large_combustion_engine.cryotheum_boost_disallowed=Upgrade the Dynamo Hatch to enable Cryotheum Boosting.
+neptech.multiblock.large_combustion_engine.cryotheum_boosted=Cryotheum boosted.
+neptech.multiblock.large_combustion_engine.cryotheum_amount=Cryotheum: %s
 
 // Electric Machines
 neptech.machine.greenhouse.name=Greenhouse
+neptech.machine.drone_launcher.name=Drone Launcher
+neptech.machine.auto_sifter.name=Auto Sifter
+neptech.machine.overkill_combustion_engine.name=Overkill Combustion Engine
+
+// Multiblock Parts
+neptech.machine.parallel_hatch.uhv.name=Hyper Parallel Hatch
+neptech.machine.parallel_hatch.uev.name=Omega Parallel Hatch
+neptech.machine.parallel_hatch.uiv.name=Grand Parallel Hatch
+neptech.machine.parallel_hatch.uxv.name=Absurd Parallel Hatch
+neptech.machine.parallel_hatch.opv.name=Divine Parallel Hatch
+neptech.machine.maintenance_hatch_sterile_cleanroom_auto.name=Automatic Sterilized Filtration Maintenance Hatch
 
 // Steam Machines
 neptech.machine.steam_smasher.name=Steam Smasher
@@ -72,3 +98,9 @@ metaitem.circuit.universal.uiv.name=Universal UIV Circuit
 metaitem.circuit.universal.uxv.name=Universal UXV Circuit
 metaitem.circuit.universal.opv.name=Universal OpV Circuit
 metaitem.circuit.universal.max.name=Universal MAX Circuit
+
+// Meta Items
+metaitem.mining_drone.name=Mining Drone
+
+// Meta Blocks
+tile.generic_blocks.slag.name=Slag

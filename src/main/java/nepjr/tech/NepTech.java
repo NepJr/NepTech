@@ -14,12 +14,16 @@ import nepjr.tech.loaders.recipe.AE2Recipes;
 import nepjr.tech.loaders.recipe.AssemblerRecipes;
 import nepjr.tech.loaders.recipe.AsslineRecipes;
 import nepjr.tech.loaders.recipe.AsteroidMiningRecipes;
+import nepjr.tech.loaders.recipe.AutoSifterRecipes;
+import nepjr.tech.loaders.recipe.AutoclaveRecipes;
 import nepjr.tech.loaders.recipe.CentrifugeRecipes;
+import nepjr.tech.loaders.recipe.ChemBathRecipes;
 import nepjr.tech.loaders.recipe.CraftingRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.FormingPressRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
 import nepjr.tech.loaders.recipe.MaceratorRecipes;
+import nepjr.tech.loaders.recipe.MixingRecipes;
 import nepjr.tech.loaders.recipe.RemovalRecipes;
 import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
@@ -74,10 +78,14 @@ public class NepTech {
     	if(NTConfig.modcompat.enableAE2Recipes && Loader.isModLoaded("appliedenergistics2")) { AE2Recipes.init(); }
     	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
     	if(NTConfig.neptech.enableGreenhouse) { GreenhouseRecipes.init(); }
+    	if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio")) { AutoSifterRecipes.init(); }
+    	AutoclaveRecipes.init();
+    	ChemBathRecipes.init();
     	CraftingRecipes.init();
     	// LaserEngraverRecipes.init();
     	FormingPressRecipes.init();
     	MaceratorRecipes.init();
+    	MixingRecipes.init();
     	ForgeHammerRecipes.init();
     	AssemblerRecipes.init();
     	AsslineRecipes.init();

@@ -3,16 +3,21 @@ package nepjr.tech.metatileentities;
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
 import static nepjr.tech.NepTech.nepId;
 
+import exnihilocreatio.ExNihiloCreatio;
 import gregicality.multiblocks.common.metatileentities.multiblockpart.MetaTileEntityParallelHatch;
 import gregtech.api.GTValues;
+import nepjr.tech.compat.exnihilo.ExNihiloGTModule;
 import nepjr.tech.config.NTConfig;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityAutoSifter;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityDroneLauncher;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
+import nepjr.tech.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTParallelHatch;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntitySterileMaintenanceHatch;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSquasher;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSqueezer;
 import nepjr.tech.metatileentities.steam.boiler.NTSteamSolarBoiler;
+import net.minecraftforge.fml.common.Loader;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamCrusher;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamFuser;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSmasher;
@@ -23,6 +28,8 @@ public class NTMetaTileEntities
 	// Electric Multiblocks (6000 - 7000)
 	public static MetaTileEntityGreenhouse GREENHOUSE;
 	public static MetaTileEntityDroneLauncher DRONE_LAUNCHER;
+	public static MetaTileEntityAutoSifter AUTO_SIFTER;
+	public static MetaTileEntityOverkillCombustionEngine OVERKILL_COMBUSTION_ENGINE;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -63,7 +70,15 @@ public class NTMetaTileEntities
 		if(NTConfig.neptech.enableDroneLauncher)
 		{
 			DRONE_LAUNCHER = registerMetaTileEntity(6001, new MetaTileEntityDroneLauncher(nepId("drone_launcher")));
-		}		
+		}
+		
+		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))
+		{
+			AUTO_SIFTER = registerMetaTileEntity(6002, new MetaTileEntityAutoSifter(nepId("auto_sifter")));
+		}
+		
+		OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6003, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
+		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{
 			STEAM_CRUSHER = registerMetaTileEntity(7003, new MetaTileEntitySteamCrusher(1, nepId("steam_crusher")));

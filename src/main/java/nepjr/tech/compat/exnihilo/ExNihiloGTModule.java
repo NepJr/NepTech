@@ -6,9 +6,11 @@ import exnihilocreatio.items.ore.ItemOre;
 import exnihilocreatio.modules.IExNihiloCreatioModule;
 import exnihilocreatio.recipes.defaults.IRecipeDefaults;
 import exnihilocreatio.registries.manager.ExNihiloRegistryManager;
+import exnihilocreatio.registries.registries.FluidBlockTransformerRegistry;
 import exnihilocreatio.registries.registries.OreRegistry;
 import exnihilocreatio.registries.registries.SieveRegistry;
 import exnihilocreatio.texturing.Color;
+import exnihilocreatio.util.BlockInfo;
 import exnihilocreatio.util.ItemInfo;
 import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
@@ -19,6 +21,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
 
 public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 {
@@ -77,6 +80,10 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		addSieveRecipe(registry, Materials.Monazite, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
 		addSieveRecipe(registry, Materials.Topaz, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);
     }
+	public void registerFluidBlockTransform(FluidBlockTransformerRegistry registry)
+	{
+		registry.register(FluidRegistry.WATER, new BlockInfo(Blocks.GRAVEL.getDefaultState()), new BlockInfo(NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG)));
+	}
 	
 	@Override
 	public String getMODID() 

@@ -547,7 +547,7 @@ public class AE2Recipes
 				"FBF",
 				"PFP",
 				'P', new UnificationEntry(OrePrefix.plate, Materials.Neutronium),
-				'F', new UnificationEntry(OrePrefix.wireFine, NTMaterials.Holmium),
+				'F', new UnificationEntry(OrePrefix.wireFine, Materials.Holmium),
 				'B', MetaItems.ULTIMATE_BATTERY.getStackForm());
 		
 		// Charged Certus
@@ -572,7 +572,7 @@ public class AE2Recipes
 		
 		// Pure Seeds
 		
-		RecipeMaps.FERMENTING_RECIPES.recipeBuilder()
+		RecipeMaps.AUTOCLAVE_RECIPES.recipeBuilder()
 			.inputs(PURE_CERTUS_SEED)
 			.fluidInputs(Materials.DistilledWater.getFluid(250))
 			.outputs(PURE_CERTUS)
@@ -580,7 +580,7 @@ public class AE2Recipes
 			.duration(200)
 			.buildAndRegister();
 		
-		RecipeMaps.FERMENTING_RECIPES.recipeBuilder()
+		RecipeMaps.AUTOCLAVE_RECIPES.recipeBuilder()
 			.inputs(PURE_FLUIX_SEED)
 			.fluidInputs(Materials.DistilledWater.getFluid(250))
 			.outputs(PURE_FLUIX)
@@ -588,7 +588,7 @@ public class AE2Recipes
 			.duration(200)
 			.buildAndRegister();
 		
-		RecipeMaps.FERMENTING_RECIPES.recipeBuilder()
+		RecipeMaps.AUTOCLAVE_RECIPES.recipeBuilder()
 			.inputs(PURE_QUARTZ_SEED)
 			.fluidInputs(Materials.DistilledWater.getFluid(250))
 			.outputs(PURE_QUARTZ)

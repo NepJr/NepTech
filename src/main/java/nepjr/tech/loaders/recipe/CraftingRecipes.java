@@ -17,6 +17,7 @@ import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
 import net.minecraft.init.Blocks;
+import net.minecraftforge.fml.common.Loader;
 
 public class CraftingRecipes 
 {
@@ -32,6 +33,19 @@ public class CraftingRecipes
 					'S', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
 					'C', new UnificationEntry(OrePrefix.circuit, Tier.LV),
 					'H', MetaTileEntities.HULL[GTValues.LV].getStackForm());
+		}
+		
+		// Auto Sifter
+		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))
+		{
+			ModHandler.addShapedRecipe("auto_sifter", NTMetaTileEntities.AUTO_SIFTER.getStackForm(),
+					"CPC",
+					"BHB",
+					"CPC",
+					'C', new UnificationEntry(OrePrefix.circuit, Tier.MV),
+					'B', MetaItems.CONVEYOR_MODULE_MV,
+					'P', MetaItems.ELECTRIC_PISTON_MV,
+					'H', MetaTileEntities.HULL[GTValues.MV].getStackForm());
 		}
 		
 		// Drone Launcher

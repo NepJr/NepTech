@@ -1,5 +1,6 @@
 package nepjr.tech.api.unification.material;
 
+import gregtech.api.GTValues;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.PropertyKey;
@@ -15,6 +16,13 @@ public class GTMaterialModifications
 		
 		Materials.Zinc.getProperties().ensureSet(PropertyKey.ORE);
 		Materials.Zinc.getProperty(PropertyKey.ORE).setOreByProducts(Materials.Gallium);
+		
+		Materials.Holmium.setMaterialRGB(0x882288);
+		Materials.Holmium.getProperties().ensureSet(PropertyKey.WIRE);
+		Materials.Holmium.getProperty(PropertyKey.WIRE).setVoltage((int) GTValues.V[GTValues.UEV]);
+		Materials.Holmium.getProperty(PropertyKey.WIRE).setLossPerBlock(0);
+		Materials.Holmium.getProperty(PropertyKey.WIRE).setAmperage(8);
+		Materials.Holmium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
 		
 		Materials.Gallium.getProperties().ensureSet(PropertyKey.ORE);
 		
