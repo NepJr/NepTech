@@ -46,6 +46,7 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		registerMaterial(registry, Materials.Oilsands, true, true);
 		registerMaterial(registry, Materials.Cassiterite, true, true);
 		registerMaterial(registry, Materials.Garnierite, true, true);
+		registerMaterial(registry, Materials.Redstone, true, true);
 		
 		// Gems
 		registerMaterial(registry, Materials.Ruby, true, true);
