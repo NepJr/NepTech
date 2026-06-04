@@ -45,6 +45,7 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		registerMaterial(registry, Materials.Gypsum, true, true);
 		registerMaterial(registry, Materials.Oilsands, true, true);
 		registerMaterial(registry, Materials.Cassiterite, true, true);
+		registerMaterial(registry, Materials.Garnierite, true, true);
 		
 		// Gems
 		registerMaterial(registry, Materials.Ruby, true, true);
@@ -67,6 +68,7 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		addSieveRecipe(registry, Materials.Galena, Blocks.GRAVEL, 0.15f, BlockSieve.MeshType.DIAMOND);
 		addSieveRecipe(registry, Materials.Tetrahedrite, Blocks.GRAVEL, 0.15f, BlockSieve.MeshType.DIAMOND);
 		addSieveRecipe(registry, Materials.Cassiterite, Blocks.GRAVEL, 0.15f, BlockSieve.MeshType.DIAMOND);
+		addSieveRecipe(registry, Materials.Garnierite, Blocks.GRAVEL, 0.15f, BlockSieve.MeshType.DIAMOND);
 		
 		// Gems
 		addSieveRecipe(registry, Materials.Ruby, NTMetaBlocks.GENERIC_BLOCKS.getState(GenericType.SLAG).getBlock(), 0.125f, BlockSieve.MeshType.DIAMOND);

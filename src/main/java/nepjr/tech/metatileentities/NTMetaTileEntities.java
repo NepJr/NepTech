@@ -83,7 +83,7 @@ public class NTMetaTileEntities
 		
 		OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6003, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
 		STEAM_AUTO_SIFTER = registerMetaTileEntity(6004, new SteamAutoSifter(nepId("steam_auto_sifter"), false));
-		STEAM_AUTO_SIFTER = registerMetaTileEntity(6005, new SteamAutoSifter(nepId("steam_hp_auto_sifter"), true));
+		HP_STEAM_AUTO_SIFTER = registerMetaTileEntity(6005, new SteamAutoSifter(nepId("hp_steam_auto_sifter"), true));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

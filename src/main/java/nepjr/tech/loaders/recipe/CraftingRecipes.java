@@ -46,6 +46,24 @@ public class CraftingRecipes
 					'B', MetaItems.CONVEYOR_MODULE_LV,
 					'P', MetaItems.ELECTRIC_PISTON_LV,
 					'H', MetaTileEntities.HULL[GTValues.LV].getStackForm());
+			
+			ModHandler.addShapedRecipe("bronze_auto_sifter", NTMetaTileEntities.STEAM_AUTO_SIFTER.getStackForm(), 
+					"IPI",
+					"BHB",
+					"IPI",
+					'I', Blocks.IRON_BARS,
+					'B', new UnificationEntry(OrePrefix.plate, Materials.Bronze),
+					'H', MetaBlocks.STEAM_CASING.getItemVariant(SteamCasingType.BRONZE_HULL),
+					'P', OreDictNames.craftingPiston);
+			
+			ModHandler.addShapedRecipe("hp_auto_sifter", NTMetaTileEntities.HP_STEAM_AUTO_SIFTER.getStackForm(), 
+					"WSW",
+					"PHP",
+					"WWW",
+					'W', new UnificationEntry(OrePrefix.plate, Materials.WroughtIron),
+					'S', new UnificationEntry(OrePrefix.plate, Materials.Steel),
+					'H', NTMetaTileEntities.STEAM_AUTO_SIFTER.getStackForm(),
+					'P', new UnificationEntry(OrePrefix.pipeSmallFluid, Materials.TinAlloy));
 		}
 		
 		// Drone Launcher
