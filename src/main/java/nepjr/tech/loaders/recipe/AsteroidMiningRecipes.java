@@ -57,6 +57,12 @@ public class AsteroidMiningRecipes
 				Materials.VanadiumMagnetite,
 				Materials.Gold);
 		
+		addMiningRecipe(MiningType.BASIC, GTValues.MV, 1, 0, new ItemStack(Items.REDSTONE, 1, 0),
+				OrePrefix.ore,
+				Materials.Redstone,
+				Materials.Ruby,
+				Materials.Cinnabar);
+		
 		addMiningRecipe(MiningType.BASIC, GTValues.MV, 2, -1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Magnetite.getId()),
 				OrePrefix.oreNetherrack,
 				Materials.Magnetite,
