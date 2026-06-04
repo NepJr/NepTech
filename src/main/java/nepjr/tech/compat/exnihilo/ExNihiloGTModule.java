@@ -19,6 +19,7 @@ import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.blocks.BlockGeneric.GenericType;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -116,6 +117,11 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 	{
 		Item ingot = Item.getByNameOrId("gregtech:meta_ingot");
 		Item dust = Item.getByNameOrId("gregtech:meta_dust");
+		
+		if(material == Materials.Glowstone)
+		{
+			dust = Items.GLOWSTONE_DUST;
+		}
 		
 		if(dustOnly == true)
 		{

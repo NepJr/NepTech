@@ -14,6 +14,11 @@ public class GTMaterialModifications
 		Materials.BlueTopaz.addFlags(MaterialFlags.GENERATE_LENS); // Blue Topaz Lens for Light Blue
 		Materials.GarnetYellow.addFlags(MaterialFlags.GENERATE_LENS); // Yellow Garnet Lens for Yellow (shocker!)
 		
+		Materials.Glowstone.getProperties().ensureSet(PropertyKey.ORE);
+		OrePrefix.ore.removeIgnored(Materials.Glowstone);
+		OrePrefix.oreNetherrack.removeIgnored(Materials.Glowstone);
+		OrePrefix.oreEndstone.removeIgnored(Materials.Glowstone);
+		
 		Materials.Zinc.getProperties().ensureSet(PropertyKey.ORE);
 		Materials.Zinc.getProperty(PropertyKey.ORE).setOreByProducts(Materials.Gallium);
 		
