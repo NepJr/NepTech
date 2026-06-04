@@ -17,6 +17,7 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.MarkerMaterials.Color;
 import gregtech.api.unification.material.MarkerMaterials.Tier;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
@@ -372,6 +373,42 @@ public class AE2Recipes
 				.circuitMeta(2)
 				.buildAndRegister();
 		}
+		
+		RecipeMaps.LASER_ENGRAVER_RECIPES.recipeBuilder()
+			.input(OrePrefix.plate, Materials.CertusQuartz)
+			.notConsumable(OrePrefix.craftingLens, Color.Red)
+			.outputs(INSCRIBER_LOGIC_PRESS)
+			.EUt(GTValues.VA[GTValues.HV])
+			.duration(60*20)
+			.cleanroom(CleanroomType.CLEANROOM)
+			.buildAndRegister();
+		
+		RecipeMaps.LASER_ENGRAVER_RECIPES.recipeBuilder()
+			.input(OrePrefix.plate, Materials.CertusQuartz)
+			.notConsumable(OrePrefix.craftingLens, Color.Green)
+			.outputs(INSCRIBER_CALCULATION_PRESS)
+			.EUt(GTValues.VA[GTValues.HV])
+			.duration(60*20)
+			.cleanroom(CleanroomType.CLEANROOM)
+			.buildAndRegister();
+		
+		RecipeMaps.LASER_ENGRAVER_RECIPES.recipeBuilder()
+			.input(OrePrefix.plate, Materials.CertusQuartz)
+			.notConsumable(OrePrefix.craftingLens, Color.Blue)
+			.outputs(INSCRIBER_ENGINEERING_PRESS)
+			.EUt(GTValues.VA[GTValues.HV])
+			.duration(60*20)
+			.cleanroom(CleanroomType.CLEANROOM)
+			.buildAndRegister();
+		
+		RecipeMaps.LASER_ENGRAVER_RECIPES.recipeBuilder()
+			.input(OrePrefix.plate, Materials.CertusQuartz)
+			.notConsumable(OrePrefix.craftingLens, Color.Black)
+			.outputs(INSCRIBER_SILICON_PRESS)
+			.EUt(GTValues.VA[GTValues.HV])
+			.duration(60*20)
+			.cleanroom(CleanroomType.CLEANROOM)
+			.buildAndRegister();
 		
 		// Make AE2 Printred Circuits in Laser Engraver
 		addEngraverRecipe(Wafers.SILICON, INSCRIBER_CALCULATION_PRESS, PRINTED_CALCULATION_CIRCUIT);
