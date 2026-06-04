@@ -155,9 +155,18 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		}
 		else
 		{
-			registry.register(material.getName(), new Color(material.getMaterialRGB()), 
-					new ItemInfo(ingot, material.getId()),
-					new ItemInfo(dust, material.getId()));
+			if(material == Materials.Diamond || material == Materials.Emerald)
+			{
+				registry.register(material.getName(), new Color(material.getMaterialRGB()), 
+						new ItemInfo(ingot, 0),
+						new ItemInfo(dust, material.getId()));
+			}
+			else
+			{
+				registry.register(material.getName(), new Color(material.getMaterialRGB()), 
+						new ItemInfo(ingot, material.getId()),
+						new ItemInfo(dust, material.getId()));
+			}
 		}
 		
 		if(blacklist == true) // By default it adds everything to the gravel sieve so we blacklist it by default so it doesn't do that
