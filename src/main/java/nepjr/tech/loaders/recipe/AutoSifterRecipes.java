@@ -24,7 +24,8 @@ public class AutoSifterRecipes
 											  Materials.Cobaltite,
 											  Materials.Galena,
 											  Materials.Tetrahedrite,
-											  Materials.Cassiterite);
+											  Materials.Cassiterite,
+											  Materials.Garnierite);
 		
 		addSiftingRecipe(SiftingBlock.SLAG, Materials.Ruby,
 											Materials.Emerald,
