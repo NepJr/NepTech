@@ -38,7 +38,8 @@ public class AutoSifterRecipes
 		
 		addSiftingRecipe(SiftingBlock.DUST, Materials.Calcite,
 											Materials.Gypsum,
-											Materials.Redstone);
+											Materials.Redstone,
+											Materials.Glowstone);
 	}
 	
 	private enum SiftingBlock
