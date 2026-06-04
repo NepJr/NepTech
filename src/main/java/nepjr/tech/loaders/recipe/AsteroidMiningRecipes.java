@@ -19,7 +19,7 @@ public class AsteroidMiningRecipes
 {
 	public static void init()
 	{
-		addMiningRecipe(MiningType.BASIC_NOTCONSUMED, GTValues.LV, 16, 0, Item.getItemFromBlock(Blocks.STONE).getDefaultInstance(), 
+		addMiningRecipe(MiningType.BASIC_NOTCONSUMED, GTValues.LV, 16, 0, new ItemStack(Blocks.STONE), 
 				OrePrefix.stone,
 				Materials.Marble,
 				Materials.GraniteBlack,
@@ -30,13 +30,13 @@ public class AsteroidMiningRecipes
 				Materials.Basalt
 				);
 		
-		addMiningRecipe(MiningType.BASIC_NOTCONSUMED, GTValues.LV, 16, -1, Item.getItemFromBlock(Blocks.NETHERRACK).getDefaultInstance(),
-				Item.getItemFromBlock(Blocks.NETHERRACK).getDefaultInstance(),
-				Item.getItemFromBlock(Blocks.SOUL_SAND).getDefaultInstance(),
-				Item.getItemFromBlock(Blocks.GLOWSTONE).getDefaultInstance());
+		addMiningRecipe(MiningType.BASIC_NOTCONSUMED, GTValues.LV, 16, -1, new ItemStack(Blocks.NETHERRACK),
+				new ItemStack(Blocks.NETHERRACK),
+				new ItemStack(Blocks.SOUL_SAND),
+				new ItemStack(Blocks.GLOWSTONE));
 		
-		addMiningRecipe(MiningType.ADVANCED_NOTCONSUMED, GTValues.EV, 16, 1, Item.getItemFromBlock(Blocks.END_STONE).getDefaultInstance(),
-				Item.getItemFromBlock(Blocks.END_STONE).getDefaultInstance());
+		addMiningRecipe(MiningType.ADVANCED_NOTCONSUMED, GTValues.EV, 16, 1, new ItemStack(Blocks.END_STONE),
+				new ItemStack(Blocks.END_STONE));
 		
 		addMiningRecipe(MiningType.BASIC, GTValues.LV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Iron.getId()),
 				OrePrefix.ore,

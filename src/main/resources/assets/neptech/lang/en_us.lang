@@ -58,6 +58,9 @@ tile.fertilized_dirt.absurd.name=Absurd Fertilized Dirt
 // WIP Items
 metaitem.spray.infinite.name=[NYI] Infinite Spray Can
 
+// Non-meta Items
+item.ring_of_flight.name=Ring of Flight
+
 // Circuits
 metaitem.circuit.bioware_processor.name=Bioware Processor
 metaitem.circuit.bioware_assembly.name=Bioware Processor Assembly

@@ -45,12 +45,12 @@ public class AE2Recipes
 	
 	private static void removeRecipes()
 	{
-		ModHandler.removeRecipeByOutput(Item.getItemFromBlock(MOLECULAR_ASSEMBLER).getDefaultInstance());
-		ModHandler.removeRecipeByOutput(Item.getItemFromBlock(ME_CONTROLLER).getDefaultInstance());
-		ModHandler.removeRecipeByOutput(Item.getItemFromBlock(ME_DRIVE).getDefaultInstance());
-		ModHandler.removeRecipeByOutput(Item.getItemFromBlock(INSCRIBER).getDefaultInstance());
-		ModHandler.removeRecipeByOutput(Item.getItemFromBlock(CRAFTING_UNIT).getDefaultInstance());
-		ModHandler.removeRecipeByOutput(Item.getItemFromBlock(CRAFTING_COPROCESSOR).getDefaultInstance());
+		ModHandler.removeRecipeByOutput(new ItemStack(Item.getItemFromBlock(MOLECULAR_ASSEMBLER)));
+		ModHandler.removeRecipeByOutput(new ItemStack(Item.getItemFromBlock(ME_CONTROLLER)));
+		ModHandler.removeRecipeByOutput(new ItemStack(Item.getItemFromBlock(ME_DRIVE)));
+		ModHandler.removeRecipeByOutput(new ItemStack(Item.getItemFromBlock(INSCRIBER)));
+		ModHandler.removeRecipeByOutput(new ItemStack(Item.getItemFromBlock(CRAFTING_UNIT)));
+		ModHandler.removeRecipeByOutput(new ItemStack(Item.getItemFromBlock(CRAFTING_COPROCESSOR)));
 		
 		ModHandler.removeRecipeByOutput(STORAGE_HOUSING);
 		ModHandler.removeRecipeByOutput(STORAGE_COMPONENT_1K);
@@ -82,11 +82,11 @@ public class AE2Recipes
 		
 		if(NTConfig.modcompat.enableAE2FCRecipes && Loader.isModLoaded("ae2fc"))
 		{
-			ModHandler.removeRecipeByOutput(Item.getItemFromBlock(FLUID_DISCRETIZER).getDefaultInstance());
+			ModHandler.removeRecipeByOutput(new ItemStack(Item.getItemFromBlock(FLUID_DISCRETIZER)));
 		}
 		if(NTConfig.modcompat.enableCrazyAERecipes && Loader.isModLoaded("crazyae"))
 		{	
-			ModHandler.removeRecipeByOutput(Item.getItemFromBlock(PERFECT_INTERFACE_THAT_CRASHES_THE_FUCKING_GAME).getDefaultInstance());
+			ModHandler.removeRecipeByOutput(new ItemStack(Item.getItemFromBlock(PERFECT_INTERFACE_THAT_CRASHES_THE_FUCKING_GAME)));
 			ModHandler.removeRecipeByOutput(ENERGY_COMPONENT_1K);
 			ModHandler.removeRecipeByOutput(ENERGY_COMPONENT_4K);
 			ModHandler.removeRecipeByOutput(ENERGY_COMPONENT_16K);
@@ -151,7 +151,7 @@ public class AE2Recipes
 	{
 		if(NTConfig.modcompat.enableAE2FCRecipes && Loader.isModLoaded("ae2fc"))
 		{	
-			ModHandler.addShapedRecipe("fluid_discretizer_new", Item.getItemFromBlock(FLUID_DISCRETIZER).getDefaultInstance(), 
+			ModHandler.addShapedRecipe("fluid_discretizer_new", new ItemStack(Item.getItemFromBlock(FLUID_DISCRETIZER)), 
 					"PEP",
 					"FCI",
 					"PEP",
@@ -417,7 +417,7 @@ public class AE2Recipes
 		addEngraverRecipe(Wafers.SILICON, INSCRIBER_LOGIC_PRESS, PRINTED_LOGIC_CIRCUIT);
 		
 		// ME Controller
-		ModHandler.addShapedRecipe("me_controller_new", Item.getItemFromBlock(ME_CONTROLLER).getDefaultInstance(), 
+		ModHandler.addShapedRecipe("me_controller_new", new ItemStack(Item.getItemFromBlock(ME_CONTROLLER)), 
 				"PFP",
 				"FCF",
 				"PFP",
@@ -426,7 +426,7 @@ public class AE2Recipes
 				'C', new UnificationEntry(OrePrefix.circuit, Tier.IV));
 		
 		// ME Drive
-		ModHandler.addShapedRecipe("me_drive_new", Item.getItemFromBlock(ME_DRIVE).getDefaultInstance(), 
+		ModHandler.addShapedRecipe("me_drive_new", new ItemStack(Item.getItemFromBlock(ME_DRIVE)),
 				"PEP",
 				"FCF",
 				"PEP",
@@ -436,7 +436,7 @@ public class AE2Recipes
 				'C', new UnificationEntry(OrePrefix.circuit, Tier.HV));
 		
 		// Crafting Unit
-		ModHandler.addShapedRecipe("crafting_unit_new", Item.getItemFromBlock(CRAFTING_UNIT).getDefaultInstance(), 
+		ModHandler.addShapedRecipe("crafting_unit_new", new ItemStack(Item.getItemFromBlock(CRAFTING_UNIT)), 
 				"PCP",
 				"FHF",
 				"PCP",
@@ -446,13 +446,13 @@ public class AE2Recipes
 				'H', new UnificationEntry(OrePrefix.circuit, Tier.HV));
 		
 		// Crafting Co-Processor
-		ModHandler.addShapelessRecipe("coprocessor_new", Item.getItemFromBlock(CRAFTING_COPROCESSOR).getDefaultInstance(),
-				Item.getItemFromBlock(CRAFTING_UNIT).getDefaultInstance(), 
+		ModHandler.addShapelessRecipe("coprocessor_new", new ItemStack(Item.getItemFromBlock(CRAFTING_COPROCESSOR)),
+				new ItemStack(Item.getItemFromBlock(CRAFTING_UNIT)), 
 				new UnificationEntry(OrePrefix.circuit, Tier.EV));
 		
 		// Interfaces
 		
-		ModHandler.addShapedRecipe("interface_new", Item.getItemFromBlock(INTERFACE).getDefaultInstance(), 
+		ModHandler.addShapedRecipe("interface_new", new ItemStack(Item.getItemFromBlock(INTERFACE)), 
 				"PGP",
 				"A F",
 				"PGP",
@@ -461,7 +461,7 @@ public class AE2Recipes
 				'F', FORMATION_CORE,
 				'G', new OreIngredient("blockGlass"));
 		
-		ModHandler.addShapedRecipe("fluid_interface_new", Item.getItemFromBlock(FLUID_INTERFACE).getDefaultInstance(), 
+		ModHandler.addShapedRecipe("fluid_interface_new", new ItemStack(Item.getItemFromBlock(FLUID_INTERFACE)), 
 				"PLP",
 				"A F",
 				"PLP",
@@ -568,7 +568,7 @@ public class AE2Recipes
 			.buildAndRegister();
 		
 		// Molecular Assembler
-		ModHandler.addShapedRecipe("molecular_assembler_new", Item.getItemFromBlock(MOLECULAR_ASSEMBLER).getDefaultInstance(),
+		ModHandler.addShapedRecipe("molecular_assembler_new", new ItemStack(Item.getItemFromBlock(MOLECULAR_ASSEMBLER)),
 				"TGT",
 				"ACF",
 				"TGT",
@@ -579,7 +579,7 @@ public class AE2Recipes
 				'C', MetaTileEntities.ASSEMBLER[GTValues.HV].getStackForm());
 		
 		// Creative Energy Cell
-		ModHandler.addShapedRecipe("creative_energy_cell", Item.getItemFromBlock(CREATIVE_ENERGY_CELL).getDefaultInstance(), 
+		ModHandler.addShapedRecipe("creative_energy_cell", new ItemStack(Item.getItemFromBlock(CREATIVE_ENERGY_CELL)), 
 				"PFP",
 				"FBF",
 				"PFP",

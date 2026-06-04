@@ -97,7 +97,7 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 	private void addSieveRecipe(SieveRegistry registry, Material material, Block blockToSift, float chance, BlockSieve.MeshType meshType)
 	{
 		ItemOre materialOre = ExNihiloRegistryManager.ORE_REGISTRY.getOreItem(material.getName());
-		ItemStack block = Item.getItemFromBlock(blockToSift).getDefaultInstance();
+		ItemStack block = new ItemStack(Item.getItemFromBlock(blockToSift));
 		
 		if(materialOre != null)
 		{

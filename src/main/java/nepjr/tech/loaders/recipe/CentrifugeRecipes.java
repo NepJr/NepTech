@@ -7,6 +7,7 @@ import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class CentrifugeRecipes 
 {
@@ -46,7 +47,7 @@ public class CentrifugeRecipes
 		
 		CENTRIFUGE_RECIPES.recipeBuilder()
 			.input(OrePrefix.ore, Materials.Oilsands)
-			.chancedOutput(Item.getItemFromBlock(Blocks.SAND).getDefaultInstance(), 5000, 5000)
+			.chancedOutput(new ItemStack(Item.getItemFromBlock(Blocks.SAND)), 5000, 5000)
 			.fluidOutputs(Materials.OilHeavy.getFluid(2000))
 			.circuitMeta(0)
 			.EUt(GTValues.VA[GTValues.LV])
@@ -55,7 +56,7 @@ public class CentrifugeRecipes
 	
 		CENTRIFUGE_RECIPES.recipeBuilder()
 			.input(OrePrefix.ore, Materials.Oilsands)
-			.chancedOutput(Item.getItemFromBlock(Blocks.SAND).getDefaultInstance(), 5000, 5000)
+			.chancedOutput(new ItemStack(Item.getItemFromBlock(Blocks.SAND)), 5000, 5000)
 			.fluidOutputs(Materials.Oil.getFluid(4000))
 			.circuitMeta(1)
 			.EUt(GTValues.VA[GTValues.LV])
@@ -64,7 +65,7 @@ public class CentrifugeRecipes
 	
 		CENTRIFUGE_RECIPES.recipeBuilder()
 			.input(OrePrefix.ore, Materials.Oilsands)
-			.chancedOutput(Item.getItemFromBlock(Blocks.SAND).getDefaultInstance(), 5000, 5000)
+			.chancedOutput(new ItemStack(Item.getItemFromBlock(Blocks.SAND)), 5000, 5000)
 			.fluidOutputs(Materials.RawOil.getFluid(8000))
 			.circuitMeta(2)
 			.EUt(GTValues.VA[GTValues.LV])
@@ -73,7 +74,7 @@ public class CentrifugeRecipes
 	
 		CENTRIFUGE_RECIPES.recipeBuilder()
 			.input(OrePrefix.ore, Materials.Oilsands)
-			.chancedOutput(Item.getItemFromBlock(Blocks.SAND).getDefaultInstance(), 5000, 5000)
+			.chancedOutput(new ItemStack(Item.getItemFromBlock(Blocks.SAND)), 5000, 5000)
 			.fluidOutputs(Materials.OilLight.getFluid(16000))
 			.circuitMeta(3)
 			.EUt(GTValues.VA[GTValues.LV])

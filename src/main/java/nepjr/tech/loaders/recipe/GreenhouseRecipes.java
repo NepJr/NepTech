@@ -15,7 +15,7 @@ public class GreenhouseRecipes
 	{
 		addGreenhouseTreeRecipe(new ItemStack(Item.getItemFromBlock(Blocks.SAPLING), 1, 0), // Oak Trees
 								new ItemStack(Item.getItemFromBlock(Blocks.LOG), 1, 0),
-								Items.APPLE.getDefaultInstance());
+								new ItemStack(Items.APPLE));
 		
 		addGreenhouseTreeRecipe(new ItemStack(Item.getItemFromBlock(Blocks.SAPLING), 1, 1), // Spruce Trees
 								new ItemStack(Item.getItemFromBlock(Blocks.LOG), 1, 1));
@@ -36,10 +36,10 @@ public class GreenhouseRecipes
 		addGreenhouseTreeRecipe(new ItemStack(Item.getItemFromBlock(Blocks.RED_MUSHROOM), 1, 0),
 								new ItemStack(Item.getItemFromBlock(Blocks.RED_MUSHROOM_BLOCK), 1, 0));
 		
-		addGreenhouseRecipe(Items.REEDS.getDefaultInstance());
-		addGreenhouseRecipe(Items.POTATO.getDefaultInstance());
-		addGreenhouseRecipe(Items.POISONOUS_POTATO.getDefaultInstance());
-		addGreenhouseRecipe(Items.CARROT.getDefaultInstance());
+		addGreenhouseRecipe(new ItemStack(Items.REEDS));
+		addGreenhouseRecipe(new ItemStack(Items.POTATO));
+		addGreenhouseRecipe(new ItemStack(Items.POISONOUS_POTATO));
+		addGreenhouseRecipe(new ItemStack(Items.CARROT));
 		
 		addGreenhouseRecipe(new ItemStack(Item.getItemFromBlock(Blocks.YELLOW_FLOWER), 1, 0)); // Dandelion
 		addGreenhouseRecipe(new ItemStack(Item.getItemFromBlock(Blocks.RED_FLOWER), 1, 0)); // Poppy
@@ -57,12 +57,12 @@ public class GreenhouseRecipes
 		addGreenhouseRecipe(new ItemStack(Item.getItemFromBlock(Blocks.DOUBLE_PLANT), 1, 4)); // Rose Bush
 		addGreenhouseRecipe(new ItemStack(Item.getItemFromBlock(Blocks.DOUBLE_PLANT), 1, 5)); // Peony
 		
-		addGreenhouseSeedRecipe(Items.WHEAT_SEEDS.getDefaultInstance(), Items.WHEAT.getDefaultInstance());
-		addGreenhouseSeedRecipe(Items.PUMPKIN_SEEDS.getDefaultInstance(), Item.getItemFromBlock(Blocks.PUMPKIN).getDefaultInstance());
-		addGreenhouseSeedRecipe(Items.MELON_SEEDS.getDefaultInstance(), Items.MELON.getDefaultInstance());
-		addGreenhouseSeedRecipe(Items.BEETROOT_SEEDS.getDefaultInstance(), Items.BEETROOT.getDefaultInstance());
+		addGreenhouseSeedRecipe(new ItemStack(Items.WHEAT_SEEDS), new ItemStack(Items.WHEAT));
+		addGreenhouseSeedRecipe(new ItemStack(Items.PUMPKIN_SEEDS), new ItemStack(Item.getItemFromBlock(Blocks.PUMPKIN)));
+		addGreenhouseSeedRecipe(new ItemStack(Items.MELON_SEEDS), new ItemStack(Items.MELON));
+		addGreenhouseSeedRecipe(new ItemStack(Items.BEETROOT_SEEDS), new ItemStack(Items.BEETROOT));
 		
-		addNetherGreenhouseRecipe(Items.NETHER_WART.getDefaultInstance());
+		addNetherGreenhouseRecipe(new ItemStack(Items.NETHER_WART));
 	}
 	
 	private static void addGreenhouseRecipe(ItemStack itemToGrow)

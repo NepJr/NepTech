@@ -1,39 +1,39 @@
 package nepjr.tech.proxy;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.event.HighTierEvent;
-import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.event.MaterialEvent;
-import gregtech.api.unification.ore.OrePrefix;
+import nepjr.tech.NTTags;
 import nepjr.tech.api.NepTechAPI;
 import nepjr.tech.api.block.IFertilizedDirtBlockStats;
 import nepjr.tech.api.unification.material.GTMaterialModifications;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.blocks.BlockFertilizedDirt;
 import nepjr.tech.common.blocks.NTMetaBlocks;
+import nepjr.tech.common.items.NTItemRingOfFlight;
 import nepjr.tech.common.items.NTMetaItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-import nepjr.tech.NTTags;
 
 @EventBusSubscriber(modid = NTTags.MODID)
 public class CommonProxy 
 {
+	@GameRegistry.ObjectHolder(NTTags.MODID + ":ring_of_flight")
+	public static final Item RING_OF_FLIGHT = null;
+	
 	public void preLoad()
 	{
 		initAbilities();
@@ -62,6 +62,8 @@ public class CommonProxy
     	IForgeRegistry<Item> registry = event.getRegistry();
     	
     	NTMetaItems.initSub();
+    	
+    	registry.register(new NTItemRingOfFlight().setRegistryName("ring_of_flight").setTranslationKey("ring_of_flight"));
     	
     	// Itemblocks
     	registry.register(createItemBlock(NTMetaBlocks.FERTILIZED_DIRT, VariantItemBlock::new));

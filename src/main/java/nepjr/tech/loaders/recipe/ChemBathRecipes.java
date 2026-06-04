@@ -11,6 +11,7 @@ import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.config.NTConfig;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Loader;
 
@@ -53,7 +54,7 @@ public class ChemBathRecipes
 				.buildAndRegister();
 			
 			CHEMICAL_BATH_RECIPES.recipeBuilder()
-				.notConsumable(Item.getItemFromBlock(Blocks.MYCELIUM).getDefaultInstance())
+				.notConsumable(new ItemStack(Item.getItemFromBlock(Blocks.MYCELIUM)))
 				.fluidInputs(Materials.Water.getFluid(1000))
 				.fluidOutputs(new FluidStack(ModFluids.fluidWitchwater, 1000))
 				.EUt(30)
