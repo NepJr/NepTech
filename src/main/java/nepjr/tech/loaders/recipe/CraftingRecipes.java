@@ -42,10 +42,10 @@ public class CraftingRecipes
 					"CPC",
 					"BHB",
 					"CPC",
-					'C', new UnificationEntry(OrePrefix.circuit, Tier.MV),
-					'B', MetaItems.CONVEYOR_MODULE_MV,
-					'P', MetaItems.ELECTRIC_PISTON_MV,
-					'H', MetaTileEntities.HULL[GTValues.MV].getStackForm());
+					'C', new UnificationEntry(OrePrefix.circuit, Tier.LV),
+					'B', MetaItems.CONVEYOR_MODULE_LV,
+					'P', MetaItems.ELECTRIC_PISTON_LV,
+					'H', MetaTileEntities.HULL[GTValues.LV].getStackForm());
 		}
 		
 		// Drone Launcher

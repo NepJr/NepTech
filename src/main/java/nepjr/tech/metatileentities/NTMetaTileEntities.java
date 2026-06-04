@@ -16,6 +16,7 @@ import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTParallel
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntitySterileMaintenanceHatch;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSquasher;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSqueezer;
+import nepjr.tech.metatileentities.steam.SteamAutoSifter;
 import nepjr.tech.metatileentities.steam.boiler.NTSteamSolarBoiler;
 import net.minecraftforge.fml.common.Loader;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamCrusher;
@@ -53,6 +54,9 @@ public class NTMetaTileEntities
 	public static NTSteamSolarBoiler STEAM_SOLAR_BOILER;
 	public static NTSteamSolarBoiler HP_STEAM_SOLAR_BOILER;
 	
+	public static SteamAutoSifter STEAM_AUTO_SIFTER;
+	public static SteamAutoSifter HP_STEAM_AUTO_SIFTER;
+	
 	// Multiblock Parts (7101 - 7500)
 	public static MetaTileEntityNTParallelHatch PARALLEL_HATCH_UHV;
 	public static MetaTileEntityNTParallelHatch PARALLEL_HATCH_UEV;
@@ -78,6 +82,8 @@ public class NTMetaTileEntities
 		}
 		
 		OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6003, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
+		STEAM_AUTO_SIFTER = registerMetaTileEntity(6004, new SteamAutoSifter(nepId("steam_auto_sifter"), false));
+		STEAM_AUTO_SIFTER = registerMetaTileEntity(6005, new SteamAutoSifter(nepId("steam_hp_auto_sifter"), true));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

@@ -28,6 +28,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MetaTileEntityAutoSifter extends RecipeMapMultiblockController
 {
@@ -68,6 +70,13 @@ public class MetaTileEntityAutoSifter extends RecipeMapMultiblockController
                 .addProgressLine(recipeMapWorkable.getProgressPercent());
     }
 
+    @SideOnly(Side.CLIENT)
+    @NotNull
+    @Override
+    protected ICubeRenderer getFrontOverlay() {
+        return Textures.SIFTER_OVERLAY;
+    }
+    
 	@Override
 	public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) 
 	{
