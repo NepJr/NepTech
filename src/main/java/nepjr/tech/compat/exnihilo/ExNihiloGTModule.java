@@ -123,11 +123,25 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 			dust = Items.GLOWSTONE_DUST;
 		}
 		
+		if(material == Materials.Redstone)
+		{
+			dust = Items.REDSTONE;
+		}
+		
 		if(dustOnly == true)
 		{
-			registry.register(material.getName(), new Color(material.getMaterialRGB()), 
-					new ItemInfo(dust, material.getId()),
-					new ItemInfo(dust, material.getId()));
+			if(material == Materials.Redstone || material == Materials.Glowstone)
+			{
+				registry.register(material.getName(), new Color(material.getMaterialRGB()), 
+						new ItemInfo(dust, 0),
+						new ItemInfo(dust, 0));
+			}
+			else
+			{
+				registry.register(material.getName(), new Color(material.getMaterialRGB()), 
+						new ItemInfo(dust, material.getId()),
+						new ItemInfo(dust, material.getId()));
+			}
 		}
 		else
 		{
