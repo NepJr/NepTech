@@ -52,8 +52,8 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		
 		// Gems
 		registerMaterial(registry, Materials.Ruby, true, true);
-		registerMaterial(registry, Materials.Emerald, true, true);
-		registerMaterial(registry, Materials.Diamond, true, true);
+		registerMaterial(registry, Materials.Emerald, false, true);
+		registerMaterial(registry, Materials.Diamond, false, true);
 		registerMaterial(registry, Materials.Sapphire, true, true);
 		registerMaterial(registry, Materials.Sodalite, true, true);
 		registerMaterial(registry, Materials.Spessartine, true, true);
@@ -126,6 +126,16 @@ public class ExNihiloGTModule implements IExNihiloCreatioModule, IRecipeDefaults
 		if(material == Materials.Redstone)
 		{
 			dust = Items.REDSTONE;
+		}
+		
+		if(material == Materials.Diamond)
+		{
+			ingot = Items.DIAMOND;
+		}
+		
+		if(material == Materials.Emerald)
+		{
+			ingot = Items.EMERALD;
 		}
 		
 		if(dustOnly == true)
