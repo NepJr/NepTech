@@ -55,7 +55,7 @@ public class AutoSifterRecipes
 		switch(blockToSift)
 		{
 		case SAND:
-			siftingRecipe.input("blockSand", 1);
+			siftingRecipe.input(Blocks.SAND);
 			break;
 		case GRAVEL:
 			siftingRecipe.input(Blocks.GRAVEL);
