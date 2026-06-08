@@ -26,7 +26,7 @@ public class GTMaterialModifications
 		Materials.Holmium.getProperties().ensureSet(PropertyKey.WIRE);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setVoltage((int) GTValues.V[GTValues.UEV]);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setLossPerBlock(0);
-		Materials.Holmium.getProperty(PropertyKey.WIRE).setAmperage(8);
+		Materials.Holmium.getProperty(PropertyKey.WIRE).setAmperage(16);
 		Materials.Holmium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
 		
 		Materials.Gallium.getProperties().ensureSet(PropertyKey.ORE);

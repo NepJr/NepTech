@@ -5,6 +5,7 @@ import exnihilocreatio.modules.AppliedEnergistics2;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
+import nepjr.tech.api.AE2Items;
 import nepjr.tech.api.recipes.NTRecipeMaps;
 import nepjr.tech.api.recipes.chance.output.NTChancedOutputLogic;
 import nepjr.tech.common.blocks.BlockGeneric.GenericType;
@@ -38,8 +39,20 @@ public class AutoSifterRecipes
 		
 		addSiftingRecipe(SiftingBlock.DUST, Materials.Calcite,
 											Materials.Gypsum,
-											Materials.Redstone,
-											Materials.Glowstone);
+											Materials.Redstone);
+		
+		addSiftingRecipe(SiftingBlock.NETHERRACK, Materials.Gold,
+												  Materials.Sulfur,
+												  Materials.Glowstone);
+		
+		NTRecipeMaps.AUTO_SIFTER.recipeBuilder()
+			.input(AppliedEnergistics2.skystoneCrushed)
+			.chancedOutputLogic(NTChancedOutputLogic.SINGLEITEM)
+			.chancedOutput(AE2Items.CHARGED_CERTUS, 5000, 0)
+			.chancedOutput(AE2Items.CERTUS_QUARTZ, 5000, 0)
+			.EUt(8)
+			.duration(100)
+			.buildAndRegister();
 	}
 	
 	private enum SiftingBlock
@@ -49,6 +62,7 @@ public class AutoSifterRecipes
 		DIRT,
 		DUST,
 		SLAG,
+		NETHERRACK,
 		SKY_STONE;
 	}
 	
@@ -75,10 +89,13 @@ public class AutoSifterRecipes
 		case SKY_STONE:
 			siftingRecipe.input(AppliedEnergistics2.skystoneCrushed);
 			break;
+		case NETHERRACK:
+			siftingRecipe.input(ModBlocks.netherrackCrushed);
+			break;
 		}
 		
 		siftingRecipe.EUt(8);
-		siftingRecipe.duration(200);
+		siftingRecipe.duration(100);
 		siftingRecipe.chancedOutputLogic(NTChancedOutputLogic.SINGLEITEM);
 		for (Material m : outputs)
 		{
@@ -110,6 +127,9 @@ public class AutoSifterRecipes
 			break;
 		case SKY_STONE:
 			siftingRecipe.input(AppliedEnergistics2.skystoneCrushed);
+			break;
+		case NETHERRACK:
+			siftingRecipe.input(ModBlocks.netherrackCrushed);
 			break;
 		}
 		

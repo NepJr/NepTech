@@ -14,6 +14,7 @@ import gregtech.common.blocks.BlockSteamCasing.SteamCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
+import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
@@ -323,5 +324,9 @@ public class CraftingRecipes
 					'H', MetaTileEntities.HULL[GTValues.UV].getStackForm(),
 					'Y', new UnificationEntry(OrePrefix.cableGtSingle, Materials.YttriumBariumCuprate));
 		}
+		
+		ModHandler.addShapelessRecipe("pulsating_iron_dust", OreDictUnifier.get(OrePrefix.dust, NTMaterials.PulsatingIron, 1),
+				new UnificationEntry(OrePrefix.dust, Materials.Iron),
+				new UnificationEntry(OrePrefix.dust, Materials.EnderPearl));
 	}
 }

@@ -15,18 +15,23 @@ import nepjr.tech.common.blocks.BlockFertilizedDirt;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTItemRingOfFlight;
 import nepjr.tech.common.items.NTMetaItems;
+import nepjr.tech.config.NTConfig;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 @EventBusSubscriber(modid = NTTags.MODID)
 public class CommonProxy 
@@ -50,10 +55,8 @@ public class CommonProxy
         NepTechAPI.FERTILIZED_DIRTS.put(Blocks.GRASS.getDefaultState(), UnregisteredFertilizerType.DIRT);
 	}
 	
-    @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) 
     {
-    	
     }
 
     @SubscribeEvent

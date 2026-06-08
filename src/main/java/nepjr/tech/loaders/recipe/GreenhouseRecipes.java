@@ -25,6 +25,12 @@ public class GreenhouseRecipes
 		
 		addGreenhouseTreeRecipe(new ItemStack(Item.getItemFromBlock(Blocks.SAPLING), 1, 3), // Jungle Trees
 								new ItemStack(Item.getItemFromBlock(Blocks.LOG), 1, 3));
+		
+		addGreenhouseTreeRecipe(new ItemStack(Item.getItemFromBlock(Blocks.SAPLING), 4, 5), // Dark Oak Trees
+								new ItemStack(Item.getItemFromBlock(Blocks.LOG2), 1, 1));
+		
+		addGreenhouseTreeRecipe(new ItemStack(Item.getItemFromBlock(Blocks.SAPLING), 1, 4), // Acacia Trees
+								new ItemStack(Item.getItemFromBlock(Blocks.LOG2), 1, 0));
 	
 		addGreenhouseTreeRecipe(new ItemStack(Item.getItemFromBlock(MetaBlocks.RUBBER_SAPLING), 1, 0), // Rubber wood
 								new ItemStack(Item.getItemFromBlock(MetaBlocks.RUBBER_LOG), 1, 0),
@@ -37,6 +43,7 @@ public class GreenhouseRecipes
 								new ItemStack(Item.getItemFromBlock(Blocks.RED_MUSHROOM_BLOCK), 1, 0));
 		
 		addGreenhouseRecipe(new ItemStack(Items.REEDS));
+		addGreenhouseRecipe(new ItemStack(Item.getItemFromBlock(Blocks.CACTUS), 1, 0));
 		addGreenhouseRecipe(new ItemStack(Items.POTATO));
 		addGreenhouseRecipe(new ItemStack(Items.POISONOUS_POTATO));
 		addGreenhouseRecipe(new ItemStack(Items.CARROT));

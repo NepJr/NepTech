@@ -42,6 +42,8 @@ dependencies {
 	implementation rfg.deobf("curse.maven:ae2-fluid-crafting-rework-623955:5751930")
 	implementation rfg.deobf("curse.maven:crazyae-1111042:6840104")
 	implementation rfg.deobf("curse.maven:baubles-227083:2518667")
+	implementation rfg.deobf("curse.maven:ender-core-ceu-1530852:8175092")
+	implementation rfg.deobf("curse.maven:enderio-ceu-1530854:8175097")
 	
 	api("codechicken:codechickenlib:3.2.3.358")
     api("com.cleanroommc:modularui:3.0.4") { transitive = false }

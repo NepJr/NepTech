@@ -9,6 +9,7 @@ import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import nepjr.tech.api.recipes.NTRecipeMaps;
 import nepjr.tech.api.recipes.chance.output.NTChancedOutputLogic;
+import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.items.NTMetaItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -19,7 +20,7 @@ public class AsteroidMiningRecipes
 {
 	public static void init()
 	{
-		addMiningRecipe(MiningType.BASIC_NOTCONSUMED, GTValues.LV, 16, 0, new ItemStack(Blocks.STONE), 
+		addMiningRecipe(MiningType.BASIC, GTValues.LV, 16, 0, new ItemStack(Blocks.STONE), 
 				OrePrefix.stone,
 				Materials.Marble,
 				Materials.GraniteBlack,
@@ -30,12 +31,12 @@ public class AsteroidMiningRecipes
 				Materials.Basalt
 				);
 		
-		addMiningRecipe(MiningType.BASIC_NOTCONSUMED, GTValues.LV, 16, -1, new ItemStack(Blocks.NETHERRACK),
+		addMiningRecipe(MiningType.BASIC, GTValues.LV, 16, -1, new ItemStack(Blocks.NETHERRACK),
 				new ItemStack(Blocks.NETHERRACK),
 				new ItemStack(Blocks.SOUL_SAND),
 				new ItemStack(Blocks.GLOWSTONE));
 		
-		addMiningRecipe(MiningType.ADVANCED_NOTCONSUMED, GTValues.EV, 16, 1, new ItemStack(Blocks.END_STONE),
+		addMiningRecipe(MiningType.ADVANCED, GTValues.EV, 16, 1, new ItemStack(Blocks.END_STONE),
 				new ItemStack(Blocks.END_STONE));
 		
 		addMiningRecipe(MiningType.BASIC, GTValues.LV, 1, 0, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Iron.getId()),
@@ -205,10 +206,21 @@ public class AsteroidMiningRecipes
 				Materials.Lepidolite,
 				Materials.Spodumene);
 		
+		addMiningRecipe(MiningType.ADVANCED, GTValues.LuV, 1, -1, NTMetaItems.NETHER_ORE_DATA.getStackForm(),
+				OrePrefix.oreNetherrack,
+				NTMaterials.Netherite,
+				Materials.NetherStar);
+		
+		addMiningRecipe(MiningType.ADVANCED, GTValues.ZPM, 1, 1, new ItemStack(Item.getByNameOrId("gregtech:meta_dust"), 1, Materials.Naquadah.getId()),
+				OrePrefix.ore,
+				Materials.Naquadah,
+				Materials.Naquadah,
+				Materials.Plutonium239);
+		
 		// Unique Recipes. I didn't want to bother adding a helper function for these so I'll just define them manually as of for right now
 		NTRecipeMaps.ASTEROID_MINING.recipeBuilder()
 			.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000))
-			.inputs(NTMetaItems.MINING_DRONE.getStackForm())
+			.notConsumable(NTMetaItems.MINING_DRONE.getStackForm())
 			.EUt(GTValues.VA[GTValues.EV])
 			.duration(180*20)
 			.input(OrePrefix.dust, Materials.Uranium235, 64)
@@ -221,9 +233,7 @@ public class AsteroidMiningRecipes
 	private enum MiningType
 	{
 		BASIC,
-		ADVANCED,
-		BASIC_NOTCONSUMED,
-		ADVANCED_NOTCONSUMED;
+		ADVANCED
 	}
 	
 	private static void addMiningRecipe(MiningType level, int tier, int circuitMeta, int dimension, ItemStack catalyst, OrePrefix prefix, Material... outputs)
@@ -232,25 +242,13 @@ public class AsteroidMiningRecipes
 		if(level == MiningType.ADVANCED)
 		{
 			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
-			recipe.inputs(NTMetaItems.MINING_DRONE.getStackForm());
 		}
 		if(level == MiningType.BASIC)
 		{
 			recipe.fluidInputs(Materials.RocketFuel.getFluid(4000));
-			recipe.inputs(NTMetaItems.MINING_DRONE.getStackForm());
 		}
 		
-		if(level == MiningType.ADVANCED_NOTCONSUMED)
-		{
-			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
-			recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
-		}
-		if(level == MiningType.BASIC_NOTCONSUMED)
-		{
-			recipe.fluidInputs(Materials.RocketFuel.getFluid(4000));
-			recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
-		}
-		
+		recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
 		recipe.notConsumable(catalyst);
 		
 		recipe.EUt(GTValues.VA[tier]);
@@ -273,24 +271,13 @@ public class AsteroidMiningRecipes
 		if(level == MiningType.ADVANCED)
 		{
 			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
-			recipe.inputs(NTMetaItems.MINING_DRONE.getStackForm());
 		}
 		if(level == MiningType.BASIC)
 		{
 			recipe.fluidInputs(Materials.RocketFuel.getFluid(4000));
-			recipe.inputs(NTMetaItems.MINING_DRONE.getStackForm());
 		}
 		
-		if(level == MiningType.ADVANCED_NOTCONSUMED)
-		{
-			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
-			recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
-		}
-		if(level == MiningType.BASIC_NOTCONSUMED)
-		{
-			recipe.fluidInputs(Materials.RocketFuel.getFluid(4000));
-			recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
-		}
+		recipe.notConsumable(NTMetaItems.MINING_DRONE.getStackForm());
 		recipe.notConsumable(catalyst);
 		recipe.EUt(GTValues.VA[tier]);
 		recipe.duration(180 * 20);

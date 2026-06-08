@@ -1,17 +1,22 @@
 package nepjr.tech.common.items;
 
+import static gregtech.api.GTValues.M;
+
+import gregtech.api.GregTechAPI;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.StandardMetaItem;
-import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.MarkerMaterials.Tier;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.api.unification.stack.MaterialStack;
 import nepjr.tech.common.items.behaviors.ColorSprayInfiniteBehaviour;
-
-import static gregtech.api.GTValues.M;
-
-import gregtech.api.GregTechAPI;
+import net.minecraft.item.EnumDyeColor;
+import net.minecraft.item.EnumRarity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionUtils;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class NTMetaItems 
 {
@@ -71,10 +76,15 @@ public class NTMetaItems
 	public static MetaItem<?>.MetaValueItem UNIVERSAL_CIRCUIT_OpV;
 	//public static MetaItem<?>.MetaValueItem UNIVERSAL_CIRCUIT_MAX;
 	
-	public static MetaItem<?>.MetaValueItem INFINITE_SPRAY_CAN;
+	public static MetaItem<?>.MetaValueItem INFINITE_SPRAY_SOLVENT;
+	public static final MetaItem<?>.MetaValueItem[] INFINITE_SPRAY_CAN_DYES = new MetaItem.MetaValueItem[EnumDyeColor.values().length];
 	
 	// Mining Drones
 	public static MetaItem<?>.MetaValueItem MINING_DRONE;
+	
+	// Ore Data
+	public static MetaItem<?>.MetaValueItem NETHER_ORE_DATA;
+
 	public static void init()
 	{
 		nepItems = new StandardMetaItem();
@@ -142,12 +152,23 @@ public class NTMetaItems
         UNIVERSAL_CIRCUIT_OpV = nepItems.addItem(38, "circuit.universal.opv").setUnificationData(OrePrefix.circuit, Tier.OpV);
         //UNIVERSAL_CIRCUIT_MAX = nepItems.addItem(39, "circuit.universal.max").setUnificationData(OrePrefix.circuit, Tier.MAX);
         
-        // Infinite spray can
-        INFINITE_SPRAY_CAN = nepItems.addItem(40, "spray.infinite")
-        		.addComponents(new ColorSprayInfiniteBehaviour())
-        		.setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        MINING_DRONE = nepItems.addItem(41, "mining_drone");        
         
-        MINING_DRONE = nepItems.addItem(41, "mining_drone");
-	}
+        // Infinite spray can stuff
+        INFINITE_SPRAY_SOLVENT = nepItems.addItem(40, "spray.infinite.solvent").setMaxStackSize(1)
+                .addComponents(new ColorSprayInfiniteBehaviour(-1))
+                .setRarity(EnumRarity.EPIC)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
+        for (int i = 0; i < EnumDyeColor.values().length; i++) {
+            INFINITE_SPRAY_CAN_DYES[i] = nepItems.addItem(42 + i, "spray.infinite.dyes." + EnumDyeColor.values()[i].getName())
+                    .setMaxStackSize(1)
+                    .addComponents(new ColorSprayInfiniteBehaviour(i))
+                    .setRarity(EnumRarity.EPIC)
+                    .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        }
+        
+        NETHER_ORE_DATA = nepItems.addItem(58, "nether_ore_data")
+        		.setRarity(EnumRarity.RARE);
+	}
 }

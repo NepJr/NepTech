@@ -11,6 +11,7 @@ import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.compat.exnihilo.ExNihiloGTModule;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.loaders.recipe.AE2Recipes;
+import nepjr.tech.loaders.recipe.AlloySmelterRecipes;
 import nepjr.tech.loaders.recipe.AssemblerRecipes;
 import nepjr.tech.loaders.recipe.AsslineRecipes;
 import nepjr.tech.loaders.recipe.AsteroidMiningRecipes;
@@ -18,6 +19,7 @@ import nepjr.tech.loaders.recipe.AutoSifterRecipes;
 import nepjr.tech.loaders.recipe.AutoclaveRecipes;
 import nepjr.tech.loaders.recipe.CentrifugeRecipes;
 import nepjr.tech.loaders.recipe.ChemBathRecipes;
+import nepjr.tech.loaders.recipe.ChemReactorRecipes;
 import nepjr.tech.loaders.recipe.CraftingRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.FormingPressRecipes;
@@ -45,6 +47,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 	 			  + "required-after:gcym;"
 	 			  + "after:ae2fc;"
 	 			  + "after:crazyae;"
+	 			  + "after:enderio;"
 	 			  + "before:exnihilocreatio;")
 public class NepTech {
 
@@ -80,7 +83,9 @@ public class NepTech {
     	if(NTConfig.neptech.enableGreenhouse) { GreenhouseRecipes.init(); }
     	if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio")) { AutoSifterRecipes.init(); }
     	AutoclaveRecipes.init();
+    	AlloySmelterRecipes.init();
     	ChemBathRecipes.init();
+    	ChemReactorRecipes.init();
     	CraftingRecipes.init();
     	// LaserEngraverRecipes.init();
     	FormingPressRecipes.init();

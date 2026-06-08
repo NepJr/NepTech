@@ -31,6 +31,16 @@ public class NTConfig
 		@Config.RequiresMcRestart
 		public boolean reworkedSteamSolarBoilers = true;
 		
+		@Config.Comment("How much steam does the Bronze Solar Boiler make per tick")
+		@Config.Name("Bronze Solar Boiler Output")
+		@Config.RequiresMcRestart
+		public int bronzeSolarBoilerOutput = 64;
+		
+		@Config.Comment("How much steam does the Steel Solar Boiler make per tick")
+		@Config.Name("Steel Solar Boiler Output")
+		@Config.RequiresMcRestart
+		public int steelSolarBoilerOutput = 128;
+		
 		@Config.Comment("Enable the reworked Steam Grinder and Steam Oven")
 		@Config.Name("Enable reworked Steam Grinder/Oven")
 		@Config.RequiresMcRestart
@@ -75,5 +85,10 @@ public class NTConfig
 		@Config.Name("Ex Nihilo Support")
 		@Config.RequiresMcRestart
 		public boolean exNihiloSupport = true;
+		
+		@Config.Comment("Enable EnderIO support")
+		@Config.Name("EnderIO Support")
+		@Config.RequiresMcRestart
+		public boolean enderIOSupport = true;
 	}
 }

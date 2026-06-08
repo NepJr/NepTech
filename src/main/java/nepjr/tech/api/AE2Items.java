@@ -39,6 +39,7 @@ public class AE2Items
 	
 	public static ItemStack FLUIX_CRYSTAL = getMaterialItem(7);
 	public static ItemStack CHARGED_CERTUS = getMaterialItem(1);
+	public static ItemStack CERTUS_QUARTZ = getMaterialItem(0);
 	public static ItemStack PURE_CERTUS = getMaterialItem(10);
 	public static ItemStack PURE_FLUIX = getMaterialItem(12);
 	public static ItemStack PURE_QUARTZ = getMaterialItem(11);

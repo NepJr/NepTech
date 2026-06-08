@@ -8,6 +8,7 @@ import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.metatileentities.steam.boiler.SteamBoiler;
+import nepjr.tech.config.NTConfig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
@@ -26,7 +27,7 @@ public class NTSteamSolarBoiler extends SteamBoiler
 
     @Override
     protected int getBaseSteamOutput() {
-        return isHighPressure ? 2560 : 1280;
+        return isHighPressure ? NTConfig.neptech.steelSolarBoilerOutput * 20 : NTConfig.neptech.bronzeSolarBoilerOutput * 20;
     }
 
     @Override

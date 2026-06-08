@@ -18,5 +18,12 @@ public class ForgeHammerRecipes
 			.EUt(16)
 			.duration(10)
 			.buildAndRegister();
+		
+		FORGE_HAMMER_RECIPES.recipeBuilder()
+			.input(Blocks.NETHERRACK)
+			.output(ModBlocks.netherrackCrushed)
+			.EUt(16)
+			.duration(10)
+			.buildAndRegister();
 	}
 }

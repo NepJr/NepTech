@@ -2,6 +2,7 @@ package nepjr.tech.common.items;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -12,6 +13,7 @@ public class NTItemRingOfFlight extends Item implements IBauble
 	public NTItemRingOfFlight()
 	{
 		this.setMaxStackSize(1);
+		this.setCreativeTab(CreativeTabs.MISC);
 	}
 	
 	@Override
@@ -26,7 +28,10 @@ public class NTItemRingOfFlight extends Item implements IBauble
 		if(entity instanceof EntityPlayer)
 		{
 			EntityPlayer player = (EntityPlayer) entity;
-			player.capabilities.allowFlying = true;
+			if(!player.capabilities.isCreativeMode)
+			{
+				player.capabilities.allowFlying = true;				
+			}
 		}
 	}
 
@@ -36,8 +41,11 @@ public class NTItemRingOfFlight extends Item implements IBauble
 		if(entity instanceof EntityPlayer)
 		{
 			EntityPlayer player = (EntityPlayer) entity;
-			player.capabilities.isFlying = false;
-			player.capabilities.allowFlying = false;
+			if(!player.capabilities.isCreativeMode)
+			{
+				player.capabilities.isFlying = false;
+				player.capabilities.allowFlying = false;
+			}
 		}
 	}
 }

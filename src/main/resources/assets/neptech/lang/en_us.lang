@@ -5,10 +5,19 @@ recipemap.auto_sifter.name=Automatic Sifting
 
 // Materials
 neptech.material.void_gas=Void Gas
-neptech.material.holmium=Holmium
 neptech.material.holminide=Holminide
 neptech.material.cryotheum=Cryotheum
 neptech.material.pyrotheum=Pyrotheum
+neptech.material.netherite=Netherite
+neptech.material.pulsating_iron=Pulsating Iron
+neptech.material.conductive_iron=Conductive Iron
+neptech.material.dark_steel=Dark Steel
+neptech.material.redstone_alloy=Redstone Alloy
+neptech.material.end_steel=End Steel
+neptech.material.electrical_steel=Electrical Steel
+neptech.material.soularium=Soularium
+neptech.material.energetic_alloy=Energetic Alloy
+neptech.material.vibrant_alloy=Vibrant Alloy
 
 // Machine tooltips n related shit
 neptech.machine.overkill_combustion_engine.tooltip.boost_regular=Supply §f1 L/s§7 of Cryotheum to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.
@@ -29,6 +38,95 @@ neptech.machine.parallel_hatch.uiv.name=Grand Parallel Hatch
 neptech.machine.parallel_hatch.uxv.name=Absurd Parallel Hatch
 neptech.machine.parallel_hatch.opv.name=Divine Parallel Hatch
 neptech.machine.maintenance_hatch_sterile_cleanroom_auto.name=Automatic Sterilized Filtration Maintenance Hatch
+
+// Energy Busses
+neptech.machine.energy_hatch.input_4a.lv.name=LV 4A Energy Hatch
+neptech.machine.energy_hatch.input_4a.mv.name=MV 4A Energy Hatch
+neptech.machine.energy_hatch.input_4a.hv.name=HV 4A Energy Hatch
+neptech.machine.energy_hatch.input_4a.uev.name=UEV 4A Energy Hatch
+neptech.machine.energy_hatch.input_4a.uiv.name=UIV 4A Energy Hatch
+neptech.machine.energy_hatch.input_4a.uxv.name=UXV 4A Energy Hatch
+neptech.machine.energy_hatch.input_4a.opv.name=OpV 4A Energy Hatch
+neptech.machine.energy_hatch.input_4a.max.name=MAX 4A Energy Hatch
+
+neptech.machine.energy_hatch.input_16a.lv.name=LV 16A Energy Hatch
+neptech.machine.energy_hatch.input_16a.mv.name=MV 16A Energy Hatch
+neptech.machine.energy_hatch.input_16a.hv.name=HV 16A Energy Hatch
+neptech.machine.energy_hatch.input_16a.ev.name=EV 16A Energy Hatch
+neptech.machine.energy_hatch.input_16a.uev.name=UEV 16A Energy Hatch
+neptech.machine.energy_hatch.input_16a.uiv.name=UIV 16A Energy Hatch
+neptech.machine.energy_hatch.input_16a.uxv.name=UXV 16A Energy Hatch
+neptech.machine.energy_hatch.input_16a.opv.name=OpV 16A Energy Hatch
+neptech.machine.energy_hatch.input_16a.max.name=MAX 16A Energy Hatch
+
+neptech.machine.energy_hatch.output_4a.lv.name=LV 4A Dynamo Hatch
+neptech.machine.energy_hatch.output_4a.mv.name=MV 4A Dynamo Hatch
+neptech.machine.energy_hatch.output_4a.hv.name=HV 4A Dynamo Hatch
+neptech.machine.energy_hatch.output_4a.uev.name=UEV 4A Dynamo Hatch
+neptech.machine.energy_hatch.output_4a.uiv.name=UIV 4A Dynamo Hatch
+neptech.machine.energy_hatch.output_4a.uxv.name=UXV 4A Dynamo Hatch
+neptech.machine.energy_hatch.output_4a.opv.name=OpV 4A Dynamo Hatch
+neptech.machine.energy_hatch.output_4a.max.name=MAX 4A Dynamo Hatch
+
+neptech.machine.energy_hatch.output_16a.lv.name=LV 16A Dynamo Hatch
+neptech.machine.energy_hatch.output_16a.mv.name=MV 16A Dynamo Hatch
+neptech.machine.energy_hatch.output_16a.hv.name=HV 16A Dynamo Hatch
+neptech.machine.energy_hatch.output_16a.ev.name=EV 16A Dynamo Hatch
+neptech.machine.energy_hatch.output_16a.uev.name=UEV 16A Dynamo Hatch
+neptech.machine.energy_hatch.output_16a.uiv.name=UIV 16A Dynamo Hatch
+neptech.machine.energy_hatch.output_16a.uxv.name=UXV 16A Dynamo Hatch
+neptech.machine.energy_hatch.output_16a.opv.name=OpV 16A Dynamo Hatch
+neptech.machine.energy_hatch.output_16a.max.name=MAX 16A Dynamo Hatch
+
+neptech.machine.substation_hatch.input.64a.lv.name=LV 64A Substation Energy Hatch
+neptech.machine.substation_hatch.input.64a.mv.name=MV 64A Substation Energy Hatch
+neptech.machine.substation_hatch.input.64a.hv.name=HV 64A Substation Energy Hatch
+neptech.machine.substation_hatch.input.64a.ev.name=EV 64A Substation Energy Hatch
+neptech.machine.substation_hatch.input.64a.uev.name=UEV 64A Substation Energy Hatch
+neptech.machine.substation_hatch.input.64a.uiv.name=UIV 64A Substation Energy Hatch
+neptech.machine.substation_hatch.input.64a.uxv.name=UXV 64A Substation Energy Hatch
+neptech.machine.substation_hatch.input.64a.opv.name=OpV 64A Substation Energy Hatch
+neptech.machine.substation_hatch.input.64a.max.name=MAX 64A Substation Energy Hatch
+
+neptech.machine.substation_hatch.output.64a.lv.name=LV 64A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.64a.mv.name=MV 64A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.64a.hv.name=HV 64A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.64a.ev.name=EV 64A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.64a.uev.name=UEV 64A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.64a.uiv.name=UIV 64A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.64a.uxv.name=UXV 64A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.64a.opv.name=OpV 64A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.64a.max.name=MAX 64A Substation Dynamo Hatch
+
+neptech.machine.substation_hatch.input.256a.lv.name=LV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.mv.name=MV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.hv.name=HV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.ev.name=EV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.iv.name=IV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.luv.name=LuV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.zpm.name=ZPM 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.uv.name=UV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.uhv.name=UHV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.uev.name=UEV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.uiv.name=UIV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.uxv.name=UXV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.opv.name=OpV 256A Substation Energy Hatch
+neptech.machine.substation_hatch.input.256a.max.name=MAX 256A Substation Energy Hatch
+
+neptech.machine.substation_hatch.output.256a.lv.name=LV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.mv.name=MV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.hv.name=HV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.ev.name=EV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.iv.name=IV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.luv.name=LuV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.zpm.name=ZPM 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.uv.name=UV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.uhv.name=UHV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.uev.name=UEV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.uiv.name=UIV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.uxv.name=UXV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.opv.name=OpV 256A Substation Dynamo Hatch
+neptech.machine.substation_hatch.output.256a.max.name=MAX 256A Substation Dynamo Hatch
 
 // Steam Machines
 neptech.machine.steam_smasher.name=Steam Smasher
@@ -54,9 +152,6 @@ tile.fertilized_dirt.advanced.name=Advanced Fertilized Dirt
 tile.fertilized_dirt.living.name=Living Fertilized Dirt
 tile.fertilized_dirt.extraterrestrial.name=Extraterrestrial Fertilized Dirt
 tile.fertilized_dirt.absurd.name=Absurd Fertilized Dirt
-
-// WIP Items
-metaitem.spray.infinite.name=[NYI] Infinite Spray Can
 
 // Non-meta Items
 item.ring_of_flight.name=Ring of Flight
@@ -106,6 +201,27 @@ metaitem.circuit.universal.max.name=Universal MAX Circuit
 
 // Meta Items
 metaitem.mining_drone.name=Mining Drone
+metaitem.spray.infinite.solvent.name=Infinite Spray Can (Solvent)
+metaitem.spray.infinite.dyes.white.name=Infinite Spray Can (White)
+metaitem.spray.infinite.dyes.orange.name=Infinite Spray Can (Orange)
+metaitem.spray.infinite.dyes.magenta.name=Infinite Spray Can (Magenta)
+metaitem.spray.infinite.dyes.light_blue.name=Infinite Spray Can (Light Blue)
+metaitem.spray.infinite.dyes.yellow.name=Infinite Spray Can (Yellow)
+metaitem.spray.infinite.dyes.lime.name=Infinite Spray Can (Lime)
+metaitem.spray.infinite.dyes.pink.name=Infinite Spray Can (Pink)
+metaitem.spray.infinite.dyes.gray.name=Infinite Spray Can (Gray)
+metaitem.spray.infinite.dyes.silver.name=Infinite Spray Can (Light Gray)
+metaitem.spray.infinite.dyes.cyan.name=Infinite Spray Can (Cyan)
+metaitem.spray.infinite.dyes.purple.name=Infinite Spray Can (Purple)
+metaitem.spray.infinite.dyes.blue.name=Infinite Spray Can (Blue)
+metaitem.spray.infinite.dyes.brown.name=Infinite Spray Can (Brown)
+metaitem.spray.infinite.dyes.green.name=Infinite Spray Can (Green)
+metaitem.spray.infinite.dyes.red.name=Infinite Spray Can (Red)
+metaitem.spray.infinite.dyes.black.name=Infinite Spray Can (Black)
+metaitem.nether_ore_data.name=Nether Ore Data
 
 // Meta Blocks
 tile.generic_blocks.slag.name=Slag
+
+// Misc
+neptech.change_logic.single_item=You only get a single output

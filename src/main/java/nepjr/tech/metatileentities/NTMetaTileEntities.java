@@ -3,26 +3,26 @@ package nepjr.tech.metatileentities;
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
 import static nepjr.tech.NepTech.nepId;
 
-import exnihilocreatio.ExNihiloCreatio;
-import gregicality.multiblocks.common.metatileentities.multiblockpart.MetaTileEntityParallelHatch;
 import gregtech.api.GTValues;
-import nepjr.tech.compat.exnihilo.ExNihiloGTModule;
+import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntitySubstationEnergyHatch;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityAutoSifter;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityDroneLauncher;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
 import nepjr.tech.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
+import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTEnergyHatch;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTParallelHatch;
+import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTSubstationEnergyHatch;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntitySterileMaintenanceHatch;
+import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamCrusher;
+import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamFuser;
+import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSmasher;
+import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSmelter;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSquasher;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSqueezer;
 import nepjr.tech.metatileentities.steam.SteamAutoSifter;
 import nepjr.tech.metatileentities.steam.boiler.NTSteamSolarBoiler;
 import net.minecraftforge.fml.common.Loader;
-import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamCrusher;
-import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamFuser;
-import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSmasher;
-import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSmelter;
 
 public class NTMetaTileEntities 
 {
@@ -65,6 +65,94 @@ public class NTMetaTileEntities
 	public static MetaTileEntityNTParallelHatch PARALLEL_HATCH_OpV;
 	public static MetaTileEntitySterileMaintenanceHatch STERILE_MAINTENANCE_HATCH;
 	
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_4A_LV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_4A_MV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_4A_HV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_4A_UEV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_4A_UIV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_4A_UXV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_4A_OpV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_4A_MAX;
+	
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_16A_LV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_16A_MV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_16A_HV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_16A_EV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_16A_UEV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_16A_UIV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_16A_UXV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_16A_OpV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_16A_MAX;
+	
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_INPUT_LV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_INPUT_MV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_INPUT_HV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_INPUT_EV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_INPUT_UEV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_INPUT_UIV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_INPUT_UXV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_INPUT_OpV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_INPUT_MAX;
+	
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_LV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_MV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_HV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_EV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_IV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_LuV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_ZPM;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_UV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_UHV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_UEV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_UIV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_UXV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_OpV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_INPUT_MAX;
+	
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_4A_LV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_4A_MV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_4A_HV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_4A_UEV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_4A_UIV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_4A_UXV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_4A_OpV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_4A_MAX;
+	
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_16A_LV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_16A_MV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_16A_HV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_16A_EV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_16A_UEV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_16A_UIV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_16A_UXV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_16A_OpV;
+	public static MetaTileEntityNTEnergyHatch ENERGY_OUTPUT_HATCH_16A_MAX;
+	
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_OUTPUT_LV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_OUTPUT_MV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_OUTPUT_HV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_OUTPUT_EV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_OUTPUT_UEV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_OUTPUT_UIV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_OUTPUT_UXV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_OUTPUT_OpV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_OUTPUT_MAX;
+	
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_LV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_MV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_HV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_EV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_IV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_LuV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_ZPM;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_UV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_UHV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_UEV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_UIV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_UXV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_OpV;
+	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_MAX;
+	
 	public static void register()
 	{
 		if(NTConfig.neptech.enableGreenhouse)
@@ -79,11 +167,11 @@ public class NTMetaTileEntities
 		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))
 		{
 			AUTO_SIFTER = registerMetaTileEntity(6002, new MetaTileEntityAutoSifter(nepId("auto_sifter")));
+			STEAM_AUTO_SIFTER = registerMetaTileEntity(6004, new SteamAutoSifter(nepId("steam_auto_sifter"), false));
+			HP_STEAM_AUTO_SIFTER = registerMetaTileEntity(6005, new SteamAutoSifter(nepId("hp_steam_auto_sifter"), true));
 		}
 		
 		OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6003, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
-		STEAM_AUTO_SIFTER = registerMetaTileEntity(6004, new SteamAutoSifter(nepId("steam_auto_sifter"), false));
-		HP_STEAM_AUTO_SIFTER = registerMetaTileEntity(6005, new SteamAutoSifter(nepId("hp_steam_auto_sifter"), true));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{
@@ -127,5 +215,94 @@ public class NTMetaTileEntities
 		{			
 			STERILE_MAINTENANCE_HATCH = registerMetaTileEntity(7106, new MetaTileEntitySterileMaintenanceHatch(nepId("maintenance_hatch_sterile_cleanroom_auto")));
 		}
+		
+		ENERGY_INPUT_HATCH_4A_LV = registerMetaTileEntity(7107, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_4a.lv"), GTValues.LV, 4, false));
+		ENERGY_INPUT_HATCH_4A_MV = registerMetaTileEntity(7108, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_4a.mv"), GTValues.MV, 4, false));
+		ENERGY_INPUT_HATCH_4A_HV = registerMetaTileEntity(7109, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_4a.hv"), GTValues.HV, 4, false));
+		ENERGY_INPUT_HATCH_4A_UEV = registerMetaTileEntity(7110, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_4a.uev"), GTValues.UEV, 4, false));
+		ENERGY_INPUT_HATCH_4A_UIV = registerMetaTileEntity(7111, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_4a.uiv"), GTValues.UIV, 4, false));
+		ENERGY_INPUT_HATCH_4A_UXV = registerMetaTileEntity(7112, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_4a.uxv"), GTValues.UXV, 4, false));
+		ENERGY_INPUT_HATCH_4A_OpV = registerMetaTileEntity(7113, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_4a.opv"), GTValues.OpV, 4, false));
+		ENERGY_INPUT_HATCH_4A_MAX = registerMetaTileEntity(7114, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_4a.max"), GTValues.MAX, 4, false));
+		
+		ENERGY_INPUT_HATCH_16A_LV = registerMetaTileEntity(7115, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_16a.lv"), GTValues.LV, 16, false));
+		ENERGY_INPUT_HATCH_16A_MV = registerMetaTileEntity(7116, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_16a.mv"), GTValues.MV, 16, false));
+		ENERGY_INPUT_HATCH_16A_HV = registerMetaTileEntity(7117, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_16a.hv"), GTValues.HV, 16, false));
+		ENERGY_INPUT_HATCH_16A_EV = registerMetaTileEntity(7118, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_16a.ev"), GTValues.EV, 16, false));
+		ENERGY_INPUT_HATCH_16A_UEV = registerMetaTileEntity(7119, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_16a.uev"), GTValues.UEV, 16, false));
+		ENERGY_INPUT_HATCH_16A_UIV = registerMetaTileEntity(7120, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_16a.uiv"), GTValues.UIV, 16, false));
+		ENERGY_INPUT_HATCH_16A_UXV = registerMetaTileEntity(7121, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_16a.uxv"), GTValues.UXV, 16, false));
+		ENERGY_INPUT_HATCH_16A_OpV = registerMetaTileEntity(7122, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_16a.opv"), GTValues.OpV, 16, false));
+		ENERGY_INPUT_HATCH_16A_MAX = registerMetaTileEntity(7123, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.input_16a.max"), GTValues.MAX, 16, false));
+		
+		ENERGY_OUTPUT_HATCH_4A_LV = registerMetaTileEntity(7124, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_4a.lv"), GTValues.LV, 4, true));
+		ENERGY_OUTPUT_HATCH_4A_MV = registerMetaTileEntity(7125, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_4a.mv"), GTValues.MV, 4, true));
+		ENERGY_OUTPUT_HATCH_4A_HV = registerMetaTileEntity(7126, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_4a.hv"), GTValues.HV, 4, true));
+		ENERGY_OUTPUT_HATCH_4A_UEV = registerMetaTileEntity(7127, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_4a.uev"), GTValues.UEV, 4, true));
+		ENERGY_OUTPUT_HATCH_4A_UIV = registerMetaTileEntity(7128, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_4a.uiv"), GTValues.UIV, 4, true));
+		ENERGY_OUTPUT_HATCH_4A_UXV = registerMetaTileEntity(7129, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_4a.uxv"), GTValues.UXV, 4, true));
+		ENERGY_OUTPUT_HATCH_4A_OpV = registerMetaTileEntity(7130, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_4a.opv"), GTValues.OpV, 4, true));
+		ENERGY_OUTPUT_HATCH_4A_MAX = registerMetaTileEntity(7131, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_4a.max"), GTValues.MAX, 4, true));
+		
+		ENERGY_OUTPUT_HATCH_16A_LV = registerMetaTileEntity(7132, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_16a.lv"), GTValues.LV, 16, true));
+		ENERGY_OUTPUT_HATCH_16A_MV = registerMetaTileEntity(7133, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_16a.mv"), GTValues.MV, 16, true));
+		ENERGY_OUTPUT_HATCH_16A_HV = registerMetaTileEntity(7134, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_16a.hv"), GTValues.HV, 16, true));
+		ENERGY_OUTPUT_HATCH_16A_EV = registerMetaTileEntity(7135, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_16a.ev"), GTValues.EV, 16, true));
+		ENERGY_OUTPUT_HATCH_16A_UEV = registerMetaTileEntity(7136, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_16a.uev"), GTValues.UEV, 16, true));
+		ENERGY_OUTPUT_HATCH_16A_UIV = registerMetaTileEntity(7137, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_16a.uiv"), GTValues.UIV, 16, true));
+		ENERGY_OUTPUT_HATCH_16A_UXV = registerMetaTileEntity(7138, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_16a.uxv"), GTValues.UXV, 16, true));
+		ENERGY_OUTPUT_HATCH_16A_OpV = registerMetaTileEntity(7139, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_16a.opv"), GTValues.OpV, 16, true));
+		ENERGY_OUTPUT_HATCH_16A_MAX = registerMetaTileEntity(7140, new MetaTileEntityNTEnergyHatch(nepId("energy_hatch.output_16a.max"), GTValues.MAX, 16, true));
+		
+		SUBSTATION_ENERGY_INPUT_LV = registerMetaTileEntity(7141, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.64a.lv"), GTValues.LV, 64, false));
+		SUBSTATION_ENERGY_INPUT_MV = registerMetaTileEntity(7142, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.64a.mv"), GTValues.MV, 64, false));
+		SUBSTATION_ENERGY_INPUT_HV = registerMetaTileEntity(7143, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.64a.hv"), GTValues.HV, 64, false));
+		SUBSTATION_ENERGY_INPUT_EV = registerMetaTileEntity(7144, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.64a.ev"), GTValues.EV, 64, false));
+		SUBSTATION_ENERGY_INPUT_UEV = registerMetaTileEntity(7145, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.64a.uev"), GTValues.UEV, 64, false));
+		SUBSTATION_ENERGY_INPUT_UIV = registerMetaTileEntity(7146, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.64a.uiv"), GTValues.UIV, 64, false));
+		SUBSTATION_ENERGY_INPUT_UXV = registerMetaTileEntity(7147, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.64a.uxv"), GTValues.UXV, 64, false));
+		SUBSTATION_ENERGY_INPUT_OpV = registerMetaTileEntity(7148, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.64a.opv"), GTValues.OpV, 64, false));
+		SUBSTATION_ENERGY_INPUT_MAX = registerMetaTileEntity(7149, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.64a.max"), GTValues.MAX, 64, false));
+	
+		SUBSTATION_ENERGY_OUTPUT_LV = registerMetaTileEntity(7150, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.64a.lv"), GTValues.LV, 64, true));
+		SUBSTATION_ENERGY_OUTPUT_MV = registerMetaTileEntity(7151, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.64a.mv"), GTValues.MV, 64, true));
+		SUBSTATION_ENERGY_OUTPUT_HV = registerMetaTileEntity(7152, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.64a.hv"), GTValues.HV, 64, true));
+		SUBSTATION_ENERGY_OUTPUT_EV = registerMetaTileEntity(7153, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.64a.ev"), GTValues.EV, 64, true));
+		SUBSTATION_ENERGY_OUTPUT_UEV = registerMetaTileEntity(7154, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.64a.uev"), GTValues.UEV, 64, true));
+		SUBSTATION_ENERGY_OUTPUT_UIV = registerMetaTileEntity(7155, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.64a.uiv"), GTValues.UIV, 64, true));
+		SUBSTATION_ENERGY_OUTPUT_UXV = registerMetaTileEntity(7156, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.64a.uxv"), GTValues.UXV, 64, true));
+		SUBSTATION_ENERGY_OUTPUT_OpV = registerMetaTileEntity(7157, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.64a.opv"), GTValues.OpV, 64, true));
+		SUBSTATION_ENERGY_OUTPUT_MAX = registerMetaTileEntity(7158, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.64a.max"), GTValues.MAX, 64, true));
+	
+		SUBSTATION_ENERGY_SUPER_INPUT_LV = registerMetaTileEntity(7159, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.lv"), GTValues.LV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_MV = registerMetaTileEntity(7160, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.mv"), GTValues.MV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_HV = registerMetaTileEntity(7161, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.hv"), GTValues.HV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_EV = registerMetaTileEntity(7162, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.ev"), GTValues.EV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_IV = registerMetaTileEntity(7163, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.iv"), GTValues.IV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_LuV = registerMetaTileEntity(7164, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.luv"), GTValues.LuV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_ZPM = registerMetaTileEntity(7165, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.zpm"), GTValues.ZPM, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_UV = registerMetaTileEntity(7166, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.uv"), GTValues.UV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_UHV = registerMetaTileEntity(7167, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.uhv"), GTValues.UHV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_UEV = registerMetaTileEntity(7168, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.uev"), GTValues.UEV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_UIV = registerMetaTileEntity(7169, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.uiv"), GTValues.UIV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_UXV = registerMetaTileEntity(7170, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.uxv"), GTValues.UXV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_OpV = registerMetaTileEntity(7171, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.opv"), GTValues.OpV, 256, false));
+		SUBSTATION_ENERGY_SUPER_INPUT_MAX = registerMetaTileEntity(7172, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.input.256a.max"), GTValues.MAX, 256, false));
+	
+		SUBSTATION_ENERGY_SUPER_OUTPUT_LV = registerMetaTileEntity(7173, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.lv"), GTValues.LV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_MV = registerMetaTileEntity(7174, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.mv"), GTValues.MV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_HV = registerMetaTileEntity(7175, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.hv"), GTValues.HV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_EV = registerMetaTileEntity(7176, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.ev"), GTValues.EV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_IV = registerMetaTileEntity(7177, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.iv"), GTValues.IV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_LuV = registerMetaTileEntity(7178, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.luv"), GTValues.LuV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_ZPM = registerMetaTileEntity(7179, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.zpm"), GTValues.ZPM, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_UV = registerMetaTileEntity(7180, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.uv"), GTValues.UV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_UHV = registerMetaTileEntity(7181, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.uhv"), GTValues.UHV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_UEV = registerMetaTileEntity(7182, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.uev"), GTValues.UEV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_UIV = registerMetaTileEntity(7183, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.uiv"), GTValues.UIV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_UXV = registerMetaTileEntity(7184, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.uxv"), GTValues.UXV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_OpV = registerMetaTileEntity(7185, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.opv"), GTValues.OpV, 256, true));
+		SUBSTATION_ENERGY_SUPER_OUTPUT_MAX = registerMetaTileEntity(7186, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.max"), GTValues.MAX, 256, true));
+
 	}
 }

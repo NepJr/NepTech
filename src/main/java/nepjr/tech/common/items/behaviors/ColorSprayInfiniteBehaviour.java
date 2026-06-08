@@ -10,7 +10,9 @@ import gregtech.api.items.metaitem.stats.IItemBehaviour;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.pipenet.tile.IPipeTile;
+import gregtech.api.util.GradientUtil;
 import gregtech.api.util.Mods;
+import gregtech.common.items.behaviors.AbstractUsableBehaviour;
 import gregtech.core.sound.GTSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
@@ -34,34 +36,19 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
 public class ColorSprayInfiniteBehaviour implements IItemBehaviour { 
-    private EnumDyeColor[] colors = EnumDyeColor.values();
-    private int colorNum = 0;
-    private EnumDyeColor color = colors[0];
-    
-    public ColorSprayInfiniteBehaviour() 
-    {
+    private final EnumDyeColor color;
+    public ColorSprayInfiniteBehaviour(int color) {
+        EnumDyeColor[] colors = EnumDyeColor.values();
+        this.color = color >= colors.length || color < 0 ? null : colors[color];
     }
-
+    
     @Override
     public ActionResult<ItemStack> onItemRightClick(@NotNull World world, @NotNull EntityPlayer player, EnumHand hand) 
     {
     	ItemStack stack = player.getHeldItem(hand);
         if(!world.isRemote && player.isSneaking())
         {
-        	if(colorNum == 15)
-        		colorNum = -1;
-        	else
-        		colorNum++;
-        	if(colorNum == -1)
-        	{
-        		this.color = null;
-        		player.sendStatusMessage(new TextComponentTranslation("spray.solvent"), true);
-        	}
-        	else
-        	{
-        		this.color = EnumDyeColor.values()[colorNum];
-        		player.sendStatusMessage(new TextComponentTranslation("spray.can.dyes." + EnumDyeColor.values()[colorNum].getName()), true);
-        	}
+        	
         	return ActionResult.newResult(EnumActionResult.PASS, player.getHeldItem(hand));
         }
         return ActionResult.newResult(EnumActionResult.SUCCESS, stack);
@@ -125,8 +112,8 @@ public class ColorSprayInfiniteBehaviour implements IItemBehaviour {
         return false;
     }
 
-    @SuppressWarnings("unchecked, rawtypes")
-    private static boolean tryStripBlockColor(EntityPlayer player, World world, BlockPos pos, Block block,
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	private static boolean tryStripBlockColor(EntityPlayer player, World world, BlockPos pos, Block block,
                                               EnumFacing side) {
         // MC special cases
         if (block == Blocks.STAINED_GLASS) {
