@@ -9,7 +9,10 @@ import gregtech.common.blocks.BlockSteamCasing.SteamCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
+import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
+import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 
 public class AssemblerRecipes 
 {
@@ -243,5 +246,25 @@ public class AssemblerRecipes
 			.duration(400)
 			.EUt(GTValues.VA[GTValues.ULV])
 			.buildAndRegister();
+		
+		// Infinite spray can time!'
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(Items.NETHER_STAR, 64)
+			.inputs(MetaItems.SPRAY_SOLVENT.getStackForm())
+			.output(NTMetaItems.INFINITE_SPRAY_SOLVENT)
+			.EUt(GTValues.VA[GTValues.EV])
+			.duration(200)
+			.buildAndRegister();
+		
+		for (int i = 0; i < EnumDyeColor.values().length; i++) {
+			ASSEMBLER_RECIPES.recipeBuilder()
+				.input(Items.NETHER_STAR, 64)
+				.inputs(MetaItems.SPRAY_CAN_DYES[i].getStackForm())
+				.output(NTMetaItems.INFINITE_SPRAY_CAN_DYES[i])
+				.EUt(GTValues.VA[GTValues.EV])
+				.duration(200)
+				.buildAndRegister();
+		}
 	}
 }
