@@ -99,7 +99,6 @@ public class NepTech {
     public void init(FMLInitializationEvent event)
     {
     	RemovalRecipes.init();
-    	// if(NTConfig.modcompat.enableAE2Recipes && Loader.isModLoaded("appliedenergistics2")) { AE2Recipes.init(); }
     	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
     	if(NTConfig.neptech.enableGreenhouse) { GreenhouseRecipes.init(); }
     	//if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio")) { AutoSifterRecipes.init(); }
