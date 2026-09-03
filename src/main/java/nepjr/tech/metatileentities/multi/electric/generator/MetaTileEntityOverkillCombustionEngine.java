@@ -70,7 +70,7 @@ public class MetaTileEntityOverkillCombustionEngine extends MetaTileEntityLargeC
 	@SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
-        return Textures.LARGE_COMBUSTION_ENGINE_OVERLAY;
+        return Textures.STURDY_HSSE_CASING;
     }
 
     @SideOnly(Side.CLIENT)

@@ -1,5 +1,6 @@
 package nepjr.tech.proxy;
 
+import nepjr.tech.client.NTTextures;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -9,6 +10,12 @@ import net.minecraftforge.fml.relauncher.Side;
 @EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy
 {
+	@Override
+	public void preLoad()
+	{
+		super.preLoad();
+		NTTextures.preInit();
+	}
 	@Override
 	public boolean isServerSide()
 	{

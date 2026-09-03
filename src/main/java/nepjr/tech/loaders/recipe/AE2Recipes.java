@@ -5,28 +5,21 @@ import static nepjr.tech.api.AE2Items.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import appeng.api.AEApi;
 import appeng.api.features.IInscriberRecipe;
-import dev.beecube31.crazyae2.core.CrazyAE;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials.Color;
 import gregtech.api.unification.material.MarkerMaterials.Tier;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
-import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.loaders.recipe.LaserEngraverRecipes.Wafers;
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;

@@ -69,26 +69,36 @@ public class NTConfig
 		@Config.Comment("Changes various AE2 Recipes to be more Gregified")
 		@Config.Name("Change AE2 Recipes")
 		@Config.RequiresMcRestart
+		@Deprecated
 		public boolean enableAE2Recipes = true;
 		
 		@Config.Comment("Changes various AE2 Fluid Crafting to be more Gregified")
 		@Config.Name("Change AE2 Fluid Crafting Recipes")
 		@Config.RequiresMcRestart
+		@Deprecated
 		public boolean enableAE2FCRecipes = true;
 		
 		@Config.Comment("Changes various CrazyAE Recipes to be more Gregified")
 		@Config.Name("Change CrazyAE Recipes")
 		@Config.RequiresMcRestart
+		@Deprecated
 		public boolean enableCrazyAERecipes = true;
 		
 		@Config.Comment("Enable Ex Nihilo support")
 		@Config.Name("Ex Nihilo Support")
 		@Config.RequiresMcRestart
+		@Deprecated
 		public boolean exNihiloSupport = true;
 		
-		@Config.Comment("Enable EnderIO support")
-		@Config.Name("EnderIO Support")
+//		@Config.Comment("Enable EnderIO support")
+//		@Config.Name("EnderIO Support")
+//		@Config.RequiresMcRestart
+//		@Deprecated
+//		public boolean enderIOSupport = true;
+		
+		@Config.Comment("Enable support for Mystical Agriculture")
+		@Config.Name("Mystical Agriculture Support")
 		@Config.RequiresMcRestart
-		public boolean enderIOSupport = true;
+		public boolean mysticalAgricultureSupport = true;
 	}
 }

@@ -4,14 +4,13 @@ import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTile
 import static nepjr.tech.NepTech.nepId;
 
 import gregtech.api.GTValues;
-import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntitySubstationEnergyHatch;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityAutoSifter;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityDroneLauncher;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishBlastFurnace;
 import nepjr.tech.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTEnergyHatch;
-import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTParallelHatch;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTSubstationEnergyHatch;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntitySterileMaintenanceHatch;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamCrusher;
@@ -25,12 +24,13 @@ import nepjr.tech.metatileentities.steam.boiler.NTSteamSolarBoiler;
 import net.minecraftforge.fml.common.Loader;
 
 public class NTMetaTileEntities 
-{
+{	
 	// Electric Multiblocks (6000 - 7000)
 	public static MetaTileEntityGreenhouse GREENHOUSE;
 	public static MetaTileEntityDroneLauncher DRONE_LAUNCHER;
 	public static MetaTileEntityAutoSifter AUTO_SIFTER;
 	public static MetaTileEntityOverkillCombustionEngine OVERKILL_COMBUSTION_ENGINE;
+	public static MetaTileEntityHellishBlastFurnace HELLISH_BLAST_FURNACE;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -58,11 +58,6 @@ public class NTMetaTileEntities
 	public static SteamAutoSifter HP_STEAM_AUTO_SIFTER;
 	
 	// Multiblock Parts (7101 - 7500)
-	public static MetaTileEntityNTParallelHatch PARALLEL_HATCH_UHV;
-	public static MetaTileEntityNTParallelHatch PARALLEL_HATCH_UEV;
-	public static MetaTileEntityNTParallelHatch PARALLEL_HATCH_UIV;
-	public static MetaTileEntityNTParallelHatch PARALLEL_HATCH_UXV;
-	public static MetaTileEntityNTParallelHatch PARALLEL_HATCH_OpV;
 	public static MetaTileEntitySterileMaintenanceHatch STERILE_MAINTENANCE_HATCH;
 	
 	public static MetaTileEntityNTEnergyHatch ENERGY_INPUT_HATCH_4A_LV;
@@ -153,8 +148,9 @@ public class NTMetaTileEntities
 	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_OpV;
 	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_MAX;
 	
+	@SuppressWarnings("deprecation")
 	public static void register()
-	{
+	{	
 		if(NTConfig.neptech.enableGreenhouse)
 		{
 			GREENHOUSE = registerMetaTileEntity(6000, new MetaTileEntityGreenhouse(nepId("greenhouse")));			
@@ -164,14 +160,16 @@ public class NTMetaTileEntities
 			DRONE_LAUNCHER = registerMetaTileEntity(6001, new MetaTileEntityDroneLauncher(nepId("drone_launcher")));
 		}
 		
+//		// TODO: Move Ex Nihilo compat to a seperate mod.
 		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))
 		{
 			AUTO_SIFTER = registerMetaTileEntity(6002, new MetaTileEntityAutoSifter(nepId("auto_sifter")));
-			STEAM_AUTO_SIFTER = registerMetaTileEntity(6004, new SteamAutoSifter(nepId("steam_auto_sifter"), false));
-			HP_STEAM_AUTO_SIFTER = registerMetaTileEntity(6005, new SteamAutoSifter(nepId("hp_steam_auto_sifter"), true));
+			STEAM_AUTO_SIFTER = registerMetaTileEntity(7015, new SteamAutoSifter(nepId("steam_auto_sifter"), false));
+			HP_STEAM_AUTO_SIFTER = registerMetaTileEntity(7016, new SteamAutoSifter(nepId("hp_steam_auto_sifter"), true));
 		}
 		
 		OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6003, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
+		HELLISH_BLAST_FURNACE = registerMetaTileEntity(6004, new MetaTileEntityHellishBlastFurnace(nepId("hellish_blast_furnace")));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{
@@ -204,12 +202,6 @@ public class NTMetaTileEntities
 			STEAM_SOLAR_BOILER = registerMetaTileEntity(7013, new NTSteamSolarBoiler(nepId("steam_solar_boiler"), false));
 			HP_STEAM_SOLAR_BOILER = registerMetaTileEntity(7014, new NTSteamSolarBoiler(nepId("hp_steam_solar_boiler"), true));		
 		}
-		
-		PARALLEL_HATCH_UHV = registerMetaTileEntity(7101, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.uhv"), GTValues.UHV));
-		PARALLEL_HATCH_UEV = registerMetaTileEntity(7102, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.uev"), GTValues.UEV));
-		PARALLEL_HATCH_UIV = registerMetaTileEntity(7103, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.uiv"), GTValues.UIV));
-		PARALLEL_HATCH_UXV = registerMetaTileEntity(7104, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.uxv"), GTValues.UXV));
-		PARALLEL_HATCH_OpV = registerMetaTileEntity(7105, new MetaTileEntityNTParallelHatch(nepId("parallel_hatch.opv"), GTValues.OpV));
 		
 		if(NTConfig.neptech.enableSterileCleaningHatch)
 		{			
@@ -303,6 +295,5 @@ public class NTMetaTileEntities
 		SUBSTATION_ENERGY_SUPER_OUTPUT_UXV = registerMetaTileEntity(7184, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.uxv"), GTValues.UXV, 256, true));
 		SUBSTATION_ENERGY_SUPER_OUTPUT_OpV = registerMetaTileEntity(7185, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.opv"), GTValues.OpV, 256, true));
 		SUBSTATION_ENERGY_SUPER_OUTPUT_MAX = registerMetaTileEntity(7186, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.max"), GTValues.MAX, 256, true));
-
 	}
 }

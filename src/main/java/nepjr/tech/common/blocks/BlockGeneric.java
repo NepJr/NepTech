@@ -15,7 +15,7 @@ public class BlockGeneric extends VariantActiveBlock<BlockGeneric.GenericType>
         setHardness(5.0f);
         setResistance(10.0f);
         setSoundType(SoundType.STONE);
-        setHarvestLevel(ToolClasses.PICKAXE, 2);
+        setHarvestLevel(ToolClasses.WRENCH, 2);
         setDefaultState(getState(GenericType.SLAG));
 	}
 	

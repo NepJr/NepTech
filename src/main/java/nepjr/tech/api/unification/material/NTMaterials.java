@@ -61,7 +61,7 @@ public class NTMaterials
 				.cableProperties(V[LuV], 16, 5)
 				.blast(builder -> builder
 						.temp(5000, GasTier.HIGH)
-						.blastStats(VA[LuV], 400))
+						.blastStats(VA[IV], 400))
 				.addOreByproducts(Materials.Naquadah)
 				.color(0x4b4042)
 				.build();

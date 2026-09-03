@@ -15,23 +15,27 @@ import nepjr.tech.common.blocks.BlockFertilizedDirt;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTItemRingOfFlight;
 import nepjr.tech.common.items.NTMetaItems;
-import nepjr.tech.config.NTConfig;
+import nepjr.tech.world.BiomeRubberForest;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.IStringSerializable;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.config.Config.Type;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeManager;
+import net.minecraftforge.common.BiomeManager.BiomeEntry;
+import net.minecraftforge.common.BiomeManager.BiomeType;
+import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 @EventBusSubscriber(modid = NTTags.MODID)
 public class CommonProxy 
@@ -39,9 +43,14 @@ public class CommonProxy
 	@GameRegistry.ObjectHolder(NTTags.MODID + ":ring_of_flight")
 	public static final Item RING_OF_FLIGHT = null;
 	
+	public static BiomeRubberForest RUBBER_FOREST;
+	
 	public void preLoad()
 	{
 		initAbilities();
+		
+		RUBBER_FOREST = new BiomeRubberForest();
+		RUBBER_FOREST.setRegistryName("rubber_forest");
 	}
 	
 	private void initAbilities()
@@ -58,6 +67,16 @@ public class CommonProxy
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) 
     {
     }
+    
+    
+    @SubscribeEvent
+    public static void syncConfig(ConfigChangedEvent.OnConfigChangedEvent event)
+    {
+    	if(event.getModID().equals(NTTags.MODID))
+    	{
+    		ConfigManager.sync(NTTags.MODID, Type.INSTANCE);
+    	}
+    }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) 
@@ -66,11 +85,13 @@ public class CommonProxy
     	
     	NTMetaItems.initSub();
     	
+    	// TODO: move to its own mod
     	registry.register(new NTItemRingOfFlight().setRegistryName("ring_of_flight").setTranslationKey("ring_of_flight"));
     	
     	// Itemblocks
     	registry.register(createItemBlock(NTMetaBlocks.FERTILIZED_DIRT, VariantItemBlock::new));
     	registry.register(createItemBlock(NTMetaBlocks.GENERIC_BLOCKS, VariantItemBlock::new));
+    	registry.register(createItemBlock(NTMetaBlocks.NT_CASINGS, VariantItemBlock::new));
     }
     
     // Taken from GYCM
@@ -87,6 +108,19 @@ public class CommonProxy
     	
     	registry.register(NTMetaBlocks.FERTILIZED_DIRT);
     	registry.register(NTMetaBlocks.GENERIC_BLOCKS);
+    	registry.register(NTMetaBlocks.NT_CASINGS);
+    }
+    
+    @SubscribeEvent
+    public static void registerBiomes(RegistryEvent.Register<Biome> event)
+    {
+    	IForgeRegistry<Biome> registry = event.getRegistry();
+    	
+    	registry.register(RUBBER_FOREST);
+    	
+    	BiomeDictionary.addTypes(RUBBER_FOREST, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.SPOOKY, BiomeDictionary.Type.DENSE);
+    	BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(RUBBER_FOREST, 10));
+		BiomeManager.addSpawnBiome(RUBBER_FOREST);
     }
 
     @SubscribeEvent

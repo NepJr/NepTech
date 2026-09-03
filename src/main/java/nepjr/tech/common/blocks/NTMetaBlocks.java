@@ -18,6 +18,7 @@ public class NTMetaBlocks
 	
 	public static BlockFertilizedDirt FERTILIZED_DIRT;
 	public static BlockGeneric GENERIC_BLOCKS;
+	public static BlockNTCasings NT_CASINGS;
 	
 	public static void init()
 	{
@@ -26,6 +27,9 @@ public class NTMetaBlocks
 		
 		GENERIC_BLOCKS = new BlockGeneric();
 		GENERIC_BLOCKS.setRegistryName("generic_blocks");
+		
+		NT_CASINGS = new BlockNTCasings();
+		NT_CASINGS.setRegistryName("nt_casing_blocks");
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -36,6 +40,8 @@ public class NTMetaBlocks
 		
 		GENERIC_BLOCKS.onModelRegister();
 		registerItemModel(GENERIC_BLOCKS);
+		
+		registerItemModel(NT_CASINGS);
 	}
 	
 	// Taken from GYCM

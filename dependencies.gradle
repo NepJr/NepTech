@@ -54,7 +54,6 @@ dependencies {
     api rfg.deobf("curse.maven:ctm-267602:2915363") // CTM 1.0.2.31
 	
 	api("gregtech:gregtech:2.8.10-beta"), { transitive = false } // This needs to be false, otherwise it pulls in a version of AE2 incompatible with AE2-FCR
-	api("gregicality:GregicalityMultiblocks:1.2.11"), { transitive = false }
 	
 	// Ex Nihilo Creatio support
 	implementation rfg.deobf("curse.maven:ex-nihilo-creatio-274456:2817545")
