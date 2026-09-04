@@ -1,5 +1,8 @@
 package nepjr.tech.api.recipes;
 
+import static gregtech.api.GTValues.IV;
+import static gregtech.api.GTValues.VA;
+
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget.MoveType;
 import gregtech.api.recipes.RecipeMap;
@@ -28,4 +31,12 @@ public class NTRecipeMaps
 			new SimpleRecipeBuilder(), false)
 						.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, MoveType.HORIZONTAL)
 						.setSound(SoundEvents.BLOCK_SAND_PLACE);
+	
+	@ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> ELECTRIC_IMPLOSION_RECIPES = new RecipeMap<>("electric_implosion_compressor", 3,
+            2, 0, 0, new SimpleRecipeBuilder().duration(200).EUt(VA[IV]), false)
+                    .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
+                    .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+                    .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
+                    .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
 }

@@ -15,6 +15,7 @@ import nepjr.tech.common.blocks.BlockFertilizedDirt;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTItemRingOfFlight;
 import nepjr.tech.common.items.NTMetaItems;
+import nepjr.tech.loaders.recipe.ElectricImplosionCompressorRecipes;
 import nepjr.tech.world.BiomeRubberForest;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -64,8 +65,10 @@ public class CommonProxy
         NepTechAPI.FERTILIZED_DIRTS.put(Blocks.GRASS.getDefaultState(), UnregisteredFertilizerType.DIRT);
 	}
 	
+	@SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) 
     {
+    	ElectricImplosionCompressorRecipes.initHandler();
     }
     
     

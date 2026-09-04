@@ -33,7 +33,8 @@ public class BlockNTCasings extends VariantBlock<BlockNTCasings.NTCasingType>
 	
 	public enum NTCasingType implements IStringSerializable
 	{
-		NETHERITE("netherite");
+		NETHERITE("netherite"),
+		NAQUADAH_ALLOY("naquadah_alloy");
 		
 		private final String name;
 		

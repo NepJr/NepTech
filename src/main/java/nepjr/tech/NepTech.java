@@ -19,6 +19,7 @@ import nepjr.tech.loaders.recipe.CentrifugeRecipes;
 import nepjr.tech.loaders.recipe.ChemBathRecipes;
 import nepjr.tech.loaders.recipe.ChemReactorRecipes;
 import nepjr.tech.loaders.recipe.CraftingRecipes;
+import nepjr.tech.loaders.recipe.ElectricImplosionCompressorRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.FormingPressRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
@@ -97,6 +98,7 @@ public class NepTech {
     	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
     	if(NTConfig.neptech.enableGreenhouse) { GreenhouseRecipes.init(); }
     	//if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio")) { AutoSifterRecipes.init(); }
+    	ElectricImplosionCompressorRecipes.init();
     	AutoclaveRecipes.init();
     	AlloySmelterRecipes.init();
     	ChemBathRecipes.init();

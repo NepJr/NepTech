@@ -9,6 +9,7 @@ import gregtech.api.GTValues;
 import gregtech.api.block.IHeatingCoilBlockStats;
 import gregtech.api.capability.IHeatingCoil;
 import gregtech.api.capability.impl.HeatingCoilRecipeLogic;
+import gregtech.api.metatileentity.ITieredMetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -113,7 +114,12 @@ public class MetaTileEntityHellishBlastFurnace extends NTMetaTileEntity implemen
                 .where('S', selfPredicate())
                 .where('X', states(getCasingState()).setMinGlobalLimited(9)
                         .or(autoAbilities(true, true, true, true, true, true, false)))
-                .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
+                .where('M', metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.MUFFLER_HATCH).stream()
+                        .filter(mte -> (mte instanceof ITieredMetaTileEntity) &&
+                                (((ITieredMetaTileEntity) mte).getTier() >= GTValues.IV))
+                        .toArray(MetaTileEntity[]::new))
+                                .addTooltip("gregtech.multiblock.pattern.error.limited.1", GTValues.VN[GTValues.IV])
+                                .setExactLimit(1))
                 .where('C', heatingCoils())
                 .where('#', air())
                 .build();
@@ -164,7 +170,18 @@ public class MetaTileEntityHellishBlastFurnace extends NTMetaTileEntity implemen
 		@Override
 		public int getParallelLimit()
 		{
-			return mte.getParallels();
+			if(mte.getParallels() <= Integer.MAX_VALUE)
+			{
+				return (int) mte.getParallels();
+			}
+			if(mte.getParallels() > Integer.MAX_VALUE)
+			{
+				return Integer.MAX_VALUE;
+			}
+			else
+			{
+				return 1;
+			}
 		}
 	}
 }

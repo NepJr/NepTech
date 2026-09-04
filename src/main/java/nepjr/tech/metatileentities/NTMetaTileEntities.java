@@ -4,9 +4,11 @@ import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTile
 import static nepjr.tech.NepTech.nepId;
 
 import gregtech.api.GTValues;
+import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityLaserHatch;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityAutoSifter;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityDroneLauncher;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityElectricImplosionCompressor;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishBlastFurnace;
 import nepjr.tech.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
@@ -31,6 +33,7 @@ public class NTMetaTileEntities
 	public static MetaTileEntityAutoSifter AUTO_SIFTER;
 	public static MetaTileEntityOverkillCombustionEngine OVERKILL_COMBUSTION_ENGINE;
 	public static MetaTileEntityHellishBlastFurnace HELLISH_BLAST_FURNACE;
+	public static MetaTileEntityElectricImplosionCompressor ELECTRIC_IMPLOSION_COMPRESSOR;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -148,9 +151,22 @@ public class NTMetaTileEntities
 	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_OpV;
 	public static MetaTileEntityNTSubstationEnergyHatch SUBSTATION_ENERGY_SUPER_OUTPUT_MAX;
 	
+	public static MetaTileEntityLaserHatch MAX_LASER_INPUT_HATCH_256;
+    public static MetaTileEntityLaserHatch MAX_LASER_INPUT_HATCH_1024;
+    public static MetaTileEntityLaserHatch MAX_LASER_INPUT_HATCH_4096;
+    public static MetaTileEntityLaserHatch MAX_LASER_OUTPUT_HATCH_256;
+    public static MetaTileEntityLaserHatch MAX_LASER_OUTPUT_HATCH_1024;
+    public static MetaTileEntityLaserHatch MAX_LASER_OUTPUT_HATCH_4096;
+    
+    public static MetaTileEntityLaserHatch[] LASER_INPUT_HATCH_16384 = new MetaTileEntityLaserHatch[10];;
+    public static MetaTileEntityLaserHatch[] LASER_INPUT_HATCH_65536 = new MetaTileEntityLaserHatch[10];;
+    public static MetaTileEntityLaserHatch[] LASER_OUTPUT_HATCH_16384 = new MetaTileEntityLaserHatch[10];;
+    public static MetaTileEntityLaserHatch[] LASER_OUTPUT_HATCH_65536 = new MetaTileEntityLaserHatch[10];;
+	
 	@SuppressWarnings("deprecation")
 	public static void register()
 	{	
+		int endPos;
 		if(NTConfig.neptech.enableGreenhouse)
 		{
 			GREENHOUSE = registerMetaTileEntity(6000, new MetaTileEntityGreenhouse(nepId("greenhouse")));			
@@ -170,6 +186,7 @@ public class NTMetaTileEntities
 		
 		OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6003, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
 		HELLISH_BLAST_FURNACE = registerMetaTileEntity(6004, new MetaTileEntityHellishBlastFurnace(nepId("hellish_blast_furnace")));
+		ELECTRIC_IMPLOSION_COMPRESSOR = registerMetaTileEntity(6005, new MetaTileEntityElectricImplosionCompressor(nepId("electric_implosion_compressor")));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{
@@ -295,5 +312,23 @@ public class NTMetaTileEntities
 		SUBSTATION_ENERGY_SUPER_OUTPUT_UXV = registerMetaTileEntity(7184, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.uxv"), GTValues.UXV, 256, true));
 		SUBSTATION_ENERGY_SUPER_OUTPUT_OpV = registerMetaTileEntity(7185, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.opv"), GTValues.OpV, 256, true));
 		SUBSTATION_ENERGY_SUPER_OUTPUT_MAX = registerMetaTileEntity(7186, new MetaTileEntityNTSubstationEnergyHatch(nepId("substation_hatch.output.256a.max"), GTValues.MAX, 256, true));
+		
+		MAX_LASER_INPUT_HATCH_256 = registerMetaTileEntity(7187, new MetaTileEntityLaserHatch(nepId("laser_hatch.target_256a.max"), false, GTValues.MAX, 256));
+		MAX_LASER_INPUT_HATCH_1024 = registerMetaTileEntity(7188, new MetaTileEntityLaserHatch(nepId("laser_hatch.target_1024a.max"), false, GTValues.MAX, 1024));
+		MAX_LASER_INPUT_HATCH_4096 = registerMetaTileEntity(7189, new MetaTileEntityLaserHatch(nepId("laser_hatch.target_4096a.max"), false, GTValues.MAX, 4096));
+		MAX_LASER_OUTPUT_HATCH_256 = registerMetaTileEntity(7190, new MetaTileEntityLaserHatch(nepId("laser_hatch.source_256a.max"), true, GTValues.MAX, 256));
+		MAX_LASER_OUTPUT_HATCH_1024 = registerMetaTileEntity(7191, new MetaTileEntityLaserHatch(nepId("laser_hatch.source_1024a.max"), true, GTValues.MAX, 1024));
+		MAX_LASER_OUTPUT_HATCH_4096 = registerMetaTileEntity(7192, new MetaTileEntityLaserHatch(nepId("laser_hatch.source_4096a.max"), true, GTValues.MAX, 4096));
+		
+		endPos = LASER_INPUT_HATCH_16384.length;
+		for(int i = 0; i < endPos; i++)
+		{
+			int v = i + GTValues.IV;
+			String voltageName = GTValues.VN[v].toLowerCase();
+			LASER_INPUT_HATCH_16384[i] = registerMetaTileEntity(7193 + i, new MetaTileEntityLaserHatch(nepId("laser_hatch.target_16384a." + voltageName), false, v, 16384));
+			LASER_OUTPUT_HATCH_16384[i] = registerMetaTileEntity(7203 + i, new MetaTileEntityLaserHatch(nepId("laser_hatch.source_16384a." + voltageName), true, v, 16384));
+			LASER_INPUT_HATCH_65536[i] = registerMetaTileEntity(7213 + i, new MetaTileEntityLaserHatch(nepId("laser_hatch.target_65536a." + voltageName), false, v, 65536));
+			LASER_OUTPUT_HATCH_65536[i] = registerMetaTileEntity(7223 + i, new MetaTileEntityLaserHatch(nepId("laser_hatch.source_65536a." + voltageName), true, v, 65536));
+		}
 	}
 }

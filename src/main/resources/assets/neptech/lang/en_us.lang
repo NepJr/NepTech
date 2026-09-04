@@ -2,6 +2,11 @@
 recipemap.greenhouse.name=Greenhouse Gardening
 recipemap.asteroid_mining.name=Asteroid Mining
 recipemap.auto_sifter.name=Automatic Sifting
+recipemap.electric_implosion_compressor.name=Electric Implosion Compressing
+
+// Casings
+tile.nt_casing_blocks.netherite.name=Heat Proof Netherite Casing
+tile.nt_casing_blocks.naquadah_alloy.name=Super Sturdy Naquadah Alloy Casing
 
 // Materials
 neptech.material.void_gas=Void Gas
@@ -28,6 +33,7 @@ neptech.parallels=Parallels: %s
 neptech.processing_speed=Processing Speed: %s%%
 neptech.energy_discount=Energy Usage: %s%%
 neptech.hellish_ebf.oc.tip=This multiblock uses the same Heating Coil bonuses as the Electric Blast Furnace. Every voltage tier above MV increases temperature by 200K.
+neptech.electric_implosion_compressor.parallels=Starts with 8 Parallels, and every tier above ZPM multiplies the parallels by 8
 
 // Electric Machines
 neptech.machine.greenhouse.name=Greenhouse
@@ -35,6 +41,7 @@ neptech.machine.drone_launcher.name=Drone Launcher
 neptech.machine.auto_sifter.name=Auto Sifter
 neptech.machine.overkill_combustion_engine.name=Overkill Combustion Engine
 neptech.machine.hellish_blast_furnace.name=Hellish Blast Furnace
+neptech.machine.electric_implosion_compressor.name=Electric Implosion Compressor
 
 // Multiblock Parts
 neptech.machine.maintenance_hatch_sterile_cleanroom_auto.name=Automatic Sterilized Filtration Maintenance Hatch
@@ -127,6 +134,57 @@ neptech.machine.substation_hatch.output.256a.uiv.name=UIV 256A Substation Dynamo
 neptech.machine.substation_hatch.output.256a.uxv.name=UXV 256A Substation Dynamo Hatch
 neptech.machine.substation_hatch.output.256a.opv.name=OpV 256A Substation Dynamo Hatch
 neptech.machine.substation_hatch.output.256a.max.name=MAX 256A Substation Dynamo Hatch
+
+neptech.machine.laser_hatch.target_256a.max.name=MAX 256A Laser Target Hatch
+neptech.machine.laser_hatch.source_256a.max.name=MAX 256A Laser Source Hatch
+neptech.machine.laser_hatch.target_1024a.max.name=MAX 1024A Laser Target Hatch
+neptech.machine.laser_hatch.source_1024a.max.name=MAX 1024A Laser Source Hatch
+neptech.machine.laser_hatch.target_4096a.max.name=MAX 4096A Laser Target Hatch
+neptech.machine.laser_hatch.source_4096a.max.name=MAX 4096A Laser Source Hatch
+
+neptech.machine.laser_hatch.target_16384a.iv.name=IV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.target_16384a.luv.name=LuV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.target_16384a.zpm.name=ZPM 16384A Laser Target Hatch
+neptech.machine.laser_hatch.target_16384a.uv.name=UV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.target_16384a.uhv.name=UHV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.target_16384a.uev.name=UEV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.target_16384a.uiv.name=UIV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.target_16384a.uxv.name=UXV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.target_16384a.opv.name=OpV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.target_16384a.max.name=MAX 16384A Laser Target Hatch
+
+neptech.machine.laser_hatch.source_16384a.iv.name=IV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.source_16384a.luv.name=LuV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.source_16384a.zpm.name=ZPM 16384A Laser Target Hatch
+neptech.machine.laser_hatch.source_16384a.uv.name=UV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.source_16384a.uhv.name=UHV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.source_16384a.uev.name=UEV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.source_16384a.uiv.name=UIV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.source_16384a.uxv.name=UXV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.source_16384a.opv.name=OpV 16384A Laser Target Hatch
+neptech.machine.laser_hatch.source_16384a.max.name=MAX 16384A Laser Target Hatch
+
+neptech.machine.laser_hatch.target_65536a.iv.name=IV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.target_65536a.luv.name=LuV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.target_65536a.zpm.name=ZPM 65536A Laser Target Hatch
+neptech.machine.laser_hatch.target_65536a.uv.name=UV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.target_65536a.uhv.name=UHV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.target_65536a.uev.name=UEV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.target_65536a.uiv.name=UIV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.target_65536a.uxv.name=UXV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.target_65536a.opv.name=OpV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.target_65536a.max.name=MAX 65536A Laser Target Hatch
+
+neptech.machine.laser_hatch.source_65536a.iv.name=IV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.source_65536a.luv.name=LuV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.source_65536a.zpm.name=ZPM 65536A Laser Target Hatch
+neptech.machine.laser_hatch.source_65536a.uv.name=UV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.source_65536a.uhv.name=UHV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.source_65536a.uev.name=UEV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.source_65536a.uiv.name=UIV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.source_65536a.uxv.name=UXV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.source_65536a.opv.name=OpV 65536A Laser Target Hatch
+neptech.machine.laser_hatch.source_65536a.max.name=MAX 65536A Laser Target Hatch
 
 // Steam Machines
 neptech.machine.steam_smasher.name=Steam Smasher

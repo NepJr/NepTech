@@ -9,10 +9,13 @@ import net.minecraftforge.fml.relauncher.Side;
 public final class NTTextures 
 {
 	public static SimpleOverlayRenderer NETHERITE_CASING;
+	public static SimpleOverlayRenderer NAQUADAH_ALLOY_CASING;
+	
 	public NTTextures() {}
 	
 	public static void preInit()
 	{
 		NETHERITE_CASING = new SimpleOverlayRenderer("casings/neptech/netherite");
+		NAQUADAH_ALLOY_CASING = new SimpleOverlayRenderer("casings/neptech/naquadah_alloy");
 	}
 }
