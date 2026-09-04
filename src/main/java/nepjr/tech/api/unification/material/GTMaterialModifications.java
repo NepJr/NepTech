@@ -24,6 +24,7 @@ public class GTMaterialModifications
 		
 		Materials.Holmium.setMaterialRGB(0x882288);
 		Materials.Holmium.getProperties().ensureSet(PropertyKey.WIRE);
+		Materials.Holmium.getProperties().ensureSet(PropertyKey.INGOT);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setVoltage((int) GTValues.V[GTValues.UEV]);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setLossPerBlock(0);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setAmperage(16);

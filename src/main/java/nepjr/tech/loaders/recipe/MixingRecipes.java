@@ -7,10 +7,12 @@ import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import nepjr.tech.api.unification.material.NTMaterials;
+import nepjr.tech.config.NTConfig;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
 
 public class MixingRecipes 
 {
@@ -86,18 +88,21 @@ public class MixingRecipes
 			.input(OrePrefix.dust, NTMaterials.DarkSteel)
 			.input(OrePrefix.dust, Materials.Obsidian)
 			.input(OrePrefix.dust, Materials.Endstone)
-			.input(OrePrefix.dust, Materials.Tungsten)
+			.input(OrePrefix.dust, Materials.TungstenSteel)
 			.output(OrePrefix.dust, NTMaterials.EndSteel, 4)
 			.EUt(GTValues.VA[GTValues.IV])
 			.duration(200)
 			.buildAndRegister();
 		
-		MIXER_RECIPES.recipeBuilder()
+		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))
+		{
+			MIXER_RECIPES.recipeBuilder()
 			.inputs(new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 4))
 			.input(Item.getItemFromBlock(Blocks.DIRT))
 			.output(Item.getItemFromBlock(Blocks.GRASS))
 			.EUt(8)
 			.duration(20)
 			.buildAndRegister();
+		}
 	}
 }

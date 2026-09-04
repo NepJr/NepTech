@@ -1,7 +1,5 @@
 package nepjr.tech.metatileentities.multi.electric;
 
-import static gregtech.api.recipes.logic.OverclockingLogic.heatingCoilOverclockingLogic;
-
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
@@ -46,7 +44,7 @@ public class MetaTileEntityHellishBlastFurnace extends NTMetaTileEntity implemen
 	private int blastFurnaceTemperature;
 	public MetaTileEntityHellishBlastFurnace(ResourceLocation metaTileEntityId) 
 	{
-		super(metaTileEntityId, RecipeMaps.BLAST_RECIPES, false, 0.8F, 0.9F);
+		super(metaTileEntityId, RecipeMaps.BLAST_RECIPES, false, 0.8F, 1.5F);
 		this.recipeMapWorkable = new HellishBlastFurnaceLogic(this);
 		this.setParallels(8);
 	}
@@ -90,8 +88,8 @@ public class MetaTileEntityHellishBlastFurnace extends NTMetaTileEntity implemen
         } else {
             this.blastFurnaceTemperature = CoilType.CUPRONICKEL.getCoilTemperature();
         }
-        // the subtracted tier gives the starting level (exclusive) of the +100K heat bonus
-        this.blastFurnaceTemperature += 100 *
+        // the subtracted tier gives the starting level (exclusive) of the +200K heat bonus
+        this.blastFurnaceTemperature += 200 *
                 Math.max(0, GTUtility.getFloorTierByVoltage(getEnergyContainer().getInputVoltage()) - GTValues.MV);
     }
 
@@ -152,6 +150,16 @@ public class MetaTileEntityHellishBlastFurnace extends NTMetaTileEntity implemen
 			super(metaTileEntity);
 			mte = (MetaTileEntityHellishBlastFurnace) this.getMetaTileEntity();
 		}
+		
+		@Override
+        protected void modifyOverclockPost(int[] resultOverclock, @NotNull IRecipePropertyStorage storage) {
+            super.modifyOverclockPost(resultOverclock, storage);
+            resultOverclock[0] *= mte.getEnergyDiscount(); 
+            resultOverclock[0] = Math.max(1, resultOverclock[0]);
+            
+            resultOverclock[1] /= mte.getProcessingSpeed(); 
+            resultOverclock[1] = Math.max(1, resultOverclock[1]);
+        }
 		
 		@Override
 		public int getParallelLimit()

@@ -27,7 +27,8 @@ import net.minecraft.world.World;
 
 public abstract class NTMetaTileEntity extends RecipeMapMultiblockController 
 {
-	private int parallels;
+	// We store the parallels as Long to prevent potential buffer overflows
+	private long parallels;
 	private float energyDiscount = 1;
 	private float processingSpeed = 1;
 	private boolean hasPerfectOC;
@@ -48,29 +49,25 @@ public abstract class NTMetaTileEntity extends RecipeMapMultiblockController
         {
         	tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
         }
-        if(getProcessingSpeed() == 1)
+        if(getParallels() > 0)
         {
-        	tooltip.add(TextFormatting.GRAY + I18n.format("neptech.processing_speed_normal"));
-        }
-        if(getProcessingSpeed() > 1)
-        {
-        	tooltip.add(TextFormatting.RED + I18n.format("neptech.processing_speed", getProcessingSpeed()));
+        	tooltip.add(TextFormatting.GREEN + I18n.format("neptech.parallels", getParallels()));
         }
         if(getProcessingSpeed() < 1)
         {
-        	tooltip.add(TextFormatting.GREEN + I18n.format("neptech.processing_speed", getProcessingSpeed()));
+        	tooltip.add(TextFormatting.RED + I18n.format("neptech.processing_speed", getProcessingSpeed() * 100));
         }
-        if(getEnergyDiscount() == 1)
+        if(getProcessingSpeed() > 1)
         {
-        	tooltip.add(TextFormatting.GRAY + I18n.format("neptech.energy_discount_normal"));
+        	tooltip.add(TextFormatting.GREEN + I18n.format("neptech.processing_speed", getProcessingSpeed() * 100));
         }
         if(getEnergyDiscount() < 1)
         {
-        	tooltip.add(TextFormatting.GREEN + I18n.format("neptech.energy_discount", getEnergyDiscount()));
+        	tooltip.add(TextFormatting.GREEN + I18n.format("neptech.energy_discount", getEnergyDiscount() * 100));
         }
         if(getEnergyDiscount() > 1)
         {
-        	tooltip.add(TextFormatting.RED + I18n.format("neptech.energy_discount", getEnergyDiscount()));
+        	tooltip.add(TextFormatting.RED + I18n.format("neptech.energy_discount", getEnergyDiscount() * 100));
         }
     }
 	
@@ -84,7 +81,7 @@ public abstract class NTMetaTileEntity extends RecipeMapMultiblockController
 		return processingSpeed;
 	}
 	
-	public int getParallels()
+	public long getParallels()
 	{
 		if(parallels > 0)
 		{
@@ -139,7 +136,18 @@ public abstract class NTMetaTileEntity extends RecipeMapMultiblockController
 		@Override
 		public int getParallelLimit()
 		{
-			return mte.getParallels();
+			if(mte.getParallels() <= Integer.MAX_VALUE)
+			{
+				return (int) mte.getParallels();
+			}
+			if(mte.getParallels() > Integer.MAX_VALUE)
+			{
+				return Integer.MAX_VALUE;
+			}
+			else
+			{
+				return 1;
+			}
 		}
     }
 }

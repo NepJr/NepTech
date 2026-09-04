@@ -24,19 +24,19 @@ neptech.machine.overkill_combustion_engine.tooltip.boost_regular=Supply §f1 L/s
 neptech.multiblock.large_combustion_engine.cryotheum_boost_disallowed=Upgrade the Dynamo Hatch to enable Cryotheum Boosting.
 neptech.multiblock.large_combustion_engine.cryotheum_boosted=Cryotheum boosted.
 neptech.multiblock.large_combustion_engine.cryotheum_amount=Cryotheum: %s
+neptech.parallels=Parallels: %s
+neptech.processing_speed=Processing Speed: %s%%
+neptech.energy_discount=Energy Usage: %s%%
+neptech.hellish_ebf.oc.tip=This multiblock uses the same Heating Coil bonuses as the Electric Blast Furnace. Every voltage tier above MV increases temperature by 200K.
 
 // Electric Machines
 neptech.machine.greenhouse.name=Greenhouse
 neptech.machine.drone_launcher.name=Drone Launcher
 neptech.machine.auto_sifter.name=Auto Sifter
 neptech.machine.overkill_combustion_engine.name=Overkill Combustion Engine
+neptech.machine.hellish_blast_furnace.name=Hellish Blast Furnace
 
 // Multiblock Parts
-neptech.machine.parallel_hatch.uhv.name=Hyper Parallel Hatch
-neptech.machine.parallel_hatch.uev.name=Omega Parallel Hatch
-neptech.machine.parallel_hatch.uiv.name=Grand Parallel Hatch
-neptech.machine.parallel_hatch.uxv.name=Absurd Parallel Hatch
-neptech.machine.parallel_hatch.opv.name=Divine Parallel Hatch
 neptech.machine.maintenance_hatch_sterile_cleanroom_auto.name=Automatic Sterilized Filtration Maintenance Hatch
 
 // Energy Busses

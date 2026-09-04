@@ -29,7 +29,6 @@ import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
 import nepjr.tech.proxy.CommonProxy;
 import nepjr.tech.world.BiomeRubberForest;
-import nepjr.tech.world.NTBiomes;
 import nepjr.tech.world.WorldGenLargeRubberTree;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
@@ -77,9 +76,6 @@ public class NepTech {
     	// Init items
     	NTMetaItems.init();
     	
-    	// Init Biomes
-    	NTBiomes.init();
-    	
     	// Register MTEs	
     	NTMetaTileEntities.register();
     	if(Loader.isModLoaded("gcym"))
@@ -94,7 +90,6 @@ public class NepTech {
     }
     
     @EventHandler
-    @Deprecated()
     // TODO: Remove recipes not related to content added by the mod and move them to GroovyScript. I don't want to program recipes in like this anymore because it just plain sucks.
     public void init(FMLInitializationEvent event)
     {
