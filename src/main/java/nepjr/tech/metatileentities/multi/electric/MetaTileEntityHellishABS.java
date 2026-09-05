@@ -149,7 +149,7 @@ public class MetaTileEntityHellishABS extends NTMetaTileEntity implements IHeati
                 .aisle("XXXXX", "C###C", "G###G", "C###C", "XXMXX")
                 .aisle("FXXXH", "C###C", "G###G", "C###C", "XXXXX")
                 .aisle("#ISO#", "#CCC#", "#GGG#", "#CCC#", "#XXX#")
-                .where('S', NTMetaTileEntities.ALLOY_BLAST_SMELTER, EnumFacing.SOUTH)
+                .where('S', NTMetaTileEntities.HELLISH_ABS, EnumFacing.SOUTH)
                 .where('X', getCasingState())
                 .where('G', getCasingState2())
                 .where('M', MetaTileEntities.MUFFLER_HATCH[GTValues.LuV], EnumFacing.UP)
