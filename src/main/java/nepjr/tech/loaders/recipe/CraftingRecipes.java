@@ -60,7 +60,7 @@ public class CraftingRecipes
 	                'S', MetaTileEntities.ALLOY_SMELTER[GTValues.HV].getStackForm(),
 	                'W', new UnificationEntry(OrePrefix.cableGtSingle, Materials.Aluminium));
 		
-		ModHandler.addShapedRecipe("hellish_alloy_blast_smelter", NTMetaTileEntities.ALLOY_BLAST_SMELTER.getStackForm(),
+		ModHandler.addShapedRecipe("hellish_alloy_blast_smelter", NTMetaTileEntities.HELLISH_ABS.getStackForm(),
                 "TCT", 
                 "WSW",
                 "TCT",
