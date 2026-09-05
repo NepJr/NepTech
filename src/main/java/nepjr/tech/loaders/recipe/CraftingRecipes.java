@@ -69,6 +69,15 @@ public class CraftingRecipes
                 'S', NTMetaTileEntities.ALLOY_BLAST_SMELTER.getStackForm(),
                 'W', new UnificationEntry(OrePrefix.cableGtSingle, Materials.NiobiumTitanium));
 		
+		ModHandler.addShapedRecipe("mixing_vessel", NTMetaTileEntities.MIXING_VESSEL.getStackForm(),
+				"PRP",
+				"CMC",
+				"PRP",
+				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.HastelloyX),
+				'C', new UnificationEntry(OrePrefix.circuit, Tier.EV),
+				'R', new UnificationEntry(OrePrefix.rotor, Materials.StainlessSteel),
+				'M', MetaTileEntities.MIXER[GTValues.HV].getStackForm());
+		
 		// Auto Sifter
 		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))
 		{
