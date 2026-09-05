@@ -82,7 +82,7 @@ neptech.mixing_vessel.tooltip4=However, making the multiblock larger exponential
 neptech.mixing_vessel.tooltip5=You can calculate the processing speed by measuring the distance from the controller to the edge, substracting 1, then multiplying by 100. The lowest it will go is -1000%% processing speed
 neptech.mixing_vessel.tooltip6=You can use higher tier mixing modules to mitigate the processing speed debuff, however it gets more expensive the larger the multiblock is
 neptech.mixing_vessel.tooltip7=Parallels are calculated by taking 4 to the power of the distance from the controller to the edge minus 1.
-neptech.mixing_vessel.tooltip8=If you have UV tier or higher Mixing Modules, you can use a single Laser Hatch!
+neptech.mixing_vessel.tooltip8=If you have UV tier or higher Mixing Modules, you can use a single Laser Hatch, though not in conjuction with regular Energy Hatches!
 neptech.mixing_vessel.tooltip9=Happy mixing!
 
 // Electric Machines
@@ -94,6 +94,7 @@ neptech.machine.hellish_blast_furnace.name=Hellish Blast Furnace
 neptech.machine.electric_implosion_compressor.name=Electric Implosion Compressor
 neptech.machine.alloy_blast_smelter.name=Alloy Blast Smelter
 neptech.machine.hellish_alloy_blast_smelter.name=Hellish Alloy Blast Smelter
+neptech.machine.mixing_vessel.name=Mixing Vessel
 
 // Electric Machine Descriptions
 neptech.multiblock.alloy_blast_smelter.description=A Blast Furnace built for creating alloys in high volumes.

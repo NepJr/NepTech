@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import gregtech.api.GTValues;
 import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.impl.EnergyContainerList;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -134,6 +135,11 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
             this.processingSpeed = 0;
             this.moduleTier = GTValues.ULV;
         }
+        
+        List<IEnergyContainer> powerInput = new ArrayList<>(getAbilities(MultiblockAbility.INPUT_ENERGY));
+        powerInput.addAll(getAbilities(MultiblockAbility.INPUT_LASER));
+
+        this.energyContainer = new EnergyContainerList(powerInput);
 	}
 	
 	@Override
@@ -142,6 +148,8 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
             reinitializeStructurePattern();
         }
         super.checkStructurePattern();
+        
+        // If mixing modules are below UV tier and we have laser hatches, invalidate the structure
         if(!getAbilities(MultiblockAbility.INPUT_LASER).isEmpty())
         {
         	if(moduleTier < GTValues.UV)
@@ -149,6 +157,13 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
         		invalidateStructure();
         	}
         }
+        // If we have both Lasers and an Energy Hatch, invalidate the structure
+        if(!getAbilities(MultiblockAbility.INPUT_ENERGY).isEmpty() && !getAbilities(MultiblockAbility.INPUT_LASER).isEmpty())
+        {
+        	invalidateStructure();
+        }
+        
+        // If we have neither, invalidate the structure
         if(getAbilities(MultiblockAbility.INPUT_ENERGY).isEmpty() && getAbilities(MultiblockAbility.INPUT_LASER).isEmpty())
         {
         	invalidateStructure();
@@ -164,7 +179,7 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
                 .addParallelsLine(recipeMapWorkable.getParallelLimit())
                 .addCustom(tl ->
                 {
-                	tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "neptech.processing_speed", getProcessingSpeed() * 100));
+                	tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "neptech.processing_speed", (int) getProcessingSpeed() * 100));
                 })
                 .addWorkingStatusLine()
                 .addProgressLine(recipeMapWorkable.getProgressPercent());
