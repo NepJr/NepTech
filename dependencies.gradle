@@ -60,4 +60,6 @@ dependencies {
 	
 	// Dependencies for other mods
 	implementation rfg.deobf("curse.maven:shadowfacts-forgelin-248453:2785465")
+	
+	runtimeOnly rfg.deobf("curse.maven:better-builders-wands-238403:2691084")
 }

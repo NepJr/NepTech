@@ -19,6 +19,9 @@ public class NTMetaBlocks
 	public static BlockFertilizedDirt FERTILIZED_DIRT;
 	public static BlockGeneric GENERIC_BLOCKS;
 	public static BlockNTCasings NT_CASINGS;
+	public static NTUniqueCasing UNIQUE_CASINGS;
+	public static BlockMixingModules MIXING_MODULES;
+	public static BlockMixingModules2 MIXING_MODULES2;
 	
 	public static void init()
 	{
@@ -30,18 +33,29 @@ public class NTMetaBlocks
 		
 		NT_CASINGS = new BlockNTCasings();
 		NT_CASINGS.setRegistryName("nt_casing_blocks");
+		
+		UNIQUE_CASINGS = new NTUniqueCasing();
+		UNIQUE_CASINGS.setRegistryName("unique_casing");
+		
+		MIXING_MODULES = new BlockMixingModules();
+		MIXING_MODULES.setRegistryName("mixing_modules");
+		
+		// With VariantActiveBlock, you can't have more than 8 subblocks, otherwise the game fucking crashes.
+		// so we make a 2nd class
+		MIXING_MODULES2 = new BlockMixingModules2();
+		MIXING_MODULES2.setRegistryName("mixing_modules2");
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public static void registerItemModels()
 	{
-		FERTILIZED_DIRT.onModelRegister();
-		registerItemModel(FERTILIZED_DIRT);
-		
-		GENERIC_BLOCKS.onModelRegister();
-		registerItemModel(GENERIC_BLOCKS);
-		
 		registerItemModel(NT_CASINGS);
+		
+		FERTILIZED_DIRT.onModelRegister();
+		GENERIC_BLOCKS.onModelRegister();		
+		MIXING_MODULES.onModelRegister();
+		MIXING_MODULES2.onModelRegister();
+		UNIQUE_CASINGS.onModelRegister();
 	}
 	
 	// Taken from GYCM

@@ -6,6 +6,7 @@ import static gregtech.api.GTValues.VA;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget.MoveType;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.builders.BlastRecipeBuilder;
 import gregtech.api.recipes.builders.GasCollectorRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
@@ -39,4 +40,14 @@ public class NTRecipeMaps
                     .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
                     .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
                     .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
+	
+	public static final RecipeMap<BlastRecipeBuilder> ALLOY_BLAST_RECIPES = new RecipeMap<>("alloy_blast_smelter", 9, 0,
+            3, 1, new BlastRecipeBuilder(), false)
+                    .setSlotOverlay(false, false, false, GuiTextures.FURNACE_OVERLAY_1)
+                    .setSlotOverlay(false, false, true, GuiTextures.FURNACE_OVERLAY_1)
+                    .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
+                    .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                    .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
+                    .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                    .setSound(GTSoundEvents.FURNACE);
 }

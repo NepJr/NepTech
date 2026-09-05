@@ -3,10 +3,37 @@ recipemap.greenhouse.name=Greenhouse Gardening
 recipemap.asteroid_mining.name=Asteroid Mining
 recipemap.auto_sifter.name=Automatic Sifting
 recipemap.electric_implosion_compressor.name=Electric Implosion Compressing
+recipemap.alloy_blast_smelter.name=Alloy Blast Smelting
 
 // Casings
 tile.nt_casing_blocks.netherite.name=Heat Proof Netherite Casing
 tile.nt_casing_blocks.naquadah_alloy.name=Super Sturdy Naquadah Alloy Casing
+tile.nt_casing_blocks.macerator_casing.name=Secure Maceration Casing
+tile.nt_casing_blocks.blast_casing.name=High Temperature Smelting Casing
+tile.nt_casing_blocks.assembler_casing.name=Large-Scale Assembler Casing
+tile.nt_casing_blocks.stress_proof_casing.name=Stress Proof Casing
+tile.nt_casing_blocks.corrosion_proof_casing.name=Corrosion Proof Casing
+tile.nt_casing_blocks.vibration_safe_casing.name=Vibration-Safe Casing
+tile.nt_casing_blocks.watertight_casing.name=Watertight Casing
+tile.nt_casing_blocks.cutter_casing.name=Shock Proof Cutting Casing
+tile.nt_casing_blocks.nonconducting_casing.name=Nonconducting Casing
+tile.nt_casing_blocks.mixer_casing.name=Reaction-Safe Mixing Casing
+tile.nt_casing_blocks.engraver_casing.name=Laser-Safe Engraving Casing
+tile.nt_casing_blocks.atomic_casing.name=Atomic Casing
+tile.nt_casing_blocks.steam_casing.name=Industrial Steam Casing
+
+// Mixing Modules
+tile.mixing_module.ulv.name=Ultra Low Voltage Mixing Module
+tile.mixing_module.lv.name=Low Voltage Mixing Module
+tile.mixing_module.mv.name=Medium Voltage Mixing Module
+tile.mixing_module.hv.name=High Voltage Mixing Module
+tile.mixing_module.ev.name=Extreme Voltage Mixing Module
+tile.mixing_module.iv.name=Insane Voltage Mixing Module
+tile.mixing_module.luv.name=Ludicrous Voltage Mixing Module
+tile.mixing_module.zpm.name=Zero Point Module Mixing Module
+tile.mixing_module2.uv.name=Ultimate Voltage Mixing Module
+tile.mixing_module2.uhv.name=Ultra High Voltage Mixing Module
+tile.mixing_module2.uev.name=Ultra Excessive Voltage Mixing Module
 
 // Materials
 neptech.material.void_gas=Void Gas
@@ -23,6 +50,19 @@ neptech.material.electrical_steel=Electrical Steel
 neptech.material.soularium=Soularium
 neptech.material.energetic_alloy=Energetic Alloy
 neptech.material.vibrant_alloy=Vibrant Alloy
+neptech.material.stellite_100=Stellite-100
+neptech.material.watertight_steel=Watertight Steel
+neptech.material.maraging_steel_300=Maraging Steel 300
+neptech.material.hastelloy_c_276=Hastelloy-C276
+neptech.material.hastelloy_x=Hastelloy-X
+neptech.material.trinaquadalloy=Trinaquadalloy
+neptech.material.zeron_100=Zeron-100
+neptech.material.titanium_carbide=Titanium Carbide
+neptech.material.tantalum_carbide=Tantalum Carbide
+neptech.material.molybdenum_disilicide=Molybdenum Disilicide
+neptech.material.hsla_steel=HSLA Steel
+neptech.material.titanium_tungsten_carbide=Titanium Tungsten Carbide
+neptech.material.incoloy_ma_956=Incoloy-MA956
 
 // Machine tooltips n related shit
 neptech.machine.overkill_combustion_engine.tooltip.boost_regular=Supply §f1 L/s§7 of Cryotheum to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.
@@ -35,6 +75,16 @@ neptech.energy_discount=Energy Usage: %s%%
 neptech.hellish_ebf.oc.tip=This multiblock uses the same Heating Coil bonuses as the Electric Blast Furnace. Every voltage tier above MV increases temperature by 200K.
 neptech.electric_implosion_compressor.parallels=Starts with 8 Parallels, and every tier above ZPM multiplies the parallels by 8
 
+neptech.mixing_vessel.tooltip1=The minimum size is 5x5x5, with the maximum being 25x25x25.
+neptech.mixing_vessel.tooltip2=The Length, Width, and Height of the entire multiblock must be equal and odd.
+neptech.mixing_vessel.tooltip3=The processing speed of the multiblock will get worse the larger you make it.
+neptech.mixing_vessel.tooltip4=However, making the multiblock larger exponentially increases the parallels, the most being 4,194,304 parallels.
+neptech.mixing_vessel.tooltip5=You can calculate the processing speed by measuring the distance from the controller to the edge, substracting 1, then multiplying by 100. The lowest it will go is -1000%% processing speed
+neptech.mixing_vessel.tooltip6=You can use higher tier mixing modules to mitigate the processing speed debuff, however it gets more expensive the larger the multiblock is
+neptech.mixing_vessel.tooltip7=Parallels are calculated by taking 4 to the power of the distance from the controller to the edge minus 1.
+neptech.mixing_vessel.tooltip8=If you have UV tier or higher Mixing Modules, you can use a single Laser Hatch!
+neptech.mixing_vessel.tooltip9=Happy mixing!
+
 // Electric Machines
 neptech.machine.greenhouse.name=Greenhouse
 neptech.machine.drone_launcher.name=Drone Launcher
@@ -42,6 +92,11 @@ neptech.machine.auto_sifter.name=Auto Sifter
 neptech.machine.overkill_combustion_engine.name=Overkill Combustion Engine
 neptech.machine.hellish_blast_furnace.name=Hellish Blast Furnace
 neptech.machine.electric_implosion_compressor.name=Electric Implosion Compressor
+neptech.machine.alloy_blast_smelter.name=Alloy Blast Smelter
+neptech.machine.hellish_alloy_blast_smelter.name=Hellish Alloy Blast Smelter
+
+// Electric Machine Descriptions
+neptech.multiblock.alloy_blast_smelter.description=A Blast Furnace built for creating alloys in high volumes.
 
 // Multiblock Parts
 neptech.machine.maintenance_hatch_sterile_cleanroom_auto.name=Automatic Sterilized Filtration Maintenance Hatch
@@ -283,3 +338,4 @@ tile.generic_blocks.slag.name=Slag
 
 // Misc
 neptech.change_logic.single_item=You only get a single output
+nt.fluid.molten=Molten %s

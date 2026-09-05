@@ -1,0 +1,166 @@
+{
+    "forge_marker": 1,
+    "variants":
+    {
+        "active=false,variant=ulv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=ulv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=lv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=lv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=mv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=mv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=hv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=hv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=ev":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=ev":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=iv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=iv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=luv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=luv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=zpm":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=zpm":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        }
+    }
+}

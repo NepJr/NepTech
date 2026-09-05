@@ -1,0 +1,66 @@
+{
+    "forge_marker": 1,
+    "variants":
+    {
+        "active=false,variant=uv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=uv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=uhv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=uhv":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=uev":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=uev":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/mixing_module/overlay_top_active",
+                "side": "gregtech:blocks/casings/neptech/mixer_casing",
+                "bottom": "#side"
+            }
+        }
+    }
+}

@@ -15,6 +15,8 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import nepjr.tech.api.unification.material.NTMaterials;
+import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
+import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
@@ -39,6 +41,33 @@ public class CraftingRecipes
 					'C', new UnificationEntry(OrePrefix.circuit, Tier.LV),
 					'H', MetaTileEntities.HULL[GTValues.LV].getStackForm());
 		}
+		
+		ModHandler.addShapedRecipe("hellish_ebf", NTMetaTileEntities.HELLISH_BLAST_FURNACE.getStackForm(), 
+					"EEE",
+					"PCP",
+					"WPW",
+					'E', MetaTileEntities.ELECTRIC_BLAST_FURNACE.getStackForm(),
+					'P', new UnificationEntry(OrePrefix.circuit, Tier.IV),
+					'C', NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.NETHERITE),
+					'W', new UnificationEntry(OrePrefix.cableGtSingle, Materials.Tungsten));
+		
+		ModHandler.addShapedRecipe("alloy_blast_smelter", NTMetaTileEntities.ALLOY_BLAST_SMELTER.getStackForm(),
+	                "TCT", 
+	                "WSW",
+	                "TCT",
+	                'T', new UnificationEntry(OrePrefix.plate, NTMaterials.TantalumCarbide),
+	                'C', new UnificationEntry(OrePrefix.circuit, Tier.HV),
+	                'S', MetaTileEntities.ALLOY_SMELTER[GTValues.HV].getStackForm(),
+	                'W', new UnificationEntry(OrePrefix.cableGtSingle, Materials.Aluminium));
+		
+		ModHandler.addShapedRecipe("hellish_alloy_blast_smelter", NTMetaTileEntities.ALLOY_BLAST_SMELTER.getStackForm(),
+                "TCT", 
+                "WSW",
+                "TCT",
+                'T', new UnificationEntry(OrePrefix.plate, NTMaterials.Netherite),
+                'C', new UnificationEntry(OrePrefix.circuit, Tier.LuV),
+                'S', NTMetaTileEntities.ALLOY_BLAST_SMELTER.getStackForm(),
+                'W', new UnificationEntry(OrePrefix.cableGtSingle, Materials.NiobiumTitanium));
 		
 		// Auto Sifter
 		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))

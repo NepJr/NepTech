@@ -1,9 +1,14 @@
 package nepjr.tech.loaders.recipe;
 
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static nepjr.tech.api.unification.material.NTMaterials.*;
+import static gregtech.api.GTValues.*;
 
 import gregtech.api.GTValues;
 import gregtech.api.fluids.store.FluidStorageKeys;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import nepjr.tech.api.unification.material.NTMaterials;
@@ -93,6 +98,36 @@ public class MixingRecipes
 			.EUt(GTValues.VA[GTValues.IV])
 			.duration(200)
 			.buildAndRegister();
+		
+        MIXER_RECIPES.recipeBuilder()
+	        .input(dust, Titanium)
+	        .input(dust, Carbon)
+	        .notConsumable(new IntCircuitIngredient(1))
+	        .output(dust, TitaniumCarbide, 2)
+	        .duration(160).EUt(VA[EV]).buildAndRegister();
+
+		MIXER_RECIPES.recipeBuilder()
+		    .input(dust, Tantalum)
+		    .input(dust, Carbon)
+		    .notConsumable(new IntCircuitIngredient(1))
+		    .output(dust, TantalumCarbide, 2)
+		    .duration(150).EUt(VA[EV]).buildAndRegister();
+		
+		MIXER_RECIPES.recipeBuilder()
+		    .input(dust, Molybdenum)
+		    .input(dust, Silicon, 2)
+		    .notConsumable(new IntCircuitIngredient(1))
+		    .output(dust, MolybdenumDisilicide, 3)
+		    .duration(180).EUt(VA[EV]).buildAndRegister();
+		
+		MIXER_RECIPES.recipeBuilder()
+		    .input(dust, Invar, 2)
+		    .input(dust, Vanadium, 1)
+		    .input(dust, Titanium, 1)
+		    .input(dust, Molybdenum, 1)
+		    .notConsumable(new IntCircuitIngredient(1))
+		    .output(dust, HSLASteel, 5)
+		    .duration(140).EUt(VA[HV]).buildAndRegister();
 		
 		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))
 		{

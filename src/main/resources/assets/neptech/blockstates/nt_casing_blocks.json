@@ -19,6 +19,84 @@
         "textures": {
           "all": "gregtech:blocks/casings/neptech/naquadah_alloy"
         }
+      },
+      "macerator_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/macerator_casing"
+        }
+      },
+      "blast_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/blast_casing"
+        }
+      },
+      "assembler_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/assembler_casing"
+        }
+      },
+      "stress_proof_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/stress_proof_casing"
+        }
+      },
+      "corrosion_proof_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/corrosion_proof_casing"
+        }
+      },
+      "vibration_safe_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/vibration_safe_casing"
+        }
+      },
+      "watertight_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/watertight_casing"
+        }
+      },
+      "cutter_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/cutter_casing"
+        }
+      },
+      "nonconducting_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/nonconducting_casing"
+        }
+      },
+      "mixer_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/mixer_casing"
+        }
+      },
+      "engraver_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/engraver_casing"
+        }
+      },
+      "atomic_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/atomic_casing"
+        }
+      },
+      "steam_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/casings/neptech/steam_casing"
+        }
       }
     }
   }

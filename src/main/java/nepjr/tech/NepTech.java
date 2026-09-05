@@ -10,6 +10,7 @@ import gregtech.GTInternalTags;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.config.NTConfig;
+import nepjr.tech.loaders.recipe.ABSRecipes;
 import nepjr.tech.loaders.recipe.AlloySmelterRecipes;
 import nepjr.tech.loaders.recipe.AssemblerRecipes;
 import nepjr.tech.loaders.recipe.AsslineRecipes;
@@ -77,6 +78,9 @@ public class NepTech {
     	// Init items
     	NTMetaItems.init();
     	
+    	// Register MetaBlocks
+    	NTMetaBlocks.init();
+    	
     	// Register MTEs	
     	NTMetaTileEntities.register();
     	if(Loader.isModLoaded("gcym"))
@@ -84,40 +88,7 @@ public class NepTech {
     		throw new RuntimeException("GCYM isn't supported with this mod. Please remove it and try launching the game again");
     	}
     	
-    	// Register MetaBlocks
-    	NTMetaBlocks.init();
-    	
     	proxy.preLoad();
-    }
-    
-    @EventHandler
-    // TODO: Remove recipes not related to content added by the mod and move them to GroovyScript. I don't want to program recipes in like this anymore because it just plain sucks.
-    public void init(FMLInitializationEvent event)
-    {
-    	RemovalRecipes.init();
-    	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
-    	if(NTConfig.neptech.enableGreenhouse) { GreenhouseRecipes.init(); }
-    	//if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio")) { AutoSifterRecipes.init(); }
-    	ElectricImplosionCompressorRecipes.init();
-    	AutoclaveRecipes.init();
-    	AlloySmelterRecipes.init();
-    	ChemBathRecipes.init();
-    	ChemReactorRecipes.init();
-    	CraftingRecipes.init();
-    	// LaserEngraverRecipes.init();
-    	FormingPressRecipes.init();
-    	MaceratorRecipes.init();
-    	MixingRecipes.init();
-    	ForgeHammerRecipes.init();
-    	AssemblerRecipes.init();
-    	AsslineRecipes.init();
-    	CentrifugeRecipes.init();
-    	UniversalCircuitRecipes.init();
-    }
-    
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
     }
 
     @NotNull
