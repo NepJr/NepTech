@@ -58,7 +58,7 @@ public class MetaTileEntityWireSupercoater extends RecipeMapMultiblockController
 					.aisle("CCCCCCCCC", " CCCCCCC ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "         ", " CCCCCCC ", "CCCCCCCCC")
 					.aisle("CCCCCCCCC", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "F       F", "CCCCCCCCC")
 					.where('W', heatingCoils())
-					.where('C', states(getCasingState())
+					.where('C', states(getCasingState()).setMinGlobalLimited(320)
 							.or(abilities(MultiblockAbility.IMPORT_ITEMS).setMinGlobalLimited(1, 1))
 							.or(abilities(MultiblockAbility.EXPORT_ITEMS).setMinGlobalLimited(1, 1))
 							.or(abilities(MultiblockAbility.IMPORT_FLUIDS).setMinGlobalLimited(1, 1))

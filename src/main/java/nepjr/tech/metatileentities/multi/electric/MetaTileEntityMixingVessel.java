@@ -376,7 +376,7 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
             center[center.length - 1] = controllerBuilder.toString();
         }
 
-        TraceabilityPredicate wallPredicate = states(getCasingState());
+        TraceabilityPredicate wallPredicate = states(getCasingState()).setMinGlobalLimited(75);
         TraceabilityPredicate basePredicate = autoAbilities().or(abilities(MultiblockAbility.INPUT_ENERGY).setMaxGlobalLimited(3))
         													 .or(abilities(MultiblockAbility.INPUT_LASER).setMaxGlobalLimited(1));
 
@@ -388,7 +388,7 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
                 .aisle(slice).setRepeatable(fDist - 1)
                 .aisle(wall)
                 .where('S', selfPredicate())
-                .where('B', states(getCasingState()).or(basePredicate))
+                .where('B', wallPredicate.or(basePredicate))
                 .where('X', wallPredicate.or(basePredicate))
                 .where('K', wallPredicate) // the block beneath the controller must only be a casing for structure
                                            // dimension checks
