@@ -10,6 +10,7 @@ import gregtech.api.recipes.builders.BlastRecipeBuilder;
 import gregtech.api.recipes.builders.GasCollectorRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
+import nepjr.tech.api.recipes.builders.WireSupercoaterBuilder;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenProperty;
 
@@ -41,6 +42,13 @@ public class NTRecipeMaps
                     .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
                     .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
 	
+	@ZenProperty
+	public static final RecipeMap<WireSupercoaterBuilder> WIRE_SUPERCOATER = new RecipeMapWireSupercoater<>("wire_supercoater", 2, 1, 0, 0,
+			new WireSupercoaterBuilder(), false)
+					.setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, MoveType.HORIZONTAL)
+					.setSound(GTSoundEvents.CHEMICAL_REACTOR);
+	
+	@ZenProperty
 	public static final RecipeMap<BlastRecipeBuilder> ALLOY_BLAST_RECIPES = new RecipeMap<>("alloy_blast_smelter", 9, 0,
             3, 1, new BlastRecipeBuilder(), false)
                     .setSlotOverlay(false, false, false, GuiTextures.FURNACE_OVERLAY_1)

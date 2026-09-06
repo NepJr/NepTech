@@ -4,6 +4,13 @@ recipemap.asteroid_mining.name=Asteroid Mining
 recipemap.auto_sifter.name=Automatic Sifting
 recipemap.electric_implosion_compressor.name=Electric Implosion Compressing
 recipemap.alloy_blast_smelter.name=Alloy Blast Smelting
+recipemap.wire_supercoater.name=Wire Supercoating
+
+// Recipe Properties
+neptech.recipe.polymer_type=Polymer Type: %s
+neptech.recipe.polymer_needed=Polymer Amount: %smB
+neptech.recipe.polyphenylene_sulfide_needed=Needed Polyphenylene Sulfide: %smB
+neptech.recipe.polyvinyl_chloride_needed=Needed Polyvinyl Chloride: %smB
 
 // Casings
 tile.nt_casing_blocks.netherite.name=Heat Proof Netherite Casing

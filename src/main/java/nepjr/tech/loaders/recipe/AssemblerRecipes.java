@@ -3,12 +3,17 @@ package nepjr.tech.loaders.recipe;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 
 import gregtech.api.GTValues;
+import gregtech.api.items.OreDictNames;
+import gregtech.api.unification.material.MarkerMaterials.Tier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.blocks.BlockSteamCasing.SteamCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
+import nepjr.tech.common.blocks.NTMetaBlocks;
+import nepjr.tech.common.blocks.BlockMixingModules.ModuleTier;
+import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
 import net.minecraft.init.Items;
@@ -27,6 +32,128 @@ public class AssemblerRecipes
 			.output(MetaTileEntities.RESERVOIR_HATCH)
 			.EUt(GTValues.VA[GTValues.LV])
 			.duration(300)
+			.buildAndRegister();
+		
+		// Mixing Modules
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.ULV])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.Iron, 4)
+			.input(OrePrefix.stickLong, Materials.Iron, 8)
+			.input("craftingPiston", 2)
+			.input(OrePrefix.circuit, Tier.ULV)
+			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.ULV))
+			.EUt(GTValues.VA[GTValues.ULV])
+			.duration(100)
+			.buildAndRegister();
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.LV])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.Steel, 4)
+			.input(OrePrefix.stickLong, Materials.Steel, 8)
+			.input(MetaItems.ELECTRIC_PISTON_LV, 2)
+			.input(OrePrefix.circuit, Tier.LV)
+			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.LV))
+			.EUt(GTValues.VA[GTValues.LV])
+			.duration(100)
+			.buildAndRegister();
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.MV])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.Aluminium, 4)
+			.input(OrePrefix.stickLong, Materials.Aluminium, 8)
+			.input(MetaItems.ELECTRIC_PISTON_MV, 2)
+			.input(OrePrefix.circuit, Tier.MV)
+			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.MV))
+			.EUt(GTValues.VA[GTValues.MV])
+			.duration(100)
+			.buildAndRegister();
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.HV])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.StainlessSteel, 4)
+			.input(OrePrefix.stickLong, Materials.StainlessSteel, 8)
+			.input(MetaItems.ELECTRIC_PISTON_HV, 2)
+			.input(OrePrefix.circuit, Tier.HV)
+			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.HV))
+			.EUt(GTValues.VA[GTValues.HV])
+			.duration(100)
+			.buildAndRegister();
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.EV])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.Titanium, 4)
+			.input(OrePrefix.stickLong, Materials.Titanium, 8)
+			.input(MetaItems.ELECTRIC_PISTON_EV, 2)
+			.input(OrePrefix.circuit, Tier.EV)
+			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.EV))
+			.EUt(GTValues.VA[GTValues.EV])
+			.duration(100)
+			.buildAndRegister();
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.IV])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.TungstenSteel, 4)
+			.input(OrePrefix.stickLong, Materials.TungstenSteel, 8)
+			.input(MetaItems.ELECTRIC_PISTON_IV, 2)
+			.input(OrePrefix.circuit, Tier.IV)
+			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.IV))
+			.EUt(GTValues.VA[GTValues.IV])
+			.duration(100)
+			.buildAndRegister();
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.LuV])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.HSSS, 4)
+			.input(OrePrefix.stickLong, Materials.HSSS, 8)
+			.input(MetaItems.ELECTRIC_PISTON_LUV, 2)
+			.input(OrePrefix.circuit, Tier.LuV)
+			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.LuV))
+			.EUt(GTValues.VA[GTValues.LuV])
+			.duration(100)
+			.buildAndRegister();
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.ZPM])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.Osmiridium, 4)
+			.input(OrePrefix.stickLong, Materials.Osmiridium, 8)
+			.input(MetaItems.ELECTRIC_PISTON_ZPM, 2)
+			.input(OrePrefix.circuit, Tier.ZPM)
+			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.ZPM))
+			.EUt(GTValues.VA[GTValues.ZPM])
+			.duration(100)
+			.buildAndRegister();
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.UV])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.Tritanium, 4)
+			.input(OrePrefix.stickLong, Materials.Tritanium, 8)
+			.input(MetaItems.ELECTRIC_PISTON_UV, 2)
+			.input(OrePrefix.circuit, Tier.UV)
+			.outputs(NTMetaBlocks.MIXING_MODULES2.getItemVariant(nepjr.tech.common.blocks.BlockMixingModules2.ModuleTier.UV))
+			.EUt(GTValues.VA[GTValues.UV])
+			.duration(100)
+			.buildAndRegister();
+		
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[GTValues.UHV])
+			.inputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.MIXER_CASING))
+			.input(OrePrefix.rotor, Materials.Neutronium, 4)
+			.input(OrePrefix.stickLong, Materials.Neutronium, 8)
+			.input(MetaItems.ELECTRIC_PISTON_UHV, 2)
+			.input(OrePrefix.circuit, Tier.UHV)
+			.outputs(NTMetaBlocks.MIXING_MODULES2.getItemVariant(nepjr.tech.common.blocks.BlockMixingModules2.ModuleTier.UHV))
+			.EUt(GTValues.VA[GTValues.UHV])
+			.duration(100)
 			.buildAndRegister();
 		
 		// Energy Hatch Bullshit

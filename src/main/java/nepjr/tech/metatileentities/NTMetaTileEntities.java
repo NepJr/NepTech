@@ -14,6 +14,7 @@ import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishABS;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishBlastFurnace;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityMixingVessel;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityWireSupercoater;
 import nepjr.tech.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTEnergyHatch;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTSubstationEnergyHatch;
@@ -40,6 +41,7 @@ public class NTMetaTileEntities
 	public static MetaTileEntityAlloyBlastSmelter ALLOY_BLAST_SMELTER;
 	public static MetaTileEntityHellishABS HELLISH_ABS;
 	public static MetaTileEntityMixingVessel MIXING_VESSEL;
+	public static MetaTileEntityWireSupercoater WIRE_SUPERCOATER;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -196,6 +198,7 @@ public class NTMetaTileEntities
 		ALLOY_BLAST_SMELTER = registerMetaTileEntity(6006, new MetaTileEntityAlloyBlastSmelter(nepId("alloy_blast_smelter")));
 		HELLISH_ABS = registerMetaTileEntity(6007, new MetaTileEntityHellishABS(nepId("hellish_alloy_blast_smelter")));
 		MIXING_VESSEL = registerMetaTileEntity(6008, new MetaTileEntityMixingVessel(nepId("mixing_vessel")));
+		WIRE_SUPERCOATER = registerMetaTileEntity(6009, new MetaTileEntityWireSupercoater(nepId("wire_supercoater")));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

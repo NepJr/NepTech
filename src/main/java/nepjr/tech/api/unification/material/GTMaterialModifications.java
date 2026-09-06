@@ -23,12 +23,17 @@ public class GTMaterialModifications
 		Materials.Zinc.getProperty(PropertyKey.ORE).setOreByProducts(Materials.Gallium);
 		
 		Materials.Holmium.setMaterialRGB(0x882288);
-		Materials.Holmium.getProperties().ensureSet(PropertyKey.WIRE);
 		Materials.Holmium.getProperties().ensureSet(PropertyKey.INGOT);
+		Materials.Holmium.getProperties().ensureSet(PropertyKey.DUST, true);
+		Materials.Holmium.getProperties().ensureSet(PropertyKey.FLUID);
+		Materials.Holmium.getProperties().ensureSet(PropertyKey.WIRE);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setVoltage((int) GTValues.V[GTValues.UEV]);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setLossPerBlock(0);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setAmperage(16);
 		Materials.Holmium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+		
+		Materials.Polybenzimidazole.addFlags(MaterialFlags.GENERATE_ROD);
+		Materials.Polybenzimidazole.addFlags(MaterialFlags.GENERATE_FRAME);
 		
 		Materials.Gallium.getProperties().ensureSet(PropertyKey.ORE);
 		
@@ -52,6 +57,9 @@ public class GTMaterialModifications
 
         // Rotors
         Materials.Iridium.addFlags(MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_ROTOR);
+        Materials.Neutronium.addFlags(MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_ROTOR);
+        Materials.Aluminium.addFlags(MaterialFlags.GENERATE_ROTOR);
+        Materials.Tritanium.addFlags(MaterialFlags.GENERATE_ROTOR);
 
         // Springs
         Materials.Neutronium.addFlags(MaterialFlags.GENERATE_SPRING);

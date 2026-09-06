@@ -39,6 +39,7 @@ import nepjr.tech.loaders.recipe.GreenhouseRecipes;
 import nepjr.tech.loaders.recipe.MaceratorRecipes;
 import nepjr.tech.loaders.recipe.MixingRecipes;
 import nepjr.tech.loaders.recipe.RemovalRecipes;
+import nepjr.tech.loaders.recipe.SupercoaterRecipeHandler;
 import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
 import nepjr.tech.world.BiomeRubberForest;
 import net.minecraft.block.Block;
@@ -57,6 +58,7 @@ import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
@@ -105,6 +107,7 @@ public class CommonProxy
 		// Handlers first
     	ElectricImplosionCompressorRecipes.initHandler();
     	ABSRecipes.initHandler();
+    	SupercoaterRecipeHandler.initHandler();
     	
     	// Then do everything else
     	RemovalRecipes.init();
@@ -130,11 +133,10 @@ public class CommonProxy
     	UniversalCircuitRecipes.init();
     }
 	
-	@SubscribeEvent
+	
 	public static void registerMaterialsPost(PostMaterialEvent event)
 	{
 		AlloyBlastPropertyAddition.init();
-		GTMaterialModifications.init();
 		GeneratedFluidHandler.init();
 	}
     
@@ -199,10 +201,11 @@ public class CommonProxy
 		BiomeManager.addSpawnBiome(RUBBER_FOREST);
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerMaterials(MaterialEvent event) 
     {
     	NTMaterials.init();
+    	GTMaterialModifications.init();
     }
     
     @SubscribeEvent
