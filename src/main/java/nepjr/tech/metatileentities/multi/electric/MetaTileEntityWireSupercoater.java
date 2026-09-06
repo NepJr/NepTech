@@ -1,7 +1,5 @@
 package nepjr.tech.metatileentities.multi.electric;
 
-import java.util.List;
-
 import org.jetbrains.annotations.NotNull;
 
 import gregtech.api.block.IHeatingCoilBlockStats;
@@ -10,7 +8,6 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
-import gregtech.api.metatileentity.multiblock.MultiblockDisplayText;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
@@ -20,7 +17,6 @@ import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.recipeproperties.IRecipePropertyStorage;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
-import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockBoilerCasing.BoilerCasingType;
@@ -34,8 +30,6 @@ import nepjr.tech.api.recipes.recipeproperties.SupercoaterPolyphenyleneSulfidePr
 import nepjr.tech.api.recipes.recipeproperties.SupercoaterPolyvinylChlorideProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
 
 public class MetaTileEntityWireSupercoater extends RecipeMapMultiblockController
 {
@@ -231,11 +225,6 @@ public class MetaTileEntityWireSupercoater extends RecipeMapMultiblockController
 		public int getParallelLimit()
 		{
 			return mte.getParallels();
-		}
-		
-		public int getParallelsRunning()
-		{
-			return parallels;
 		}
 	}
 

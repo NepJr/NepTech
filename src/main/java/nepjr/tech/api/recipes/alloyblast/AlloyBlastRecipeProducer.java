@@ -71,7 +71,6 @@ public class AlloyBlastRecipeProducer {
      * @param material the material
      * @return the builder
      */
-    @SuppressWarnings("MethodMayBeStatic")
     protected @NotNull BlastRecipeBuilder createBuilder(@NotNull BlastProperty property, @NotNull Material material) {
         BlastRecipeBuilder builder = NTRecipeMaps.ALLOY_BLAST_RECIPES.recipeBuilder();
         // apply the duration override
@@ -173,7 +172,6 @@ public class AlloyBlastRecipeProducer {
      * @param molten   the molten fluid
      * @param property the blast property of the material
      */
-    @SuppressWarnings("MethodMayBeStatic")
     protected void addFreezerRecipes(@NotNull Material material, @NotNull Fluid molten,
                                      @NotNull BlastProperty property) {
         int vacuumDuration = property.getVacuumDurationOverride() == -1 ? (int) material.getMass() * 3 :

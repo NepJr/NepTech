@@ -1,13 +1,10 @@
 package nepjr.tech.api.unification.material;
 
-import gregtech.api.GTValues;
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.BlastProperty.GasTier;
-import gregtech.api.unification.material.properties.BlastProperty;
-
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.GTValues.*;
 import static nepjr.tech.NepTech.nepId;

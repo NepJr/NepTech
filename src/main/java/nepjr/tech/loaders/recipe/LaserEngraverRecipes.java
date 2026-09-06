@@ -4,7 +4,6 @@ import gregtech.api.GTValues;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.common.items.MetaItems;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class LaserEngraverRecipes 

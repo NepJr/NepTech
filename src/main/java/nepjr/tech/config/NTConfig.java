@@ -10,17 +10,8 @@ public class NTConfig
 	@Config.Name("NepTech Options")
 	public static NepTechOptions neptech = new NepTechOptions();
 	
-	@Config.Comment("Options related to working with other mods")
-	@Config.Name("Mod Compatibility Options")
-	public static ModCompatOptions modcompat = new ModCompatOptions();
-	
 	public static class NepTechOptions
-	{
-		@Config.Comment("Toggle whether the greenhouse is enabled or not")
-		@Config.Name("Enable Greenhouse")
-		@Config.RequiresMcRestart
-		public boolean enableGreenhouse = true;
-		
+	{	
 		@Config.Comment("Toggle whether the Drone Launcher is enabled or not")
 		@Config.Name("Enable Drone Launcher")
 		@Config.RequiresMcRestart
@@ -62,43 +53,5 @@ public class NTConfig
 		@Config.Comment("Enable the new Sterile Cleaing Maintenance Hatch for running recipes outside a Sterile Cleanroom")
 		@Config.Name("Automatic Sterile Cleaning Hatch")
 		public boolean enableSterileCleaningHatch = true;
-	}
-	
-	public static class ModCompatOptions
-	{
-		@Config.Comment("Changes various AE2 Recipes to be more Gregified")
-		@Config.Name("Change AE2 Recipes")
-		@Config.RequiresMcRestart
-		@Deprecated
-		public boolean enableAE2Recipes = true;
-		
-		@Config.Comment("Changes various AE2 Fluid Crafting to be more Gregified")
-		@Config.Name("Change AE2 Fluid Crafting Recipes")
-		@Config.RequiresMcRestart
-		@Deprecated
-		public boolean enableAE2FCRecipes = true;
-		
-		@Config.Comment("Changes various CrazyAE Recipes to be more Gregified")
-		@Config.Name("Change CrazyAE Recipes")
-		@Config.RequiresMcRestart
-		@Deprecated
-		public boolean enableCrazyAERecipes = true;
-		
-		@Config.Comment("Enable Ex Nihilo support")
-		@Config.Name("Ex Nihilo Support")
-		@Config.RequiresMcRestart
-		@Deprecated
-		public boolean exNihiloSupport = true;
-		
-//		@Config.Comment("Enable EnderIO support")
-//		@Config.Name("EnderIO Support")
-//		@Config.RequiresMcRestart
-//		@Deprecated
-//		public boolean enderIOSupport = true;
-		
-		@Config.Comment("Enable support for Mystical Agriculture")
-		@Config.Name("Mystical Agriculture Support")
-		@Config.RequiresMcRestart
-		public boolean mysticalAgricultureSupport = true;
 	}
 }

@@ -2,8 +2,6 @@ package nepjr.tech.loaders.recipe;
 
 import gregtech.api.GTValues;
 import gregtech.api.recipes.builders.GasCollectorRecipeBuilder;
-import gregtech.api.recipes.builders.SimpleRecipeBuilder;
-import gregtech.api.recipes.chance.output.ChancedOutputLogic;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;

@@ -3,7 +3,6 @@ package nepjr.tech.loaders.recipe;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 
 import gregtech.api.GTValues;
-import gregtech.api.items.OreDictNames;
 import gregtech.api.unification.material.MarkerMaterials.Tier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;

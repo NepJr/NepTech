@@ -13,10 +13,6 @@ import gregtech.api.unification.stack.MaterialStack;
 import nepjr.tech.common.items.behaviors.ColorSprayInfiniteBehaviour;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.EnumRarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionUtils;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class NTMetaItems 
 {

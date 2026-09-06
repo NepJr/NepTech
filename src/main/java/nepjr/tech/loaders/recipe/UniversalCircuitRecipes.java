@@ -3,7 +3,6 @@ package nepjr.tech.loaders.recipe;
 import gregtech.common.items.MetaItems;
 import nepjr.tech.common.items.NTMetaItems;
 
-import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.FORMING_PRESS_RECIPES;
 import static gregtech.common.items.MetaItems.SHAPE_MOLD_CREDIT;
 

@@ -20,7 +20,6 @@ import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.blocks.BlockCleanroomCasing.CasingType;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
-import nepjr.tech.api.metatileentity.NTMetaTileEntity;
 import nepjr.tech.api.recipes.NTRecipeMaps;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;

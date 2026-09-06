@@ -113,7 +113,7 @@ public class CommonProxy
     	RemovalRecipes.init();
     	CasingRecipes.init();
     	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
-    	if(NTConfig.neptech.enableGreenhouse) { GreenhouseRecipes.init(); }
+    	GreenhouseRecipes.init();
     	//if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio")) { AutoSifterRecipes.init(); }
     	ElectricImplosionCompressorRecipes.init();
     	ABSRecipes.init();

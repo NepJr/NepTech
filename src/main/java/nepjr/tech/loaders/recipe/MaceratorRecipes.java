@@ -3,7 +3,6 @@ package nepjr.tech.loaders.recipe;
 import static gregtech.api.recipes.RecipeMaps.MACERATOR_RECIPES;
 
 import gregtech.api.GTValues;
-import gregtech.api.recipes.chance.output.ChancedOutputLogic;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 

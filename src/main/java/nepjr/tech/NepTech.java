@@ -1,7 +1,5 @@
 package nepjr.tech;
 
-import java.util.Random;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -9,43 +7,13 @@ import org.jetbrains.annotations.NotNull;
 import gregtech.GTInternalTags;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTMetaItems;
-import nepjr.tech.config.NTConfig;
-import nepjr.tech.loaders.recipe.ABSRecipes;
-import nepjr.tech.loaders.recipe.AlloySmelterRecipes;
-import nepjr.tech.loaders.recipe.AssemblerRecipes;
-import nepjr.tech.loaders.recipe.AsslineRecipes;
-import nepjr.tech.loaders.recipe.AsteroidMiningRecipes;
-import nepjr.tech.loaders.recipe.AutoclaveRecipes;
-import nepjr.tech.loaders.recipe.CentrifugeRecipes;
-import nepjr.tech.loaders.recipe.ChemBathRecipes;
-import nepjr.tech.loaders.recipe.ChemReactorRecipes;
-import nepjr.tech.loaders.recipe.CraftingRecipes;
-import nepjr.tech.loaders.recipe.ElectricImplosionCompressorRecipes;
-import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
-import nepjr.tech.loaders.recipe.FormingPressRecipes;
-import nepjr.tech.loaders.recipe.GreenhouseRecipes;
-import nepjr.tech.loaders.recipe.MaceratorRecipes;
-import nepjr.tech.loaders.recipe.MixingRecipes;
-import nepjr.tech.loaders.recipe.RemovalRecipes;
-import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
 import nepjr.tech.proxy.CommonProxy;
-import nepjr.tech.world.BiomeRubberForest;
-import nepjr.tech.world.WorldGenLargeRubberTree;
-import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = NTTags.MODID, 
@@ -71,10 +39,6 @@ public class NepTech {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) 
     {	
-    	// Ex Nihilo support
-    	// TODO: Move Ex Nihilo compat to a seperate mod.
-    	//if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio")) { ExNihiloCreatio.loadedModules.add(new ExNihiloGTModule()); }
-    	
     	// Init items
     	NTMetaItems.init();
     	

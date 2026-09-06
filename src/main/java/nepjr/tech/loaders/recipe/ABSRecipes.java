@@ -82,8 +82,7 @@ public class ABSRecipes
 			.buildAndRegister();
 	}
 	
-	@SuppressWarnings("SameParameterValue")
-    private static void registerTrinaryAlloy(@NotNull Material input1, int input1Amount,
+	private static void registerTrinaryAlloy(@NotNull Material input1, int input1Amount,
                                              @NotNull Material input2, int input2Amount,
                                              @NotNull Material input3, int input3Amount,
                                              @NotNull Material output, int outputAmount,

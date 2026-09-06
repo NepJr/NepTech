@@ -24,23 +24,19 @@ import nepjr.tech.proxy.CommonProxy;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.Loader;
 
 public class CraftingRecipes 
 {
 	public static void init()
 	{
 		// Greenhouse
-		if(NTConfig.neptech.enableGreenhouse)
-		{
-			ModHandler.addShapedRecipe("greenhouse", NTMetaTileEntities.GREENHOUSE.getStackForm(), 
-					"SCS",
-					"CHC",
-					"SCS",
-					'S', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
-					'C', new UnificationEntry(OrePrefix.circuit, Tier.LV),
-					'H', MetaTileEntities.HULL[GTValues.LV].getStackForm());
-		}
+		ModHandler.addShapedRecipe("greenhouse", NTMetaTileEntities.GREENHOUSE.getStackForm(), 
+				"SCS",
+				"CHC",
+				"SCS",
+				'S', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.STEEL_SOLID),
+				'C', new UnificationEntry(OrePrefix.circuit, Tier.LV),
+				'H', MetaTileEntities.HULL[GTValues.LV].getStackForm());
 		
 		ModHandler.addShapedRecipe("hellish_ebf", NTMetaTileEntities.HELLISH_BLAST_FURNACE.getStackForm(), 
 					"EEE",
@@ -77,37 +73,6 @@ public class CraftingRecipes
 				'C', new UnificationEntry(OrePrefix.circuit, Tier.EV),
 				'R', new UnificationEntry(OrePrefix.rotor, Materials.StainlessSteel),
 				'M', MetaTileEntities.MIXER[GTValues.HV].getStackForm());
-		
-		// Auto Sifter
-		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))
-		{
-			ModHandler.addShapedRecipe("auto_sifter", NTMetaTileEntities.AUTO_SIFTER.getStackForm(),
-					"CPC",
-					"BHB",
-					"CPC",
-					'C', new UnificationEntry(OrePrefix.circuit, Tier.LV),
-					'B', MetaItems.CONVEYOR_MODULE_LV,
-					'P', MetaItems.ELECTRIC_PISTON_LV,
-					'H', MetaTileEntities.HULL[GTValues.LV].getStackForm());
-			
-			ModHandler.addShapedRecipe("bronze_auto_sifter", NTMetaTileEntities.STEAM_AUTO_SIFTER.getStackForm(), 
-					"IPI",
-					"BHB",
-					"IPI",
-					'I', Blocks.IRON_BARS,
-					'B', new UnificationEntry(OrePrefix.plate, Materials.Bronze),
-					'H', MetaBlocks.STEAM_CASING.getItemVariant(SteamCasingType.BRONZE_HULL),
-					'P', OreDictNames.craftingPiston);
-			
-			ModHandler.addShapedRecipe("hp_auto_sifter", NTMetaTileEntities.HP_STEAM_AUTO_SIFTER.getStackForm(), 
-					"WSW",
-					"PHP",
-					"WWW",
-					'W', new UnificationEntry(OrePrefix.plate, Materials.WroughtIron),
-					'S', new UnificationEntry(OrePrefix.plate, Materials.Steel),
-					'H', NTMetaTileEntities.STEAM_AUTO_SIFTER.getStackForm(),
-					'P', new UnificationEntry(OrePrefix.pipeSmallFluid, Materials.TinAlloy));
-		}
 		
 		// Ring of Flight
 		ModHandler.addShapedRecipe("ring_of_flight", new ItemStack(CommonProxy.RING_OF_FLIGHT),

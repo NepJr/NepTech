@@ -18,7 +18,6 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
 import gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType;
 import it.unimi.dsi.fastutil.ints.IntLists;
-import nepjr.tech.api.metatileentity.NTMetaTileEntity;
 import nepjr.tech.api.recipes.NTRecipeMaps;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;

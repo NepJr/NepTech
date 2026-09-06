@@ -34,7 +34,6 @@ public class NTMetaTileEntities
 	// Electric Multiblocks (6000 - 7000)
 	public static MetaTileEntityGreenhouse GREENHOUSE;
 	public static MetaTileEntityDroneLauncher DRONE_LAUNCHER;
-	public static MetaTileEntityAutoSifter AUTO_SIFTER;
 	public static MetaTileEntityOverkillCombustionEngine OVERKILL_COMBUSTION_ENGINE;
 	public static MetaTileEntityHellishBlastFurnace HELLISH_BLAST_FURNACE;
 	public static MetaTileEntityElectricImplosionCompressor ELECTRIC_IMPLOSION_COMPRESSOR;
@@ -64,9 +63,6 @@ public class NTMetaTileEntities
 	
 	public static NTSteamSolarBoiler STEAM_SOLAR_BOILER;
 	public static NTSteamSolarBoiler HP_STEAM_SOLAR_BOILER;
-	
-	public static SteamAutoSifter STEAM_AUTO_SIFTER;
-	public static SteamAutoSifter HP_STEAM_AUTO_SIFTER;
 	
 	// Multiblock Parts (7101 - 7500)
 	public static MetaTileEntitySterileMaintenanceHatch STERILE_MAINTENANCE_HATCH;
@@ -171,34 +167,22 @@ public class NTMetaTileEntities
     public static MetaTileEntityLaserHatch[] LASER_OUTPUT_HATCH_16384 = new MetaTileEntityLaserHatch[10];;
     public static MetaTileEntityLaserHatch[] LASER_OUTPUT_HATCH_65536 = new MetaTileEntityLaserHatch[10];;
 	
-	@SuppressWarnings("deprecation")
 	public static void register()
 	{	
 		int endPos;
-		if(NTConfig.neptech.enableGreenhouse)
-		{
-			GREENHOUSE = registerMetaTileEntity(6000, new MetaTileEntityGreenhouse(nepId("greenhouse")));			
-		}
+		GREENHOUSE = registerMetaTileEntity(6000, new MetaTileEntityGreenhouse(nepId("greenhouse")));	
 		if(NTConfig.neptech.enableDroneLauncher)
 		{
 			DRONE_LAUNCHER = registerMetaTileEntity(6001, new MetaTileEntityDroneLauncher(nepId("drone_launcher")));
 		}
 		
-//		// TODO: Move Ex Nihilo compat to a seperate mod.
-		if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio"))
-		{
-			AUTO_SIFTER = registerMetaTileEntity(6002, new MetaTileEntityAutoSifter(nepId("auto_sifter")));
-			STEAM_AUTO_SIFTER = registerMetaTileEntity(7015, new SteamAutoSifter(nepId("steam_auto_sifter"), false));
-			HP_STEAM_AUTO_SIFTER = registerMetaTileEntity(7016, new SteamAutoSifter(nepId("hp_steam_auto_sifter"), true));
-		}
-		
-		OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6003, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
-		HELLISH_BLAST_FURNACE = registerMetaTileEntity(6004, new MetaTileEntityHellishBlastFurnace(nepId("hellish_blast_furnace")));
-		ELECTRIC_IMPLOSION_COMPRESSOR = registerMetaTileEntity(6005, new MetaTileEntityElectricImplosionCompressor(nepId("electric_implosion_compressor")));
-		ALLOY_BLAST_SMELTER = registerMetaTileEntity(6006, new MetaTileEntityAlloyBlastSmelter(nepId("alloy_blast_smelter")));
-		HELLISH_ABS = registerMetaTileEntity(6007, new MetaTileEntityHellishABS(nepId("hellish_alloy_blast_smelter")));
-		MIXING_VESSEL = registerMetaTileEntity(6008, new MetaTileEntityMixingVessel(nepId("mixing_vessel")));
-		WIRE_SUPERCOATER = registerMetaTileEntity(6009, new MetaTileEntityWireSupercoater(nepId("wire_supercoater")));
+		OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6002, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
+		HELLISH_BLAST_FURNACE = registerMetaTileEntity(6003, new MetaTileEntityHellishBlastFurnace(nepId("hellish_blast_furnace")));
+		ELECTRIC_IMPLOSION_COMPRESSOR = registerMetaTileEntity(6004, new MetaTileEntityElectricImplosionCompressor(nepId("electric_implosion_compressor")));
+		ALLOY_BLAST_SMELTER = registerMetaTileEntity(6005, new MetaTileEntityAlloyBlastSmelter(nepId("alloy_blast_smelter")));
+		HELLISH_ABS = registerMetaTileEntity(6006, new MetaTileEntityHellishABS(nepId("hellish_alloy_blast_smelter")));
+		MIXING_VESSEL = registerMetaTileEntity(6007, new MetaTileEntityMixingVessel(nepId("mixing_vessel")));
+		WIRE_SUPERCOATER = registerMetaTileEntity(6008, new MetaTileEntityWireSupercoater(nepId("wire_supercoater")));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{
