@@ -50,9 +50,9 @@ public class NTMetaBlocks
 	public static void registerItemModels()
 	{
 		registerItemModel(NT_CASINGS);
+		registerItemModel(GENERIC_BLOCKS);
 		
-		FERTILIZED_DIRT.onModelRegister();
-		GENERIC_BLOCKS.onModelRegister();		
+		FERTILIZED_DIRT.onModelRegister();	
 		MIXING_MODULES.onModelRegister();
 		MIXING_MODULES2.onModelRegister();
 		UNIQUE_CASINGS.onModelRegister();

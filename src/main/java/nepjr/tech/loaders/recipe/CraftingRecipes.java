@@ -74,6 +74,15 @@ public class CraftingRecipes
 				'R', new UnificationEntry(OrePrefix.rotor, Materials.StainlessSteel),
 				'M', MetaTileEntities.MIXER[GTValues.HV].getStackForm());
 		
+		ModHandler.addShapedRecipe("wire_supercoater", NTMetaTileEntities.WIRE_SUPERCOATER.getStackForm(), 
+				"CPC",
+				"EHE",
+				"CPC",
+				'C', MetaBlocks.METAL_CASING.getItemVariant(MetalCasingType.PTFE_INERT_CASING),
+				'E', new UnificationEntry(OrePrefix.circuit, Tier.EV),
+				'P', MetaItems.ELECTRIC_PUMP_EV,
+				'H', MetaTileEntities.HULL[GTValues.EV].getStackForm());
+		
 		// Ring of Flight
 		ModHandler.addShapedRecipe("ring_of_flight", new ItemStack(CommonProxy.RING_OF_FLIGHT),
 				"GIG",

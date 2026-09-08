@@ -37,7 +37,11 @@ public class BlockMixingModules2 extends VariantActiveBlock<BlockMixingModules2.
 	{
 		UV(GTValues.UV, 10.6f),
 		UHV(GTValues.UHV, 11.8f),
-		UEV(GTValues.UEV, 13.0f);
+		UEV(GTValues.UEV, 13.0f),
+		UIV(GTValues.UIV, 14.0f),
+		UXV(GTValues.UXV, 16.0f),
+		OpV(GTValues.OpV, 20.0f),
+		MAX(GTValues.MAX, 30.0f);
 		
 		private final int tier;
 		private final float processingSpeed;

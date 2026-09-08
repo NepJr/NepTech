@@ -41,6 +41,10 @@ tile.mixing_module.zpm.name=Zero Point Module Mixing Module
 tile.mixing_module2.uv.name=Ultimate Voltage Mixing Module
 tile.mixing_module2.uhv.name=Ultra High Voltage Mixing Module
 tile.mixing_module2.uev.name=Ultra Excessive Voltage Mixing Module
+tile.mixing_module2.uiv.name=Ultra Immense Voltage Mixing Module
+tile.mixing_module2.uxv.name=Ultra Extreme Voltage Mixing Module
+tile.mixing_module2.opv.name=Overpowered Voltage Mixing Module
+tile.mixing_module2.max.name=Maximum Voltage Mixing Module
 
 // Materials
 neptech.material.void_gas=Void Gas
@@ -82,10 +86,10 @@ neptech.energy_discount=Energy Usage: %s%%
 neptech.hellish_ebf.oc.tip=This multiblock uses the same Heating Coil bonuses as the Electric Blast Furnace. Every voltage tier above MV increases temperature by 200K.
 neptech.electric_implosion_compressor.parallels=Starts with 8 Parallels, and every tier above ZPM multiplies the parallels by 8
 
-neptech.mixing_vessel.tooltip1=The minimum size is 5x5x5, with the maximum being 25x25x25.
+neptech.mixing_vessel.tooltip1=The minimum size is 5x5x5, with the maximum being 33x33x33.
 neptech.mixing_vessel.tooltip2=The Length, Width, and Height of the entire multiblock must be equal and odd.
 neptech.mixing_vessel.tooltip3=The processing speed of the multiblock will get worse the larger you make it.
-neptech.mixing_vessel.tooltip4=However, making the multiblock larger exponentially increases the parallels, the most being 4,194,304 parallels.
+neptech.mixing_vessel.tooltip4=However, making the multiblock larger exponentially increases the parallels, the most being 1,073,741,824 parallels.
 neptech.mixing_vessel.tooltip5=You can calculate the processing speed by measuring the distance from the controller to the edge, substracting 1, then multiplying by 100. The lowest it will go is -1000%% processing speed
 neptech.mixing_vessel.tooltip6=You can use higher tier mixing modules to mitigate the processing speed debuff, however it gets more expensive the larger the multiblock is
 neptech.mixing_vessel.tooltip7=Parallels are calculated by taking 4 to the power of the distance from the controller to the edge minus 1.
@@ -103,6 +107,9 @@ neptech.machine.alloy_blast_smelter.name=Alloy Blast Smelter
 neptech.machine.hellish_alloy_blast_smelter.name=Hellish Alloy Blast Smelter
 neptech.machine.mixing_vessel.name=Mixing Vessel
 neptech.machine.wire_supercoater.name=Wire Supercoater
+neptech.machine.hellish_multi_smelter.name=Hellish Multi Smelter
+neptech.machine.titanium_air_vacuum.name=Air Vacuum
+neptech.machine.tungstensteel_air_vacuum.name=Extreme Air Vacuum
 
 // Electric Machine Descriptions
 neptech.multiblock.alloy_blast_smelter.description=A Blast Furnace built for creating alloys in high volumes.
@@ -250,6 +257,19 @@ neptech.machine.laser_hatch.source_65536a.uxv.name=UXV 65536A Laser Target Hatch
 neptech.machine.laser_hatch.source_65536a.opv.name=OpV 65536A Laser Target Hatch
 neptech.machine.laser_hatch.source_65536a.max.name=MAX 65536A Laser Target Hatch
 
+neptech.machine.laser_diode.iv.name=Insane Voltage Laser Diode
+neptech.machine.laser_diode.luv.name=Ludicrous Voltage Laser Diode
+neptech.machine.laser_diode.zpm.name=Zero Point Module Laser Diode
+neptech.machine.laser_diode.uv.name=Ultimate Voltage Laser Diode
+neptech.machine.laser_diode.uhv.name=Ultra High Voltage Laser Diode
+neptech.machine.laser_diode.uev.name=Ultra Excessive Voltage Laser Diode
+neptech.machine.laser_diode.uiv.name=Ultra Immense Voltage Laser Diode
+neptech.machine.laser_diode.uxv.name=Ultra Extreme Voltage Laser Diode
+neptech.machine.laser_diode.opv.name=Overpowered Voltage Laser Diode
+neptech.machine.laser_diode.max.name=Maximum Voltage Laser Diode
+
+neptech.machine.laser_diode.tooltip_starts_at=Starts as §f256A§7, use Soft Mallet to change
+
 // Steam Machines
 neptech.machine.steam_smasher.name=Steam Smasher
 neptech.machine.hp_steam_smasher.name=High Pressure Steam Smasher
@@ -344,6 +364,7 @@ metaitem.nether_ore_data.name=Nether Ore Data
 
 // Meta Blocks
 tile.generic_blocks.slag.name=Slag
+tile.generic_blocks.dust.name=Dust
 
 // Misc
 neptech.change_logic.single_item=You only get a single output

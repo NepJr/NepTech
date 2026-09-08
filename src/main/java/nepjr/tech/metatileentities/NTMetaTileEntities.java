@@ -6,13 +6,15 @@ import static nepjr.tech.NepTech.nepId;
 import gregtech.api.GTValues;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityLaserHatch;
 import nepjr.tech.config.NTConfig;
+import nepjr.tech.metatileentities.electric.MetaTileEntityLaserDiode;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityAirVacuum;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityAlloyBlastSmelter;
-import nepjr.tech.metatileentities.multi.electric.MetaTileEntityAutoSifter;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityDroneLauncher;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityElectricImplosionCompressor;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishABS;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishBlastFurnace;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishMultiSmelter;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityMixingVessel;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityWireSupercoater;
 import nepjr.tech.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
@@ -25,9 +27,7 @@ import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSmasher;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSmelter;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSquasher;
 import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSqueezer;
-import nepjr.tech.metatileentities.steam.SteamAutoSifter;
 import nepjr.tech.metatileentities.steam.boiler.NTSteamSolarBoiler;
-import net.minecraftforge.fml.common.Loader;
 
 public class NTMetaTileEntities 
 {	
@@ -41,6 +41,9 @@ public class NTMetaTileEntities
 	public static MetaTileEntityHellishABS HELLISH_ABS;
 	public static MetaTileEntityMixingVessel MIXING_VESSEL;
 	public static MetaTileEntityWireSupercoater WIRE_SUPERCOATER;
+	public static MetaTileEntityAirVacuum TITANIUM_AIR_VACUUM;
+	public static MetaTileEntityAirVacuum TUNGSTENSTEEL_AIR_VACUUM;
+	public static MetaTileEntityHellishMultiSmelter HELLISH_MULTI_SMELTER;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -162,10 +165,12 @@ public class NTMetaTileEntities
     public static MetaTileEntityLaserHatch MAX_LASER_OUTPUT_HATCH_1024;
     public static MetaTileEntityLaserHatch MAX_LASER_OUTPUT_HATCH_4096;
     
-    public static MetaTileEntityLaserHatch[] LASER_INPUT_HATCH_16384 = new MetaTileEntityLaserHatch[10];;
-    public static MetaTileEntityLaserHatch[] LASER_INPUT_HATCH_65536 = new MetaTileEntityLaserHatch[10];;
-    public static MetaTileEntityLaserHatch[] LASER_OUTPUT_HATCH_16384 = new MetaTileEntityLaserHatch[10];;
-    public static MetaTileEntityLaserHatch[] LASER_OUTPUT_HATCH_65536 = new MetaTileEntityLaserHatch[10];;
+    public static MetaTileEntityLaserHatch[] LASER_INPUT_HATCH_16384 = new MetaTileEntityLaserHatch[10];
+    public static MetaTileEntityLaserHatch[] LASER_INPUT_HATCH_65536 = new MetaTileEntityLaserHatch[10];
+    public static MetaTileEntityLaserHatch[] LASER_OUTPUT_HATCH_16384 = new MetaTileEntityLaserHatch[10];
+    public static MetaTileEntityLaserHatch[] LASER_OUTPUT_HATCH_65536 = new MetaTileEntityLaserHatch[10];
+    
+    public static MetaTileEntityLaserDiode[] LASER_DIODE = new MetaTileEntityLaserDiode[10];
 	
 	public static void register()
 	{	
@@ -183,6 +188,9 @@ public class NTMetaTileEntities
 		HELLISH_ABS = registerMetaTileEntity(6006, new MetaTileEntityHellishABS(nepId("hellish_alloy_blast_smelter")));
 		MIXING_VESSEL = registerMetaTileEntity(6007, new MetaTileEntityMixingVessel(nepId("mixing_vessel")));
 		WIRE_SUPERCOATER = registerMetaTileEntity(6008, new MetaTileEntityWireSupercoater(nepId("wire_supercoater")));
+		TITANIUM_AIR_VACUUM = registerMetaTileEntity(6009, new MetaTileEntityAirVacuum(nepId("titanium_air_vacuum"), 0));
+		TUNGSTENSTEEL_AIR_VACUUM = registerMetaTileEntity(6010, new MetaTileEntityAirVacuum(nepId("tungstensteel_air_vacuum"), 1));
+		HELLISH_MULTI_SMELTER = registerMetaTileEntity(6011, new MetaTileEntityHellishMultiSmelter(nepId("hellish_multi_smelter")));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{
@@ -325,6 +333,7 @@ public class NTMetaTileEntities
 			LASER_OUTPUT_HATCH_16384[i] = registerMetaTileEntity(7203 + i, new MetaTileEntityLaserHatch(nepId("laser_hatch.source_16384a." + voltageName), true, v, 16384));
 			LASER_INPUT_HATCH_65536[i] = registerMetaTileEntity(7213 + i, new MetaTileEntityLaserHatch(nepId("laser_hatch.target_65536a." + voltageName), false, v, 65536));
 			LASER_OUTPUT_HATCH_65536[i] = registerMetaTileEntity(7223 + i, new MetaTileEntityLaserHatch(nepId("laser_hatch.source_65536a." + voltageName), true, v, 65536));
+			LASER_DIODE[i] = registerMetaTileEntity(7233 + i, new MetaTileEntityLaserDiode(nepId("laser_diode." + voltageName), v));
 		}
 	}
 }

@@ -233,8 +233,8 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
         int hDist = 0;
 
         // find the left, right, back, and front distances for the structure pattern
-        // maximum size is 25*25*25 including walls, so check 12 block radius around the controller for blocks
-        for (int i = 1; i < 13; i++) {
+        // maximum size is 33*33*33 including walls, so check 12 block radius around the controller for blocks
+        for (int i = 1; i < 17; i++) {
             if (lDist == 0 && isBlockEdge(world, lPos, left)) lDist = i;
             if (rDist == 0 && isBlockEdge(world, rPos, right)) rDist = i;
             if (bDist == 0 && isBlockEdge(world, bPos, back)) bDist = i;
@@ -243,7 +243,7 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
         }
 
         // height is diameter instead of radius, so it needs to be done separately
-        for (int i = 1; i < 25; i++) {
+        for (int i = 1; i < 33; i++) {
             if (isBlockFloor(world, hPos, EnumFacing.DOWN)) hDist = i;
             if (hDist != 0) break;
         }

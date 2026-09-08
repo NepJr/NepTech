@@ -2,12 +2,23 @@
     "forge_marker": 1,
     "variants":
     {
-        "active=false,variant=slag":
+        "variant":
         {
-            "model": "minecraft:cube_all",
-            "textures":
+            "slag":
             {
-                "all": "neptech:blocks/generic/slag"
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "neptech:blocks/generic/slag"
+                }
+            },
+            "dust":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "neptech:blocks/generic/dust"
+                }
             }
         }
     }

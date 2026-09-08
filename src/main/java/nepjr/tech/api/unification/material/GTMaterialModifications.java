@@ -4,7 +4,9 @@ import gregtech.api.GTValues;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.PropertyKey;
+import gregtech.api.unification.material.properties.ToolProperty;
 import gregtech.api.unification.ore.OrePrefix;
+import net.minecraft.init.Enchantments;
 
 public class GTMaterialModifications 
 {
@@ -43,6 +45,12 @@ public class GTMaterialModifications
 		OrePrefix.gemFlawed.removeIgnored(Materials.NetherStar);
 		OrePrefix.gemFlawless.removeIgnored(Materials.NetherStar);
 		Materials.NetherStar.addFlags(MaterialFlags.HIGH_SIFTER_OUTPUT);
+		
+		Materials.Emerald.getProperties().setProperty(PropertyKey.TOOL, 
+				ToolProperty.Builder.of(6.0F, 7.0F, 1536, 3)
+                .attackSpeed(0.1F).enchantability(18)
+                .enchantment(Enchantments.FORTUNE, 5)
+                .enchantment(Enchantments.LOOTING, 5).build());
 		
 		// Frames
         Materials.TungstenCarbide.addFlags(MaterialFlags.GENERATE_FRAME);

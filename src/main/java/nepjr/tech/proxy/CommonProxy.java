@@ -133,7 +133,7 @@ public class CommonProxy
     	UniversalCircuitRecipes.init();
     }
 	
-	
+	@SubscribeEvent
 	public static void registerMaterialsPost(PostMaterialEvent event)
 	{
 		AlloyBlastPropertyAddition.init();
