@@ -167,7 +167,7 @@ public class CommonProxy
     	registry.register(createItemBlock(NTMetaBlocks.UNIQUE_CASINGS, VariantItemBlock::new));
     	registry.register(createItemBlock(NTMetaBlocks.MIXING_MODULES, VariantItemBlock::new));
     	registry.register(createItemBlock(NTMetaBlocks.MIXING_MODULES2, VariantItemBlock::new));
-		registry.register(createItemBlock(NTMetaBlocks.LASER_FOCI, VariantitemBlock::new));
+		registry.register(createItemBlock(NTMetaBlocks.LASER_FOCI, VariantItemBlock::new));
     }
     
     // Taken from GYCM
