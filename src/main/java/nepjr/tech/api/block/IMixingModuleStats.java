@@ -1,14 +1,5 @@
 package nepjr.tech.api.block;
 
-public interface IMixingModuleStats 
+public interface IMixingModuleStats extends IBasicMultiblockModule
 {
-    /**
-     * @return the processing speed
-     */
-    float getProcessingSpeed();
-    
-    /*
-     * @return the tier
-     */
-    int getTier();
 }

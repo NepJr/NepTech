@@ -1,14 +1,5 @@
 package nepjr.tech.api.block;
 
-public interface ILaserFociStats 
+public interface ILaserFociStats extends IBasicMultiblockModule
 {
-	/**
-     * @return the processing speed
-     */
-    float getProcessingSpeed();
-    
-    /*
-     * @return the tier
-     */
-    int getTier();
 }

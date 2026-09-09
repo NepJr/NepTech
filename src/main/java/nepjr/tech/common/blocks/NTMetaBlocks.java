@@ -23,6 +23,8 @@ public class NTMetaBlocks
 	public static BlockMixingModules MIXING_MODULES;
 	public static BlockMixingModules2 MIXING_MODULES2;
 	public static BlockLaserFoci LASER_FOCI;
+	public static BlockBeamSplitter BEAM_SPLITTER;
+	public static BlockCrushingWheels CRUSHING_WHEELS;
 	
 	public static void init()
 	{
@@ -48,6 +50,12 @@ public class NTMetaBlocks
 
 		LASER_FOCI = new BlockLaserFoci();
 		LASER_FOCI.setRegistryName("laser_foci");
+		
+		BEAM_SPLITTER = new BlockBeamSplitter();
+		BEAM_SPLITTER.setRegistryName("beam_splitter");
+		
+		CRUSHING_WHEELS = new BlockCrushingWheels();
+		CRUSHING_WHEELS.setRegistryName("crushing_wheels");
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -56,11 +64,13 @@ public class NTMetaBlocks
 		registerItemModel(NT_CASINGS);
 		registerItemModel(GENERIC_BLOCKS);
 		registerItemModel(LASER_FOCI);
+		registerItemModel(BEAM_SPLITTER);
 		
 		FERTILIZED_DIRT.onModelRegister();	
 		MIXING_MODULES.onModelRegister();
 		MIXING_MODULES2.onModelRegister();
 		UNIQUE_CASINGS.onModelRegister();
+		CRUSHING_WHEELS.onModelRegister();
 	}
 	
 	// Taken from GYCM

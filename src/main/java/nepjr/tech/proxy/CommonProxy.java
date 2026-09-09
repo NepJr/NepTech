@@ -14,7 +14,10 @@ import nepjr.tech.api.fluids.GeneratedFluidHandler;
 import nepjr.tech.api.unification.material.GTMaterialModifications;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.api.unification.properties.AlloyBlastPropertyAddition;
+import nepjr.tech.common.blocks.BlockBeamSplitter;
+import nepjr.tech.common.blocks.BlockCrushingWheels;
 import nepjr.tech.common.blocks.BlockFertilizedDirt;
+import nepjr.tech.common.blocks.BlockLaserFoci;
 import nepjr.tech.common.blocks.BlockMixingModules;
 import nepjr.tech.common.blocks.BlockMixingModules2;
 import nepjr.tech.common.blocks.NTMetaBlocks;
@@ -36,6 +39,7 @@ import nepjr.tech.loaders.recipe.ElectricImplosionCompressorRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.FormingPressRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
+import nepjr.tech.loaders.recipe.LaserHatchRecipes;
 import nepjr.tech.loaders.recipe.MaceratorRecipes;
 import nepjr.tech.loaders.recipe.MixingRecipes;
 import nepjr.tech.loaders.recipe.RemovalRecipes;
@@ -99,6 +103,24 @@ public class CommonProxy
         {
         	NepTechAPI.MIXING_MODULES.put(NTMetaBlocks.MIXING_MODULES2.getState(module), module);
         }
+        
+        // mmm laser
+        for(BlockLaserFoci.FociTier foci : BlockLaserFoci.FociTier.values())
+        {
+        	NepTechAPI.LASER_FOCI.put(NTMetaBlocks.LASER_FOCI.getState(foci), foci);
+        }
+        
+        // beamers
+        for(BlockBeamSplitter.BeamSplitter beam : BlockBeamSplitter.BeamSplitter.values())
+        {
+        	NepTechAPI.BEAM_SPLITTER.put(NTMetaBlocks.BEAM_SPLITTER.getState(beam), beam);
+        }
+        
+        // crushers
+        for(BlockCrushingWheels.CrushingWheels wheel : BlockCrushingWheels.CrushingWheels.values())
+        {
+        	NepTechAPI.CRUSHING_WHEELS.put(NTMetaBlocks.CRUSHING_WHEELS.getState(wheel), wheel);
+        }
 	}
 	
 	@SubscribeEvent
@@ -128,6 +150,7 @@ public class CommonProxy
     	MixingRecipes.init();
     	ForgeHammerRecipes.init();
     	AssemblerRecipes.init();
+    	LaserHatchRecipes.init();
     	AsslineRecipes.init();
     	CentrifugeRecipes.init();
     	UniversalCircuitRecipes.init();
@@ -168,6 +191,8 @@ public class CommonProxy
     	registry.register(createItemBlock(NTMetaBlocks.MIXING_MODULES, VariantItemBlock::new));
     	registry.register(createItemBlock(NTMetaBlocks.MIXING_MODULES2, VariantItemBlock::new));
 		registry.register(createItemBlock(NTMetaBlocks.LASER_FOCI, VariantItemBlock::new));
+		registry.register(createItemBlock(NTMetaBlocks.BEAM_SPLITTER, VariantItemBlock::new));
+		registry.register(createItemBlock(NTMetaBlocks.CRUSHING_WHEELS, VariantItemBlock::new));
     }
     
     // Taken from GYCM
@@ -189,6 +214,8 @@ public class CommonProxy
     	registry.register(NTMetaBlocks.MIXING_MODULES);
     	registry.register(NTMetaBlocks.MIXING_MODULES2);
 		registry.register(NTMetaBlocks.LASER_FOCI);
+		registry.register(NTMetaBlocks.BEAM_SPLITTER);
+		registry.register(NTMetaBlocks.CRUSHING_WHEELS);
     }
     
     @SubscribeEvent

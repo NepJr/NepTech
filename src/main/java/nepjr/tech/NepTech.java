@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 	 name = NTTags.MODNAME, 
 	 acceptedMinecraftVersions = "[1.12.2]",
 	 dependencies = GTInternalTags.DEP_VERSION_STRING
-	 			  + "after:gcym;"
+	 			  + "required-after:baubles;"
 	 			  + "after:ae2fc;"
 	 			  + "after:crazyae;"
 	 			  + "after:enderio;"

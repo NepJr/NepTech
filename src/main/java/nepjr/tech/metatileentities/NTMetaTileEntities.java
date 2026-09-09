@@ -15,7 +15,9 @@ import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishABS;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishBlastFurnace;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishMultiSmelter;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityLargeLaserEngraver;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityMixingVessel;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityPulverizer;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityWireSupercoater;
 import nepjr.tech.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTEnergyHatch;
@@ -44,6 +46,8 @@ public class NTMetaTileEntities
 	public static MetaTileEntityAirVacuum TITANIUM_AIR_VACUUM;
 	public static MetaTileEntityAirVacuum TUNGSTENSTEEL_AIR_VACUUM;
 	public static MetaTileEntityHellishMultiSmelter HELLISH_MULTI_SMELTER;
+	public static MetaTileEntityLargeLaserEngraver LARGE_LASER_ENGRAVER;
+	public static MetaTileEntityPulverizer PULVERIZER;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -191,6 +195,8 @@ public class NTMetaTileEntities
 		TITANIUM_AIR_VACUUM = registerMetaTileEntity(6009, new MetaTileEntityAirVacuum(nepId("titanium_air_vacuum"), 0));
 		TUNGSTENSTEEL_AIR_VACUUM = registerMetaTileEntity(6010, new MetaTileEntityAirVacuum(nepId("tungstensteel_air_vacuum"), 1));
 		HELLISH_MULTI_SMELTER = registerMetaTileEntity(6011, new MetaTileEntityHellishMultiSmelter(nepId("hellish_multi_smelter")));
+		LARGE_LASER_ENGRAVER = registerMetaTileEntity(6012, new MetaTileEntityLargeLaserEngraver(nepId("large_laser_engraver")));
+		PULVERIZER = registerMetaTileEntity(6013, new MetaTileEntityPulverizer(nepId("pulverizer")));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

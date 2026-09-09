@@ -1,0 +1,166 @@
+{
+    "forge_marker": 1,
+    "variants":
+    {
+        "active=false,variant=cobalt_brass":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/cobalt_brass_off",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=cobalt_brass":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/cobalt_brass_on",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=vanadiumsteel":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/vanadiumsteel_off",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=vanadiumsteel":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/vanadiumsteel_on",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=bluesteel":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/bluesteel_off",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=bluesteel":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/bluesteel_on",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=ultimet":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/ultimet_off",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=ultimet":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/ultimet_on",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=tungsten_carbide":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/tungsten_carbide_off",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=tungsten_carbide":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/tungsten_carbide_on",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=hsse":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/hsse_off",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=hsse":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/hsse_on",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=naquadah_alloy":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/naquadah_alloy_off",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=naquadah_alloy":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/naquadah_alloy_on",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=false,variant=duranium":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/duranium_off",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        },
+        "active=true,variant=duranium":
+        {
+            "model": "minecraft:cube_bottom_top",
+            "textures":
+            {
+                "top": "gregtech:blocks/crushing_wheels/duranium_on",
+                "side": "gregtech:blocks/casings/neptech/macerator_casing",
+                "bottom": "#side"
+            }
+        }
+    }
+}

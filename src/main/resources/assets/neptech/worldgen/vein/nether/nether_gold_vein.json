@@ -1,0 +1,38 @@
+{
+  "name": "neptech.veins.ore.nether_gold",
+  "weight": 1,
+  "density": 0.25,
+  "min_height": 10,
+  "max_height": 100,
+  "vein_populator": {
+    "type": "surface_rock",
+    "material": "gold"
+  },
+  "dimension_filter": [
+    "is_nether"
+  ],
+  "generator": {
+    "type": "layered",
+    "radius": [
+      17,
+      24
+    ]
+  },
+  "filler": {
+    "type": "layered",
+    "values": [
+      {
+        "primary": "ore:gold"
+      },
+      {
+        "secondary": "ore:gold"
+      },
+      {
+        "between": "ore:gold"
+      },
+      {
+        "sporadic": "ore:gold"
+      }
+    ]
+  }
+}

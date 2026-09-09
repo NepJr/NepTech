@@ -207,6 +207,12 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
                                 @NotNull EnumFacing direction) {
         return isBlockEdge(world, pos, direction);
     }
+    
+    @Override
+    public boolean canBeDistinct() 
+	{
+        return true;
+    }
 	
 	/**
      * Scans for blocks around the controller to update the dimensions

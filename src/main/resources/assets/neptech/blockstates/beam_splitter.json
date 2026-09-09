@@ -1,0 +1,64 @@
+{
+    "forge_marker": 1,
+    "variants":
+    {
+        "variant":
+        {
+            "256a":
+            {
+                "model": "minecraft:cube_bottom_top",
+                "textures":
+                {
+                    "side": "gregtech:blocks/casings/neptech/engraver_casing",
+                    "bottom": "gregtech:blocks/beam_splitter/overlay_bottom",
+                    "top": "#bottom"
+
+                }
+            },
+            "1024a":
+            {
+                "model": "minecraft:cube_bottom_top",
+                "textures":
+                {
+                    "side": "gregtech:blocks/casings/neptech/engraver_casing",
+                    "bottom": "gregtech:blocks/beam_splitter/overlay_bottom",
+                    "top": "#bottom"
+
+                }
+            },
+            "4096a":
+            {
+                "model": "minecraft:cube_bottom_top",
+                "textures":
+                {
+                    "side": "gregtech:blocks/casings/neptech/engraver_casing",
+                    "bottom": "gregtech:blocks/beam_splitter/overlay_bottom",
+                    "top": "#bottom"
+
+                }
+            },
+            "16384a":
+            {
+                "model": "minecraft:cube_bottom_top",
+                "textures":
+                {
+                    "side": "gregtech:blocks/casings/neptech/engraver_casing",
+                    "bottom": "gregtech:blocks/beam_splitter/overlay_bottom",
+                    "top": "#bottom"
+
+                }
+            },
+            "65536a":
+            {
+                "model": "minecraft:cube_bottom_top",
+                "textures":
+                {
+                    "side": "gregtech:blocks/casings/neptech/engraver_casing",
+                    "bottom": "gregtech:blocks/beam_splitter/overlay_bottom",
+                    "top": "#bottom"
+
+                }
+            }
+        }
+    }
+}

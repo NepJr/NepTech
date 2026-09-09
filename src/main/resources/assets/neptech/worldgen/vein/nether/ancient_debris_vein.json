@@ -1,0 +1,38 @@
+{
+  "name": "neptech.veins.ore.ancient_debris",
+  "weight": 10,
+  "density": 0.25,
+  "min_height": 10,
+  "max_height": 80,
+  "vein_populator": {
+    "type": "surface_rock",
+    "material": "ancient_debris"
+  },
+  "dimension_filter": [
+    "is_nether"
+  ],
+  "generator": {
+    "type": "layered",
+    "radius": [
+      17,
+      24
+    ]
+  },
+  "filler": {
+    "type": "layered",
+    "values": [
+      {
+        "primary": "ore:ancient_debris"
+      },
+      {
+        "secondary": "ore:ancient_debris"
+      },
+      {
+        "between": "ore:ancient_debris"
+      },
+      {
+        "sporadic": "ore:nether_star"
+      }
+    ]
+  }
+}

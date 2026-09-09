@@ -5,6 +5,8 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.BlastProperty.GasTier;
+import nepjr.tech.api.unification.NTElements;
+
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.GTValues.*;
 import static nepjr.tech.NepTech.nepId;
@@ -13,10 +15,12 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 public class NTMaterials 
 {
+	// Neptech Materials
 	public static Material VoidGas;
 	public static Material Cryotheum;
 	public static Material Pyrotheum;
 	public static Material Netherite;
+	public static Material AncientDebris;
 	
 	// EnderIO Alloys
 	public static Material EnergeticAlloy;
@@ -70,9 +74,17 @@ public class NTMaterials
 				.color(0x89CFEF)
 				.build();
 		
-		Netherite = new Material.Builder(8004, nepId("netherite"))
+		Pyrotheum = new Material.Builder(8004, nepId("pyrotheum"))
+				.liquid(new FluidBuilder()
+						.temperature(8000))
+				.iconSet(DULL)
+				.color(0xFF8000)
+				.build();
+		
+		Netherite = new Material.Builder(8005, nepId("netherite"))
 				.ingot().ore()
 				.iconSet(METALLIC)
+				.element(NTElements.Nr)
 				.flags(MaterialFlags.GENERATE_FRAME)
 				.cableProperties(V[LuV], 16, 5)
 				.blast(builder -> builder
@@ -81,6 +93,12 @@ public class NTMaterials
 				.addOreByproducts(Materials.Naquadah)
 				.color(0x4b4042)
 				.build();
+		
+		AncientDebris = new Material.Builder(8006, nepId("ancient_debris"))
+        		.dust(2).ore()
+        		.color(0x4b4042).iconSet(DULL)
+        		.addOreByproducts(Netherite)
+        		.build();
 		
 		// EnderIO alloys
 		// Colors borrowed from Nomi Labs / Nomifactory CEu
