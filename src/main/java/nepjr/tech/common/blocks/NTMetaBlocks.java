@@ -22,6 +22,7 @@ public class NTMetaBlocks
 	public static NTUniqueCasing UNIQUE_CASINGS;
 	public static BlockMixingModules MIXING_MODULES;
 	public static BlockMixingModules2 MIXING_MODULES2;
+	public static BlockLaserFoci LASER_FOCI;
 	
 	public static void init()
 	{
@@ -44,6 +45,9 @@ public class NTMetaBlocks
 		// so we make a 2nd class
 		MIXING_MODULES2 = new BlockMixingModules2();
 		MIXING_MODULES2.setRegistryName("mixing_modules2");
+
+		LASER_FOCI = new BlockLaserFoci();
+		LASER_FOCI.setRegistryName("laser_foci");
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -51,6 +55,7 @@ public class NTMetaBlocks
 	{
 		registerItemModel(NT_CASINGS);
 		registerItemModel(GENERIC_BLOCKS);
+		registerItemModel(LASER_FOCI);
 		
 		FERTILIZED_DIRT.onModelRegister();	
 		MIXING_MODULES.onModelRegister();

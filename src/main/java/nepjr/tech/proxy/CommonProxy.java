@@ -167,6 +167,7 @@ public class CommonProxy
     	registry.register(createItemBlock(NTMetaBlocks.UNIQUE_CASINGS, VariantItemBlock::new));
     	registry.register(createItemBlock(NTMetaBlocks.MIXING_MODULES, VariantItemBlock::new));
     	registry.register(createItemBlock(NTMetaBlocks.MIXING_MODULES2, VariantItemBlock::new));
+		registry.register(createItemBlock(NTMetaBlocks.LASER_FOCI, VariantitemBlock::new));
     }
     
     // Taken from GYCM
@@ -187,6 +188,7 @@ public class CommonProxy
     	registry.register(NTMetaBlocks.UNIQUE_CASINGS);
     	registry.register(NTMetaBlocks.MIXING_MODULES);
     	registry.register(NTMetaBlocks.MIXING_MODULES2);
+		registry.register(NTMetaBlocks.LASER_FOCI);
     }
     
     @SubscribeEvent
