@@ -21,6 +21,10 @@ public class NTMaterials
 	public static Material Pyrotheum;
 	public static Material Netherite;
 	public static Material AncientDebris;
+	public static Material MagneticHolmium;
+	public static Material Draconium;
+	public static Material AwakenedDraconium;
+	public static Material Mostimite;
 	
 	// EnderIO Alloys
 	public static Material EnergeticAlloy;
@@ -48,11 +52,20 @@ public class NTMaterials
     public static Material TitaniumTungstenCarbide;
     public static Material IncoloyMA956;
 	
+    // Netherite Line materials
+    public static Material RawNetheritePowder;
+    public static Material RawActiniumPowder;
+    public static Material Holminide;
+    public static Material ExoticMetalMixture;
+    public static Material DraconiumMetalResidue;
+    public static Material AcidicMostimiteSolution;
+    public static Material MostimiteTrifluoride;
+    public static Material AncientSludgeResidue;
+    
 	// Holmium related stuff
 	public static Material ImpureHolmiumSolution;
 	public static Material EnrichedHolmiumSolution;
 	public static Material HolmiumChloride;
-	public static Material Holminide;
 	
 	public static void init()
 	{
@@ -99,6 +112,23 @@ public class NTMaterials
         		.color(0x4b4042).iconSet(DULL)
         		.addOreByproducts(Netherite)
         		.build();
+		
+		// Magnetic Holmium
+		
+		Draconium = new Material.Builder(8008, nepId("draconium"))
+				.ingot().dust().fluid()
+				.color(0xAA00AA).iconSet(METALLIC)
+				.flags(GENERATE_PLATE, 
+					   GENERATE_DOUBLE_PLATE,
+					   GENERATE_ROTOR,
+					   GENERATE_GEAR)
+				.build();
+		
+		AwakenedDraconium = new Material.Builder(8009, nepId("awakened_draconium"))
+				.ingot().dust().fluid()
+				.color(0xFF6A00).iconSet(METALLIC)
+				.cableProperties(V[UEV], 8, 48)
+				.build();
 		
 		// EnderIO alloys
 		// Colors borrowed from Nomi Labs / Nomifactory CEu

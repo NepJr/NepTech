@@ -25,6 +25,7 @@ public class NTMetaBlocks
 	public static BlockLaserFoci LASER_FOCI;
 	public static BlockBeamSplitter BEAM_SPLITTER;
 	public static BlockCrushingWheels CRUSHING_WHEELS;
+	public static BlockNTCoils NT_COILS;
 	
 	public static void init()
 	{
@@ -56,6 +57,9 @@ public class NTMetaBlocks
 		
 		CRUSHING_WHEELS = new BlockCrushingWheels();
 		CRUSHING_WHEELS.setRegistryName("crushing_wheels");
+		
+		NT_COILS = new BlockNTCoils();
+		NT_COILS.setRegistryName("wire_coil");
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -71,6 +75,7 @@ public class NTMetaBlocks
 		MIXING_MODULES2.onModelRegister();
 		UNIQUE_CASINGS.onModelRegister();
 		CRUSHING_WHEELS.onModelRegister();
+		NT_COILS.onModelRegister();
 	}
 	
 	// Taken from GYCM

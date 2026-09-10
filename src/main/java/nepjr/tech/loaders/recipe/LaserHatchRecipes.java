@@ -15,6 +15,8 @@ public class LaserHatchRecipes
 	{
 		ivRecipes();
 		luvRecipes();
+		zpmRecipes();
+		uvRecipes();
 	}
 	
 	private static void ivRecipes()
@@ -115,6 +117,108 @@ public class LaserHatchRecipes
 			.outputs(NTMetaTileEntities.LASER_OUTPUT_HATCH_65536[1].getStackForm())
 			.circuitMeta(5)
 			.EUt(VA[LuV])
+			.duration(240*20)
+			.buildAndRegister();
+	}
+	
+	private static void zpmRecipes()
+	{
+		RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[ZPM])
+			.input(OrePrefix.lens, Materials.Diamond, 8)
+			.input(MetaItems.EMITTER_ZPM, 8)
+			.input(MetaItems.ELECTRIC_PUMP_ZPM, 8)
+			.input(OrePrefix.cableGtOctal, Materials.VanadiumGallium, 4)
+			.outputs(NTMetaTileEntities.LASER_INPUT_HATCH_16384[2].getStackForm())
+			.circuitMeta(4)
+			.EUt(VA[ZPM])
+			.duration(120*20)
+			.buildAndRegister();
+		
+		RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[ZPM])
+			.input(OrePrefix.lens, Materials.Diamond, 8)
+			.input(MetaItems.SENSOR_ZPM, 8)
+			.input(MetaItems.ELECTRIC_PUMP_ZPM, 8)
+			.input(OrePrefix.cableGtOctal, Materials.VanadiumGallium, 4)
+			.outputs(NTMetaTileEntities.LASER_OUTPUT_HATCH_16384[2].getStackForm())
+			.circuitMeta(4)
+			.EUt(VA[ZPM])
+			.duration(120*20)
+			.buildAndRegister();
+		
+		RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[ZPM])
+			.input(OrePrefix.lens, Materials.Diamond, 16)
+			.input(MetaItems.EMITTER_ZPM, 16)
+			.input(MetaItems.ELECTRIC_PUMP_ZPM, 16)
+			.input(OrePrefix.cableGtHex, Materials.VanadiumGallium, 4)
+			.outputs(NTMetaTileEntities.LASER_INPUT_HATCH_65536[2].getStackForm())
+			.circuitMeta(5)
+			.EUt(VA[ZPM])
+			.duration(240*20)
+			.buildAndRegister();
+	
+		RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[ZPM])
+			.input(OrePrefix.lens, Materials.Diamond, 16)
+			.input(MetaItems.SENSOR_ZPM, 16)
+			.input(MetaItems.ELECTRIC_PUMP_ZPM, 16)
+			.input(OrePrefix.cableGtHex, Materials.VanadiumGallium, 4)
+			.outputs(NTMetaTileEntities.LASER_OUTPUT_HATCH_65536[2].getStackForm())
+			.circuitMeta(5)
+			.EUt(VA[ZPM])
+			.duration(240*20)
+			.buildAndRegister();
+	}
+	
+	private static void uvRecipes()
+	{
+		RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[UV])
+			.input(OrePrefix.lens, Materials.Diamond, 8)
+			.input(MetaItems.EMITTER_UV, 8)
+			.input(MetaItems.ELECTRIC_PUMP_UV, 8)
+			.input(OrePrefix.cableGtOctal, Materials.YttriumBariumCuprate, 4)
+			.outputs(NTMetaTileEntities.LASER_INPUT_HATCH_16384[3].getStackForm())
+			.circuitMeta(4)
+			.EUt(VA[UV])
+			.duration(120*20)
+			.buildAndRegister();
+		
+		RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[UV])
+			.input(OrePrefix.lens, Materials.Diamond, 8)
+			.input(MetaItems.SENSOR_UV, 8)
+			.input(MetaItems.ELECTRIC_PUMP_UV, 8)
+			.input(OrePrefix.cableGtOctal, Materials.YttriumBariumCuprate, 4)
+			.outputs(NTMetaTileEntities.LASER_OUTPUT_HATCH_16384[3].getStackForm())
+			.circuitMeta(4)
+			.EUt(VA[UV])
+			.duration(120*20)
+			.buildAndRegister();
+		
+		RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[UV])
+			.input(OrePrefix.lens, Materials.Diamond, 16)
+			.input(MetaItems.EMITTER_UV, 16)
+			.input(MetaItems.ELECTRIC_PUMP_UV, 16)
+			.input(OrePrefix.cableGtHex, Materials.YttriumBariumCuprate, 4)
+			.outputs(NTMetaTileEntities.LASER_INPUT_HATCH_65536[3].getStackForm())
+			.circuitMeta(5)
+			.EUt(VA[UV])
+			.duration(240*20)
+			.buildAndRegister();
+	
+		RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[UV])
+			.input(OrePrefix.lens, Materials.Diamond, 16)
+			.input(MetaItems.SENSOR_UV, 16)
+			.input(MetaItems.ELECTRIC_PUMP_UV, 16)
+			.input(OrePrefix.cableGtHex, Materials.YttriumBariumCuprate, 4)
+			.outputs(NTMetaTileEntities.LASER_OUTPUT_HATCH_65536[3].getStackForm())
+			.circuitMeta(5)
+			.EUt(VA[UV])
 			.duration(240*20)
 			.buildAndRegister();
 	}

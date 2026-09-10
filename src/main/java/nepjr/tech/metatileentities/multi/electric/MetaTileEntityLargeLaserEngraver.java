@@ -342,6 +342,11 @@ public class MetaTileEntityLargeLaserEngraver extends RecipeMapMultiblockControl
 		return configuredParallels;
 	}
 	
+	private int getFociTier()
+	{
+		return fociTier;
+	}
+	
 	private class LaserEngraverRecipeLogic extends MultiblockRecipeLogic
 	{
 		private MetaTileEntityLargeLaserEngraver mte;
@@ -356,6 +361,11 @@ public class MetaTileEntityLargeLaserEngraver extends RecipeMapMultiblockControl
 		{
 			return mte.getConfiguredParallels();
 		}
+		
+		@Override
+	    public long getMaxVoltage() {
+	        return GTValues.V[mte.getFociTier()];
+	    }
 		
 		@Override
 	    public long getMaximumOverclockVoltage() 

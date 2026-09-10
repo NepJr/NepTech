@@ -29,6 +29,9 @@ tile.nt_casing_blocks.engraver_casing.name=Laser-Safe Engraving Casing
 tile.nt_casing_blocks.atomic_casing.name=Atomic Casing
 tile.nt_casing_blocks.steam_casing.name=Industrial Steam Casing
 
+// Coils
+tile.wire_coil.awakened_draconium.name=Awakened Draconium Coil Block
+
 // Mixing Modules
 tile.mixing_module.ulv.name=Ultra Low Voltage Mixing Module
 tile.mixing_module.lv.name=Low Voltage Mixing Module
@@ -93,6 +96,9 @@ neptech.material.molybdenum_disilicide=Molybdenum Disilicide
 neptech.material.hsla_steel=HSLA Steel
 neptech.material.titanium_tungsten_carbide=Titanium Tungsten Carbide
 neptech.material.incoloy_ma_956=Incoloy-MA956
+neptech.material.draconium=Draconium
+neptech.material.awakened_draconium=Awakened Draconium
+neptech.material.ancient_debris=Ancient Debris
 
 // Machine tooltips n related shit
 neptech.multiblock.conf_parallels=Configured Parallels: %s
@@ -386,6 +392,9 @@ metaitem.spray.infinite.dyes.green.name=Infinite Spray Can (Green)
 metaitem.spray.infinite.dyes.red.name=Infinite Spray Can (Red)
 metaitem.spray.infinite.dyes.black.name=Infinite Spray Can (Black)
 metaitem.nether_ore_data.name=Nether Ore Data
+
+metaitem.wafer.extremely_high_power_integrated_circuit.name=EHPIC Wafer
+metaitem.plate.extremely_high_power_integrated_circuit.name=EHPIC
 
 // Meta Blocks
 tile.generic_blocks.slag.name=Slag

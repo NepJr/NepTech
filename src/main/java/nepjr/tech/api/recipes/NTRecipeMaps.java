@@ -49,6 +49,11 @@ public class NTRecipeMaps
 					.setSound(GTSoundEvents.CHEMICAL_REACTOR);
 	
 	@ZenProperty
+	public static final RecipeMap<GasCollectorRecipeBuilder> VOID_ORE_MINER = new RecipeMap<>("void_ore_miner", 1, 256, 1, 0,
+			new GasCollectorRecipeBuilder(), true)
+				.setSound(GTSoundEvents.MINER);
+	
+	@ZenProperty
 	public static final RecipeMap<BlastRecipeBuilder> ALLOY_BLAST_RECIPES = new RecipeMap<>("alloy_blast_smelter", 9, 0,
             3, 1, new BlastRecipeBuilder(), false)
                     .setSlotOverlay(false, false, false, GuiTextures.FURNACE_OVERLAY_1)

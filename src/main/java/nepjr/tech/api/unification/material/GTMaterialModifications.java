@@ -32,7 +32,18 @@ public class GTMaterialModifications
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setVoltage((int) GTValues.V[GTValues.UEV]);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setLossPerBlock(0);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setAmperage(16);
-		Materials.Holmium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+		Materials.Holmium.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_ROD, MaterialFlags.GENERATE_LONG_ROD, MaterialFlags.GENERATE_SPRING);
+		
+		Materials.Actinium.getProperties().ensureSet(PropertyKey.INGOT, true);
+		Materials.Actinium.getProperties().ensureSet(PropertyKey.DUST, true);
+		Materials.Actinium.addFlags(MaterialFlags.GENERATE_RING,
+									MaterialFlags.GENERATE_ROUND,
+									MaterialFlags.GENERATE_ROD, 
+									MaterialFlags.GENERATE_LONG_ROD,
+									MaterialFlags.GENERATE_BOLT_SCREW,
+									MaterialFlags.GENERATE_SMALL_GEAR,
+									MaterialFlags.GENERATE_GEAR,
+									MaterialFlags.GENERATE_FRAME);
 		
 		Materials.Polybenzimidazole.addFlags(MaterialFlags.GENERATE_ROD);
 		Materials.Polybenzimidazole.addFlags(MaterialFlags.GENERATE_FRAME);
@@ -71,11 +82,15 @@ public class GTMaterialModifications
 
         // Springs
         Materials.Neutronium.addFlags(MaterialFlags.GENERATE_SPRING);
+        Materials.Tritanium.addFlags(MaterialFlags.GENERATE_SPRING);
 
         // Dense Plates
         Materials.Neutronium.addFlags(MaterialFlags.GENERATE_DENSE);
 
         // Foils
         Materials.Graphene.addFlags(MaterialFlags.GENERATE_FOIL);
+        
+        // Bolts
+        Materials.Duranium.addFlags(MaterialFlags.GENERATE_BOLT_SCREW);
 	}
 }

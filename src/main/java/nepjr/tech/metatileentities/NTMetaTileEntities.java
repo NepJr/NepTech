@@ -4,6 +4,7 @@ import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTile
 import static nepjr.tech.NepTech.nepId;
 
 import gregtech.api.GTValues;
+import gregtech.api.unification.material.Materials;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityLaserHatch;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.metatileentities.electric.MetaTileEntityLaserDiode;
@@ -18,6 +19,7 @@ import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishMultiSmel
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityLargeLaserEngraver;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityMixingVessel;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityPulverizer;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityVoidOreMiner;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityWireSupercoater;
 import nepjr.tech.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
 import nepjr.tech.metatileentities.multi.multiblockpart.MetaTileEntityNTEnergyHatch;
@@ -48,6 +50,11 @@ public class NTMetaTileEntities
 	public static MetaTileEntityHellishMultiSmelter HELLISH_MULTI_SMELTER;
 	public static MetaTileEntityLargeLaserEngraver LARGE_LASER_ENGRAVER;
 	public static MetaTileEntityPulverizer PULVERIZER;
+	public static MetaTileEntityVoidOreMiner VOID_MINER_ZPM;
+	public static MetaTileEntityVoidOreMiner VOID_MINER_UV;
+	public static MetaTileEntityVoidOreMiner VOID_MINER_UHV;
+	public static MetaTileEntityVoidOreMiner VOID_MINER_UEV;
+	public static MetaTileEntityVoidOreMiner VOID_MINER_UIV;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -197,6 +204,11 @@ public class NTMetaTileEntities
 		HELLISH_MULTI_SMELTER = registerMetaTileEntity(6011, new MetaTileEntityHellishMultiSmelter(nepId("hellish_multi_smelter")));
 		LARGE_LASER_ENGRAVER = registerMetaTileEntity(6012, new MetaTileEntityLargeLaserEngraver(nepId("large_laser_engraver")));
 		PULVERIZER = registerMetaTileEntity(6013, new MetaTileEntityPulverizer(nepId("pulverizer")));
+		VOID_MINER_ZPM = registerMetaTileEntity(6014, new MetaTileEntityVoidOreMiner(nepId("void_miner_zpm"), GTValues.ZPM, Materials.NaquadahAlloy));
+		VOID_MINER_UV = registerMetaTileEntity(6015, new MetaTileEntityVoidOreMiner(nepId("void_miner_uv"), GTValues.UV, Materials.NaquadahAlloy));
+		VOID_MINER_UHV = registerMetaTileEntity(6016, new MetaTileEntityVoidOreMiner(nepId("void_miner_uhv"), GTValues.UHV, Materials.NaquadahAlloy));
+		VOID_MINER_UEV = registerMetaTileEntity(6017, new MetaTileEntityVoidOreMiner(nepId("void_miner_uev"), GTValues.UEV, Materials.NaquadahAlloy));
+		VOID_MINER_UIV = registerMetaTileEntity(6018, new MetaTileEntityVoidOreMiner(nepId("void_miner_uiv"), GTValues.UIV, Materials.NaquadahAlloy));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

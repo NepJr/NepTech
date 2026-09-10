@@ -3,10 +3,12 @@ package nepjr.tech.proxy;
 import java.util.Objects;
 import java.util.function.Function;
 
+import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.event.HighTierEvent;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
+import gregtech.loaders.recipe.CraftingComponent;
 import nepjr.tech.NTTags;
 import nepjr.tech.api.NepTechAPI;
 import nepjr.tech.api.block.IFertilizedDirtBlockStats;
@@ -20,6 +22,7 @@ import nepjr.tech.common.blocks.BlockFertilizedDirt;
 import nepjr.tech.common.blocks.BlockLaserFoci;
 import nepjr.tech.common.blocks.BlockMixingModules;
 import nepjr.tech.common.blocks.BlockMixingModules2;
+import nepjr.tech.common.blocks.BlockNTCoils;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTItemRingOfFlight;
 import nepjr.tech.common.items.NTMetaItems;
@@ -30,6 +33,7 @@ import nepjr.tech.loaders.recipe.AssemblerRecipes;
 import nepjr.tech.loaders.recipe.AsslineRecipes;
 import nepjr.tech.loaders.recipe.AsteroidMiningRecipes;
 import nepjr.tech.loaders.recipe.AutoclaveRecipes;
+import nepjr.tech.loaders.recipe.BiowareCircuitRecipes;
 import nepjr.tech.loaders.recipe.CasingRecipes;
 import nepjr.tech.loaders.recipe.CentrifugeRecipes;
 import nepjr.tech.loaders.recipe.ChemBathRecipes;
@@ -42,9 +46,13 @@ import nepjr.tech.loaders.recipe.GreenhouseRecipes;
 import nepjr.tech.loaders.recipe.LaserHatchRecipes;
 import nepjr.tech.loaders.recipe.MaceratorRecipes;
 import nepjr.tech.loaders.recipe.MixingRecipes;
+import nepjr.tech.loaders.recipe.NTCraftingComponents;
+import nepjr.tech.loaders.recipe.NetheriteProcessingRecipes;
 import nepjr.tech.loaders.recipe.RemovalRecipes;
 import nepjr.tech.loaders.recipe.SupercoaterRecipeHandler;
 import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
+import nepjr.tech.loaders.recipe.VoidOreMinerRecipes;
+import nepjr.tech.loaders.recipe.WaferRecipes;
 import nepjr.tech.world.BiomeRubberForest;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -94,6 +102,12 @@ public class CommonProxy
         NepTechAPI.FERTILIZED_DIRTS.put(Blocks.DIRT.getDefaultState(), UnregisteredFertilizerType.DIRT);
         NepTechAPI.FERTILIZED_DIRTS.put(Blocks.GRASS.getDefaultState(), UnregisteredFertilizerType.DIRT);
         
+        // Turnin' up the heat!
+        for(BlockNTCoils.CoilType type : BlockNTCoils.CoilType.values())
+        {
+        	GregTechAPI.HEATING_COILS.put(NTMetaBlocks.NT_COILS.getState(type), type);
+        }
+        
         // Those who mix
         for(BlockMixingModules.ModuleTier module : BlockMixingModules.ModuleTier.values())
         {
@@ -123,16 +137,34 @@ public class CommonProxy
         }
 	}
 	
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
+	public static void initComponents(GregTechAPI.RegisterEvent<CraftingComponent> event)
+	{
+		NTCraftingComponents.init();
+	}
+	
 	@SubscribeEvent
-    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) 
-    {
-		// Handlers first
+	public static void registerRecipesNormal(RegistryEvent.Register<IRecipe> event)
+	{
+		// then Handlers
     	ElectricImplosionCompressorRecipes.initHandler();
     	ABSRecipes.initHandler();
     	SupercoaterRecipeHandler.initHandler();
+	}
+	
+	@SubscribeEvent(priority = EventPriority.LOW)
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) 
+    {
+		// Remove recipes
+		RemovalRecipes.init();
+    	
     	
     	// Then do everything else
-    	RemovalRecipes.init();
+    	WaferRecipes.init();
+    	BiowareCircuitRecipes.init();
+    	NetheriteProcessingRecipes.init();
+    	VoidOreMinerRecipes.init();
+    	
     	CasingRecipes.init();
     	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
     	GreenhouseRecipes.init();
@@ -193,6 +225,7 @@ public class CommonProxy
 		registry.register(createItemBlock(NTMetaBlocks.LASER_FOCI, VariantItemBlock::new));
 		registry.register(createItemBlock(NTMetaBlocks.BEAM_SPLITTER, VariantItemBlock::new));
 		registry.register(createItemBlock(NTMetaBlocks.CRUSHING_WHEELS, VariantItemBlock::new));
+		registry.register(createItemBlock(NTMetaBlocks.NT_COILS, VariantItemBlock::new));
     }
     
     // Taken from GYCM
@@ -216,6 +249,7 @@ public class CommonProxy
 		registry.register(NTMetaBlocks.LASER_FOCI);
 		registry.register(NTMetaBlocks.BEAM_SPLITTER);
 		registry.register(NTMetaBlocks.CRUSHING_WHEELS);
+		registry.register(NTMetaBlocks.NT_COILS);
     }
     
     @SubscribeEvent

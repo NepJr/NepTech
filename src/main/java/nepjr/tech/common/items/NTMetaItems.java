@@ -80,6 +80,17 @@ public class NTMetaItems
 	
 	// Ore Data
 	public static MetaItem<?>.MetaValueItem NETHER_ORE_DATA;
+	
+	// Wafers and stuff
+	public static MetaItem<?>.MetaValueItem EHPIC_WAFER;
+	public static MetaItem<?>.MetaValueItem EHPIC;
+	
+	// Uncatagorized
+	public static MetaItem<?>.MetaValueItem SYNTHETIC_DRAGON_EGG;
+	public static MetaItem<?>.MetaValueItem DRACONIC_STEM_CELLS;
+	public static MetaItem<?>.MetaValueItem DRACONIC_PROCESSING_UNIT;
+	public static MetaItem<?>.MetaValueItem BOARD_BIOWARE;
+	public static MetaItem<?>.MetaValueItem CIRCUIT_BOARD_BIOWARE;
 
 	public static void init()
 	{
@@ -166,5 +177,15 @@ public class NTMetaItems
         
         NETHER_ORE_DATA = nepItems.addItem(58, "nether_ore_data")
         		.setRarity(EnumRarity.RARE);
+        
+        SYNTHETIC_DRAGON_EGG = nepItems.addItem(59, "synthetic_dragon_egg");
+        DRACONIC_STEM_CELLS = nepItems.addItem(60, "draconic_stem_cells");
+        DRACONIC_PROCESSING_UNIT = nepItems.addItem(61, "draconic_processing_unit");
+        BOARD_BIOWARE = nepItems.addItem(62, "board.bioware");
+        CIRCUIT_BOARD_BIOWARE = nepItems.addItem(63, "circuit_board.bioware");
+        
+        // Wafers n stuff
+        EHPIC_WAFER = nepItems.addItem(400, "wafer.extremely_high_power_integrated_circuit");
+        EHPIC = nepItems.addItem(500, "plate.extremely_high_power_integrated_circuit");
 	}
 }
