@@ -38,7 +38,7 @@ public class NetheriteProcessingRecipes
 			.output(OrePrefix.dust, NTMaterials.Holminide, 2)
 			.output(OrePrefix.dust, NTMaterials.ExoticMetalMixture, 1)
 			.output(OrePrefix.dust, NTMaterials.AncientSludgeResidue, 2)
-			.EUt(VA[UV])
+			.EUt(VA[LuV])
 			.duration(25*20)
 			.buildAndRegister();
 		
