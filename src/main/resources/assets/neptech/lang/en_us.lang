@@ -99,6 +99,16 @@ neptech.material.incoloy_ma_956=Incoloy-MA956
 neptech.material.draconium=Draconium
 neptech.material.awakened_draconium=Awakened Draconium
 neptech.material.ancient_debris=Ancient Debris
+neptech.material.mostimite=Mostimite
+neptech.material.wyvernium=Wyvernium
+neptech.material.raw_netherite_powder=Raw Netherite Powder
+neptech.material.raw_actinium_powder=Raw Actinium Powder
+neptech.material.exotic_metal_mixture=Exotic Metal Mixture
+neptech.material.mostimite_metal_residue=Mostimite Metal Residue
+neptech.material.acidic_wyvernium_solution=Acidic Wyvernium Solution
+neptech.material.wyvernium_tetroxide=Wyvernium Tetroxide
+neptech.material.mostimite_chloride=Mostimite Chloride
+neptech.material.ancient_sludge_residue=Ancient Sludge Residue
 
 // Machine tooltips n related shit
 neptech.multiblock.conf_parallels=Configured Parallels: %s

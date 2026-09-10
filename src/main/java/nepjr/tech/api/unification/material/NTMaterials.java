@@ -24,6 +24,7 @@ public class NTMaterials
 	public static Material MagneticHolmium;
 	public static Material Draconium;
 	public static Material AwakenedDraconium;
+	public static Material Wyvernium;
 	public static Material Mostimite;
 	
 	// EnderIO Alloys
@@ -57,9 +58,10 @@ public class NTMaterials
     public static Material RawActiniumPowder;
     public static Material Holminide;
     public static Material ExoticMetalMixture;
-    public static Material DraconiumMetalResidue;
-    public static Material AcidicMostimiteSolution;
-    public static Material MostimiteTrifluoride;
+    public static Material MostimiteMetalResidue;
+    public static Material AcidicWyverniumSolution;
+    public static Material WyverniumTetroxide;
+    public static Material MostimiteChloride;
     public static Material AncientSludgeResidue;
     
 	// Holmium related stuff
@@ -113,6 +115,11 @@ public class NTMaterials
         		.addOreByproducts(Netherite)
         		.build();
 		
+		Mostimite = new Material.Builder(8007, nepId("mostimite"))
+				.ingot().dust().fluid()
+				.color(0x0000FF).iconSet(METALLIC)
+				.build();
+		
 		// Magnetic Holmium
 		
 		Draconium = new Material.Builder(8008, nepId("draconium"))
@@ -130,6 +137,10 @@ public class NTMaterials
 				.cableProperties(V[UEV], 8, 48)
 				.build();
 		
+		Wyvernium = new Material.Builder(8010, nepId("wyvernium"))
+				.ingot().dust().fluid()
+				.color(0xCC00CC).iconSet(METALLIC)
+				.build();
 		// EnderIO alloys
 		// Colors borrowed from Nomi Labs / Nomifactory CEu
 		
@@ -355,5 +366,38 @@ public class NTMaterials
                 		.temp(3625, GasTier.MID)
                 		.blastStats(VA[EV], 800))
                 .build();
+        
+        // Netherite Line stuff
+        RawNetheritePowder = new Material.Builder(8200, nepId("raw_netherite_powder"))
+        		.dust()
+        		.build();
+        RawActiniumPowder = new Material.Builder(8201, nepId("raw_actinium_powder"))
+        		.dust()
+        		.build();
+        Holminide = new Material.Builder(8202, nepId("holminide"))
+        		.dust()
+        		.build();
+        ExoticMetalMixture = new Material.Builder(8203, nepId("exotic_metal_mixture"))
+        		.dust()
+        		.build();
+        
+        MostimiteMetalResidue = new Material.Builder(8204, nepId("mostimite_metal_residue"))
+        		.dust()
+        		.build();
+        
+        AcidicWyverniumSolution = new Material.Builder(8205, nepId("acidic_wyvernium_solution"))
+        		.fluid()
+        		.build();
+        
+        WyverniumTetroxide = new Material.Builder(8206, nepId("wyvernium_tetroxide"))
+        		.dust()
+        		.build();
+        
+        MostimiteChloride = new Material.Builder(8207, nepId("mostimite_chloride"))
+        		.dust()
+        		.build();
+        AncientSludgeResidue = new Material.Builder(8208, nepId("ancient_sludge_residue"))
+        		.dust()
+        		.build();
 	}
 }
