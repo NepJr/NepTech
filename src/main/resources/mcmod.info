@@ -4,9 +4,9 @@
     "description": "An expansion mod for GregTech, mostly meant for the NepTech modpack, but should be more or less functional outside of it",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "logoFile": "",
+    "logoFile": "assets/neptech/textures/mod_icon.png",
     "url": "",
     "authorList": ["NepJr"],
-    "credits": "Gregicallity Multiblocks developers, as some stuff (code and textures) come from there, but was also how I (NepJr) learned how to make a GT addon mod in the first place",
+    "credits": "GregTechCEu devs first and foremost. This addon wouldn't exist without it. Gregicallity Multiblocks and Science developers, as some stuff (code and textures) come from those repositories, but was also how I (NepJr) learned how to make a GT addon mod in the first place.",
     "dependencies": []
 }]

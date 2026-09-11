@@ -1,15 +1,17 @@
-package nepjr.tech.loaders.recipe;
+package nepjr.tech.loaders.recipe.machines;
 
 import static gregtech.api.GTValues.*;
 
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Materials;
+import gregtech.api.unification.material.MarkerMaterials.Tier;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
+import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.metatileentities.NTMetaTileEntities;
 
-public class LaserHatchRecipes 
+public class EnergyHatchRecipes 
 {
 	public static void init()
 	{
@@ -17,6 +19,7 @@ public class LaserHatchRecipes
 		luvRecipes();
 		zpmRecipes();
 		uvRecipes();
+		uhvRecipes();
 	}
 	
 	private static void ivRecipes()
@@ -220,6 +223,41 @@ public class LaserHatchRecipes
 			.circuitMeta(5)
 			.EUt(VA[UV])
 			.duration(240*20)
+			.buildAndRegister();
+	}
+	
+	private static void uhvRecipes()
+	{
+		RecipeMaps.ASSEMBLY_LINE_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[UHV])
+			.input(OrePrefix.cableGtSingle, Materials.Europium, 4)
+			.input(MetaItems.ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2)
+			.input(OrePrefix.circuit, Tier.UHV)
+			.input(NTMetaItems.VOLTAGE_COIL_UHV)
+			.fluidInputs(Materials.SodiumPotassium.getFluid(12000), Materials.SolderingAlloy.getFluid(5760))
+			.stationResearch(b -> b
+					.researchStack(MetaTileEntities.ENERGY_INPUT_HATCH[UV].getStackForm())
+					.EUt(VA[UV])
+					.CWUt(128))
+			.output(MetaTileEntities.ENERGY_INPUT_HATCH[UHV])
+			.EUt(VA[UHV])
+			.duration(50*20)
+			.buildAndRegister();
+		
+		RecipeMaps.ASSEMBLY_LINE_RECIPES.recipeBuilder()
+			.input(MetaTileEntities.HULL[UHV])
+			.input(OrePrefix.spring, Materials.Europium, 4)
+			.input(MetaItems.ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2)
+			.input(OrePrefix.circuit, Tier.UHV)
+			.input(NTMetaItems.VOLTAGE_COIL_UHV)
+			.fluidInputs(Materials.SodiumPotassium.getFluid(12000), Materials.SolderingAlloy.getFluid(5760))
+			.stationResearch(b -> b
+					.researchStack(MetaTileEntities.ENERGY_OUTPUT_HATCH[UV].getStackForm())
+					.EUt(VA[UV])
+					.CWUt(128))
+			.output(MetaTileEntities.ENERGY_OUTPUT_HATCH[UHV])
+			.EUt(VA[UHV])
+			.duration(50*20)
 			.buildAndRegister();
 	}
 }

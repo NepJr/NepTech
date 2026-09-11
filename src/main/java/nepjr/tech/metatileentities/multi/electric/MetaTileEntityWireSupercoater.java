@@ -1,6 +1,9 @@
 package nepjr.tech.metatileentities.multi.electric;
 
+import java.util.List;
+
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import gregtech.api.block.IHeatingCoilBlockStats;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
@@ -19,6 +22,8 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
+import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
+import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.BlockBoilerCasing.BoilerCasingType;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
 import gregtech.common.blocks.BlockWireCoil.CoilType;
@@ -28,8 +33,13 @@ import nepjr.tech.api.recipes.recipeproperties.SupercoaterPolymerProperty;
 import nepjr.tech.api.recipes.recipeproperties.SupercoaterPolymerTypeProperty;
 import nepjr.tech.api.recipes.recipeproperties.SupercoaterPolyphenyleneSulfideProperty;
 import nepjr.tech.api.recipes.recipeproperties.SupercoaterPolyvinylChlorideProperty;
+import nepjr.tech.client.NTTextures;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 
 public class MetaTileEntityWireSupercoater extends RecipeMapMultiblockController
 {
@@ -70,6 +80,21 @@ public class MetaTileEntityWireSupercoater extends RecipeMapMultiblockController
 					.where('S', selfPredicate())
 					.build();
 	}
+	
+	@Override
+    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced)
+	{
+        super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
+        tooltip.add(TextFormatting.GREEN + I18n.format("neptech.processing_speed.supercoater"));
+        tooltip.add(TextFormatting.GREEN + I18n.format("neptech.fluid_usage.supercoater"));
+        tooltip.add(TextFormatting.GREEN + I18n.format("neptech.parallels.supercoater"));
+    }
+	
+	@Override
+    protected @NotNull OrientedOverlayRenderer getFrontOverlay() {
+        return Textures.EXTRUDER_OVERLAY;
+    }
 	
 	@Override
     protected void formStructure(PatternMatchContext context)

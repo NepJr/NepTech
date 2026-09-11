@@ -65,12 +65,11 @@ public class NTMetaBlocks
 	@SideOnly(Side.CLIENT)
 	public static void registerItemModels()
 	{
+		registerItemModel(FERTILIZED_DIRT);
 		registerItemModel(NT_CASINGS);
 		registerItemModel(GENERIC_BLOCKS);
 		registerItemModel(LASER_FOCI);
 		registerItemModel(BEAM_SPLITTER);
-		
-		FERTILIZED_DIRT.onModelRegister();	
 		MIXING_MODULES.onModelRegister();
 		MIXING_MODULES2.onModelRegister();
 		UNIQUE_CASINGS.onModelRegister();

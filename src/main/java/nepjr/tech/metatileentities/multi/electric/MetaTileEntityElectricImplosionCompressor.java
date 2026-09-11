@@ -88,7 +88,8 @@ public class MetaTileEntityElectricImplosionCompressor extends RecipeMapMultiblo
     }
 	
 	@Override
-    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
+    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced)
+	{
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
         tooltip.add(TextFormatting.LIGHT_PURPLE + I18n.format("neptech.electric_implosion_compressor.parallels"));

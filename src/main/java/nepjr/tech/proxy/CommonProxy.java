@@ -32,27 +32,28 @@ import nepjr.tech.loaders.recipe.AlloySmelterRecipes;
 import nepjr.tech.loaders.recipe.AssemblerRecipes;
 import nepjr.tech.loaders.recipe.AsslineRecipes;
 import nepjr.tech.loaders.recipe.AsteroidMiningRecipes;
-import nepjr.tech.loaders.recipe.AutoclaveRecipes;
 import nepjr.tech.loaders.recipe.BiowareCircuitRecipes;
 import nepjr.tech.loaders.recipe.CasingRecipes;
 import nepjr.tech.loaders.recipe.CentrifugeRecipes;
 import nepjr.tech.loaders.recipe.ChemBathRecipes;
 import nepjr.tech.loaders.recipe.ChemReactorRecipes;
+import nepjr.tech.loaders.recipe.ComponentRecipes;
 import nepjr.tech.loaders.recipe.CraftingRecipes;
 import nepjr.tech.loaders.recipe.ElectricImplosionCompressorRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.FormingPressRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
-import nepjr.tech.loaders.recipe.LaserHatchRecipes;
 import nepjr.tech.loaders.recipe.MaceratorRecipes;
 import nepjr.tech.loaders.recipe.MixingRecipes;
 import nepjr.tech.loaders.recipe.NTCraftingComponents;
 import nepjr.tech.loaders.recipe.NetheriteProcessingRecipes;
+import nepjr.tech.loaders.recipe.PolarizingRecipes;
 import nepjr.tech.loaders.recipe.RemovalRecipes;
 import nepjr.tech.loaders.recipe.SupercoaterRecipeHandler;
 import nepjr.tech.loaders.recipe.UniversalCircuitRecipes;
 import nepjr.tech.loaders.recipe.VoidOreMinerRecipes;
 import nepjr.tech.loaders.recipe.WaferRecipes;
+import nepjr.tech.loaders.recipe.machines.MachineRecipes;
 import nepjr.tech.world.BiomeRubberForest;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -160,18 +161,18 @@ public class CommonProxy
     	
     	
     	// Then do everything else
+		MachineRecipes.init();
     	WaferRecipes.init();
     	BiowareCircuitRecipes.init();
     	NetheriteProcessingRecipes.init();
     	VoidOreMinerRecipes.init();
-    	
+    	PolarizingRecipes.init();
+    	ComponentRecipes.init();
     	CasingRecipes.init();
     	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
     	GreenhouseRecipes.init();
-    	//if(NTConfig.modcompat.exNihiloSupport && Loader.isModLoaded("exnihilocreatio")) { AutoSifterRecipes.init(); }
     	ElectricImplosionCompressorRecipes.init();
     	ABSRecipes.init();
-    	AutoclaveRecipes.init();
     	AlloySmelterRecipes.init();
     	ChemBathRecipes.init();
     	ChemReactorRecipes.init();
@@ -182,7 +183,6 @@ public class CommonProxy
     	MixingRecipes.init();
     	ForgeHammerRecipes.init();
     	AssemblerRecipes.init();
-    	LaserHatchRecipes.init();
     	AsslineRecipes.init();
     	CentrifugeRecipes.init();
     	UniversalCircuitRecipes.init();

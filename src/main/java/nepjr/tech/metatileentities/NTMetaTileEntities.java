@@ -10,6 +10,7 @@ import nepjr.tech.config.NTConfig;
 import nepjr.tech.metatileentities.electric.MetaTileEntityLaserDiode;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityAirVacuum;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityAlloyBlastSmelter;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityArcSmelter;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityDroneLauncher;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityElectricImplosionCompressor;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
@@ -19,6 +20,8 @@ import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishMultiSmel
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityLargeLaserEngraver;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityMixingVessel;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityPulverizer;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntitySuperPacker;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityUniversalSmelter;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityVoidOreMiner;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityWireSupercoater;
 import nepjr.tech.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
@@ -55,6 +58,9 @@ public class NTMetaTileEntities
 	public static MetaTileEntityVoidOreMiner VOID_MINER_UHV;
 	public static MetaTileEntityVoidOreMiner VOID_MINER_UEV;
 	public static MetaTileEntityVoidOreMiner VOID_MINER_UIV;
+	public static MetaTileEntitySuperPacker SUPER_PACKER;
+	public static MetaTileEntityArcSmelter ARC_SMELTER;
+	public static MetaTileEntityUniversalSmelter UNIVERSAL_SMELTER;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -192,7 +198,7 @@ public class NTMetaTileEntities
 			DRONE_LAUNCHER = registerMetaTileEntity(6001, new MetaTileEntityDroneLauncher(nepId("drone_launcher")));
 		}
 		
-		OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6002, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
+		//OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6002, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));
 		HELLISH_BLAST_FURNACE = registerMetaTileEntity(6003, new MetaTileEntityHellishBlastFurnace(nepId("hellish_blast_furnace")));
 		ELECTRIC_IMPLOSION_COMPRESSOR = registerMetaTileEntity(6004, new MetaTileEntityElectricImplosionCompressor(nepId("electric_implosion_compressor")));
 		ALLOY_BLAST_SMELTER = registerMetaTileEntity(6005, new MetaTileEntityAlloyBlastSmelter(nepId("alloy_blast_smelter")));
@@ -209,6 +215,9 @@ public class NTMetaTileEntities
 		VOID_MINER_UHV = registerMetaTileEntity(6016, new MetaTileEntityVoidOreMiner(nepId("void_miner_uhv"), GTValues.UHV, Materials.NaquadahAlloy));
 		VOID_MINER_UEV = registerMetaTileEntity(6017, new MetaTileEntityVoidOreMiner(nepId("void_miner_uev"), GTValues.UEV, Materials.NaquadahAlloy));
 		VOID_MINER_UIV = registerMetaTileEntity(6018, new MetaTileEntityVoidOreMiner(nepId("void_miner_uiv"), GTValues.UIV, Materials.NaquadahAlloy));
+		SUPER_PACKER = registerMetaTileEntity(6019, new MetaTileEntitySuperPacker(nepId("super_packer")));
+		ARC_SMELTER = registerMetaTileEntity(6020, new MetaTileEntityArcSmelter(nepId("arc_smelter")));
+		UNIVERSAL_SMELTER = registerMetaTileEntity(6021, new MetaTileEntityUniversalSmelter(nepId("universal_smelter")));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Supplier;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
@@ -12,6 +13,7 @@ import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.PatternStringError;
 import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.recipeproperties.IRecipePropertyStorage;
 import gregtech.api.util.BlockInfo;
 import gregtech.client.utils.TooltipHelper;
 import nepjr.tech.api.NepTechAPI;
@@ -130,6 +132,35 @@ public abstract class NTMetaTileEntity extends RecipeMapMultiblockController
 			super(tileEntity, hasPerfectOC);
 			mte = (NTMetaTileEntity) this.getMetaTileEntity();
 		}
+		
+		@Override
+        protected void modifyOverclockPost(int[] resultOverclock, @NotNull IRecipePropertyStorage storage) {
+            super.modifyOverclockPost(resultOverclock, storage);
+            
+            if(mte.getEnergyDiscount() < 1.0f)
+            {
+            	resultOverclock[0] *= mte.getEnergyDiscount(); 
+                resultOverclock[0] = Math.max(1, resultOverclock[0]);
+            }
+            
+            if(mte.getEnergyDiscount() > 1.0f)
+            {
+            	resultOverclock[0] /= mte.getEnergyDiscount(); 
+                resultOverclock[0] = Math.max(1, resultOverclock[0]);
+            }
+            
+            if(mte.getProcessingSpeed() < 1)
+            {
+            	resultOverclock[1] *= mte.getProcessingSpeed(); 
+                resultOverclock[1] = Math.max(1, resultOverclock[1]);
+            }
+            if(mte.getProcessingSpeed() > 1)
+            {
+            	resultOverclock[1] /= mte.getProcessingSpeed(); 
+                resultOverclock[1] = Math.max(1, resultOverclock[1]);
+            }
+            
+        }
 		
 		@Override
 		public int getParallelLimit()

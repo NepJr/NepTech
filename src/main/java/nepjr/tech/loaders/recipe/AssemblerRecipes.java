@@ -34,126 +34,13 @@ public class AssemblerRecipes
 			.duration(300)
 			.buildAndRegister();
 		
-		// Mixing Modules
-		
+		// Voltage Coils
 		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.ULV])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.Iron, 4)
-			.input(OrePrefix.stickLong, Materials.Iron, 8)
-			.input("craftingPiston", 2)
-			.input(OrePrefix.circuit, Tier.ULV)
-			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.ULV))
-			.EUt(GTValues.VA[GTValues.ULV])
-			.duration(100)
-			.buildAndRegister();
-		
-		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.LV])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.Steel, 4)
-			.input(OrePrefix.stickLong, Materials.Steel, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_LV, 2)
-			.input(OrePrefix.circuit, Tier.LV)
-			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.LV))
-			.EUt(GTValues.VA[GTValues.LV])
-			.duration(100)
-			.buildAndRegister();
-		
-		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.MV])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.Aluminium, 4)
-			.input(OrePrefix.stickLong, Materials.Aluminium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_MV, 2)
-			.input(OrePrefix.circuit, Tier.MV)
-			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.MV))
-			.EUt(GTValues.VA[GTValues.MV])
-			.duration(100)
-			.buildAndRegister();
-		
-		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.HV])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.StainlessSteel, 4)
-			.input(OrePrefix.stickLong, Materials.StainlessSteel, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_HV, 2)
-			.input(OrePrefix.circuit, Tier.HV)
-			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.HV))
-			.EUt(GTValues.VA[GTValues.HV])
-			.duration(100)
-			.buildAndRegister();
-		
-		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.EV])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.Titanium, 4)
-			.input(OrePrefix.stickLong, Materials.Titanium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_EV, 2)
-			.input(OrePrefix.circuit, Tier.EV)
-			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.EV))
-			.EUt(GTValues.VA[GTValues.EV])
-			.duration(100)
-			.buildAndRegister();
-		
-		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.IV])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.TungstenSteel, 4)
-			.input(OrePrefix.stickLong, Materials.TungstenSteel, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_IV, 2)
-			.input(OrePrefix.circuit, Tier.IV)
-			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.IV))
-			.EUt(GTValues.VA[GTValues.IV])
-			.duration(100)
-			.buildAndRegister();
-		
-		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.LuV])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.HSSS, 4)
-			.input(OrePrefix.stickLong, Materials.HSSS, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_LuV, 2)
-			.input(OrePrefix.circuit, Tier.LuV)
-			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.LuV))
-			.EUt(GTValues.VA[GTValues.LuV])
-			.duration(100)
-			.buildAndRegister();
-		
-		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.ZPM])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.Osmiridium, 4)
-			.input(OrePrefix.stickLong, Materials.Osmiridium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_ZPM, 2)
-			.input(OrePrefix.circuit, Tier.ZPM)
-			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.ZPM))
-			.EUt(GTValues.VA[GTValues.ZPM])
-			.duration(100)
-			.buildAndRegister();
-		
-		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.UV])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.Tritanium, 4)
-			.input(OrePrefix.stickLong, Materials.Tritanium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_UV, 2)
-			.input(OrePrefix.circuit, Tier.UV)
-			.outputs(NTMetaBlocks.MIXING_MODULES2.getItemVariant(nepjr.tech.common.blocks.BlockMixingModules2.ModuleTier.UV))
-			.EUt(GTValues.VA[GTValues.UV])
-			.duration(100)
-			.buildAndRegister();
-		
-		ASSEMBLER_RECIPES.recipeBuilder()
-			.input(MetaTileEntities.HULL[GTValues.UHV])
-			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
-			.input(OrePrefix.rotor, Materials.Neutronium, 4)
-			.input(OrePrefix.stickLong, Materials.Neutronium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_UHV, 2)
-			.input(OrePrefix.circuit, Tier.UHV)
-			.outputs(NTMetaBlocks.MIXING_MODULES2.getItemVariant(nepjr.tech.common.blocks.BlockMixingModules2.ModuleTier.UHV))
+			.input(OrePrefix.stick, NTMaterials.MagneticHolmium)
+			.input(OrePrefix.wireFine, Materials.Actinium, 16)
+			.output(NTMetaItems.VOLTAGE_COIL_UHV)
 			.EUt(GTValues.VA[GTValues.UHV])
-			.duration(100)
+			.duration(10*20)
 			.buildAndRegister();
 		
 		// Energy Hatch Bullshit

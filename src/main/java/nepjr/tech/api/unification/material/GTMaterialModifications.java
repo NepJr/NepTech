@@ -1,8 +1,16 @@
 package nepjr.tech.api.unification.material;
 
+import java.util.function.UnaryOperator;
+
 import gregtech.api.GTValues;
+import gregtech.api.fluids.FluidBuilder;
+import gregtech.api.fluids.store.FluidStorageKeys;
+import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialFlags;
+import gregtech.api.unification.material.properties.BlastProperty;
+import gregtech.api.unification.material.properties.BlastProperty.GasTier;
+import gregtech.api.unification.material.properties.FluidProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.material.properties.ToolProperty;
 import gregtech.api.unification.ore.OrePrefix;
@@ -11,7 +19,7 @@ import net.minecraft.init.Enchantments;
 public class GTMaterialModifications 
 {
 	public static void init()
-	{
+	{		
 		Materials.Topaz.addFlags(MaterialFlags.GENERATE_LENS); // Topaz Lens for orange lens
 		Materials.BlueTopaz.addFlags(MaterialFlags.GENERATE_LENS); // Blue Topaz Lens for Light Blue
 		Materials.GarnetYellow.addFlags(MaterialFlags.GENERATE_LENS); // Yellow Garnet Lens for Yellow (shocker!)
@@ -27,8 +35,13 @@ public class GTMaterialModifications
 		Materials.Holmium.setMaterialRGB(0x882288);
 		Materials.Holmium.getProperties().ensureSet(PropertyKey.INGOT);
 		Materials.Holmium.getProperties().ensureSet(PropertyKey.DUST, true);
-		Materials.Holmium.getProperties().ensureSet(PropertyKey.FLUID);
+		
+		fluid(Materials.Holmium);
+		
 		Materials.Holmium.getProperties().ensureSet(PropertyKey.WIRE);
+		
+		blast(Materials.Holmium, b -> b.temp(8700, GasTier.HIGHEST).blastStats(GTValues.VA[GTValues.ZPM], 800));
+
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setVoltage((int) GTValues.V[GTValues.UEV]);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setLossPerBlock(0);
 		Materials.Holmium.getProperty(PropertyKey.WIRE).setAmperage(16);
@@ -36,6 +49,9 @@ public class GTMaterialModifications
 		
 		Materials.Actinium.getProperties().ensureSet(PropertyKey.INGOT, true);
 		Materials.Actinium.getProperties().ensureSet(PropertyKey.DUST, true);
+		
+		fluid(Materials.Actinium);
+		
 		Materials.Actinium.addFlags(MaterialFlags.GENERATE_RING,
 									MaterialFlags.GENERATE_ROUND,
 									MaterialFlags.GENERATE_ROD, 
@@ -43,7 +59,8 @@ public class GTMaterialModifications
 									MaterialFlags.GENERATE_BOLT_SCREW,
 									MaterialFlags.GENERATE_SMALL_GEAR,
 									MaterialFlags.GENERATE_GEAR,
-									MaterialFlags.GENERATE_FRAME);
+									MaterialFlags.GENERATE_FRAME,
+									MaterialFlags.GENERATE_FINE_WIRE);
 		
 		Materials.Polybenzimidazole.addFlags(MaterialFlags.GENERATE_ROD);
 		Materials.Polybenzimidazole.addFlags(MaterialFlags.GENERATE_FRAME);
@@ -68,6 +85,13 @@ public class GTMaterialModifications
         Materials.Tungsten.addFlags(MaterialFlags.GENERATE_FRAME);
         Materials.Brass.addFlags(MaterialFlags.GENERATE_FRAME);
 
+        // Fine Wire
+        Materials.Neutronium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        Materials.RutheniumTriniumAmericiumNeutronate.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        
+        // Gears
+        Materials.Darmstadtium.addFlags(MaterialFlags.GENERATE_GEAR);
+        
         // Small Gears
         Materials.TungstenCarbide.addFlags(MaterialFlags.GENERATE_SMALL_GEAR);
 
@@ -93,4 +117,22 @@ public class GTMaterialModifications
         // Bolts
         Materials.Duranium.addFlags(MaterialFlags.GENERATE_BOLT_SCREW);
 	}
+	
+	// Helper functions to add certain properties to materials, as they get really fucking stupid for whatever reason
+	
+    private static void blast(Material m, UnaryOperator<BlastProperty.Builder> b)
+    {
+    	m.setProperty(PropertyKey.BLAST, b.apply(new BlastProperty.Builder()).build());
+    }
+    
+    private static void fluid(Material m)
+    {
+    	m.getProperties().ensureSet(PropertyKey.FLUID);
+    	
+    	FluidProperty fluidProperty;
+		FluidBuilder fluid = new FluidBuilder();
+		
+		fluidProperty = m.getProperty(PropertyKey.FLUID);
+		fluidProperty.enqueueRegistration(FluidStorageKeys.LIQUID, fluid);
+    }
 }

@@ -1,6 +1,7 @@
 package nepjr.tech.api.unification.material;
 
 import gregtech.api.fluids.FluidBuilder;
+import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialFlags;
@@ -26,6 +27,7 @@ public class NTMaterials
 	public static Material AwakenedDraconium;
 	public static Material Wyvernium;
 	public static Material Mostimite;
+	public static Material Crystalline;
 	
 	// EnderIO Alloys
 	public static Material EnergeticAlloy;
@@ -63,11 +65,6 @@ public class NTMaterials
     public static Material WyverniumTetroxide;
     public static Material MostimiteChloride;
     public static Material AncientSludgeResidue;
-    
-	// Holmium related stuff
-	public static Material ImpureHolmiumSolution;
-	public static Material EnrichedHolmiumSolution;
-	public static Material HolmiumChloride;
 	
 	public static void init()
 	{
@@ -111,7 +108,7 @@ public class NTMaterials
 		
 		AncientDebris = new Material.Builder(8006, nepId("ancient_debris"))
         		.dust(2).ore()
-        		.color(0x4b4042).iconSet(DULL)
+        		.color(0x3B3437).iconSet(DULL)
         		.addOreByproducts(Netherite)
         		.build();
 		
@@ -119,10 +116,19 @@ public class NTMaterials
 				.ingot().dust().fluid()
 				.color(0x0000FF).iconSet(METALLIC)
 				.build();
+
+		MagneticHolmium = new Material.Builder(8008, nepId("magnetic_holmium"))
+				.ingot().dust()
+				.iconSet(MAGNETIC)
+				.color(0x882288)
+				.flags(MaterialFlags.IS_MAGNETIC, MaterialFlags.GENERATE_ROD, MaterialFlags.GENERATE_LONG_ROD)
+				.components(Holmium, 1)
+                .ingotSmeltInto(Holmium)
+                .arcSmeltInto(Holmium)
+                .macerateInto(Holmium)
+				.build();
 		
-		// Magnetic Holmium
-		
-		Draconium = new Material.Builder(8008, nepId("draconium"))
+		Draconium = new Material.Builder(8009, nepId("draconium"))
 				.ingot().dust().fluid()
 				.color(0xAA00AA).iconSet(METALLIC)
 				.flags(GENERATE_PLATE, 
@@ -131,16 +137,22 @@ public class NTMaterials
 					   GENERATE_GEAR)
 				.build();
 		
-		AwakenedDraconium = new Material.Builder(8009, nepId("awakened_draconium"))
+		AwakenedDraconium = new Material.Builder(8010, nepId("awakened_draconium"))
 				.ingot().dust().fluid()
 				.color(0xFF6A00).iconSet(METALLIC)
 				.cableProperties(V[UEV], 8, 48)
 				.build();
 		
-		Wyvernium = new Material.Builder(8010, nepId("wyvernium"))
+		Wyvernium = new Material.Builder(8011, nepId("wyvernium"))
 				.ingot().dust().fluid()
 				.color(0xCC00CC).iconSet(METALLIC)
 				.build();
+		
+		Crystalline = new Material.Builder(8012, nepId("crystalline"))
+				.dust().gem(3).fluid()
+				.color(0x8FFFFF).iconSet(DIAMOND)
+				.build();
+		
 		// EnderIO alloys
 		// Colors borrowed from Nomi Labs / Nomifactory CEu
 		
@@ -370,34 +382,46 @@ public class NTMaterials
         // Netherite Line stuff
         RawNetheritePowder = new Material.Builder(8200, nepId("raw_netherite_powder"))
         		.dust()
+        		.color(0x292022)
+        		.iconSet(METALLIC)
         		.build();
         RawActiniumPowder = new Material.Builder(8201, nepId("raw_actinium_powder"))
         		.dust()
+        		.color(0x95A2C7)
+        		.iconSet(METALLIC)
         		.build();
-        Holminide = new Material.Builder(8202, nepId("holminide"))
+        ExoticMetalMixture = new Material.Builder(8202, nepId("exotic_metal_mixture"))
         		.dust()
-        		.build();
-        ExoticMetalMixture = new Material.Builder(8203, nepId("exotic_metal_mixture"))
-        		.dust()
+        		.color(0xFF00BB)
+        		.iconSet(METALLIC)
         		.build();
         
-        MostimiteMetalResidue = new Material.Builder(8204, nepId("mostimite_metal_residue"))
+        MostimiteMetalResidue = new Material.Builder(8203, nepId("mostimite_metal_residue"))
         		.dust()
+        		.color(0x0B0B57)
+        		.iconSet(METALLIC)
         		.build();
         
-        AcidicWyverniumSolution = new Material.Builder(8205, nepId("acidic_wyvernium_solution"))
+        AcidicWyverniumSolution = new Material.Builder(8204, nepId("acidic_wyvernium_solution"))
         		.fluid()
+        		.color(0xDE37DE)
         		.build();
         
-        WyverniumTetroxide = new Material.Builder(8206, nepId("wyvernium_tetroxide"))
+        WyverniumTetroxide = new Material.Builder(8205, nepId("wyvernium_tetroxide"))
         		.dust()
+        		.color(0xA321A3)
+        		.iconSet(METALLIC)
         		.build();
         
-        MostimiteChloride = new Material.Builder(8207, nepId("mostimite_chloride"))
+        MostimiteChloride = new Material.Builder(8206, nepId("mostimite_chloride"))
         		.dust()
+        		.color(0x2B2B99)
+        		.iconSet(METALLIC)
         		.build();
-        AncientSludgeResidue = new Material.Builder(8208, nepId("ancient_sludge_residue"))
+        AncientSludgeResidue = new Material.Builder(8207, nepId("ancient_sludge_residue"))
         		.dust()
+        		.color(0x332F30)
+        		.iconSet(METALLIC)
         		.build();
 	}
 }

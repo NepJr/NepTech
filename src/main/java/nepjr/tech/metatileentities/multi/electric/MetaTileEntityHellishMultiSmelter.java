@@ -3,6 +3,7 @@ package nepjr.tech.metatileentities.multi.electric;
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import gregtech.api.block.IHeatingCoilBlockStats;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
@@ -13,7 +14,6 @@ import gregtech.api.metatileentity.multiblock.MultiMapMultiblockController;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.MultiblockDisplayText;
 import gregtech.api.metatileentity.multiblock.ParallelLogicType;
-import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.PatternMatchContext;
@@ -26,16 +26,20 @@ import gregtech.api.util.TextComponentUtil;
 import gregtech.api.util.TextFormattingUtil;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
+import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.BlockWireCoil.CoilType;
 import gregtech.core.sound.GTSoundEvents;
 import nepjr.tech.client.NTTextures;
 import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -125,6 +129,14 @@ public class MetaTileEntityHellishMultiSmelter extends MultiMapMultiblockControl
             this.heatingCoilLevel = CoilType.CUPRONICKEL.getLevel();
             this.heatingCoilDiscount = CoilType.CUPRONICKEL.getEnergyDiscount();
         }
+    }
+    
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced)
+	{
+        super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
+        tooltip.add(TextFormatting.GREEN + I18n.format("neptech.parallels.multi_smelter"));
     }
 
     @Override

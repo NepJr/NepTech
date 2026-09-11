@@ -114,12 +114,7 @@ public class MetaTileEntityHellishBlastFurnace extends NTMetaTileEntity implemen
                 .where('S', selfPredicate())
                 .where('X', states(getCasingState()).setMinGlobalLimited(9)
                         .or(autoAbilities(true, true, true, true, true, true, false)))
-                .where('M', metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.MUFFLER_HATCH).stream()
-                        .filter(mte -> (mte instanceof ITieredMetaTileEntity) &&
-                                (((ITieredMetaTileEntity) mte).getTier() >= GTValues.IV))
-                        .toArray(MetaTileEntity[]::new))
-                                .addTooltip("gregtech.multiblock.pattern.error.limited.1", GTValues.VN[GTValues.IV])
-                                .setExactLimit(1))
+                .where('M', abilities(MultiblockAbility.MUFFLER_HATCH).setExactLimit(1))
                 .where('C', heatingCoils())
                 .where('#', air())
                 .build();

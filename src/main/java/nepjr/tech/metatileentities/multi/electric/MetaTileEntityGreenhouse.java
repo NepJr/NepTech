@@ -161,7 +161,7 @@ public class MetaTileEntityGreenhouse extends RecipeMapMultiblockController
 		@Override
 		public int getParallelLimit()
 		{
-			return (int) Math.min(Math.max(Math.pow(2, fertilizerTier), 1), Integer.MAX_VALUE);
+			return (int) Math.min(Math.max(Math.pow(8, fertilizerTier), 1), Integer.MAX_VALUE);
 		}
 	}
 	

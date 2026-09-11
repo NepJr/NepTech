@@ -10,6 +10,7 @@ import gregtech.common.ConfigHolder;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
 import nepjr.tech.common.blocks.NTMetaBlocks;
+import nepjr.tech.common.blocks.NTUniqueCasing;
 
 public class CasingRecipes 
 {
@@ -108,6 +109,14 @@ public class CasingRecipes
                         .getItemVariant(NTCasingType.STEAM_CASING, numCasings),
                 "PhP", "PFP", "PwP", 'P', new UnificationEntry(OrePrefix.plate, Materials.Brass), 'F',
                 new UnificationEntry(OrePrefix.frameGt, Materials.Brass));
+        
+        ModHandler.addShapedRecipe(true, "casing_heat_vent",
+                NTMetaBlocks.UNIQUE_CASINGS.getItemVariant(NTUniqueCasing.UniqueCasingType.HEAT_VENT, numCasings),
+                "PDP",
+                "RLR", "PDP", 'P', new UnificationEntry(OrePrefix.plate, NTMaterials.TantalumCarbide), 'D',
+                new UnificationEntry(OrePrefix.plateDouble, NTMaterials.MolybdenumDisilicide), 'R',
+                new UnificationEntry(OrePrefix.rotor, Materials.Titanium), 'L',
+                new UnificationEntry(OrePrefix.stickLong, NTMaterials.MolybdenumDisilicide));
         
         
         RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()

@@ -1,0 +1,49 @@
+{
+    "forge_marker": 1,
+    "variants":
+    {
+        "variant":
+        {
+            "basic":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "minecraft:blocks/farmland_wet"
+                }
+            },
+            "advanced":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "minecraft:blocks/farmland_wet"
+                }
+            },
+            "living":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "minecraft:blocks/farmland_wet"
+                }
+            },
+            "extraterrestrial":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "minecraft:blocks/farmland_wet"
+                }
+            },
+            "absurd":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "minecraft:blocks/farmland_wet"
+                }
+            }
+        }
+    }
+}

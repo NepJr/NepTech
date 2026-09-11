@@ -33,6 +33,8 @@ import gregtech.api.util.BlockInfo;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.TextComponentUtil;
 import gregtech.client.renderer.ICubeRenderer;
+import gregtech.client.renderer.texture.Textures;
+import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
@@ -413,6 +415,11 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
 	{
 		return NTTextures.MIXER_CASING;
 	}
+	
+	@Override
+    protected @NotNull OrientedOverlayRenderer getFrontOverlay() {
+        return Textures.CLEANROOM_OVERLAY;
+    }
 
 	@Override
 	public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) 

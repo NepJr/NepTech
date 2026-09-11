@@ -11,22 +11,27 @@ public class NetheriteProcessingRecipes
 {
 	public static void init()
 	{
+		simpleRecipes();
+	}
+	
+	private static void simpleRecipes()
+	{
 		BLAST_RECIPES.recipeBuilder()
 			.input(OrePrefix.dust, NTMaterials.AncientDebris, 6)
 			.input(OrePrefix.dust, Materials.Gold, 1)
 			.circuitMeta(1)
 			.output(OrePrefix.ingotHot, NTMaterials.Netherite)
-			.EUt(VA[IV])
+			.EUt(VA[HV])
 			.duration(20*20)
 			.buildAndRegister();
-		
+	
 		BLAST_RECIPES.recipeBuilder()
 			.input(OrePrefix.dust, NTMaterials.AncientDebris, 6)
 			.input(OrePrefix.dust, Materials.Gold, 1)
 			.fluidInputs(Materials.Argon.getFluid(50))
 			.circuitMeta(2)
 			.output(OrePrefix.ingotHot, NTMaterials.Netherite)
-			.EUt(VA[IV])
+			.EUt(VA[HV])
 			.duration(268)
 			.buildAndRegister();
 		
@@ -72,7 +77,13 @@ public class NetheriteProcessingRecipes
 			.duration(10*20)
 			.buildAndRegister();
 		
-		// Holminide
+		ELECTROMAGNETIC_SEPARATOR_RECIPES.recipeBuilder()
+			.input(OrePrefix.dust, NTMaterials.Holminide, 2)
+			.output(OrePrefix.dust, Materials.Holmium)
+			.chancedOutput(OrePrefix.dust, NTMaterials.Crystalline, 1, 100, 0)
+			.EUt(VA[ZPM])
+			.duration(20*20)
+			.buildAndRegister();
 		
 		LARGE_CHEMICAL_RECIPES.recipeBuilder()
 			.input(OrePrefix.dust, NTMaterials.ExoticMetalMixture, 7)
@@ -122,7 +133,7 @@ public class NetheriteProcessingRecipes
 		CENTRIFUGE_RECIPES.recipeBuilder()
 			.input(OrePrefix.dust, NTMaterials.AncientSludgeResidue, 5)
 			.output(OrePrefix.dust, Materials.Gold, 3)
-			.output(OrePrefix.dust, Materials.PlatinumGroupSludge, 2)
+			.output(OrePrefix.dust, Materials.NetherStar, 2)
 			.EUt(VA[EV])
 			.duration(45*20)
 			.buildAndRegister();

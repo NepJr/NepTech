@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import gregtech.api.GTValues;
 import gregtech.api.capability.IEnergyContainer;
@@ -35,6 +36,7 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.TextComponentUtil;
 import gregtech.api.util.TextFormattingUtil;
 import gregtech.client.renderer.ICubeRenderer;
+import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.BlockGlassCasing.CasingType;
 import gregtech.common.blocks.MetaBlocks;
 import nepjr.tech.api.NepTechAPI;
@@ -44,6 +46,8 @@ import nepjr.tech.client.NTTextures;
 import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
@@ -51,6 +55,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 
 public class MetaTileEntityLargeLaserEngraver extends RecipeMapMultiblockController
 {
@@ -106,6 +111,17 @@ public class MetaTileEntityLargeLaserEngraver extends RecipeMapMultiblockControl
 	{
 		return BEAM_SPLITTER.get();
 	}
+	
+	@Override
+    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced)
+	{
+        super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(TooltipHelper.BLINKING_RED + I18n.format("neptech.laser_needed"));
+        tooltip.add(TextFormatting.GREEN + I18n.format("neptech.recipes.large_laser_engraver"));
+        tooltip.add(TextFormatting.YELLOW + I18n.format("neptech.warning.large_laser_engraver"));
+        tooltip.add(TextFormatting.GREEN + I18n.format("neptech.processing_speed.large_laser_engraver"));
+        tooltip.add(TextFormatting.GREEN + I18n.format("neptech.parallels.large_laser_engraver"));
+    }
 	
 	public static Supplier<TraceabilityPredicate> LASER_FOCI = () -> new TraceabilityPredicate(blockWorldState ->
 	{
