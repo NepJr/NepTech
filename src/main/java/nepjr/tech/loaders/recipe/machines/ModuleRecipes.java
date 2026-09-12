@@ -4,9 +4,11 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 
 import gregtech.api.GTValues;
+import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials.Tier;
+import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
@@ -34,6 +36,7 @@ public class ModuleRecipes
 		laserFoci();
 		beamSplitter();
 		crushingWheels();
+		centrifugingMotors();
 	}
 	
 	private static void farmland()
@@ -416,5 +419,29 @@ public class ModuleRecipes
 				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.Zeron100),
 				'B', new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Materials.Duranium),
 				'M', MetaItems.ELECTRIC_MOTOR_UV);
+	}
+	
+	private static void centrifugingMotors()
+	{
+		cmHelper(GTValues.LV, MetaItems.ELECTRIC_MOTOR_LV, Materials.Steel);
+		cmHelper(GTValues.MV, MetaItems.ELECTRIC_MOTOR_MV, Materials.Aluminium);
+		cmHelper(GTValues.HV, MetaItems.ELECTRIC_MOTOR_HV, Materials.StainlessSteel);
+		cmHelper(GTValues.EV, MetaItems.ELECTRIC_MOTOR_EV, Materials.Titanium);
+		cmHelper(GTValues.IV, MetaItems.ELECTRIC_MOTOR_IV, Materials.TungstenSteel);
+		cmHelper(GTValues.LuV, MetaItems.ELECTRIC_MOTOR_LuV, Materials.Ruridit);
+		cmHelper(GTValues.ZPM, MetaItems.ELECTRIC_MOTOR_ZPM, Materials.NaquadahAlloy);
+		cmHelper(GTValues.UV, MetaItems.ELECTRIC_MOTOR_UV, Materials.Darmstadtium);
+		cmHelper(GTValues.UHV, MetaItems.ELECTRIC_MOTOR_UHV, Materials.Neutronium);
+	}
+	
+	private static void cmHelper(int tier, MetaItem<?>.MetaValueItem motor, Material gear)
+	{
+		ModHandler.addShapedRecipe("centrifuging_motor_" + GTValues.VN[tier].toLowerCase(), new ItemStack(Item.getItemFromBlock(NTMetaBlocks.CENTRIFUGING_MOTORS), 1, tier - 1),
+				"PMP",
+				"MGM",
+				"PMP",
+				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.IncoloyMA956),
+				'G', new UnificationEntry(OrePrefix.gear, gear),
+				'M', motor);
 	}
 }

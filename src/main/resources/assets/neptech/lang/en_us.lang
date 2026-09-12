@@ -62,6 +62,17 @@ tile.crushing_wheels.hsse.name=HSS-E Crushing Wheels
 tile.crushing_wheels.naquadah_alloy.name=Naquadah Alloy Crushing Wheels
 tile.crushing_wheels.duranium.name=Duranium Crushing Wheels
 
+// Centrifuging Motors
+tile.centrifuging_motor.lv.name=Low Voltage Centrifuging Motor
+tile.centrifuging_motor.mv.name=Medium Voltage Centrifuging Motor
+tile.centrifuging_motor.hv.name=High Voltage Centrifuging Motor
+tile.centrifuging_motor.ev.name=Extreme Voltage Centrifuging Motor
+tile.centrifuging_motor.iv.name=Insane Voltage Centrifuging Motor
+tile.centrifuging_motor.luv.name=Ludicrous Voltage Centrifuging Motor
+tile.centrifuging_motor.zpm.name=Zero Point Module Centrifuging Motor
+tile.centrifuging_motor.uv.name=Ultimate Voltage Centrifuging Motor
+tile.centrifuging_motor.uhv.name=Ultra High Voltage Centrifuging Motor
+
 // Laser Foci
 tile.laser_foci.iv.name=IV Laser Foci
 tile.laser_foci.luv.name=LuV Laser Foci
@@ -157,11 +168,14 @@ neptech.crushing_wheels.pulverizer=Processing speed and Parallels are determined
 
 neptech.parallels.multi_smelter=Parallels: Coil Parallels * 2
 
+neptech.industrial_centrifuge.tooltip=Parallels, Processing speed, and EU usage are determined by the Centrifuging Motors
+neptech.industrial_thermal_centrifuge.tooltip=Parallels and EU usage are determined by the Centrifuging Motors. Processing speed is the one shown on the coils multiplied by two
+
 neptech.mixing_vessel.tooltip1=The minimum size is 5x5x5, with the maximum being 33x33x33.
 neptech.mixing_vessel.tooltip2=The Length, Width, and Height of the entire multiblock must be equal and odd.
 neptech.mixing_vessel.tooltip3=The processing speed of the multiblock will get worse the larger you make it.
 neptech.mixing_vessel.tooltip4=However, making the multiblock larger exponentially increases the parallels, the most being 1,073,741,824 parallels.
-neptech.mixing_vessel.tooltip5=You can calculate the processing speed by measuring the distance from the controller to the edge, substracting 1, then multiplying by 100. The lowest it will go is -1000%% processing speed
+neptech.mixing_vessel.tooltip5=You can calculate the processing speed by measuring the distance from the controller to the edge, substracting 1, then multiplying by 100. The lowest it will go is -1400%% processing speed
 neptech.mixing_vessel.tooltip6=You can use higher tier mixing modules to mitigate the processing speed debuff, however it gets more expensive the larger the multiblock is
 neptech.mixing_vessel.tooltip7=Parallels are calculated by taking 4 to the power of the distance from the controller to the edge minus 1.
 neptech.mixing_vessel.tooltip8=If you have UV tier or higher Mixing Modules, you can use a single Laser Hatch, though not in conjuction with regular Energy Hatches!
@@ -188,11 +202,13 @@ neptech.machine.large_laser_engraver.name=Large Laser Engraver
 neptech.machine.pulverizer.name=Pulverizer
 neptech.machine.arc_smelter.name=Arc Smelter
 neptech.machine.universal_smelter.name=Universal Smelter
-neptech.machine.void_ore_miner_zpm.name=Void Ore Miner
-neptech.machine.void_ore_miner_uv.name=Void Ore Miner II
-neptech.machine.void_ore_miner_uhv.name=Void Ore Miner III
-neptech.machine.void_ore_miner_uev.name=Void Ore Miner IV
-neptech.machine.void_ore_miner_uiv.name=Void Ore Miner V
+neptech.machine.void_miner_zpm.name=Void Ore Miner
+neptech.machine.void_miner_uv.name=Void Ore Miner II
+neptech.machine.void_miner_uhv.name=Void Ore Miner III
+neptech.machine.void_miner_uev.name=Void Ore Miner IV
+neptech.machine.void_miner_uiv.name=Void Ore Miner V
+neptech.machine.industrial_centrifuge.name=Industrial Centrifuge
+neptech.machine.industrial_thermal_centrifuge.name=Industrial Thermal Centrifuge
 
 // Electric Machine Descriptions
 neptech.multiblock.alloy_blast_smelter.description=A Blast Furnace built for creating alloys in high volumes.

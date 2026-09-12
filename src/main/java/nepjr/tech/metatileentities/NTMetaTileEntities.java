@@ -4,6 +4,7 @@ import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTile
 import static nepjr.tech.NepTech.nepId;
 
 import gregtech.api.GTValues;
+import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Materials;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityLaserHatch;
 import nepjr.tech.config.NTConfig;
@@ -17,6 +18,7 @@ import nepjr.tech.metatileentities.multi.electric.MetaTileEntityGreenhouse;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishABS;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishBlastFurnace;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityHellishMultiSmelter;
+import nepjr.tech.metatileentities.multi.electric.MetaTileEntityIndustrialCentrifuge;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityLargeLaserEngraver;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityMixingVessel;
 import nepjr.tech.metatileentities.multi.electric.MetaTileEntityPulverizer;
@@ -61,6 +63,8 @@ public class NTMetaTileEntities
 	public static MetaTileEntitySuperPacker SUPER_PACKER;
 	public static MetaTileEntityArcSmelter ARC_SMELTER;
 	public static MetaTileEntityUniversalSmelter UNIVERSAL_SMELTER;
+	public static MetaTileEntityIndustrialCentrifuge INDUSTRIAL_CENTRIFUGE;
+	public static MetaTileEntityIndustrialCentrifuge INDUSTRIAL_THERMAL_CENTRIFUGE;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -218,6 +222,8 @@ public class NTMetaTileEntities
 		SUPER_PACKER = registerMetaTileEntity(6019, new MetaTileEntitySuperPacker(nepId("super_packer")));
 		ARC_SMELTER = registerMetaTileEntity(6020, new MetaTileEntityArcSmelter(nepId("arc_smelter")));
 		UNIVERSAL_SMELTER = registerMetaTileEntity(6021, new MetaTileEntityUniversalSmelter(nepId("universal_smelter")));
+		INDUSTRIAL_CENTRIFUGE = registerMetaTileEntity(6022, new MetaTileEntityIndustrialCentrifuge(nepId("industrial_centrifuge"), RecipeMaps.CENTRIFUGE_RECIPES));
+		INDUSTRIAL_THERMAL_CENTRIFUGE = registerMetaTileEntity(6023, new MetaTileEntityIndustrialCentrifuge(nepId("industrial_thermal_centrifuge"), RecipeMaps.THERMAL_CENTRIFUGE_RECIPES));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

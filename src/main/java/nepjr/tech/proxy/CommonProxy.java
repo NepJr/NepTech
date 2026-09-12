@@ -17,6 +17,7 @@ import nepjr.tech.api.unification.material.GTMaterialModifications;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.api.unification.properties.AlloyBlastPropertyAddition;
 import nepjr.tech.common.blocks.BlockBeamSplitter;
+import nepjr.tech.common.blocks.BlockCentrifugingMotors;
 import nepjr.tech.common.blocks.BlockCrushingWheels;
 import nepjr.tech.common.blocks.BlockFertilizedDirt;
 import nepjr.tech.common.blocks.BlockLaserFoci;
@@ -117,6 +118,12 @@ public class CommonProxy
         for(BlockMixingModules2.ModuleTier module : BlockMixingModules2.ModuleTier.values())
         {
         	NepTechAPI.MIXING_MODULES.put(NTMetaBlocks.MIXING_MODULES2.getState(module), module);
+        }
+        
+        // speeeeeeeeeeeeeeeeeeeeeeeeen
+        for(BlockCentrifugingMotors.MotorTier tier : BlockCentrifugingMotors.MotorTier.values())
+        {
+        	NepTechAPI.CENTRIFUGING_MOTORS.put(NTMetaBlocks.CENTRIFUGING_MOTORS.getState(tier), tier);
         }
         
         // mmm laser
@@ -226,6 +233,7 @@ public class CommonProxy
 		registry.register(createItemBlock(NTMetaBlocks.BEAM_SPLITTER, VariantItemBlock::new));
 		registry.register(createItemBlock(NTMetaBlocks.CRUSHING_WHEELS, VariantItemBlock::new));
 		registry.register(createItemBlock(NTMetaBlocks.NT_COILS, VariantItemBlock::new));
+		registry.register(createItemBlock(NTMetaBlocks.CENTRIFUGING_MOTORS, VariantItemBlock::new));
     }
     
     // Taken from GYCM
@@ -250,6 +258,7 @@ public class CommonProxy
 		registry.register(NTMetaBlocks.BEAM_SPLITTER);
 		registry.register(NTMetaBlocks.CRUSHING_WHEELS);
 		registry.register(NTMetaBlocks.NT_COILS);
+		registry.register(NTMetaBlocks.CENTRIFUGING_MOTORS);
     }
     
     @SubscribeEvent

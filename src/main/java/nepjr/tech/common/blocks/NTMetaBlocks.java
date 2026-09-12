@@ -26,6 +26,7 @@ public class NTMetaBlocks
 	public static BlockBeamSplitter BEAM_SPLITTER;
 	public static BlockCrushingWheels CRUSHING_WHEELS;
 	public static BlockNTCoils NT_COILS;
+	public static BlockCentrifugingMotors CENTRIFUGING_MOTORS;
 	
 	public static void init()
 	{
@@ -60,6 +61,9 @@ public class NTMetaBlocks
 		
 		NT_COILS = new BlockNTCoils();
 		NT_COILS.setRegistryName("wire_coil");
+		
+		CENTRIFUGING_MOTORS = new BlockCentrifugingMotors();
+		CENTRIFUGING_MOTORS.setRegistryName("centrifuging_motor");
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -70,6 +74,7 @@ public class NTMetaBlocks
 		registerItemModel(GENERIC_BLOCKS);
 		registerItemModel(LASER_FOCI);
 		registerItemModel(BEAM_SPLITTER);
+		registerItemModel(CENTRIFUGING_MOTORS);
 		MIXING_MODULES.onModelRegister();
 		MIXING_MODULES2.onModelRegister();
 		UNIQUE_CASINGS.onModelRegister();

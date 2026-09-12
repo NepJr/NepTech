@@ -15,6 +15,7 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.blocks.BlockGlassCasing.CasingType;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
 import gregtech.common.blocks.BlockSteamCasing.SteamCasingType;
+import gregtech.common.blocks.BlockWireCoil.CoilType;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import nepjr.tech.api.unification.material.NTMaterials;
@@ -126,6 +127,24 @@ public class MultiblockRecipes
 						'C', new UnificationEntry(OrePrefix.circuit, Tier.HV),
 						'M', MetaItems.COMPONENT_GRINDER_DIAMOND,
 						'S', MetaTileEntities.MACERATOR[GTValues.HV].getStackForm());
+				
+				ModHandler.addShapedRecipe("industrial_centrifuge", NTMetaTileEntities.INDUSTRIAL_CENTRIFUGE.getStackForm(), 
+						"PCP",
+						"WSW",
+						"PCP",
+						'P', new UnificationEntry(OrePrefix.plate, NTMaterials.IncoloyMA956),
+						'W', new UnificationEntry(OrePrefix.cableGtQuadruple, Materials.Gold),
+						'C', new UnificationEntry(OrePrefix.circuit, Tier.HV),
+						'S', MetaTileEntities.CENTRIFUGE[HV].getStackForm());
+				
+				ModHandler.addShapedRecipe("industrial_thermal_centrifuge", NTMetaTileEntities.INDUSTRIAL_THERMAL_CENTRIFUGE.getStackForm(), 
+						"PCP",
+						"WSW",
+						"PCP",
+						'P', new UnificationEntry(OrePrefix.plate, NTMaterials.IncoloyMA956),
+						'W', MetaBlocks.WIRE_COIL.getItemVariant(CoilType.NICHROME),
+						'C', new UnificationEntry(OrePrefix.circuit, Tier.HV),
+						'S', MetaTileEntities.THERMAL_CENTRIFUGE[HV].getStackForm());
 				
 				if(NTConfig.neptech.reworkedSteamGrinderOver)
 				{
