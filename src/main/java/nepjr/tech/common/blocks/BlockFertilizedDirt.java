@@ -48,7 +48,7 @@ public class BlockFertilizedDirt extends VariantBlock<BlockFertilizedDirt.Fertil
         IBlockState stackState = itemBlock.getBlockState(itemStack);
         FertilizerType fertilizer = getState(stackState);
         
-        ITextComponent parallel = TextComponentUtil.stringWithColor(TextFormatting.DARK_PURPLE, String.valueOf((int) Math.pow(8, fertilizer.getTier())));
+        ITextComponent parallel = TextComponentUtil.stringWithColor(TextFormatting.DARK_PURPLE, String.valueOf( 32 * fertilizer.getTier()));
         ITextComponent processingSpeed = TextComponentUtil.stringWithColor(TextFormatting.YELLOW, String.valueOf((int) Math.round(100 * fertilizer.getDiscount())));
         
         lines.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.parallel", parallel).getFormattedText());
