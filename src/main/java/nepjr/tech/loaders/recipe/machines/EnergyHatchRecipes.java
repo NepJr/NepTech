@@ -9,7 +9,7 @@ import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import nepjr.tech.common.items.NTMetaItems;
-import nepjr.tech.metatileentities.NTMetaTileEntities;
+import nepjr.tech.common.metatileentities.NTMetaTileEntities;
 
 public class EnergyHatchRecipes 
 {

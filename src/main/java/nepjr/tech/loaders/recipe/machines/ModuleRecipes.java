@@ -21,7 +21,7 @@ import nepjr.tech.common.blocks.BlockFertilizedDirt.FertilizerType;
 import nepjr.tech.common.blocks.BlockLaserFoci.FociTier;
 import nepjr.tech.common.blocks.BlockMixingModules.ModuleTier;
 import nepjr.tech.common.blocks.NTMetaBlocks;
-import nepjr.tech.metatileentities.NTMetaTileEntities;
+import nepjr.tech.common.metatileentities.NTMetaTileEntities;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;

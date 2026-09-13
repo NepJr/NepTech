@@ -60,7 +60,9 @@ public class BlockCentrifugingMotors extends VariantBlock<BlockCentrifugingMotor
         
         ITextComponent processingSpeed = TextComponentUtil.stringWithColor(TextFormatting.YELLOW, String.valueOf((int) Math.round(100 * moduleTier.getProcessingSpeed())));
         ITextComponent energyDiscount = TextComponentUtil.stringWithColor(TextFormatting.YELLOW, String.valueOf((int) Math.round(100 - (5 * moduleTier.getTier()))));
-        
+		ITextComponent parallel = TextComponentUtil.stringWithColor(TextFormatting.DARK_PURPLE, String.valueOf((int)  256 * moduleTier.getTier()));
+
+		lines.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.parallel", parallel).getFormattedText());
         lines.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "neptech.processing_speed_bonus", processingSpeed).getFormattedText());
         lines.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "neptech.energy_discount", energyDiscount).getFormattedText());
     }

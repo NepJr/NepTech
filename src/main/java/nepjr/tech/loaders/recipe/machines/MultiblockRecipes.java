@@ -22,7 +22,7 @@ import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
 import nepjr.tech.config.NTConfig;
-import nepjr.tech.metatileentities.NTMetaTileEntities;
+import nepjr.tech.common.metatileentities.NTMetaTileEntities;
 import net.minecraft.init.Blocks;
 
 public class MultiblockRecipes

@@ -1,27 +1,21 @@
 package nepjr.tech.loaders.recipe;
 
 import gregtech.api.GTValues;
-import gregtech.api.items.OreDictNames;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials.Tier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.blocks.BlockGlassCasing.CasingType;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
-import gregtech.common.blocks.BlockSteamCasing.SteamCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import nepjr.tech.api.unification.material.NTMaterials;
-import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
-import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.config.NTConfig;
-import nepjr.tech.metatileentities.NTMetaTileEntities;
+import nepjr.tech.common.metatileentities.NTMetaTileEntities;
 import nepjr.tech.proxy.CommonProxy;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 

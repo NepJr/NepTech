@@ -66,13 +66,13 @@ public class BlockMixingModules2 extends VariantActiveBlock<BlockMixingModules2.
 
 	public enum ModuleTier implements IStringSerializable, IMixingModuleStats
 	{
-		UV(GTValues.UV, 10.6f),
-		UHV(GTValues.UHV, 11.8f),
-		UEV(GTValues.UEV, 13.0f),
-		UIV(GTValues.UIV, 14.0f),
-		UXV(GTValues.UXV, 16.0f),
-		OpV(GTValues.OpV, 20.0f),
-		MAX(GTValues.MAX, 30.0f);
+		UV(GTValues.UV, 5.0f),
+		UHV(GTValues.UHV, 5.5f),
+		UEV(GTValues.UEV, 6.0f),
+		UIV(GTValues.UIV, 6.5f),
+		UXV(GTValues.UXV, 7.0f),
+		OpV(GTValues.OpV, 7.5f),
+		MAX(GTValues.MAX, 8.0f);
 		
 		private final int tier;
 		private final float processingSpeed;

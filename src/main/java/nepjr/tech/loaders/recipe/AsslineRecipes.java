@@ -4,19 +4,13 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
 import static gregtech.api.unification.ore.OrePrefix.circuit;
 
-import gregtech.api.GTValues;
 import gregtech.api.unification.material.MarkerMaterials.Tier;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.blocks.BlockCleanroomCasing.CasingType;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
-import nepjr.tech.common.blocks.BlockBeamSplitter.BeamSplitter;
-import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
-import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.config.NTConfig;
-import nepjr.tech.metatileentities.NTMetaTileEntities;
+import nepjr.tech.common.metatileentities.NTMetaTileEntities;
 
 public class AsslineRecipes 
 {

@@ -8,7 +8,7 @@ import gregtech.api.metatileentity.multiblock.ParallelLogicType;
 import gregtech.api.metatileentity.multiblock.RecipeMapSteamMultiblockController;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
-import nepjr.tech.metatileentities.multi.steam.MetaTileEntitySteamSmelter;
+import nepjr.tech.common.metatileentities.multi.steam.MetaTileEntitySteamSmelter;
 
 public class NTSteamMultiWorkable extends SteamMultiblockRecipeLogic {
 	

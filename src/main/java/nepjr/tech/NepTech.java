@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import gregtech.GTInternalTags;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTMetaItems;
-import nepjr.tech.metatileentities.NTMetaTileEntities;
+import nepjr.tech.common.metatileentities.NTMetaTileEntities;
 import nepjr.tech.proxy.CommonProxy;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;

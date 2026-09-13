@@ -3,19 +3,15 @@ package nepjr.tech.loaders.recipe;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 
 import gregtech.api.GTValues;
-import gregtech.api.unification.material.MarkerMaterials.Tier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.blocks.BlockSteamCasing.SteamCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
-import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.api.unification.material.NTMaterials;
-import nepjr.tech.common.blocks.BlockMixingModules.ModuleTier;
-import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
 import nepjr.tech.common.items.NTMetaItems;
-import nepjr.tech.metatileentities.NTMetaTileEntities;
+import nepjr.tech.common.metatileentities.NTMetaTileEntities;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 

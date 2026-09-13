@@ -67,13 +67,13 @@ public class BlockMixingModules extends VariantActiveBlock<BlockMixingModules.Mo
 	public enum ModuleTier implements IStringSerializable, IMixingModuleStats
 	{
 		ULV(GTValues.ULV, 0.0f),
-		LV(GTValues.LV, 2.2f),
-		MV(GTValues.MV, 3.4f),
-		HV(GTValues.HV, 4.6f),
-		EV(GTValues.EV, 5.8f),
-		IV(GTValues.IV, 7.0f),
-		LuV(GTValues.LuV, 8.2f),
-		ZPM(GTValues.ZPM, 9.4f);
+		LV(GTValues.LV, 0.5f),
+		MV(GTValues.MV, 1.0f),
+		HV(GTValues.HV, 2.5f),
+		EV(GTValues.EV, 3.0f),
+		IV(GTValues.IV, 3.5f),
+		LuV(GTValues.LuV, 4.0f),
+		ZPM(GTValues.ZPM, 4.5f);
 		
 		private final int tier;
 		private final float processingSpeed;

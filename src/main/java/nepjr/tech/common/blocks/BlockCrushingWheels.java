@@ -50,7 +50,7 @@ public class BlockCrushingWheels extends VariantActiveBlock<BlockCrushingWheels.
         CrushingWheels crushingWheels = getState(stackState);
         
         ITextComponent processingSpeed = TextComponentUtil.stringWithColor(TextFormatting.YELLOW, String.valueOf((int) Math.round(100 * crushingWheels.getProcessingSpeed())));
-        ITextComponent parallel = TextComponentUtil.stringWithColor(TextFormatting.DARK_PURPLE, String.valueOf((int) Math.pow(8, crushingWheels.getTier())));
+        ITextComponent parallel = TextComponentUtil.stringWithColor(TextFormatting.DARK_PURPLE, String.valueOf((int)  256 * crushingWheels.getTier()));
         
         lines.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.parallel", parallel).getFormattedText());
         lines.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "neptech.processing_speed", processingSpeed).getFormattedText());
@@ -59,14 +59,14 @@ public class BlockCrushingWheels extends VariantActiveBlock<BlockCrushingWheels.
 
 	public enum CrushingWheels implements IStringSerializable, ICrushingWheelStats
 	{
-		COBALT_BRASS("cobalt_brass", 2.0f, GTValues.LV),
-		VANADIUMSTEEL("vanadiumsteel", 4.0f, GTValues.MV),
-		BLUESTEEL("bluesteel", 6.0f, GTValues.HV),
-		ULTIMET("ultimet", 8.0f, GTValues.EV),
-		TUNGSTEN_CARBIDE("tungsten_carbide", 10.0f, GTValues.IV),
-		HSSE("hsse", 12.0f, GTValues.LuV),
-		NAQUADAH_ALLOY("naquadah_alloy", 14.0f, GTValues.ZPM),
-		DURANIUM("duranium", 16.0f, GTValues.UV);
+		COBALT_BRASS("cobalt_brass", 1.5f, GTValues.LV),
+		VANADIUMSTEEL("vanadiumsteel", 2.0f, GTValues.MV),
+		BLUESTEEL("bluesteel", 2.5f, GTValues.HV),
+		ULTIMET("ultimet", 3.0f, GTValues.EV),
+		TUNGSTEN_CARBIDE("tungsten_carbide", 3.5f, GTValues.IV),
+		HSSE("hsse", 4.0f, GTValues.LuV),
+		NAQUADAH_ALLOY("naquadah_alloy", 4.5f, GTValues.ZPM),
+		DURANIUM("duranium", 5.0f, GTValues.UV);
 		
 		private float processingSpeed;
 		private int tier;
