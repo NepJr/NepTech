@@ -134,6 +134,7 @@ neptech.material.acidic_wyvernium_solution=Acidic Wyvernium Solution
 neptech.material.wyvernium_tetroxide=Wyvernium Tetroxide
 neptech.material.mostimite_chloride=Mostimite Chloride
 neptech.material.ancient_sludge_residue=Ancient Sludge Residue
+neptech.material.crystalline=Crystalline
 
 // Machine tooltips n related shit
 neptech.machine.can_accept_single_laser=Can accept a single Laser Hatch!
@@ -175,10 +176,10 @@ neptech.industrial_thermal_centrifuge.tooltip=Parallels and EU usage are determi
 neptech.mixing_vessel.tooltip1=The minimum size is 5x5x5, with the maximum being 15x15x15.
 neptech.mixing_vessel.tooltip2=The Length, Width, and Height of the entire multiblock must be equal and odd.
 neptech.mixing_vessel.tooltip3=The processing speed of the multiblock will get worse the larger you make it.
-neptech.mixing_vessel.tooltip4=However, making the multiblock larger exponentially increases the parallels, the most being 262,144 parallels.
+neptech.mixing_vessel.tooltip4=However, making the multiblock larger exponentially increases the parallels, the most being 3072 parallels.
 neptech.mixing_vessel.tooltip5=You can calculate the processing speed by measuring the distance from the controller to the edge, substracting 1, then multiplying by 100. The lowest it will go is -500%% processing speed
 neptech.mixing_vessel.tooltip6=You can use higher tier mixing modules to mitigate the processing speed debuff, however it gets more expensive the larger the multiblock is
-neptech.mixing_vessel.tooltip7=Parallels are calculated by taking 8 to the power of the distance from the controller to the edge minus 1.
+neptech.mixing_vessel.tooltip7=Parallels are calculated by multiplying 512 by the distance from the controller to the edge minus 1.
 neptech.mixing_vessel.tooltip8=If you have UV tier or higher Mixing Modules, you can use a single Laser Hatch, though not in conjuction with regular Energy Hatches!
 neptech.mixing_vessel.tooltip9=Happy mixing!
 

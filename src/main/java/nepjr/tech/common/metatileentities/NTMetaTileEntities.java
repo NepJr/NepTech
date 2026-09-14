@@ -7,25 +7,9 @@ import gregtech.api.GTValues;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Materials;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityLaserHatch;
+import nepjr.tech.common.metatileentities.multi.electric.*;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.common.metatileentities.electric.MetaTileEntityLaserDiode;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityAirVacuum;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityAlloyBlastSmelter;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityArcSmelter;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityDroneLauncher;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityElectricImplosionCompressor;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityGreenhouse;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityHellishABS;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityHellishBlastFurnace;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityHellishMultiSmelter;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityIndustrialCentrifuge;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityLargeLaserEngraver;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityMixingVessel;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityPulverizer;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntitySuperPacker;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityUniversalSmelter;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityVoidOreMiner;
-import nepjr.tech.common.metatileentities.multi.electric.MetaTileEntityWireSupercoater;
 import nepjr.tech.common.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
 import nepjr.tech.common.metatileentities.multi.multiblockpart.MetaTileEntityNTEnergyHatch;
 import nepjr.tech.common.metatileentities.multi.multiblockpart.MetaTileEntityNTSubstationEnergyHatch;
@@ -65,6 +49,7 @@ public class NTMetaTileEntities
 	public static MetaTileEntityUniversalSmelter UNIVERSAL_SMELTER;
 	public static MetaTileEntityIndustrialCentrifuge INDUSTRIAL_CENTRIFUGE;
 	public static MetaTileEntityIndustrialCentrifuge INDUSTRIAL_THERMAL_CENTRIFUGE;
+	public static MetaTileEntityIndustrialMetalworkingUnit INDUSTRIAL_METALWORKING_UNIT;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -224,6 +209,7 @@ public class NTMetaTileEntities
 		UNIVERSAL_SMELTER = registerMetaTileEntity(6021, new MetaTileEntityUniversalSmelter(nepId("universal_smelter")));
 		INDUSTRIAL_CENTRIFUGE = registerMetaTileEntity(6022, new MetaTileEntityIndustrialCentrifuge(nepId("industrial_centrifuge"), RecipeMaps.CENTRIFUGE_RECIPES));
 		INDUSTRIAL_THERMAL_CENTRIFUGE = registerMetaTileEntity(6023, new MetaTileEntityIndustrialCentrifuge(nepId("industrial_thermal_centrifuge"), RecipeMaps.THERMAL_CENTRIFUGE_RECIPES));
+		INDUSTRIAL_METALWORKING_UNIT = registerMetaTileEntity(6024, new MetaTileEntityIndustrialMetalworkingUnit(nepId("industrial_metalworking_unit")));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

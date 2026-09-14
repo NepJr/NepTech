@@ -598,11 +598,12 @@ public class MetaTileEntityMixingVessel extends RecipeMapMultiblockController
 		@Override
 		public int getParallelLimit()
 		{
-			return (int) Math.pow(8, mte.lDist - 1);
+			return 512 * (mte.lDist - 1);
 		}
 		
 		@Override
-        protected void modifyOverclockPost(int[] resultOverclock, @NotNull IRecipePropertyStorage storage) {
+        protected void modifyOverclockPost(int[] resultOverclock, @NotNull IRecipePropertyStorage storage)
+        {
             super.modifyOverclockPost(resultOverclock, storage);
 
             if(mte.getProcessingSpeed() > 0.0f)

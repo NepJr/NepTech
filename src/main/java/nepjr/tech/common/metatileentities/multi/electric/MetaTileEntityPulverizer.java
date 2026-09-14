@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Supplier;
 
+import gregtech.client.utils.TooltipHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -65,6 +66,7 @@ public class MetaTileEntityPulverizer extends RecipeMapMultiblockController
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced)
 	{
         super.addInformation(stack, player, tooltip, advanced);
+		tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
         tooltip.add(TextFormatting.GREEN + I18n.format("neptech.crushing_wheels.pulverizer"));
     }
 	
@@ -73,7 +75,7 @@ public class MetaTileEntityPulverizer extends RecipeMapMultiblockController
         super.formStructure(context);
         Object crushingWheels = context.get("CrushingWheels");
         if (crushingWheels instanceof ICrushingWheelStats) {
-            this.maxParallels = (int) 256*((ICrushingWheelStats) crushingWheels).getTier();
+            this.maxParallels = (int) 64*((ICrushingWheelStats) crushingWheels).getTier();
             this.processingSpeed = ((ICrushingWheelStats) crushingWheels).getProcessingSpeed();
         } else {
             this.maxParallels = 0;
@@ -144,7 +146,7 @@ public class MetaTileEntityPulverizer extends RecipeMapMultiblockController
 		private MetaTileEntityPulverizer mte;
 		public PulverizerRecipeLogic(MetaTileEntityPulverizer tileEntity)
 		{
-			super(tileEntity);
+			super(tileEntity, true);
 			this.mte = tileEntity;
 		}
 		

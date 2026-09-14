@@ -2,6 +2,8 @@ package nepjr.tech.common.metatileentities.multi.electric;
 
 import java.util.List;
 
+import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
+import nepjr.tech.client.NTTextures;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -86,6 +88,12 @@ public class MetaTileEntityAirVacuum extends RecipeMapMultiblockController
 		return tier == 1 ? Textures.ROBUST_TUNGSTENSTEEL_CASING : 
 						   Textures.STABLE_TITANIUM_CASING;
 	}
+
+	@Override
+	protected @NotNull OrientedOverlayRenderer getFrontOverlay() {
+		return Textures.GAS_COLLECTOR_OVERLAY;
+	}
+
 	@Override
 	public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity)
 	{

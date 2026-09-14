@@ -50,7 +50,7 @@ public class BlockCrushingWheels extends VariantActiveBlock<BlockCrushingWheels.
         CrushingWheels crushingWheels = getState(stackState);
         
         ITextComponent processingSpeed = TextComponentUtil.stringWithColor(TextFormatting.YELLOW, String.valueOf((int) Math.round(100 * crushingWheels.getProcessingSpeed())));
-        ITextComponent parallel = TextComponentUtil.stringWithColor(TextFormatting.DARK_PURPLE, String.valueOf((int)  256 * crushingWheels.getTier()));
+        ITextComponent parallel = TextComponentUtil.stringWithColor(TextFormatting.DARK_PURPLE, String.valueOf((int)  64 * crushingWheels.getTier()));
         
         lines.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.parallel", parallel).getFormattedText());
         lines.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "neptech.processing_speed", processingSpeed).getFormattedText());

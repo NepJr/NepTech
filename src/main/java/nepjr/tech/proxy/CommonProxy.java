@@ -16,15 +16,7 @@ import nepjr.tech.api.fluids.GeneratedFluidHandler;
 import nepjr.tech.api.unification.material.GTMaterialModifications;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.api.unification.properties.AlloyBlastPropertyAddition;
-import nepjr.tech.common.blocks.BlockBeamSplitter;
-import nepjr.tech.common.blocks.BlockCentrifugingMotors;
-import nepjr.tech.common.blocks.BlockCrushingWheels;
-import nepjr.tech.common.blocks.BlockFertilizedDirt;
-import nepjr.tech.common.blocks.BlockLaserFoci;
-import nepjr.tech.common.blocks.BlockMixingModules;
-import nepjr.tech.common.blocks.BlockMixingModules2;
-import nepjr.tech.common.blocks.BlockNTCoils;
-import nepjr.tech.common.blocks.NTMetaBlocks;
+import nepjr.tech.common.blocks.*;
 import nepjr.tech.common.items.NTItemRingOfFlight;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.config.NTConfig;
@@ -143,6 +135,12 @@ public class CommonProxy
         {
         	NepTechAPI.CRUSHING_WHEELS.put(NTMetaBlocks.CRUSHING_WHEELS.getState(wheel), wheel);
         }
+
+		// forwards and back and forwards and back
+		for(BlockMetalworkingModule.ModuleTier module : BlockMetalworkingModule.ModuleTier.values())
+		{
+			NepTechAPI.METALWORKING_MODULES.put(NTMetaBlocks.METALWORKING_MODULES.getState(module), module);
+		}
 	}
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -234,6 +232,7 @@ public class CommonProxy
 		registry.register(createItemBlock(NTMetaBlocks.CRUSHING_WHEELS, VariantItemBlock::new));
 		registry.register(createItemBlock(NTMetaBlocks.NT_COILS, VariantItemBlock::new));
 		registry.register(createItemBlock(NTMetaBlocks.CENTRIFUGING_MOTORS, VariantItemBlock::new));
+		registry.register(createItemBlock(NTMetaBlocks.METALWORKING_MODULES, VariantItemBlock::new));
     }
     
     // Taken from GYCM
@@ -259,6 +258,7 @@ public class CommonProxy
 		registry.register(NTMetaBlocks.CRUSHING_WHEELS);
 		registry.register(NTMetaBlocks.NT_COILS);
 		registry.register(NTMetaBlocks.CENTRIFUGING_MOTORS);
+		registry.register(NTMetaBlocks.METALWORKING_MODULES);
     }
     
     @SubscribeEvent
