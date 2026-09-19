@@ -1,4 +1,4 @@
-package nepjr.tech.loaders.recipe;
+package nepjr.tech.loaders.recipe.machines;
 
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;

@@ -29,6 +29,8 @@ public class NTMaterials
 	public static Material Mostimite;
 	public static Material Crystalline;
 	public static Material DragonBlood;
+	public static Material TimeDialatedSilicon;
+	public static Material DragonsBreath;
 	
 	// EnderIO Alloys
 	public static Material EnergeticAlloy;
@@ -156,9 +158,19 @@ public class NTMaterials
 		
 		DragonBlood = new Material.Builder(8013, nepId("dragonblood"))
 				.fluid()
-				.color(0x380043)
+				.color(0x7C0043)
 				.build();
 		
+		TimeDialatedSilicon = new Material.Builder(8014, nepId("time_dialated_silicon"))
+				.dust().fluid()
+				.color(0x00066).iconSet(FINE)
+				.build();
+		
+		DragonsBreath = new Material.Builder(8015, nepId("dragons_breath"))
+				.fluid()
+				.color(0x7C0086)
+				.build();
+				
 		// EnderIO alloys
 		// Colors borrowed from Nomi Labs / Nomifactory CEu
 		
