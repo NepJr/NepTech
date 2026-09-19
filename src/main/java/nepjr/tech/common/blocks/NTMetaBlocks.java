@@ -28,6 +28,7 @@ public class NTMetaBlocks
 	public static BlockNTCoils NT_COILS;
 	public static BlockCentrifugingMotors CENTRIFUGING_MOTORS;
 	public static BlockMetalworkingModule METALWORKING_MODULES;
+	public static BlockNTFusionCasings NT_FUSION_CASING;
 	
 	public static void init()
 	{
@@ -68,6 +69,9 @@ public class NTMetaBlocks
 
 		METALWORKING_MODULES = new BlockMetalworkingModule();
 		METALWORKING_MODULES.setRegistryName("metalworking_module");
+		
+		NT_FUSION_CASING = new BlockNTFusionCasings();
+		NT_FUSION_CASING.setRegistryName("nt_fusion_casing");
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -85,6 +89,7 @@ public class NTMetaBlocks
 		UNIQUE_CASINGS.onModelRegister();
 		CRUSHING_WHEELS.onModelRegister();
 		NT_COILS.onModelRegister();
+		NT_FUSION_CASING.onModelRegister();
 	}
 	
 	// Taken from GYCM

@@ -3,9 +3,11 @@ package nepjr.tech.proxy;
 import java.util.Objects;
 import java.util.function.Function;
 
+import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.event.HighTierEvent;
+import gregtech.api.recipes.recipeproperties.FusionEUToStartProperty;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
 import gregtech.loaders.recipe.CraftingComponent;
@@ -35,6 +37,7 @@ import nepjr.tech.loaders.recipe.CraftingRecipes;
 import nepjr.tech.loaders.recipe.ElectricImplosionCompressorRecipes;
 import nepjr.tech.loaders.recipe.ForgeHammerRecipes;
 import nepjr.tech.loaders.recipe.FormingPressRecipes;
+import nepjr.tech.loaders.recipe.FusionRecipes;
 import nepjr.tech.loaders.recipe.GreenhouseRecipes;
 import nepjr.tech.loaders.recipe.MaceratorRecipes;
 import nepjr.tech.loaders.recipe.MixingRecipes;
@@ -164,6 +167,9 @@ public class CommonProxy
 		// Remove recipes
 		RemovalRecipes.init();
     	
+		FusionEUToStartProperty.registerFusionTier(GTValues.UHV, "(MK4)");
+        FusionEUToStartProperty.registerFusionTier(GTValues.UEV, "(MK5)");
+        FusionEUToStartProperty.registerFusionTier(GTValues.UIV, "(MK6)");
     	
     	// Then do everything else
 		MachineRecipes.init();
@@ -174,6 +180,7 @@ public class CommonProxy
     	PolarizingRecipes.init();
     	ComponentRecipes.init();
     	CasingRecipes.init();
+    	FusionRecipes.init();
     	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
     	GreenhouseRecipes.init();
     	ElectricImplosionCompressorRecipes.init();
@@ -233,6 +240,7 @@ public class CommonProxy
 		registry.register(createItemBlock(NTMetaBlocks.NT_COILS, VariantItemBlock::new));
 		registry.register(createItemBlock(NTMetaBlocks.CENTRIFUGING_MOTORS, VariantItemBlock::new));
 		registry.register(createItemBlock(NTMetaBlocks.METALWORKING_MODULES, VariantItemBlock::new));
+		registry.register(createItemBlock(NTMetaBlocks.NT_FUSION_CASING, VariantItemBlock::new));
     }
     
     // Taken from GYCM
@@ -259,6 +267,7 @@ public class CommonProxy
 		registry.register(NTMetaBlocks.NT_COILS);
 		registry.register(NTMetaBlocks.CENTRIFUGING_MOTORS);
 		registry.register(NTMetaBlocks.METALWORKING_MODULES);
+		registry.register(NTMetaBlocks.NT_FUSION_CASING);
     }
     
     @SubscribeEvent

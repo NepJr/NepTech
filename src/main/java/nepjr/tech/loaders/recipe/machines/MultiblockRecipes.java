@@ -43,7 +43,7 @@ public class MultiblockRecipes
 							"PCP",
 							"WPW",
 							'E', MetaTileEntities.ELECTRIC_BLAST_FURNACE.getStackForm(),
-							'P', new UnificationEntry(OrePrefix.circuit, Tier.IV),
+							'P', new UnificationEntry(OrePrefix.circuit, Tier.EV),
 							'C', NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.NETHERITE),
 							'W', new UnificationEntry(OrePrefix.cableGtSingle, Materials.Tungsten));
 				
@@ -79,7 +79,7 @@ public class MultiblockRecipes
 		                "WSW",
 		                "TCT",
 		                'T', new UnificationEntry(OrePrefix.plate, NTMaterials.Netherite),
-		                'C', new UnificationEntry(OrePrefix.circuit, Tier.LuV),
+		                'C', new UnificationEntry(OrePrefix.circuit, Tier.IV),
 		                'S', NTMetaTileEntities.ALLOY_BLAST_SMELTER.getStackForm(),
 		                'W', new UnificationEntry(OrePrefix.cableGtSingle, Materials.NiobiumTitanium));
 				

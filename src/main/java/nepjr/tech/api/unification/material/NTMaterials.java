@@ -28,6 +28,7 @@ public class NTMaterials
 	public static Material Wyvernium;
 	public static Material Mostimite;
 	public static Material Crystalline;
+	public static Material DragonBlood;
 	
 	// EnderIO Alloys
 	public static Material EnergeticAlloy;
@@ -151,6 +152,11 @@ public class NTMaterials
 		Crystalline = new Material.Builder(8012, nepId("crystalline"))
 				.dust().gem(3).fluid()
 				.color(0x8FFFFF).iconSet(DIAMOND)
+				.build();
+		
+		DragonBlood = new Material.Builder(8013, nepId("dragonblood"))
+				.fluid()
+				.color(0x380043)
 				.build();
 		
 		// EnderIO alloys
