@@ -10,6 +10,7 @@ import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.api.unification.stack.MaterialStack;
+import nepjr.tech.api.NepTechAPI;
 import nepjr.tech.common.items.behaviors.ColorSprayInfiniteBehaviour;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.EnumRarity;
@@ -96,6 +97,7 @@ public class NTMetaItems
 	{
 		nepItems = new StandardMetaItem();
 		nepItems.setRegistryName("neptech_meta_item");
+		nepItems.setCreativeTab(NepTechAPI.TAB_NEPTECH);
 	}
 	
 	public static void initSub()
