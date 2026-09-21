@@ -11,6 +11,7 @@ import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.MarkerMaterials.Tier;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.BlockFusionCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.blocks.BlockGlassCasing.CasingType;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
@@ -21,6 +22,7 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
+import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.common.metatileentities.NTMetaTileEntities;
 import net.minecraft.init.Blocks;
@@ -470,5 +472,25 @@ public class MultiblockRecipes
 				.EUt(VA[UHV])
 				.duration(20*20)
 				.buildAndRegister();
+
+			ASSEMBLY_LINE_RECIPES.recipeBuilder()
+					.input(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL).getItem())
+					.input(circuit, Tier.UEV, 4)
+					.input(MetaItems.GRAVI_STAR)
+					.input(OrePrefix.plateDouble, Materials.Neutronium)
+					.input(MetaItems.FIELD_GENERATOR_UV, 2)
+					.input(NTMetaItems.EHPIC, 64)
+					.input(NTMetaItems.EHPIC, 64)
+					.input(OrePrefix.wireGtQuadruple, Materials.RutheniumTriniumAmericiumNeutronate, 32)
+					.fluidInputs(Materials.SolderingAlloy.getFluid(1152))
+					.fluidInputs(Materials.Europium.getFluid(1152))
+					.stationResearch(b -> b
+							.researchStack(MetaTileEntities.FUSION_REACTOR[2].getStackForm())
+							.CWUt(192)
+							.EUt(VA[UHV]))
+					.output(NTMetaTileEntities.NT_FUSION_REACTOR[0])
+					.EUt(VA[UV])
+					.duration(1000)
+					.buildAndRegister();
 	}
 }

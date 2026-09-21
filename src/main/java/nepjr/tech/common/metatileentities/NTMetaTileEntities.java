@@ -50,6 +50,7 @@ public class NTMetaTileEntities
 	public static MetaTileEntityIndustrialCentrifuge INDUSTRIAL_CENTRIFUGE;
 	public static MetaTileEntityIndustrialCentrifuge INDUSTRIAL_THERMAL_CENTRIFUGE;
 	public static MetaTileEntityIndustrialMetalworkingUnit INDUSTRIAL_METALWORKING_UNIT;
+	public static MetaTileEntityNTFusionReactor[] NT_FUSION_REACTOR = new MetaTileEntityNTFusionReactor[3];
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -210,6 +211,9 @@ public class NTMetaTileEntities
 		INDUSTRIAL_CENTRIFUGE = registerMetaTileEntity(6022, new MetaTileEntityIndustrialCentrifuge(nepId("industrial_centrifuge"), RecipeMaps.CENTRIFUGE_RECIPES));
 		INDUSTRIAL_THERMAL_CENTRIFUGE = registerMetaTileEntity(6023, new MetaTileEntityIndustrialCentrifuge(nepId("industrial_thermal_centrifuge"), RecipeMaps.THERMAL_CENTRIFUGE_RECIPES));
 		INDUSTRIAL_METALWORKING_UNIT = registerMetaTileEntity(6024, new MetaTileEntityIndustrialMetalworkingUnit(nepId("industrial_metalworking_unit")));
+		NT_FUSION_REACTOR[0] = registerMetaTileEntity(6025, new MetaTileEntityNTFusionReactor(nepId("fusion_reactor_mk4"), GTValues.UHV));
+		NT_FUSION_REACTOR[1] = registerMetaTileEntity(6026, new MetaTileEntityNTFusionReactor(nepId("fusion_reactor_mk5"), GTValues.UEV));
+		NT_FUSION_REACTOR[2] = registerMetaTileEntity(6027, new MetaTileEntityNTFusionReactor(nepId("fusion_reactor_mk6"), GTValues.UIV));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

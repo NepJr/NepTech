@@ -1,5 +1,6 @@
 package nepjr.tech.loaders.recipe.machines;
 
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
@@ -7,10 +8,19 @@ import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.ConfigHolder;
+import gregtech.common.blocks.BlockFusionCasing;
+import gregtech.common.blocks.BlockMachineCasing;
+import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.items.MetaItems;
+import gregtech.common.metatileentities.MetaTileEntities;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.blocks.BlockNTCasings.NTCasingType;
+import nepjr.tech.common.blocks.BlockNTFusionCasings;
 import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.blocks.NTUniqueCasing;
+import nepjr.tech.common.items.NTMetaItems;
+
+import static gregtech.api.GTValues.*;
 
 public class CasingRecipes 
 {
@@ -239,5 +249,18 @@ public class CasingRecipes
                 .outputs(NTMetaBlocks.NT_CASINGS
                         .getItemVariant(NTCasingType.STEAM_CASING, numCasings))
                 .duration(50).EUt(16).buildAndRegister();
+
+        RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV))
+                .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
+                .input(NTMetaItems.VOLTAGE_COIL_UHV, 2)
+                .input(MetaItems.FIELD_GENERATOR_UV, 1)
+                .input(OrePrefix.plate, Materials.Neutronium)
+                .fluidInputs(Materials.Polybenzimidazole.getFluid(1152))
+                .outputs(NTMetaBlocks.NT_FUSION_CASING.getItemVariant(BlockNTFusionCasings.NTFusionCasingType.MK4, numCasings))
+                .EUt(VA[UHV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
 	}
 }
