@@ -92,6 +92,7 @@ public class NTMetaItems
 	public static MetaItem<?>.MetaValueItem DRACONIC_PROCESSING_UNIT;
 	public static MetaItem<?>.MetaValueItem BOARD_BIOWARE;
 	public static MetaItem<?>.MetaValueItem CIRCUIT_BOARD_BIOWARE;
+	public static MetaItem<?>.MetaValueItem DRAGON_HEART;
 
 	public static void init()
 	{
@@ -185,6 +186,7 @@ public class NTMetaItems
         DRACONIC_PROCESSING_UNIT = nepItems.addItem(61, "draconic_processing_unit");
         BOARD_BIOWARE = nepItems.addItem(62, "board.bioware");
         CIRCUIT_BOARD_BIOWARE = nepItems.addItem(63, "circuit_board.bioware");
+		DRAGON_HEART = nepItems.addItem(64, "dragon_heart");
         
         // Wafers n stuff
         EHPIC_WAFER = nepItems.addItem(400, "wafer.extremely_high_power_integrated_circuit");

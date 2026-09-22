@@ -15,6 +15,8 @@ import gregtech.common.pipelike.optical.OpticalPipeType;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.common.metatileentities.NTMetaTileEntities;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class EnergyHatchRecipes 
 {
@@ -30,7 +32,7 @@ public class EnergyHatchRecipes
 		for(int i = 0; i < 10; i++)
 		{
 			RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
-					.input(MetaTileEntities.HULL[IV + i])
+					.inputs(new ItemStack(Item.getItemFromBlock(MetaBlocks.MACHINE_CASING), 1, IV + i))
 					.input(OrePrefix.gemFlawless, Materials.NetherStar, 2)
 					.input(MetaBlocks.LASER_PIPES[0])
 					.output(NTMetaTileEntities.LASER_DIODE[i])

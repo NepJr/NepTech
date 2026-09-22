@@ -5,6 +5,7 @@ import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialFlags;
+import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty.GasTier;
 import nepjr.tech.api.unification.NTElements;
 
@@ -143,6 +144,10 @@ public class NTMaterials
 		AwakenedDraconium = new Material.Builder(8010, nepId("awakened_draconium"))
 				.ingot().dust().fluid()
 				.color(0xFF6A00).iconSet(METALLIC)
+				.blast(b -> b
+						.blastStats(VA[UV], 200)
+						.temp(9600, GasTier.HIGHEST)
+						.vacuumStats(VA[ZPM], 150))
 				.cableProperties(V[UEV], 8, 48)
 				.build();
 		
@@ -162,8 +167,8 @@ public class NTMaterials
 				.build();
 		
 		TimeDialatedSilicon = new Material.Builder(8014, nepId("time_dialated_silicon"))
-				.dust().fluid()
-				.color(0x00066).iconSet(FINE)
+				.ingot().fluid()
+				.color(0x00066).iconSet(METALLIC)
 				.build();
 		
 		DragonsBreath = new Material.Builder(8015, nepId("dragons_breath"))

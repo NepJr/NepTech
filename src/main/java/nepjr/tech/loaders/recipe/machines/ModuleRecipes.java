@@ -35,8 +35,35 @@ public class ModuleRecipes
 		mixingModules();
 		laserFoci();
 		beamSplitter();
-		crushingWheels();
-		centrifugingMotors();
+
+		crushingWheels(GTValues.LV, MetaItems.ELECTRIC_MOTOR_LV, Materials.CobaltBrass);
+		crushingWheels(GTValues.MV, MetaItems.ELECTRIC_MOTOR_MV, Materials.VanadiumSteel);
+		crushingWheels(GTValues.HV, MetaItems.ELECTRIC_MOTOR_HV, Materials.BlueSteel);
+		crushingWheels(GTValues.EV, MetaItems.ELECTRIC_MOTOR_EV, Materials.Ultimet);
+		crushingWheels(GTValues.IV, MetaItems.ELECTRIC_MOTOR_IV, Materials.TungstenCarbide);
+		crushingWheels(GTValues.LuV, MetaItems.ELECTRIC_MOTOR_LuV, Materials.HSSE);
+		crushingWheels(GTValues.ZPM, MetaItems.ELECTRIC_MOTOR_ZPM, Materials.NaquadahAlloy);
+		crushingWheels(GTValues.UV, MetaItems.ELECTRIC_MOTOR_UV, Materials.Duranium);
+
+		centrifugingMotors(GTValues.LV, MetaItems.ELECTRIC_MOTOR_LV, Materials.Steel);
+		centrifugingMotors(GTValues.MV, MetaItems.ELECTRIC_MOTOR_MV, Materials.Aluminium);
+		centrifugingMotors(GTValues.HV, MetaItems.ELECTRIC_MOTOR_HV, Materials.StainlessSteel);
+		centrifugingMotors(GTValues.EV, MetaItems.ELECTRIC_MOTOR_EV, Materials.Titanium);
+		centrifugingMotors(GTValues.IV, MetaItems.ELECTRIC_MOTOR_IV, Materials.TungstenSteel);
+		centrifugingMotors(GTValues.LuV, MetaItems.ELECTRIC_MOTOR_LuV, Materials.Ruridit);
+		centrifugingMotors(GTValues.ZPM, MetaItems.ELECTRIC_MOTOR_ZPM, Materials.NaquadahAlloy);
+		centrifugingMotors(GTValues.UV, MetaItems.ELECTRIC_MOTOR_UV, Materials.Darmstadtium);
+		centrifugingMotors(GTValues.UHV, MetaItems.ELECTRIC_MOTOR_UHV, Materials.Neutronium);
+
+		metalworkingModules(GTValues.LV, MetaItems.ELECTRIC_MOTOR_LV, MetaItems.ELECTRIC_PISTON_LV);
+		metalworkingModules(GTValues.MV, MetaItems.ELECTRIC_MOTOR_MV, MetaItems.ELECTRIC_PISTON_MV);
+		metalworkingModules(GTValues.HV, MetaItems.ELECTRIC_MOTOR_HV, MetaItems.ELECTRIC_PISTON_HV);
+		metalworkingModules(GTValues.EV, MetaItems.ELECTRIC_MOTOR_EV, MetaItems.ELECTRIC_PISTON_EV);
+		metalworkingModules(GTValues.IV, MetaItems.ELECTRIC_MOTOR_IV, MetaItems.ELECTRIC_PISTON_IV);
+		metalworkingModules(GTValues.LuV, MetaItems.ELECTRIC_MOTOR_LuV, MetaItems.ELECTRIC_PISTON_LUV);
+		metalworkingModules(GTValues.ZPM, MetaItems.ELECTRIC_MOTOR_ZPM, MetaItems.ELECTRIC_PISTON_ZPM);
+		metalworkingModules(GTValues.UV, MetaItems.ELECTRIC_MOTOR_UV, MetaItems.ELECTRIC_PISTON_UV);
+		metalworkingModules(GTValues.UHV, MetaItems.ELECTRIC_MOTOR_UHV, MetaItems.ELECTRIC_PISTON_UHV);
 	}
 	
 	private static void farmland()
@@ -80,7 +107,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.Iron, 4)
 			.input(OrePrefix.stickLong, Materials.Iron, 8)
-			.input("craftingPiston", 2)
+			.input("craftingPiston", 8)
 			.input(OrePrefix.circuit, Tier.ULV)
 			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.ULV))
 			.EUt(GTValues.VA[GTValues.ULV])
@@ -92,7 +119,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.Steel, 4)
 			.input(OrePrefix.stickLong, Materials.Steel, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_LV, 2)
+			.input(MetaItems.ELECTRIC_MOTOR_LV, 8)
 			.input(OrePrefix.circuit, Tier.LV)
 			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.LV))
 			.EUt(GTValues.VA[GTValues.LV])
@@ -104,7 +131,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.Aluminium, 4)
 			.input(OrePrefix.stickLong, Materials.Aluminium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_MV, 2)
+			.input(MetaItems.ELECTRIC_MOTOR_MV, 8)
 			.input(OrePrefix.circuit, Tier.MV)
 			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.MV))
 			.EUt(GTValues.VA[GTValues.MV])
@@ -116,7 +143,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.StainlessSteel, 4)
 			.input(OrePrefix.stickLong, Materials.StainlessSteel, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_HV, 2)
+			.input(MetaItems.ELECTRIC_MOTOR_HV, 8)
 			.input(OrePrefix.circuit, Tier.HV)
 			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.HV))
 			.EUt(GTValues.VA[GTValues.HV])
@@ -128,7 +155,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.Titanium, 4)
 			.input(OrePrefix.stickLong, Materials.Titanium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_EV, 2)
+			.input(MetaItems.ELECTRIC_MOTOR_EV, 8)
 			.input(OrePrefix.circuit, Tier.EV)
 			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.EV))
 			.EUt(GTValues.VA[GTValues.EV])
@@ -140,7 +167,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.TungstenSteel, 4)
 			.input(OrePrefix.stickLong, Materials.TungstenSteel, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_IV, 2)
+			.input(MetaItems.ELECTRIC_MOTOR_IV, 8)
 			.input(OrePrefix.circuit, Tier.IV)
 			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.IV))
 			.EUt(GTValues.VA[GTValues.IV])
@@ -152,7 +179,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.HSSS, 4)
 			.input(OrePrefix.stickLong, Materials.HSSS, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_LuV, 2)
+			.input(MetaItems.ELECTRIC_MOTOR_LuV, 8)
 			.input(OrePrefix.circuit, Tier.LuV)
 			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.LuV))
 			.EUt(GTValues.VA[GTValues.LuV])
@@ -164,7 +191,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.Osmiridium, 4)
 			.input(OrePrefix.stickLong, Materials.Osmiridium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_ZPM, 2)
+			.input(MetaItems.ELECTRIC_MOTOR_ZPM, 8)
 			.input(OrePrefix.circuit, Tier.ZPM)
 			.outputs(NTMetaBlocks.MIXING_MODULES.getItemVariant(ModuleTier.ZPM))
 			.EUt(GTValues.VA[GTValues.ZPM])
@@ -176,7 +203,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.Tritanium, 4)
 			.input(OrePrefix.stickLong, Materials.Tritanium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_UV, 2)
+			.input(MetaItems.ELECTRIC_MOTOR_UV, 8)
 			.input(OrePrefix.circuit, Tier.UV)
 			.outputs(NTMetaBlocks.MIXING_MODULES2.getItemVariant(nepjr.tech.common.blocks.BlockMixingModules2.ModuleTier.UV))
 			.EUt(GTValues.VA[GTValues.UV])
@@ -188,7 +215,7 @@ public class ModuleRecipes
 			.input(OrePrefix.plate, NTMaterials.HastelloyX, 4)
 			.input(OrePrefix.rotor, Materials.Neutronium, 4)
 			.input(OrePrefix.stickLong, Materials.Neutronium, 8)
-			.input(MetaItems.ELECTRIC_MOTOR_UHV, 2)
+			.input(MetaItems.ELECTRIC_MOTOR_UHV, 8)
 			.input(OrePrefix.circuit, Tier.UHV)
 			.outputs(NTMetaBlocks.MIXING_MODULES2.getItemVariant(nepjr.tech.common.blocks.BlockMixingModules2.ModuleTier.UHV))
 			.EUt(GTValues.VA[GTValues.UHV])
@@ -353,95 +380,40 @@ public class ModuleRecipes
 			.duration(400)
 			.buildAndRegister();
 	}
-	
-	private static void crushingWheels()
+
+	private static void crushingWheels(int tier, MetaItem<?>.MetaValueItem motor, Material buzzsaw)
 	{
-		ModHandler.addShapedRecipe("cobalt_brass_crushing_wheels", NTMetaBlocks.CRUSHING_WHEELS.getItemVariant(CrushingWheels.COBALT_BRASS),
-				"PBP",
-				"BMB",
-				"PBP",
-				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.Zeron100),
-				'B', new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Materials.CobaltBrass),
-				'M', MetaItems.ELECTRIC_MOTOR_LV);
-		
-		ModHandler.addShapedRecipe("vanadiumsteel_crushing_wheels", NTMetaBlocks.CRUSHING_WHEELS.getItemVariant(CrushingWheels.VANADIUMSTEEL),
-				"PBP",
-				"BMB",
-				"PBP",
-				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.Zeron100),
-				'B', new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Materials.VanadiumSteel),
-				'M', MetaItems.ELECTRIC_MOTOR_MV);
-		
-		ModHandler.addShapedRecipe("bluesteel_crushing_wheels", NTMetaBlocks.CRUSHING_WHEELS.getItemVariant(CrushingWheels.BLUESTEEL),
-				"PBP",
-				"BMB",
-				"PBP",
-				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.Zeron100),
-				'B', new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Materials.BlueSteel),
-				'M', MetaItems.ELECTRIC_MOTOR_HV);
-		
-		ModHandler.addShapedRecipe("ultimet_crushing_wheels", NTMetaBlocks.CRUSHING_WHEELS.getItemVariant(CrushingWheels.ULTIMET),
-				"PBP",
-				"BMB",
-				"PBP",
-				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.Zeron100),
-				'B', new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Materials.Ultimet),
-				'M', MetaItems.ELECTRIC_MOTOR_EV);
-		
-		ModHandler.addShapedRecipe("tungsten_carbide_crushing_wheels", NTMetaBlocks.CRUSHING_WHEELS.getItemVariant(CrushingWheels.TUNGSTEN_CARBIDE),
-				"PBP",
-				"BMB",
-				"PBP",
-				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.Zeron100),
-				'B', new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Materials.TungstenCarbide),
-				'M', MetaItems.ELECTRIC_MOTOR_IV);
-		
-		ModHandler.addShapedRecipe("hsse_crushing_wheels", NTMetaBlocks.CRUSHING_WHEELS.getItemVariant(CrushingWheels.HSSE),
-				"PBP",
-				"BMB",
-				"PBP",
-				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.Zeron100),
-				'B', new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Materials.HSSE),
-				'M', MetaItems.ELECTRIC_MOTOR_LuV);
-		
-		ModHandler.addShapedRecipe("naquadah_alloy_crushing_wheels", NTMetaBlocks.CRUSHING_WHEELS.getItemVariant(CrushingWheels.NAQUADAH_ALLOY),
-				"PBP",
-				"BMB",
-				"PBP",
-				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.Zeron100),
-				'B', new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Materials.NaquadahAlloy),
-				'M', MetaItems.ELECTRIC_MOTOR_ZPM);
-		
-		ModHandler.addShapedRecipe("duranium_crushing_wheels", NTMetaBlocks.CRUSHING_WHEELS.getItemVariant(CrushingWheels.DURANIUM),
-				"PBP",
-				"BMB",
-				"PBP",
-				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.Zeron100),
-				'B', new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Materials.Duranium),
-				'M', MetaItems.ELECTRIC_MOTOR_UV);
+		ASSEMBLER_RECIPES.recipeBuilder()
+				.input(OrePrefix.plate, NTMaterials.Zeron100, 8)
+				.input(OrePrefix.toolHeadBuzzSaw, buzzsaw, 16)
+				.input(motor, 16)
+				.EUt(VA[tier])
+				.duration(400)
+				.outputs(new ItemStack(Item.getItemFromBlock(NTMetaBlocks.CRUSHING_WHEELS), 1, tier - 1))
+				.buildAndRegister();
 	}
-	
-	private static void centrifugingMotors()
+
+	private static void centrifugingMotors(int tier, MetaItem<?>.MetaValueItem motor, Material gear)
 	{
-		cmHelper(GTValues.LV, MetaItems.ELECTRIC_MOTOR_LV, Materials.Steel);
-		cmHelper(GTValues.MV, MetaItems.ELECTRIC_MOTOR_MV, Materials.Aluminium);
-		cmHelper(GTValues.HV, MetaItems.ELECTRIC_MOTOR_HV, Materials.StainlessSteel);
-		cmHelper(GTValues.EV, MetaItems.ELECTRIC_MOTOR_EV, Materials.Titanium);
-		cmHelper(GTValues.IV, MetaItems.ELECTRIC_MOTOR_IV, Materials.TungstenSteel);
-		cmHelper(GTValues.LuV, MetaItems.ELECTRIC_MOTOR_LuV, Materials.Ruridit);
-		cmHelper(GTValues.ZPM, MetaItems.ELECTRIC_MOTOR_ZPM, Materials.NaquadahAlloy);
-		cmHelper(GTValues.UV, MetaItems.ELECTRIC_MOTOR_UV, Materials.Darmstadtium);
-		cmHelper(GTValues.UHV, MetaItems.ELECTRIC_MOTOR_UHV, Materials.Neutronium);
+		ASSEMBLER_RECIPES.recipeBuilder()
+				.input(OrePrefix.plate, NTMaterials.IncoloyMA956, 8)
+				.input(OrePrefix.gear, gear, 16)
+				.input(motor, 16)
+				.EUt(VA[tier])
+				.duration(400)
+				.outputs(new ItemStack(Item.getItemFromBlock(NTMetaBlocks.CENTRIFUGING_MOTORS), 1, tier - 1))
+				.buildAndRegister();
 	}
-	
-	private static void cmHelper(int tier, MetaItem<?>.MetaValueItem motor, Material gear)
+
+	private static void metalworkingModules(int tier, MetaItem<?>.MetaValueItem motor, MetaItem<?>.MetaValueItem piston)
 	{
-		ModHandler.addShapedRecipe("centrifuging_motor_" + GTValues.VN[tier].toLowerCase(), new ItemStack(Item.getItemFromBlock(NTMetaBlocks.CENTRIFUGING_MOTORS), 1, tier - 1),
-				"PMP",
-				"MGM",
-				"PMP",
-				'P', new UnificationEntry(OrePrefix.plate, NTMaterials.IncoloyMA956),
-				'G', new UnificationEntry(OrePrefix.gear, gear),
-				'M', motor);
+		ASSEMBLER_RECIPES.recipeBuilder()
+				.input(OrePrefix.plate, NTMaterials.MaragingSteel300, 8)
+				.input(piston, 16)
+				.input(motor, 16)
+				.EUt(VA[tier])
+				.duration(400)
+				.outputs(new ItemStack(Item.getItemFromBlock(NTMetaBlocks.METALWORKING_MODULES), 1, tier - 1))
+				.buildAndRegister();
 	}
 }

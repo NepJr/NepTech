@@ -155,6 +155,8 @@ public class CommonProxy
 		CannerRecipes.init();
     	PolarizingRecipes.init();
     	ComponentRecipes.init();
+		FluidHeaterRecipes.init();
+		EBFRecipes.init();
     	CasingRecipes.init();
     	FusionRecipes.init();
     	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }

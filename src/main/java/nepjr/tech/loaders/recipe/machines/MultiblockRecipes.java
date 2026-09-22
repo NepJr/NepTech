@@ -147,6 +147,16 @@ public class MultiblockRecipes
 						'W', MetaBlocks.WIRE_COIL.getItemVariant(CoilType.NICHROME),
 						'C', new UnificationEntry(OrePrefix.circuit, Tier.HV),
 						'S', MetaTileEntities.THERMAL_CENTRIFUGE[HV].getStackForm());
+
+				ModHandler.addShapedRecipe("industrial_metalworking_unit", NTMetaTileEntities.INDUSTRIAL_METALWORKING_UNIT.getStackForm(),
+						"PFP",
+						"EXB",
+						"PPP",
+						'P', new UnificationEntry(OrePrefix.plate, NTMaterials.MaragingSteel300),
+						'F', MetaTileEntities.FORMING_PRESS[EV].getStackForm(),
+						'E', MetaTileEntities.EXTRUDER[EV].getStackForm(),
+						'B', MetaTileEntities.BENDER[EV].getStackForm(),
+						'X', new UnificationEntry(circuit, Tier.IV));
 				
 				if(NTConfig.neptech.reworkedSteamGrinderOver)
 				{

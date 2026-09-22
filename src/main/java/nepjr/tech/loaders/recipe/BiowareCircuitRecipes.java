@@ -61,7 +61,7 @@ public class BiowareCircuitRecipes
 			.input(MetaItems.ELECTRIC_PUMP_UV)
 			.input(MetaItems.SENSOR_ZPM)
 			.input(OrePrefix.circuit, Tier.LuV)
-			.input(OrePrefix.foil, Materials.YttriumBariumCuprate)
+			.input(OrePrefix.foil, Materials.YttriumBariumCuprate, 16)
 			.fluidInputs(Materials.SterileGrowthMedium.getFluid(8000))
 			.cleanroom(CleanroomType.STERILE_CLEANROOM)
 			.output(NTMetaItems.BOARD_BIOWARE, 16)

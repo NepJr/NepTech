@@ -21,5 +21,5 @@ public class NepTechAPI
 	public static final Object2ObjectMap<IBlockState, IMetalworkingModuleStats> METALWORKING_MODULES = new Object2ObjectOpenHashMap<>();
 	
 	public static final BaseCreativeTab TAB_NEPTECH = new BaseCreativeTab(NTTags.MODID + ".main",
-            () -> OreDictUnifier.get(OrePrefix.ingot, NTMaterials.Wyvernium), true);
+            () -> OreDictUnifier.get(OrePrefix.ingot, NTMaterials.Wyvernium), false);
 }

@@ -150,7 +150,7 @@ neptech.material.mostimite_chloride=Mostimite Chloride
 neptech.material.ancient_sludge_residue=Ancient Sludge Residue
 neptech.material.crystalline=Crystalline
 neptech.material.dragonblood=Dragonblood
-neptech.material.time_dilated_silicon=Time Dialated Silicon
+neptech.material.time_dialated_silicon=Time Dialated Silicon
 neptech.material.dragons_breath=Dragon's Breath
 
 // Machine tooltips n related shit
@@ -228,6 +228,11 @@ neptech.machine.void_miner_uev.name=Void Ore Miner IV
 neptech.machine.void_miner_uiv.name=Void Ore Miner V
 neptech.machine.industrial_centrifuge.name=Industrial Centrifuge
 neptech.machine.industrial_thermal_centrifuge.name=Industrial Thermal Centrifuge
+neptech.machine.super_packer.name=Super Megaindustrial Blackhole Packing Monster 9001!!!
+neptech.machine.industrial_metalworking_unit.name=Industrial Metalworking Unit
+neptech.machine.fusion_reactor_mk4.name=Fusion Reactor Computer Mark 4
+neptech.machine.fusion_reactor_mk5.name=Fusion Reactor Computer Mark 5
+neptech.machine.fusion_reactor_mk6.name=Fusion Reactor Computer Mark 6
 
 // Electric Machine Descriptions
 neptech.multiblock.alloy_blast_smelter.description=A Blast Furnace built for creating alloys in high volumes.
@@ -488,6 +493,7 @@ metaitem.circuit_board.bioware.name=Bioware Circuit Board
 
 metaitem.wafer.extremely_high_power_integrated_circuit.name=EHPIC Wafer
 metaitem.plate.extremely_high_power_integrated_circuit.name=EHPIC
+metaitem.dragon_heart.name=Dragon Heart
 
 // Meta Blocks
 tile.generic_blocks.slag.name=Slag
