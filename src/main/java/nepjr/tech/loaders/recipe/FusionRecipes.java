@@ -10,10 +10,10 @@ public class FusionRecipes
 	public static void init()
 	{
 		RecipeMaps.FUSION_RECIPES.recipeBuilder()
-			.fluidInputs(NTMaterials.Wyvernium.getFluid(576))
-			.fluidInputs(NTMaterials.DragonBlood.getFluid(144))
-			.fluidOutputs(NTMaterials.Draconium.getFluid(576))
-			.EUt(GTValues.VA[GTValues.UHV])
+			.fluidInputs(NTMaterials.Wyvernium.getFluid(24))
+			.fluidInputs(NTMaterials.DragonBlood.getFluid(6))
+			.fluidOutputs(NTMaterials.Draconium.getFluid(24))
+			.EUt(GTValues.VA[GTValues.ZPM])
 			.EUToStart(800000000)
 			.duration(50)
 			.buildAndRegister();

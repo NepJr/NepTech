@@ -34,7 +34,7 @@ public class NTSteamMultiWorkable extends SteamMultiblockRecipeLogic {
     @Override
     public boolean checkRecipe(@NotNull Recipe recipe)
     {
-    	return recipe.getEUt() > 32 ? false : true;
+    	return recipe.getEUt() <= 32;
     }
     
     @NotNull
@@ -59,7 +59,7 @@ public class NTSteamMultiWorkable extends SteamMultiblockRecipeLogic {
         else
         {
         	builder.EUt((int) Math.ceil(currentRecipeEU * conversionRate / 2))
-            .duration((int) (currentRecipeDuration * 2));
+            .duration((int) ((currentRecipeDuration) * 2));
         }
     }
 }

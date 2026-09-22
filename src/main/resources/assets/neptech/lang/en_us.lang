@@ -28,6 +28,9 @@ tile.nt_casing_blocks.mixer_casing.name=Reaction-Safe Mixing Casing
 tile.nt_casing_blocks.engraver_casing.name=Laser-Safe Engraving Casing
 tile.nt_casing_blocks.atomic_casing.name=Atomic Casing
 tile.nt_casing_blocks.steam_casing.name=Industrial Steam Casing
+tile.nt_fusion_casing.mk4.name=Fusion Casing MK IV
+tile.nt_fusion_casing.mk5.name=Fusion Casing MK V
+tile.nt_fusion_casing.mk6.name=Fusion Casing MK VI
 
 // Unique Casings
 tile.unique_casing.heat_vent.name=Heat Vent
@@ -72,6 +75,17 @@ tile.centrifuging_motor.luv.name=Ludicrous Voltage Centrifuging Motor
 tile.centrifuging_motor.zpm.name=Zero Point Module Centrifuging Motor
 tile.centrifuging_motor.uv.name=Ultimate Voltage Centrifuging Motor
 tile.centrifuging_motor.uhv.name=Ultra High Voltage Centrifuging Motor
+
+// Metalworking Modules
+tile.metalworking_module.lv.name=Low Voltage Metalworking Module
+tile.metalworking_module.mv.name=Medium Voltage Metalworking Module
+tile.metalworking_module.hv.name=High Voltage Metalworking Module
+tile.metalworking_module.ev.name=Extreme Voltage Metalworking Module
+tile.metalworking_module.iv.name=Insane Voltage Metalworking Module
+tile.metalworking_module.luv.name=Ludicrous Voltage Metalworking Module
+tile.metalworking_module.zpm.name=Zero Point Module Metalworking Module
+tile.metalworking_module.uv.name=Ultimate Voltage Metalworking Module
+tile.metalworking_module.uhv.name=Ultra High Voltage Metalworking Module
 
 // Laser Foci
 tile.laser_foci.iv.name=IV Laser Foci
@@ -135,6 +149,9 @@ neptech.material.wyvernium_tetroxide=Wyvernium Tetroxide
 neptech.material.mostimite_chloride=Mostimite Chloride
 neptech.material.ancient_sludge_residue=Ancient Sludge Residue
 neptech.material.crystalline=Crystalline
+neptech.material.dragonblood=Dragonblood
+neptech.material.time_dilated_silicon=Time Dialated Silicon
+neptech.material.dragons_breath=Dragon's Breath
 
 // Machine tooltips n related shit
 neptech.machine.can_accept_single_laser=Can accept a single Laser Hatch!

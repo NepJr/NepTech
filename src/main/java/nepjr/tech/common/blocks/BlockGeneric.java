@@ -2,6 +2,7 @@ package nepjr.tech.common.blocks;
 
 import gregtech.api.block.VariantBlock;
 import gregtech.api.items.toolitem.ToolClasses;
+import nepjr.tech.api.NepTechAPI;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.IStringSerializable;
@@ -16,6 +17,7 @@ public class BlockGeneric extends VariantBlock<BlockGeneric.GenericType>
         setResistance(10.0f);
         setSoundType(SoundType.SAND);
         setHarvestLevel(ToolClasses.WRENCH, 2);
+		setCreativeTab(NepTechAPI.TAB_NEPTECH);
         setDefaultState(getState(GenericType.SLAG));
 	}
 	

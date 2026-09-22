@@ -255,7 +255,7 @@ public class CasingRecipes
                 .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
                 .input(NTMetaItems.VOLTAGE_COIL_UHV, 2)
                 .input(MetaItems.FIELD_GENERATOR_UV, 1)
-                .input(OrePrefix.plate, Materials.Neutronium)
+                .input(OrePrefix.plate, Materials.Neutronium, 6)
                 .fluidInputs(Materials.Polybenzimidazole.getFluid(1152))
                 .outputs(NTMetaBlocks.NT_FUSION_CASING.getItemVariant(BlockNTFusionCasings.NTFusionCasingType.MK4, numCasings))
                 .EUt(VA[UHV])

@@ -1,5 +1,6 @@
 package nepjr.tech.common.blocks;
 
+import nepjr.tech.api.NepTechAPI;
 import org.jetbrains.annotations.NotNull;
 
 import gregtech.api.block.VariantActiveBlock;
@@ -23,6 +24,7 @@ public class BlockNTFusionCasings extends VariantActiveBlock<BlockNTFusionCasing
         setResistance(10.0f);
         setSoundType(SoundType.METAL);
         setHarvestLevel(ToolClasses.WRENCH, 2);
+		setCreativeTab(NepTechAPI.TAB_NEPTECH);
         setDefaultState(getState(NTFusionCasingType.MK4));
 	}
 	

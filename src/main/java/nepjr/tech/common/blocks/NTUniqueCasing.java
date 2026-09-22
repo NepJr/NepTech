@@ -1,5 +1,6 @@
 package nepjr.tech.common.blocks;
 
+import nepjr.tech.api.NepTechAPI;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -25,6 +26,7 @@ public class NTUniqueCasing extends VariantActiveBlock<NTUniqueCasing.UniqueCasi
         setResistance(10.0f);
         setSoundType(SoundType.METAL);
         setHarvestLevel(ToolClasses.WRENCH, 2);
+        setCreativeTab(NepTechAPI.TAB_NEPTECH);
         setDefaultState(getState(UniqueCasingType.CRUSHING_WHEELS));
     }
 

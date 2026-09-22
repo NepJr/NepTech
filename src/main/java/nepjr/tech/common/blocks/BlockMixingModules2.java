@@ -2,6 +2,7 @@ package nepjr.tech.common.blocks;
 
 import java.util.List;
 
+import nepjr.tech.api.NepTechAPI;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,6 +38,7 @@ public class BlockMixingModules2 extends VariantActiveBlock<BlockMixingModules2.
         setResistance(10.0f);
         setSoundType(SoundType.METAL);
         setHarvestLevel(ToolClasses.WRENCH, 2);
+		setCreativeTab(NepTechAPI.TAB_NEPTECH);
         setDefaultState(getState(ModuleTier.UV));
 	}
 	

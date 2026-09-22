@@ -2,6 +2,7 @@ package nepjr.tech.common.blocks;
 
 import java.util.List;
 
+import nepjr.tech.api.NepTechAPI;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,6 +33,7 @@ public class BlockFertilizedDirt extends VariantBlock<BlockFertilizedDirt.Fertil
         setResistance(10.0f);
         setSoundType(SoundType.GROUND);
         setHarvestLevel(ToolClasses.SHOVEL, 2);
+		setCreativeTab(NepTechAPI.TAB_NEPTECH);
         setDefaultState(getState(FertilizerType.BASIC));
 	}
 	

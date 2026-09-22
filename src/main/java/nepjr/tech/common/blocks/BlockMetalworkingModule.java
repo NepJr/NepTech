@@ -5,6 +5,7 @@ import gregtech.api.block.VariantBlock;
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.items.toolitem.ToolClasses;
 import gregtech.api.util.TextComponentUtil;
+import nepjr.tech.api.NepTechAPI;
 import nepjr.tech.api.block.IMetalworkingModuleStats;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -35,6 +36,7 @@ public class BlockMetalworkingModule extends VariantBlock<BlockMetalworkingModul
         setResistance(10.0f);
         setSoundType(SoundType.METAL);
         setHarvestLevel(ToolClasses.WRENCH, 2);
+        setCreativeTab(NepTechAPI.TAB_NEPTECH);
         setDefaultState(getState(BlockMetalworkingModule.ModuleTier.LV));
     }
 

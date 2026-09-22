@@ -116,7 +116,7 @@ public class SupercoaterRecipeHandler
         
         builder.circuitMeta(3);
         builder.polymer(StyreneButadieneRubber);
-        builder.polymerAmt(GTValues.L / 2 * polymerAmount / 4)
+        builder.polymerAmt(GTValues.L / 2 * polymerAmount / 2)
                 .buildAndRegister();
     }
 }
