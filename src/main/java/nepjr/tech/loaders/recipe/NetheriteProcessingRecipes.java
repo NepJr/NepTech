@@ -21,6 +21,7 @@ public class NetheriteProcessingRecipes
 			.input(OrePrefix.dust, Materials.Gold, 1)
 			.circuitMeta(1)
 			.output(OrePrefix.ingotHot, NTMaterials.Netherite)
+			.blastFurnaceTemp(4500)
 			.EUt(VA[HV])
 			.duration(20*20)
 			.buildAndRegister();
@@ -31,6 +32,7 @@ public class NetheriteProcessingRecipes
 			.fluidInputs(Materials.Argon.getFluid(50))
 			.circuitMeta(2)
 			.output(OrePrefix.ingotHot, NTMaterials.Netherite)
+			.blastFurnaceTemp(4500)
 			.EUt(VA[HV])
 			.duration(268)
 			.buildAndRegister();
@@ -53,6 +55,7 @@ public class NetheriteProcessingRecipes
 			.circuitMeta(1)
 			.output(OrePrefix.ingotHot, NTMaterials.Netherite)
 			.fluidOutputs(Materials.Chlorine.getFluid(800))
+			.blastFurnaceTemp(4500)
 			.EUt(VA[IV])
 			.duration(20*20)
 			.buildAndRegister();
@@ -62,6 +65,7 @@ public class NetheriteProcessingRecipes
 			.input(OrePrefix.dust, Materials.Gold, 1)
 			.fluidInputs(Materials.Argon.getFluid(50))
 			.fluidOutputs(Materials.Chlorine.getFluid(800))
+			.blastFurnaceTemp(4500)
 			.circuitMeta(2)
 			.output(OrePrefix.ingotHot, NTMaterials.Netherite)
 			.EUt(VA[IV])

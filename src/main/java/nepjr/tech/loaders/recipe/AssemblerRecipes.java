@@ -1,5 +1,7 @@
 package nepjr.tech.loaders.recipe;
 
+import static gregtech.api.GTValues.UHV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 
 import gregtech.api.GTValues;
@@ -10,6 +12,8 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import nepjr.tech.api.unification.material.NTMaterials;
+import nepjr.tech.common.blocks.BlockNTCoils;
+import nepjr.tech.common.blocks.NTMetaBlocks;
 import nepjr.tech.common.items.NTMetaItems;
 import nepjr.tech.common.metatileentities.NTMetaTileEntities;
 import net.minecraft.init.Items;
@@ -26,7 +30,7 @@ public class AssemblerRecipes
 			.input(MetaTileEntities.FLUID_IMPORT_HATCH[GTValues.LV])
 			.input(MetaItems.ELECTRIC_PUMP_LV)
 			.output(MetaTileEntities.RESERVOIR_HATCH)
-			.EUt(GTValues.VA[GTValues.LV])
+			.EUt(VA[GTValues.LV])
 			.duration(300)
 			.buildAndRegister();
 		
@@ -35,7 +39,8 @@ public class AssemblerRecipes
 			.input(OrePrefix.stick, NTMaterials.MagneticHolmium)
 			.input(OrePrefix.wireFine, Materials.Actinium, 16)
 			.output(NTMetaItems.VOLTAGE_COIL_UHV)
-			.EUt(GTValues.VA[GTValues.UHV])
+			.circuitMeta(1)
+			.EUt(VA[UHV])
 			.duration(10*20)
 			.buildAndRegister();
 		
@@ -47,7 +52,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Steel, 2)
 			.output(NTMetaTileEntities.ENERGY_INPUT_HATCH_4A_LV)
 			.duration(100)
-			.EUt(GTValues.VA[GTValues.ULV])
+			.EUt(VA[GTValues.ULV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -56,7 +61,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Aluminium, 2)
 			.output(NTMetaTileEntities.ENERGY_INPUT_HATCH_4A_MV)
 			.duration(100)
-			.EUt(GTValues.VA[GTValues.LV])
+			.EUt(VA[GTValues.LV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -65,7 +70,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.StainlessSteel, 2)
 			.output(NTMetaTileEntities.ENERGY_INPUT_HATCH_4A_HV)
 			.duration(100)
-			.EUt(GTValues.VA[GTValues.MV])
+			.EUt(VA[GTValues.MV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -75,7 +80,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Steel, 4)
 			.output(NTMetaTileEntities.ENERGY_INPUT_HATCH_16A_LV)
 			.duration(200)
-			.EUt(GTValues.VA[GTValues.ULV])
+			.EUt(VA[GTValues.ULV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -85,7 +90,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Aluminium, 4)
 			.output(NTMetaTileEntities.ENERGY_INPUT_HATCH_16A_MV)
 			.duration(200)
-			.EUt(GTValues.VA[GTValues.LV])
+			.EUt(VA[GTValues.LV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -95,7 +100,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.StainlessSteel, 4)
 			.output(NTMetaTileEntities.ENERGY_INPUT_HATCH_16A_HV)
 			.duration(200)
-			.EUt(GTValues.VA[GTValues.MV])
+			.EUt(VA[GTValues.MV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -105,7 +110,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Titanium, 4)
 			.output(NTMetaTileEntities.ENERGY_INPUT_HATCH_16A_EV)
 			.duration(200)
-			.EUt(GTValues.VA[GTValues.HV])
+			.EUt(VA[GTValues.HV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -115,7 +120,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Steel, 6)
 			.output(NTMetaTileEntities.SUBSTATION_ENERGY_INPUT_LV)
 			.duration(400)
-			.EUt(GTValues.VA[GTValues.ULV])
+			.EUt(VA[GTValues.ULV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -125,7 +130,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Aluminium, 6)
 			.output(NTMetaTileEntities.SUBSTATION_ENERGY_INPUT_MV)
 			.duration(400)
-			.EUt(GTValues.VA[GTValues.LV])
+			.EUt(VA[GTValues.LV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -135,7 +140,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.StainlessSteel, 6)
 			.output(NTMetaTileEntities.SUBSTATION_ENERGY_INPUT_HV)
 			.duration(400)
-			.EUt(GTValues.VA[GTValues.HV])
+			.EUt(VA[GTValues.HV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -145,7 +150,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Titanium, 6)
 			.output(NTMetaTileEntities.SUBSTATION_ENERGY_INPUT_EV)
 			.duration(400)
-			.EUt(GTValues.VA[GTValues.ULV])
+			.EUt(VA[GTValues.ULV])
 			.buildAndRegister();
 		
 		// Dynamo Hatch Bullshit
@@ -156,7 +161,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Steel, 2)
 			.output(NTMetaTileEntities.ENERGY_OUTPUT_HATCH_4A_LV)
 			.duration(100)
-			.EUt(GTValues.VA[GTValues.ULV])
+			.EUt(VA[GTValues.ULV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -165,7 +170,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Aluminium, 2)
 			.output(NTMetaTileEntities.ENERGY_OUTPUT_HATCH_4A_MV)
 			.duration(100)
-			.EUt(GTValues.VA[GTValues.LV])
+			.EUt(VA[GTValues.LV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -174,7 +179,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.StainlessSteel, 2)
 			.output(NTMetaTileEntities.ENERGY_OUTPUT_HATCH_4A_HV)
 			.duration(100)
-			.EUt(GTValues.VA[GTValues.MV])
+			.EUt(VA[GTValues.MV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -184,7 +189,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Steel, 4)
 			.output(NTMetaTileEntities.ENERGY_OUTPUT_HATCH_16A_LV)
 			.duration(200)
-			.EUt(GTValues.VA[GTValues.ULV])
+			.EUt(VA[GTValues.ULV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -194,7 +199,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Aluminium, 4)
 			.output(NTMetaTileEntities.ENERGY_OUTPUT_HATCH_16A_MV)
 			.duration(200)
-			.EUt(GTValues.VA[GTValues.LV])
+			.EUt(VA[GTValues.LV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -204,7 +209,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.StainlessSteel, 4)
 			.output(NTMetaTileEntities.ENERGY_OUTPUT_HATCH_16A_HV)
 			.duration(200)
-			.EUt(GTValues.VA[GTValues.MV])
+			.EUt(VA[GTValues.MV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -214,7 +219,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Titanium, 4)
 			.output(NTMetaTileEntities.ENERGY_OUTPUT_HATCH_16A_EV)
 			.duration(200)
-			.EUt(GTValues.VA[GTValues.HV])
+			.EUt(VA[GTValues.HV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -224,7 +229,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Steel, 6)
 			.output(NTMetaTileEntities.SUBSTATION_ENERGY_OUTPUT_LV)
 			.duration(400)
-			.EUt(GTValues.VA[GTValues.ULV])
+			.EUt(VA[GTValues.ULV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -234,7 +239,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Aluminium, 6)
 			.output(NTMetaTileEntities.SUBSTATION_ENERGY_OUTPUT_MV)
 			.duration(400)
-			.EUt(GTValues.VA[GTValues.LV])
+			.EUt(VA[GTValues.LV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -244,7 +249,7 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.StainlessSteel, 6)
 			.output(NTMetaTileEntities.SUBSTATION_ENERGY_OUTPUT_HV)
 			.duration(400)
-			.EUt(GTValues.VA[GTValues.HV])
+			.EUt(VA[GTValues.HV])
 			.buildAndRegister();
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
@@ -254,25 +259,35 @@ public class AssemblerRecipes
 			.input(OrePrefix.plate, Materials.Titanium, 6)
 			.output(NTMetaTileEntities.SUBSTATION_ENERGY_OUTPUT_EV)
 			.duration(400)
-			.EUt(GTValues.VA[GTValues.ULV])
+			.EUt(VA[GTValues.ULV])
 			.buildAndRegister();
-		
-		// Infinite spray can time!'
+
+		ASSEMBLER_RECIPES.recipeBuilder()
+			.input(OrePrefix.wireGtDouble, NTMaterials.AwakenedDraconium, 8)
+			.input(OrePrefix.foil, Materials.Neutronium, 8)
+			.fluidInputs(Materials.Tritanium.getFluid(144))
+			.outputs(NTMetaBlocks.NT_COILS.getItemVariant(BlockNTCoils.CoilType.AWAKENED_DRACONIUM))
+			.EUt(VA[UHV])
+			.duration(50*20)
+			.buildAndRegister();
+
+		// Infinite spray can time!
 		
 		ASSEMBLER_RECIPES.recipeBuilder()
 			.input(Items.NETHER_STAR, 64)
 			.inputs(MetaItems.SPRAY_SOLVENT.getStackForm())
 			.output(NTMetaItems.INFINITE_SPRAY_SOLVENT)
-			.EUt(GTValues.VA[GTValues.EV])
+			.EUt(VA[GTValues.EV])
 			.duration(200)
 			.buildAndRegister();
 		
-		for (int i = 0; i < EnumDyeColor.values().length; i++) {
+		for (int i = 0; i < EnumDyeColor.values().length; i++)
+		{
 			ASSEMBLER_RECIPES.recipeBuilder()
 				.input(Items.NETHER_STAR, 64)
 				.inputs(MetaItems.SPRAY_CAN_DYES[i].getStackForm())
 				.output(NTMetaItems.INFINITE_SPRAY_CAN_DYES[i])
-				.EUt(GTValues.VA[GTValues.EV])
+				.EUt(VA[GTValues.EV])
 				.duration(200)
 				.buildAndRegister();
 		}

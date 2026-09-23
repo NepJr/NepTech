@@ -1,0 +1,81 @@
+{
+    "forge_marker": 1,
+    "variants":
+    {
+        "variant":
+        {
+            "lv":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "gregtech:blocks/metalworking_module/lv"
+                }
+            },
+            "mv":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "gregtech:blocks/metalworking_module/mv"
+                }
+            },
+            "hv":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "gregtech:blocks/metalworking_module/hv"
+                }
+            },
+            "ev":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "gregtech:blocks/metalworking_module/ev"
+                }
+            },
+            "iv":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "gregtech:blocks/metalworking_module/iv"
+                }
+            },
+            "luv":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "gregtech:blocks/metalworking_module/luv"
+                }
+            },
+            "zpm":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "gregtech:blocks/metalworking_module/zpm"
+                }
+            },
+            "uv":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "gregtech:blocks/metalworking_module/uv"
+                }
+            },
+            "uhv":
+            {
+                "model": "minecraft:cube_all",
+                "textures":
+                {
+                    "all": "gregtech:blocks/metalworking_module/uhv"
+                }
+            }
+        }
+    }
+}
