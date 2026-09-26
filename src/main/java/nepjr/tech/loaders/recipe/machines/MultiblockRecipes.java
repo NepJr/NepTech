@@ -157,6 +157,24 @@ public class MultiblockRecipes
 						'E', MetaTileEntities.EXTRUDER[EV].getStackForm(),
 						'B', MetaTileEntities.BENDER[EV].getStackForm(),
 						'X', new UnificationEntry(circuit, Tier.IV));
+
+				ModHandler.addShapedRecipe("forge_smasher", NTMetaTileEntities.FORGE_SMASHER.getStackForm(),
+						"PCP",
+						"CMC",
+						"PCP",
+						'P', new UnificationEntry(OrePrefix.plate, NTMaterials.MaragingSteel300),
+						'C', new UnificationEntry(circuit, Tier.EV),
+						'M', MetaTileEntities.FORGE_HAMMER[EV].getStackForm());
+
+				ModHandler.addShapedRecipe("large_electromagnet", NTMetaTileEntities.LARGE_ELECTROMAGNET.getStackForm(),
+						"PMP",
+						"CHC",
+						"PEP",
+						'P', new UnificationEntry(OrePrefix.plate, NTMaterials.HSLASteel),
+						'M', MetaTileEntities.ELECTROMAGNETIC_SEPARATOR[GTValues.HV].getStackForm(),
+						'E', MetaTileEntities.POLARIZER[GTValues.HV].getStackForm(),
+						'C', new UnificationEntry(circuit, Tier.HV),
+						'H', MetaTileEntities.HULL[GTValues.HV].getStackForm());
 				
 				if(NTConfig.neptech.reworkedSteamGrinderOver)
 				{

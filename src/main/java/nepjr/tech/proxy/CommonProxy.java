@@ -8,12 +8,17 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.event.HighTierEvent;
 import gregtech.api.recipes.recipeproperties.FusionEUToStartProperty;
+import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
+import gregtech.common.blocks.BlockCompressed;
+import gregtech.common.blocks.MetaBlocks;
 import gregtech.loaders.recipe.CraftingComponent;
 import nepjr.tech.NTTags;
 import nepjr.tech.api.NepTechAPI;
 import nepjr.tech.api.block.IFertilizedDirtBlockStats;
+import nepjr.tech.api.block.IMagnetStats;
 import nepjr.tech.api.fluids.GeneratedFluidHandler;
 import nepjr.tech.api.unification.material.GTMaterialModifications;
 import nepjr.tech.api.unification.material.NTMaterials;
@@ -73,6 +78,11 @@ public class CommonProxy
         
         NepTechAPI.FERTILIZED_DIRTS.put(Blocks.DIRT.getDefaultState(), UnregisteredFertilizerType.DIRT);
         NepTechAPI.FERTILIZED_DIRTS.put(Blocks.GRASS.getDefaultState(), UnregisteredFertilizerType.DIRT);
+
+		NepTechAPI.MAGNETS.put(MetaBlocks.COMPRESSED.get(Materials.SteelMagnetic).getBlock(Materials.SteelMagnetic), Magnets.STEEL);
+		NepTechAPI.MAGNETS.put(MetaBlocks.COMPRESSED.get(Materials.NeodymiumMagnetic).getBlock(Materials.NeodymiumMagnetic), Magnets.NEODYMIUM);
+		NepTechAPI.MAGNETS.put(MetaBlocks.COMPRESSED.get(Materials.SamariumMagnetic).getBlock(Materials.SamariumMagnetic), Magnets.SAMARIUM);
+		NepTechAPI.MAGNETS.put(MetaBlocks.COMPRESSED.get(NTMaterials.MagneticHolmium).getBlock(NTMaterials.MagneticHolmium), Magnets.HOLMIUM);
         
         // Turnin' up the heat!
         for(BlockNTCoils.CoilType type : BlockNTCoils.CoilType.values())
@@ -159,6 +169,7 @@ public class CommonProxy
 		EBFRecipes.init();
     	CasingRecipes.init();
     	FusionRecipes.init();
+		NaqFuels.init();
     	if(NTConfig.neptech.enableDroneLauncher) { AsteroidMiningRecipes.init(); }
     	GreenhouseRecipes.init();
     	ElectricImplosionCompressorRecipes.init();
@@ -314,6 +325,32 @@ public class CommonProxy
 		@Override
 		public float getDiscount() {
 			return this.growthDiscount;
+		}
+	}
+
+	public enum Magnets implements IMagnetStats
+	{
+		STEEL(1, 1.5f),
+		NEODYMIUM(2, 2.0f),
+		SAMARIUM(3, 2.5f),
+		HOLMIUM(4, 3.0f);
+
+		private int tier;
+		private float processingSpeed;
+		Magnets(int tier, float processingSpeed)
+		{
+			this.tier = tier;
+			this.processingSpeed = processingSpeed;
+		}
+
+		@Override
+		public float getProcessingSpeed() {
+			return processingSpeed;
+		}
+
+		@Override
+		public int getTier() {
+			return tier;
 		}
 	}
 }

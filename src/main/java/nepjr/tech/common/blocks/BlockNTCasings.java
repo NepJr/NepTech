@@ -49,7 +49,7 @@ public class BlockNTCasings extends VariantBlock<BlockNTCasings.NTCasingType>
         MIXER_CASING("mixer_casing"),
         ENGRAVER_CASING("engraver_casing"),
         ATOMIC_CASING("atomic_casing"),
-        STEAM_CASING("steam_casing");
+        NAQFUEL_STABILIZER("naqfuel_stabilizer");
 		
 		private final String name;
 		

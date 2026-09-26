@@ -123,5 +123,17 @@ public class MixingRecipes
 		    .notConsumable(new IntCircuitIngredient(1))
 		    .output(dust, HSLASteel, 5)
 		    .duration(140).EUt(VA[HV]).buildAndRegister();
+
+		MIXER_RECIPES.recipeBuilder()
+				.input(dust, Trinium, 4)
+				.input(dust, Naquadria, 3)
+				.input(dust, Plutonium241, 11)
+				.input(dust, Uranium235, 8)
+				.fluidInputs(HighOctaneGasoline.getFluid(8000))
+				.fluidInputs(Pyrotheum.getFluid(12000))
+				.fluidOutputs(UnactivatedNaqFuelMk1.getFluid(46000))
+				.EUt(VA[UV])
+				.duration(400)
+				.buildAndRegister();
 	}
 }

@@ -7,6 +7,7 @@ import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget.MoveType;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.builders.BlastRecipeBuilder;
+import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.GasCollectorRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
@@ -63,4 +64,12 @@ public class NTRecipeMaps
                     .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
                     .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
                     .setSound(GTSoundEvents.FURNACE);
+
+	@ZenProperty
+	public static final RecipeMap<FuelRecipeBuilder> NAQ_FUELS = new RecipeMap<>(
+			"naq_fuels", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
+			.setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
+			.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, MoveType.HORIZONTAL)
+			.setSound(GTSoundEvents.ARC)
+			.allowEmptyOutput();
 }

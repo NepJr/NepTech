@@ -8,6 +8,7 @@ import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Materials;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityLaserHatch;
 import nepjr.tech.common.metatileentities.multi.electric.*;
+import nepjr.tech.common.metatileentities.multi.electric.generator.MetaTileEntityNaqReactor;
 import nepjr.tech.config.NTConfig;
 import nepjr.tech.common.metatileentities.electric.MetaTileEntityLaserDiode;
 import nepjr.tech.common.metatileentities.multi.electric.generator.MetaTileEntityOverkillCombustionEngine;
@@ -51,6 +52,9 @@ public class NTMetaTileEntities
 	public static MetaTileEntityIndustrialCentrifuge INDUSTRIAL_THERMAL_CENTRIFUGE;
 	public static MetaTileEntityIndustrialMetalworkingUnit INDUSTRIAL_METALWORKING_UNIT;
 	public static MetaTileEntityNTFusionReactor[] NT_FUSION_REACTOR = new MetaTileEntityNTFusionReactor[3];
+	public static MetaTileEntityForgeSmasher FORGE_SMASHER;
+	public static MetaTileEntityLargeElectromagnet LARGE_ELECTROMAGNET;
+	public static MetaTileEntityNaqReactor NAQ_REACTOR;
 	
 	// Steam multiblocks (7001 - 7100)
 	public static MetaTileEntitySteamSmasher STEAM_SMASHER;
@@ -214,6 +218,9 @@ public class NTMetaTileEntities
 		NT_FUSION_REACTOR[0] = registerMetaTileEntity(6025, new MetaTileEntityNTFusionReactor(nepId("fusion_reactor_mk4"), GTValues.UHV));
 		NT_FUSION_REACTOR[1] = registerMetaTileEntity(6026, new MetaTileEntityNTFusionReactor(nepId("fusion_reactor_mk5"), GTValues.UEV));
 		NT_FUSION_REACTOR[2] = registerMetaTileEntity(6027, new MetaTileEntityNTFusionReactor(nepId("fusion_reactor_mk6"), GTValues.UIV));
+		FORGE_SMASHER = registerMetaTileEntity(6028, new MetaTileEntityForgeSmasher(nepId("forge_smasher")));
+		LARGE_ELECTROMAGNET = registerMetaTileEntity(6029, new MetaTileEntityLargeElectromagnet(nepId("large_electromagnet")));
+		NAQ_REACTOR = registerMetaTileEntity(6030, new MetaTileEntityNaqReactor(nepId("naq_reactor")));
 		
 		if(NTConfig.neptech.reworkedSteamGrinderOver)
 		{

@@ -4,6 +4,7 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
+import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
@@ -113,12 +114,6 @@ public class CasingRecipes
                         .getItemVariant(NTCasingType.ATOMIC_CASING, numCasings),
                 "PhP", "PFP", "PwP", 'P', new UnificationEntry(OrePrefix.plateDouble, NTMaterials.Trinaquadalloy),
                 'F', new UnificationEntry(OrePrefix.frameGt, Materials.NaquadahAlloy));
-        
-        ModHandler.addShapedRecipe(true, "casing_steam",
-                NTMetaBlocks.NT_CASINGS
-                        .getItemVariant(NTCasingType.STEAM_CASING, numCasings),
-                "PhP", "PFP", "PwP", 'P', new UnificationEntry(OrePrefix.plate, Materials.Brass), 'F',
-                new UnificationEntry(OrePrefix.frameGt, Materials.Brass));
         
         ModHandler.addShapedRecipe(true, "casing_heat_vent",
                 NTMetaBlocks.UNIQUE_CASINGS.getItemVariant(NTUniqueCasing.UniqueCasingType.HEAT_VENT, numCasings),
@@ -243,14 +238,6 @@ public class CasingRecipes
                 .duration(50).EUt(16).buildAndRegister();
 
         RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
-                .input(OrePrefix.plate, Materials.Brass, 6)
-                .input(OrePrefix.frameGt, Materials.Brass)
-                .notConsumable(new IntCircuitIngredient(6))
-                .outputs(NTMetaBlocks.NT_CASINGS
-                        .getItemVariant(NTCasingType.STEAM_CASING, numCasings))
-                .duration(50).EUt(16).buildAndRegister();
-
-        RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
                 .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV))
                 .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
                 .input(NTMetaItems.VOLTAGE_COIL_UHV, 2)
@@ -261,6 +248,26 @@ public class CasingRecipes
                 .EUt(VA[UHV])
                 .duration(100)
                 .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        RecipeMaps.ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(MetaItems.FIELD_GENERATOR_IV, 64)
+                .input(MetaItems.FIELD_GENERATOR_IV, 64)
+                .input(MetaItems.SENSOR_IV, 64)
+                .input(MetaItems.SENSOR_IV, 64)
+                .input(MetaItems.EMITTER_IV, 64)
+                .input(MetaItems.EMITTER_IV, 64)
+                .input(MetaItems.NEUTRON_REFLECTOR, 64)
+                .input(MetaItems.NEUTRON_REFLECTOR, 64)
+                .input(OrePrefix.circuit, MarkerMaterials.Tier.IV, 16)
+                .stationResearch(b -> b
+                        .researchStack(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
+                        .CWUt(32)
+                        .EUt(VA[LuV])
+                )
+                .outputs(NTMetaBlocks.NT_CASINGS.getItemVariant(NTCasingType.NAQFUEL_STABILIZER))
+                .EUt(VA[ZPM])
+                .duration(400)
                 .buildAndRegister();
 	}
 }

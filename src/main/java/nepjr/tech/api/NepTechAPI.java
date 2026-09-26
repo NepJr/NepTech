@@ -1,5 +1,6 @@
 package nepjr.tech.api;
 
+import crafttweaker.api.block.IBlock;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.util.BaseCreativeTab;
@@ -19,6 +20,7 @@ public class NepTechAPI
 	public static final Object2ObjectMap<IBlockState, ICrushingWheelStats> CRUSHING_WHEELS = new Object2ObjectOpenHashMap<>();
 	public static final Object2ObjectMap<IBlockState, ICentrifugingMotorStats> CENTRIFUGING_MOTORS = new Object2ObjectOpenHashMap<>();
 	public static final Object2ObjectMap<IBlockState, IMetalworkingModuleStats> METALWORKING_MODULES = new Object2ObjectOpenHashMap<>();
+	public static final Object2ObjectMap<IBlockState, IMagnetStats> MAGNETS = new Object2ObjectOpenHashMap<>();
 	
 	public static final BaseCreativeTab TAB_NEPTECH = new BaseCreativeTab(NTTags.MODID + ".main",
             () -> OreDictUnifier.get(OrePrefix.ingot, NTMaterials.Wyvernium), false);

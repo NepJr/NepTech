@@ -69,6 +69,19 @@ public class NTMaterials
     public static Material WyverniumTetroxide;
     public static Material MostimiteChloride;
     public static Material AncientSludgeResidue;
+
+	// Naq fuels
+	public static Material UnactivatedNaqFuelMk1;
+	public static Material UnactivatedNaqFuelMk2;
+	public static Material UnactivatedNaqFuelMk3;
+	public static Material UnactivatedNaqFuelMk4;
+	public static Material UnactivatedNaqFuelMk5;
+
+	public static Material NaqFuelMk1;
+	public static Material NaqFuelMk2;
+	public static Material NaqFuelMk3;
+	public static Material NaqFuelMk4;
+	public static Material NaqFuelMk5;
 	
 	public static void init()
 	{
@@ -325,7 +338,7 @@ public class NTMaterials
         Trinaquadalloy = new Material.Builder(8114, nepId("trinaquadalloy"))
                 .ingot().fluid()
                 .color(0x281832).iconSet(BRIGHT)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_FRAME)
                 .components(Trinium, 6, Naquadah, 2, Carbon, 1)
                 .blast(builder -> builder
                 		.temp(8747, GasTier.HIGHER)
@@ -446,5 +459,17 @@ public class NTMaterials
         		.color(0x332F30)
         		.iconSet(METALLIC)
         		.build();
+
+		UnactivatedNaqFuelMk1 = new Material.Builder(9000, nepId("unactivated_naqfuel_mk_1"))
+				.fluid()
+				.color(0x00DD00)
+				.iconSet(METALLIC)
+				.build();
+
+		NaqFuelMk1 = new Material.Builder(9005, nepId("naqfuel_mk_1"))
+				.fluid()
+				.color(0x00FF00)
+				.iconSet(METALLIC)
+				.build();
 	}
 }
