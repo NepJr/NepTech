@@ -11,6 +11,7 @@ import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.GasCollectorRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
+import nepjr.tech.api.recipes.builders.OffworldMiningBuilder;
 import nepjr.tech.api.recipes.builders.WireSupercoaterBuilder;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -24,8 +25,8 @@ public class NTRecipeMaps
 						.setSound(GTSoundEvents.CHAINSAW_TOOL);
 	
 	@ZenProperty
-	public static final RecipeMap<GasCollectorRecipeBuilder> ASTEROID_MINING = new RecipeMap<>("asteroid_mining", 3, 9, 2, 2,
-			new GasCollectorRecipeBuilder(), false)
+	public static final RecipeMap<OffworldMiningBuilder> ASTEROID_MINING = new RecipeMap<>("asteroid_mining", 3, 9, 2, 2,
+			new OffworldMiningBuilder(), false)
 						.setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, MoveType.HORIZONTAL)
 						.setSound(GTSoundEvents.MINER);
 	

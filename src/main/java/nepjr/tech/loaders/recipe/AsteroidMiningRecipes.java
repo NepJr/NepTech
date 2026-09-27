@@ -6,6 +6,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import nepjr.tech.api.recipes.NTRecipeMaps;
+import nepjr.tech.api.recipes.builders.OffworldMiningBuilder;
 import nepjr.tech.api.recipes.chance.output.NTChancedOutputLogic;
 import nepjr.tech.api.unification.material.NTMaterials;
 import nepjr.tech.common.items.NTMetaItems;
@@ -224,7 +225,7 @@ public class AsteroidMiningRecipes
 			.input(OrePrefix.dust, Materials.Uranium235, 64)
 			.output(OrePrefix.ore, Materials.Plutonium239, 64)
 			.circuitMeta(1)
-			.dimension(1)
+			.minerTier(1)
 			.buildAndRegister();
 	}
 	
@@ -236,7 +237,7 @@ public class AsteroidMiningRecipes
 	
 	private static void addMiningRecipe(MiningType level, int tier, int circuitMeta, int dimension, ItemStack catalyst, OrePrefix prefix, Material... outputs)
 	{
-		GasCollectorRecipeBuilder recipe = NTRecipeMaps.ASTEROID_MINING.recipeBuilder();
+		OffworldMiningBuilder recipe = NTRecipeMaps.ASTEROID_MINING.recipeBuilder();
 		if(level == MiningType.ADVANCED)
 		{
 			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
@@ -253,7 +254,7 @@ public class AsteroidMiningRecipes
 		recipe.duration(180 * 20);
 		recipe.circuitMeta(circuitMeta);
 		recipe.chancedOutputLogic(NTChancedOutputLogic.SINGLEITEM);
-		recipe.dimension(dimension);
+		recipe.minerTier(1);
 		
 		for (Material m : outputs)
 		{
@@ -265,7 +266,7 @@ public class AsteroidMiningRecipes
 	
 	private static void addMiningRecipe(MiningType level, int tier, int circuitMeta, int dimension, ItemStack catalyst, ItemStack... outputs)
 	{
-		GasCollectorRecipeBuilder recipe = NTRecipeMaps.ASTEROID_MINING.recipeBuilder();
+		OffworldMiningBuilder recipe = NTRecipeMaps.ASTEROID_MINING.recipeBuilder();
 		if(level == MiningType.ADVANCED)
 		{
 			recipe.fluidInputs(Materials.HighOctaneGasoline.getFluid(8000));
@@ -281,7 +282,7 @@ public class AsteroidMiningRecipes
 		recipe.duration(180 * 20);
 		recipe.circuitMeta(circuitMeta);
 		recipe.chancedOutputLogic(NTChancedOutputLogic.SINGLEITEM);
-		recipe.dimension(dimension);
+		recipe.minerTier(1);
 		
 		for (ItemStack i : outputs)
 		{

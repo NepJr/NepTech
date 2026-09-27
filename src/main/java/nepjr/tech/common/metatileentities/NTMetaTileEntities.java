@@ -189,7 +189,7 @@ public class NTMetaTileEntities
 		GREENHOUSE = registerMetaTileEntity(6000, new MetaTileEntityGreenhouse(nepId("greenhouse")));	
 		if(NTConfig.neptech.enableDroneLauncher)
 		{
-			DRONE_LAUNCHER = registerMetaTileEntity(6001, new MetaTileEntityDroneLauncher(nepId("drone_launcher")));
+			DRONE_LAUNCHER = registerMetaTileEntity(6001, new MetaTileEntityDroneLauncher(nepId("drone_launcher"), 1));
 		}
 		
 		//OVERKILL_COMBUSTION_ENGINE = registerMetaTileEntity(6002, new MetaTileEntityOverkillCombustionEngine(nepId("overkill_combustion_engine")));

@@ -1,6 +1,8 @@
 package nepjr.tech.common.metatileentities.multi.electric.generator;
 
 import gregtech.api.GTValues;
+import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.impl.EnergyContainerList;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.FuelMultiblockController;
@@ -8,6 +10,7 @@ import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
+import gregtech.api.pattern.PatternMatchContext;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
@@ -25,6 +28,9 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MetaTileEntityNaqReactor extends FuelMultiblockController
 {
 
@@ -33,9 +39,18 @@ public class MetaTileEntityNaqReactor extends FuelMultiblockController
     }
 
     @Override
+    protected void formStructure(PatternMatchContext context) {
+        super.formStructure(context);
+        List<IEnergyContainer> powerInput = new ArrayList<>(getAbilities(MultiblockAbility.OUTPUT_ENERGY));
+        powerInput.addAll(getAbilities(MultiblockAbility.OUTPUT_LASER));
+
+        this.energyContainer = new EnergyContainerList(powerInput);
+    }
+
+    @Override
     protected @NotNull BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("CCCCCCCCC", "RCCCCCCCR", "R       R", "R       R", "R       R", "R       R", "R       R", "R       R", "R       R", "RCCCCCCCR", "CCCCCCCCC")
+                .aisle("CCCCCCCCC", "RCCCECCCR", "R       R", "R       R", "R       R", "R       R", "R       R", "R       R", "R       R", "RCCCCCCCR", "CCCCCCCCC")
                 .aisle("CCHHHHHCC", "CCHHHHHCC", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "CCHHHHHCC", "CCHHHHHCC")
                 .aisle("CHCCCCCHC", "CHCCCCCHC", "  CCCCC  ", "  CGGGC  ", "  CGGGC  ", "  CGGGC  ", "  CGGGC  ", "  CGGGC  ", "  CCCCC  ", "CHCCCCCHC", "CHCCCCCHC")
                 .aisle("CHCCCCCHC", "CHCCCCCHC", "  CFFFC  ", "  GFFFG  ", "  GFFFG  ", "  GFFFG  ", "  GFFFG  ", "  GFFFG  ", "  CFFFC  ", "CHCCCCCHC", "CHCCCCCHC")
@@ -45,9 +60,10 @@ public class MetaTileEntityNaqReactor extends FuelMultiblockController
                 .aisle("CCHHHHHCC", "CCHHHHHCC", "         ", "         ", "         ", "         ", "         ", "         ", "         ", "CCHHHHHCC", "CCHHHHHCC")
                 .aisle("CCCCCCCCC", "RCCCSCCCR", "R       R", "R       R", "R       R", "R       R", "R       R", "R       R", "R       R", "RCCCCCCCR", "CCCCCCCCC")
                 .where('C', states(getCasingState())
-                        .or(abilities(MultiblockAbility.OUTPUT_ENERGY).setExactLimit(1))
                         .or(abilities(MultiblockAbility.MAINTENANCE_HATCH).setExactLimit(1))
                         .or(abilities(MultiblockAbility.IMPORT_FLUIDS).setExactLimit(1)))
+                .where('E', abilities(MultiblockAbility.OUTPUT_ENERGY).setMaxGlobalLimited(1, 1)
+                        .or(abilities(MultiblockAbility.OUTPUT_LASER).setMaxGlobalLimited(1, 0)))
                 .where('H', states(getHeatVent()))
                 .where('R', frames(NTMaterials.Trinaquadalloy))
                 .where('G', states(getGlassState()))

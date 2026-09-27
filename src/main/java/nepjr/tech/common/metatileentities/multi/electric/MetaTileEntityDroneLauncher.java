@@ -1,5 +1,6 @@
 package nepjr.tech.common.metatileentities.multi.electric;
 
+import nepjr.tech.api.recipes.recipeproperties.OffworldMiningTierProperty;
 import org.jetbrains.annotations.NotNull;
 
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
@@ -25,10 +26,12 @@ import net.minecraft.util.ResourceLocation;
 public class MetaTileEntityDroneLauncher extends RecipeMapMultiblockController
 {
 
-	public MetaTileEntityDroneLauncher(ResourceLocation metaTileEntityId) 
+	int tier;
+	public MetaTileEntityDroneLauncher(ResourceLocation metaTileEntityId, int tier)
 	{
 		super(metaTileEntityId, NTRecipeMaps.ASTEROID_MINING);
 		this.recipeMapWorkable = new DroneLauncherRecipeLogic(this);
+		this.tier = tier;
 	}
 
 	@Override
@@ -76,17 +79,13 @@ public class MetaTileEntityDroneLauncher extends RecipeMapMultiblockController
 	@Override
 	public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) 
 	{
-		return new MetaTileEntityDroneLauncher(metaTileEntityId);
+		return new MetaTileEntityDroneLauncher(metaTileEntityId, tier);
 	}
-	
-	protected boolean checkRecipe(@NotNull Recipe recipe) {
-        for (int dimension : recipe.getProperty(GasCollectorDimensionProperty.getInstance(), IntLists.EMPTY_LIST)) {
-            if (dimension == this.getWorld().provider.getDimension()) {
-                return true;
-            }
-        }
-        return false;
-    }
+
+	public int getTier()
+	{
+		return tier;
+	}
 
     private static class DroneLauncherRecipeLogic extends MultiblockRecipeLogic {
 
@@ -95,8 +94,20 @@ public class MetaTileEntityDroneLauncher extends RecipeMapMultiblockController
         }
 
         @Override
-        public boolean checkRecipe(@NotNull Recipe recipe) {
-            return ((MetaTileEntityDroneLauncher) metaTileEntity).checkRecipe(recipe) && super.checkRecipe(recipe);
+        public boolean checkRecipe(@NotNull Recipe recipe)
+		{
+			int recipeTier = recipe.getProperty(OffworldMiningTierProperty.getInstance(), 0);
+
+			if(!super.checkRecipe(recipe))
+			{
+				return false;
+			}
+
+			if(((MetaTileEntityDroneLauncher) metaTileEntity).getTier() >= recipeTier)
+			{
+				return true;
+			}
+            return false;
         }
     }
 

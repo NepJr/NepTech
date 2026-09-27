@@ -20,8 +20,8 @@ public class MetaTileEntitySuperPacker extends NTMetaTileEntity
 {
 	public MetaTileEntitySuperPacker(ResourceLocation metaTileEntityId)
 	{
-		super(metaTileEntityId, RecipeMaps.PACKER_RECIPES, true, 0.01f, 90.01f);
-		setParallels(1000000000);
+		super(metaTileEntityId, RecipeMaps.PACKER_RECIPES, true, 0.75f, 4.0f);
+		setParallels(8192);
 	}
 
 	@Override
