@@ -69,6 +69,12 @@ public class NTMaterials
     public static Material WyverniumTetroxide;
     public static Material MostimiteChloride;
     public static Material AncientSludgeResidue;
+    
+    // Space Miner exclusive materials
+    public static Material Titanite;
+    
+    // New stone type dusts
+    public static Material MoonDust;
 
 	// Naq fuels
 	public static Material UnactivatedNaqFuelMk1;
@@ -460,13 +466,21 @@ public class NTMaterials
         		.iconSet(METALLIC)
         		.build();
 
-		UnactivatedNaqFuelMk1 = new Material.Builder(9000, nepId("unactivated_naqfuel_mk_1"))
+        Titanite = new Material.Builder(9000, nepId("titanite"))
+        		.dust().ore()
+        		.color(0xA52A2A)
+        		.components(Calcium, 1, Titanium, 1, Silicon, 1, Oxygen, 5)
+        		.flags(MaterialFlags.DISABLE_DECOMPOSITION)
+        		.iconSet(DULL)
+        		.build();
+        
+		UnactivatedNaqFuelMk1 = new Material.Builder(10000, nepId("unactivated_naqfuel_mk_1"))
 				.fluid()
 				.color(0x00DD00)
 				.iconSet(METALLIC)
 				.build();
 
-		NaqFuelMk1 = new Material.Builder(9005, nepId("naqfuel_mk_1"))
+		NaqFuelMk1 = new Material.Builder(10005, nepId("naqfuel_mk_1"))
 				.fluid()
 				.color(0x00FF00)
 				.iconSet(METALLIC)

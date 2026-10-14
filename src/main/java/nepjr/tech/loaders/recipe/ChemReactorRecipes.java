@@ -6,7 +6,7 @@ import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import nepjr.tech.api.unification.material.NTMaterials;
 
-import static gregtech.api.GTValues.LuV;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.GTValues.VA;
 
 public class ChemReactorRecipes 
@@ -18,7 +18,7 @@ public class ChemReactorRecipes
 			.fluidInputs(Materials.Water.getFluid(1000))
 			.output(OrePrefix.dust, Materials.SodiumHydroxide, 3)
 			.fluidOutputs(Materials.Hydrogen.getFluid(1000))
-			.EUt(VA[GTValues.MV])
+			.EUt(VA[MV])
 			.duration(50)
 			.buildAndRegister();
 
@@ -29,5 +29,18 @@ public class ChemReactorRecipes
 				.EUt(VA[LuV])
 				.duration(400)
 				.buildAndRegister();
+		
+		RecipeMaps.LARGE_CHEMICAL_RECIPES.recipeBuilder()
+			.input(OrePrefix.dust, NTMaterials.Titanite)
+			.fluidInputs(Materials.HydrochloricAcid.getFluid(4000))
+			.fluidOutputs(Materials.TitaniumTetrachloride.getFluid(1000))
+			.fluidOutputs(Materials.Water.getFluid(2000))
+			.fluidOutputs(Materials.Oxygen.getFluid(3000))
+			.output(OrePrefix.dust, Materials.Silicon)
+			.output(OrePrefix.dust, Materials.Calcium)
+			.EUt(VA[EV])
+			.duration(200)
+			.buildAndRegister();
+			
 	}
 }

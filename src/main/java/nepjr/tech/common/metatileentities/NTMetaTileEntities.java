@@ -15,6 +15,7 @@ import nepjr.tech.common.metatileentities.multi.electric.generator.MetaTileEntit
 import nepjr.tech.common.metatileentities.multi.multiblockpart.MetaTileEntityNTEnergyHatch;
 import nepjr.tech.common.metatileentities.multi.multiblockpart.MetaTileEntityNTSubstationEnergyHatch;
 import nepjr.tech.common.metatileentities.multi.multiblockpart.MetaTileEntitySterileMaintenanceHatch;
+import nepjr.tech.common.metatileentities.multi.steam.MetaTileEntityAdvancedPBF;
 import nepjr.tech.common.metatileentities.multi.steam.MetaTileEntitySteamCrusher;
 import nepjr.tech.common.metatileentities.multi.steam.MetaTileEntitySteamFuser;
 import nepjr.tech.common.metatileentities.multi.steam.MetaTileEntitySteamSmasher;
@@ -77,6 +78,8 @@ public class NTMetaTileEntities
 	
 	public static NTSteamSolarBoiler STEAM_SOLAR_BOILER;
 	public static NTSteamSolarBoiler HP_STEAM_SOLAR_BOILER;
+	
+	public static MetaTileEntityAdvancedPBF ADVANCED_PBF;
 	
 	// Multiblock Parts (7101 - 7500)
 	public static MetaTileEntitySterileMaintenanceHatch STERILE_MAINTENANCE_HATCH;
@@ -253,6 +256,8 @@ public class NTMetaTileEntities
 			STEAM_SOLAR_BOILER = registerMetaTileEntity(7013, new NTSteamSolarBoiler(nepId("steam_solar_boiler"), false));
 			HP_STEAM_SOLAR_BOILER = registerMetaTileEntity(7014, new NTSteamSolarBoiler(nepId("hp_steam_solar_boiler"), true));		
 		}
+		
+		ADVANCED_PBF = registerMetaTileEntity(7015, new MetaTileEntityAdvancedPBF(nepId("advanced_pbf")));
 		
 		if(NTConfig.neptech.enableSterileCleaningHatch)
 		{			

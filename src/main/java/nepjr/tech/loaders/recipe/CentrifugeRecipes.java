@@ -3,8 +3,10 @@ package nepjr.tech.loaders.recipe;
 import static gregtech.api.recipes.RecipeMaps.CENTRIFUGE_RECIPES;
 
 import gregtech.api.GTValues;
+import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
+import nepjr.tech.api.unification.material.NTMaterials;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
